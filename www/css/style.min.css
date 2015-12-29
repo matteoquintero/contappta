@@ -1,0 +1,7 @@
+body{font-family:'osl'}.view,.pane{background-image:url(../img/concrete.png);background-repeat:repeat}.tabs-striped.tabs-dark .tabs{background-color:#2bbcf9}
+.tab-nav.tabs .tab-item.tab-item-active{border-width:5px 0 0 0;border-color:#187095}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:'osb'}
+p{font-family:'osl'}.card{border-width:7px 0 0 0;border-color:#a9ca3d;border-style:solid}.card a{font-family:'osl';text-transform:uppercase;font-size:14px!important;color:rgba(255,255,255,1)!important}
+.list.card h2{color:#2bbcf9}.button.button-positive.button-outline{border-color:#2bbcf9;background:transparent;color:#2bbcf9}a.item{color:#444}.list h2{color:#187095}
+.list.card.chat h2{color:#444}.tabs .tab-item .badge.badge-assertive,.badge.badge-assertive{background-color:#a9ca3d}.card-one .item-avatar h2{letter-spacing:2px}
+.card-one .item-body img{border:.100em solid #ececec}.card-one .item-body p{font-size:20px;line-height:25px}.card-two{border-color:#f49915}.card-two .item-body img{border-radius:100%;width:50vw;height:50vw;float:left;margin:0;border:.200em solid #efefef}
+.card-two .item-body p{float:left;width:37vw;padding:0 0 0 20px;font-size:19px;line-height:25px;text-align:left}
