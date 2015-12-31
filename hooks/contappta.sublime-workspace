@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"card",
+				"card-two"
+			],
+			[
 				"start",
 				"startDate"
 			],
@@ -36,10 +40,43 @@
 	"buffers":
 	[
 		{
+			"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/css/style.css",
+			"settings":
+			{
+				"buffer_size": 3711,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/magazine.html",
+			"settings":
+			{
+				"buffer_size": 627,
+				"line_ending": "Unix",
+				"name": "<ion-slide-box on-slide-changed=\"slideHasChanged($"
+			}
+		},
+		{
+			"file": "/Users/matteoquintero/Downloads/tabbedSlideBox/tabSlideBox.js",
+			"settings":
+			{
+				"buffer_size": 5471,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-chats.html",
+			"settings":
+			{
+				"buffer_size": 578,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/app.js",
 			"settings":
 			{
-				"buffer_size": 3056,
+				"buffer_size": 3400,
 				"line_ending": "Unix"
 			}
 		},
@@ -47,31 +84,7 @@
 			"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/controllers.js",
 			"settings":
 			{
-				"buffer_size": 2095,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/index.html",
-			"settings":
-			{
-				"buffer_size": 1422,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-account.html",
-			"settings":
-			{
-				"buffer_size": 914,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/date.html",
-			"settings":
-			{
-				"buffer_size": 347,
+				"buffer_size": 2616,
 				"line_ending": "Unix"
 			}
 		}
@@ -112,17 +125,29 @@
 	},
 	"file_history":
 	[
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-dash.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/chat-detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/services.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/controllers.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-account.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/app.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-chats.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/css/style.min.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/partials/card-two.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/css/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/partials/card-one.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/date.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/dash-detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/dash-answer.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tabs.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/onezone-datepicker.min.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/platforms/android/assets/www/js/app.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/platforms/android/assets/www/index.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/date2.html",
 		"/Users/matteoquintero/Downloads/ionic-datepicker-master/src/ionic-datepicker.app.js",
 		"/Users/matteoquintero/Downloads/ionic-datepicker-master/src/ionic-datepicker.service.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/index.html",
 		"/Users/matteoquintero/Downloads/ionic-datepicker-master/src/ionic-datepicker-modal.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/date.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/services.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/controllers.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/app.js",
 		"/Users/matteoquintero/Downloads/ionic-datepicker-master/dist/ionic-datepicker.bundle.min.js",
 		"/Users/matteoquintero/Downloads/ionic-datepicker-master/src/ionic-datepicker.directive.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/ui-calendar-master/gruntFile.js",
@@ -139,32 +164,24 @@
 		"/Users/matteoquintero/Downloads/angular-bootstrap-calendar-master/karma.conf.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/lib/ionic/js/ionic.bundle.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/services.min.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-account.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/nls-date.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/service-date.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/directive-date.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/controller-date.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/controller-date.min.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tabs.html",
 		"/Users/matteoquintero/node_modules/datepicker-for-ionic/src/controller.js",
 		"/Users/matteoquintero/node_modules/datepicker-for-ionic/src/app.js",
 		"/Users/matteoquintero/node_modules/datepicker-for-ionic/dist/templates.js",
 		"/Users/matteoquintero/node_modules/datepicker-for-ionic/dist/ionic-datepicker.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/dash-detail.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/datepicker-for-ionic/dist/ionic-datepicker.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/datepicker-for-ionic/src/app.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/datepicker-for-ionic/src/controller.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/ionic/src/ionic-datepicker.app.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/ionic/src/ionic-datepicker-modal.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/taque/src/ionic-datepicker-popup.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/css/style.css",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-dash.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/ionic/demos/old/checkbox/index.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/config.xml",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/lib/ionic/css/ionic.css",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-chats.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/dash-answer.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/chat-detail.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/scss/ionic.app.scss",
 		"/Users/matteoquintero/Library/Application Support/Sublime Text 2/Packages/User/SublimeOnSaveBuild.sublime-settings",
 		"/Users/matteoquintero/Library/Application Support/Sublime Text 2/Packages/User/sassmq.sublime-build",
@@ -204,6 +221,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"<open files>",
 			"/Applications/XAMPP/xamppfiles/htdocs/contappta/www"
 		]
 	},
@@ -212,6 +230,39 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"png",
+			"../../img/icons/corazonesfera.png",
+			"54px",
+			"wyVM1evRxNw",
+			"//www.youtube.com/embed/wyVM1evRxNw",
+			"https:",
+			"?rel=0",
+			"typecard:22,",
+			"typecard:2,",
+			"typecard:1,",
+			"    typecard:'card-one'",
+			"   typecard:'card-two'",
+			"card:'card-two'",
+			"class=\"animate-switch\"",
+			"typecard",
+			"img:",
+			" type:",
+			"type",
+			"    type:'card-",
+			"partials",
+			"F48685",
+			"FBFAFA",
+			"\"}}]);",
+			"F48685",
+			"/*!",
+			"dash-detail",
+			"card-two",
+			"type:'card-one'",
+			"type",
+			"    avatar:'img/mcfly.jpg'",
+			"card-two",
+			"item-avatar",
+			"card-two",
 			"  .state('tab.dash-detail', {\n    url: '/dash/:noticeId',\n    views: {\n      'tab-dash': {\n        templateUrl: 'templates/dash-detail.html',\n        controller: 'DashDetailCtrl'\n      }\n    }\n  })\n",
 			"2016",
 			"epicker-for-ionic/dis",
@@ -236,6 +287,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"a9ca3d"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -246,89 +298,59 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/app.js",
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/css/style.css",
 					"settings":
 					{
-						"buffer_size": 3056,
+						"buffer_size": 3711,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2129,
-								2129
+								3711,
+								3711
 							]
 						],
 						"settings":
 						{
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
 							"trim_trailing_white_space_on_save": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 541.0,
+						"translation.y": 2694.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/controllers.js",
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/magazine.html",
 					"settings":
 					{
-						"buffer_size": 2095,
+						"buffer_size": 627,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								736,
-								736
+								61,
+								61
 							]
 						],
 						"settings":
 						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 58.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/index.html",
-					"settings":
-					{
-						"buffer_size": 1422,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								655,
-								655
-							]
-						],
-						"settings":
-						{
+							"auto_name": "<ion-slide-box on-slide-changed=\"slideHasChanged($",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
 							"syntax": "Packages/HTML/HTML.tmLanguage",
@@ -337,25 +359,55 @@
 							"trim_trailing_white_space_on_save": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-account.html",
+					"buffer": 2,
+					"file": "/Users/matteoquintero/Downloads/tabbedSlideBox/tabSlideBox.js",
 					"settings":
 					{
-						"buffer_size": 914,
+						"buffer_size": 5471,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								324,
-								324
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-chats.html",
+					"settings":
+					{
+						"buffer_size": 578,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48,
+								0
+							],
+							[
+								578,
+								549
 							]
 						],
 						"settings":
@@ -375,31 +427,62 @@
 				},
 				{
 					"buffer": 4,
-					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/date.html",
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/app.js",
 					"settings":
 					{
-						"buffer_size": 347,
+						"buffer_size": 3400,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								315,
-								315
+								3062,
+								3062
 							]
 						],
 						"settings":
 						{
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
 							"trim_trailing_white_space_on_save": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1101.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/controllers.js",
+					"settings":
+					{
+						"buffer_size": 2616,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2246,
+								2258
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 796.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

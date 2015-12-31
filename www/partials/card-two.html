@@ -1,0 +1,27 @@
+<div class="item item-avatar">
+
+  <img src="{{notice.avatar}}">
+  <h2>{{notice.title}}</h2>
+  <p>{{notice.date}}</p>
+</div>
+
+<ion-item class="item-body">
+    <div class="video-container">
+        <iframe class="youtube-player" type="text/html" src="{{notice.media | trusted}}" frameborder="0" width="100%" height="315" allowfullscreen ></iframe>
+    </div>
+    <p>{{notice.descriptionshort}}</p>
+
+</ion-item>
+
+<div class="item tabs tabs-secondary tabs-icon-left">
+
+  <a class="tab-item" href="#/tab/dash/dash-detail/{{notice.id}}">
+    <i class="icon ion-ios-glasses-outline"></i>
+    Ver detalle
+  </a>
+
+  <a class="tab-item" href="#/tab/dash/answer/{{notice.id}}"  ng-show="{{notice.answer}}">
+    <i class="icon ion-ios-redo-outline"></i>
+    Responder
+  </a>
+</div>

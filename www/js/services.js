@@ -7,22 +7,24 @@ angular.module('starter.services', [])
   var notices = [{
     id: 0,
     title: 'Vacaciones recreativas',
-    date: 'Noviembre 05, 2018',
+    date: 'Diciembre 12, 2015',
     descriptionshort: 'Queremos darle la bienvenida a nuestras actividades de Vacaciones...',
     description: 'Queremos darle la bienvenida a nuestras actividades de Vacaciones donde viviremos una experiencia.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos earum nemo dolorum, optio maiores voluptatibus perspiciatis tenetur doloribus praesentium necessitatibus molestias, autem tempore sit ipsa. Delectus sint magnam illum suscipit.',
-    img:'img/notice-0.jpg',
+    media:'https://www.youtube.com/embed/MP2FrFBGEfs?rel=0',
     avatar:'img/mcfly.jpg',
-    type:'card-one',
-    answer: true
+    stylecard:'card-one',
+    typecard:2,
+    answer: false
   }, {
     id: 1,
     title: 'Entrega de notas',
     date: 'Noviembre 05, 2018',
     descriptionshort: 'Queremos darle la bienvenida a nuestras actividades de Vacaciones...',
     description: 'Queremos darle la bienvenida a nuestras actividades de Vacaciones donde viviremos una experiencia.',
-    img:'img/notice-1.jpg',
+    media:'img/notice-1.jpg',
     avatar:'img/mcfly.jpg',
-    type:'card-two',
+    stylecard:'card-two',
+    typecard:1,
     answer: true
   }, {
     id: 2,
@@ -30,9 +32,10 @@ angular.module('starter.services', [])
     date: 'Noviembre 05, 2018',
     descriptionshort: 'Queremos darle la bienvenida a nuestras actividades de Vacaciones...',
     description: 'Queremos darle la bienvenida a nuestras actividades de Vacaciones donde viviremos una experiencia.',
-    img:'img/notice-2.jpg',
+    media:'img/notice-2.jpg',
     avatar:'img/mcfly.jpg',
-    type:'card-one',
+    stylecard:'card-one',
+    typecard:1,
     answer: false
   }, {
     id: 3,
@@ -40,9 +43,10 @@ angular.module('starter.services', [])
     date: 'Noviembre 05, 2018',
     descriptionshort: 'Queremos darle la bienvenida a nuestras actividades de Vacaciones...',
     description: 'Queremos darle la bienvenida a nuestras actividades de Vacaciones donde viviremos una experiencia.',
-    img:'img/notice-0.jpg',
+    media:'img/notice-0.jpg',
     avatar:'img/mcfly.jpg',
-    type:'card-two',
+    stylecard:'card-two',
+    typecard:1,
     answer: false
   }, {
     id: 4,
@@ -50,9 +54,10 @@ angular.module('starter.services', [])
     date: 'Noviembre 05, 2018',
     descriptionshort: 'Queremos darle la bienvenida a nuestras actividades de Vacaciones...',
     description: 'Queremos darle la bienvenida a nuestras actividades de Vacaciones donde viviremos una experiencia.',
-    img:'img/notice-0.jpg',
+    media:'https://www.youtube.com/embed/MP2FrFBGEfs?rel=0',
     avatar:'img/mcfly.jpg',
-    type:'card-one',
+    stylecard:'card-one',
+    typecard:2,
     answer: true
   }];
 
@@ -82,7 +87,11 @@ angular.module('starter.services', [])
     id: 0,
     name: 'Luis (Director)',
     lastText: 'Su hijo reprobo 3 materias',
-    face: 'img/ben.png'
+    face: 'img/ben.png',
+    messages:[
+    { description:"Su hijo reprobo 3 materias las cuales fueron" },
+    { description:"Su hijo reprobo 3 materias las cuales fueron" }
+    ]
   }, {
     id: 1,
     name: 'Andres (Profesor)',
@@ -92,7 +101,11 @@ angular.module('starter.services', [])
     id: 2,
     name: 'Mariana (Profesora)',
     lastText: 'Su hijo reprobo 3 materias',
-    face: 'img/adam.jpg'
+    face: 'img/adam.jpg',
+    messages:[
+    { description:"Su hijo reprobo 3 materias las cuales fueron" },
+    { description:"Su hijo reprobo 3 materias las cuales fueron" }
+    ]
   }, {
     id: 3,
     name: 'Gullermo (Profesor)',
@@ -110,7 +123,8 @@ angular.module('starter.services', [])
       return chats;
     },
     remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
+      console.log(chat);
+      //chats.splice(chats.indexOf(chat), 1);
     },
     get: function(chatId) {
       for (var i = 0; i < chats.length; i++) {
@@ -119,6 +133,17 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    },
+    getMessage: function(chatId) {
+      for (var i = 0; i < chats.length; i++) {
+        if (chats[i].id === parseInt(chatId)) {
+          return chats[i].messages;
+        }
+      }
+      return null;
+    },
+    removeMessage: function(chat) {
+      chats.splice(chats.indexOf(chat), 1);
     }
   };
 });

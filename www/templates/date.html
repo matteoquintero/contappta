@@ -1,11 +1,19 @@
-<ion-view view-title="Calendario">
+<ion-view  view-title="Calendario">
   <ion-content class="padding">
+  <copy>
+    <strong>En esta sección usted se informara</strong>
+    <span>sobre cada uno de los eventos</span>
+    <small>se resalta con verde el día de los eventos </small>
+  </copy>
+
 
 <onezone-datepicker datepicker-object="onezoneDatepicker">
-    <button class="button button-block button-outline button-positive show-onezone-datepicker">
-        {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
-    </button>
+
 </onezone-datepicker>
+
+        <a class="tab-item" href="#/tab/dash/dash-detail/0">
+          Ver detalle
+        </a>
 
   </ion-content>
 </ion-view>
