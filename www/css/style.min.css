@@ -1,6 +1,6 @@
 body{font-family:'osl'}.view,.pane{background-image:url(../img/concrete.png);background-repeat:repeat}.tabs-striped.tabs-dark .tabs{background-color:#2bbcf9}
 .tab-nav.tabs .tab-item.tab-item-active{border-width:5px 0 0 0;border-color:#187095}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:'osb'}
-p,button{font-family:'osl'}.card{border-width:7px 0 0 0;border-color:#a9ca3d;border-style:solid}.card a{font-family:'osl';text-transform:uppercase;font-size:14px!important;color:rgba(255,255,255,1)!important}
+p,button{font-family:'osl'}.card{border-width:7px 0 0 0;border-color:#a9ca3d;border-style:solid}.card-one a,.card-two a{font-family:'osl';text-transform:uppercase;font-size:14px!important;color:rgba(255,255,255,1)!important}
 .list.card h2{color:#2bbcf9}.button.button-positive.button-outline{border-color:#2bbcf9;background:transparent;color:#2bbcf9}a.item{color:#444}.list h2{color:#187095}
 .list.card.chat h2{color:#444}.tabs .tab-item .badge.badge-assertive,.badge.badge-assertive{background-color:#a9ca3d}.card-one .item-avatar h2{letter-spacing:3px;color:#a9ca3d}
 .card-one .item-body img{border:.100em solid #ececec}.card-one .item-body p{font-size:20px;line-height:25px}.card-two{border-color:#f49915}.card-two .item-avatar h2{color:#f49915;letter-spacing:3px}
@@ -9,9 +9,13 @@ p,button{font-family:'osl'}.card{border-width:7px 0 0 0;border-color:#a9ca3d;bor
 #dash-detail h6{text-align:right;color:#cacaca;letter-spacing:2px}#dash-detail p{text-align:justify;font-size:20px;line-height:25px;color:#696868;margin-top:10%}
 #dash-answer textarea{resize:none;height:200px;font-family:'osl';font-size:18px;padding-top:8%;color:#3e3d3d}.bar-stable p{position:absolute;right:70px;z-index:11;color:#3a3838;text-align:right;top:22px;opacity:0}
 .bar-stable img{width:50px;height:50px;position:absolute;z-index:11;top:6px;right:10px}.bar.bar-stable .title{padding-top:12px;font-family:osb;letter-spacing:4px;color:#ccc}
-.bar.bar-stable{height:65px;background:#fff}.has-header{top:65px}.bar .title+.buttons{top:20px}.has-header{height:100%}.list{height:100%}.list .item-icon-left{height:100px;padding-left:80px;line-height:65px}
-.bar .buttons span{display:none}.bar-stable .button.button-clear{top:5px;color:#187095}.item-icon-left .icon{background-color:rgba(204,204,204,0.12);height:50px;top:20px;width:50px;border-radius:100%}
-.item-icon-left .icon::before{left:9px;color:#ccc;position:relative}.item .badge{top:40px}.button.button-positive{border-color:#187095;background-color:#2bbcf9;color:#fff}
+.bar.bar-stable{height:65px;background:#fff}.has-header{top:63px}.list{height:100%}.list .item-icon-left{height:90px;padding-left:91px;line-height:59px;font-family:osl;letter-spacing:1px;color:#737373}
+.bar .buttons span{display:none}.bar-stable .button.button-clear{top:5px;color:#187095}.item-icon-left .icon{background-color:rgba(204,204,204,0.12);height:60px;top:15px;width:60px;border-radius:100%}
+.item-icon-left .icon::before{left:14px;color:#ccc;position:relative;font-size:38px}.item .badge{top:40px}.button.button-positive{border-color:#187095;background-color:#2bbcf9;color:#fff}
 .slider-pager{display:none}.slide-wrapper{height:89%}.slider-img{width:78%;display:block;margin:0 auto;cursor:-webkit-grab}copy{width:100%;position:relative;display:block;overflow:hidden;padding:2% 0;margin:1% 0 4% 0}
 copy strong{font-size:25px;color:#afafaf;margin-right:10px}copy span{font-family:osb;letter-spacing:3px;font-size:25px;color:#187095;line-height:34px}
-copy small{font-family:osl;font-size:13px;color:#6f6e6e}.item-floating-label .input-label.has-input{font-family:osb;color:#e2e2e2;letter-spacing:3px}
+copy small{font-family:osl;font-size:13px;color:#6f6e6e}.item-floating-label .input-label.has-input{font-family:osb;color:#e2e2e2;letter-spacing:3px}.list .item>h4{letter-spacing:1px;color:#ccc}
+.medal .card i{color:#ccc;font-size:75px;right:55px}.medal .card p{margin:7% 0 5% 0;width:80%;text-align:justify}.medal .card h3{margin:5% 0;letter-spacing:3px}
+.medal .card-one h3{color:#a9ca3d}.medal .card-two h3{color:#f49915}.acount .ion-plus-round{background-color:#187095}.acount .ion-ios-calendar-outline{background-color:#a9ca3d}
+.acount .ion-ios-bookmarks-outline{background-color:#f49915}.acount .ion-university{background-color:#2bbcf9}.acount .ion-ios-person-outline{background-color:#187095}
+.acount .item-icon-left .icon::before{color:#fff}#map{width:100%;height:400px;padding:5%;background-color:#fff;position:relative;display:block}

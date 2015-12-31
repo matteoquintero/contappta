@@ -90,31 +90,31 @@ angular.module('starter.services', [])
     face: 'img/ben.png',
     messages:[
     { description:"Su hijo reprobo 3 materias las cuales fueron" },
-    { description:"Su hijo reprobo 3 materias las cuales fueron" }
+    { description:"Su hijo ha ganado 4 reconocimiento" }
     ]
   }, {
     id: 1,
     name: 'Andres (Profesor)',
-    lastText: 'Su hijo reprobo 3 materias',
+    lastText: 'Reunion',
     face: 'img/max.png'
   }, {
     id: 2,
     name: 'Mariana (Profesora)',
-    lastText: 'Su hijo reprobo 3 materias',
+    lastText: 'Su hijo',
     face: 'img/adam.jpg',
     messages:[
+    { description:"Su hijo esta enfermo" },
     { description:"Su hijo reprobo 3 materias las cuales fueron" },
-    { description:"Su hijo reprobo 3 materias las cuales fueron" }
     ]
   }, {
     id: 3,
     name: 'Gullermo (Profesor)',
-    lastText: 'Su hijo reprobo 3 materias',
+    lastText: 'No hay clase',
     face: 'img/perry.png'
   }, {
     id: 4,
     name: 'Luis (Profesor)',
-    lastText: 'Su hijo reprobo 3 materias',
+    lastText: 'Me despido',
     face: 'img/mike.png'
   }];
 

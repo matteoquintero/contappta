@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'onezone-datepicker','uiGmapgoogle-maps'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'onezone-datepicker'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -100,6 +100,43 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         'tab-chats': {
           templateUrl: 'templates/chat-detail.html',
           controller: 'ChatDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.institute', {
+      url: '/institute',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/institute.html',
+          controller: 'InstituteCtrl'
+        }
+      }
+    })
+
+    .state('tab.son', {
+      url: '/son',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/son.html',
+        }
+      }
+    })
+
+    .state('tab.new-message', {
+      url: '/new-message',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/new-message.html',
+        }
+      }
+    })
+
+    .state('tab.medal', {
+      url: '/medal',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/medal.html',
         }
       }
     })

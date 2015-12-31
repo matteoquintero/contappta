@@ -1,42 +1,36 @@
-<ion-view  view-title="Calendario">
+
+
+<ion-view  view-title="Instituto">
   <ion-content class="padding" data-tap-disabled="true">
-  <copy>
-    <strong>En esta sección usted se informara</strong>
-    <span>sobre cada los datos de</span>
-    <small>contacto del colegio </small>
-  </copy>
 
+  <div class="list card">
 
-<div class="list card">
+    <div class="item item-icon-left">
+      <i class="icon ion-ios-lightbulb-outline"></i>
+        Jardín infantíl Kids World
+    </div>
 
-  <div class="item item-icon-left">
-    <i class="icon ion-home"></i>
-    Enter home address
+    <div class="item item-icon-left">
+      <i class="icon ion-ios-location-outline"></i>
+      Kr 57 N 128 - 03 Barrio Las Villas
+    </div>
+
+    <div class="item item-icon-left">
+      <i class="icon ion-ios-telephone-outline"></i>
+      604 21 64
+    </div>
+
+    <div class="item item-icon-left">
+      <i class="icon ion-ios-email-outline"></i>
+      info@kidsworld.com.co
+    </div>
+
   </div>
 
-  <div class="item item-icon-left">
-    <i class="icon ion-ios-telephone"></i>
-    Enter phone number
-  </div>
-
-  <div class="item item-icon-left">
-    <i class="icon ion-wifi"></i>
-    Enter wireless password
-  </div>
-
-  <div class="item item-icon-left">
-    <i class="icon ion-card"></i>
-    Enter card information
-  </div>
-
-</div>
-
-
-  <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
-
-
-
+  <div id="map" data-tap-disabled="true"></div>
+    <ion-footer-bar>
+      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Donde estoy</a>
+    </ion-footer-bar>
 
   </ion-content>
 </ion-view>
-

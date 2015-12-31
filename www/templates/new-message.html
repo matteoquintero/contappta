@@ -4,26 +4,32 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="Responder noticia">
+<ion-view view-title="Nuevo mensaje">
 
   <ion-content class="padding" id="dash-answer">
 
   <copy>
-    <strong>Digite la respuesta para la noticia</strong>
-    <span>{{notice.title}}</span>
-    <small>su respuesta sera muy util</small>
+    <strong>En esta sección pued enviar</strong>
+    <span>mensajes personales</span>
+    <small>a cualquier persona</small>
   </copy>
 
-  <div class="list card {{notice.stylecard}}">
+  <div class="list card card-one">
+
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="text" placeholder="Busca el remitente">
+    </label>
+
     <label class="item item-input item-floating-label">
-      <span class="input-label">Respuesta</span>
-      <textarea type="text" placeholder="Digite su respuesta"></textarea>
+      <span class="input-label">Mensaje</span>
+      <textarea type="text" placeholder="Escribe tu mensaje"></textarea>
     </label>
 
       <div class="item tabs tabs-secondary tabs-icon-left">
         <a class="tab-item" href="#" >
           <i class="icon ion-ios-redo-outline"></i>
-          Enviar respuesta
+          Enviar mensaje
         </a>
       </div>
 
