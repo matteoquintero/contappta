@@ -1,5 +1,20 @@
 angular.module('starter.services', [])
 
+.service('fileUpload', ['$http', function ($http) {
+    this.uploadFileToUrl = function(file, uploadUrl){
+        var fd = new FormData();
+        fd.append('file', file);
+        $http.post(uploadUrl, fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        })
+        .success(function(){
+        })
+        .error(function(){
+        });
+    }
+}])
+
 .factory('Notices', function() {
   // Might use a resource here that returns a JSON array
 
@@ -86,34 +101,51 @@ angular.module('starter.services', [])
   var chats = [{
     id: 0,
     name: 'Luis (Director)',
+    date: "05/01/2016",
     lastText: 'Su hijo reprobo 3 materias',
     face: 'img/ben.png',
     messages:[
-    { description:"Su hijo reprobo 3 materias las cuales fueron" },
-    { description:"Su hijo ha ganado 4 reconocimiento" }
+    {
+      description:"Su hijo reprobo 3 materias las cuales fueron",
+      date:"05/01/2016 09:59 am"
+    },
+    {
+      description:"Su hijo ha ganado 4 reconocimiento",
+      date:"05/01/2016 07:59 am"
+    }
     ]
   }, {
     id: 1,
     name: 'Andres (Profesor)',
+    date: "30/12/2015",
     lastText: 'Reunion',
     face: 'img/max.png'
   }, {
     id: 2,
     name: 'Mariana (Profesora)',
+    date: "30/11/2015",
     lastText: 'Su hijo',
     face: 'img/adam.jpg',
     messages:[
-    { description:"Su hijo esta enfermo" },
-    { description:"Su hijo reprobo 3 materias las cuales fueron" },
+    {
+      description:"Su hijo esta enfermo",
+      date:"30/11/2015 07:59 am"
+     },
+    {
+      description:"Su hijo reprobo 3 materias las cuales fueron",
+      date:"30/11/2015 07:59 am"
+     },
     ]
   }, {
     id: 3,
     name: 'Gullermo (Profesor)',
+    date: "30/04/2015",
     lastText: 'No hay clase',
     face: 'img/perry.png'
   }, {
     id: 4,
     name: 'Luis (Profesor)',
+    date: "30/04/2014",
     lastText: 'Me despido',
     face: 'img/mike.png'
   }];

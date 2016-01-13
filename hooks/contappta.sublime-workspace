@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"ite",
+				"item"
+			],
+			[
+				"item",
+				"item-thumbnail-left"
+			],
+			[
+				"be",
+				"be	:before"
+			],
+			[
 				"card",
 				"card-two"
 			],
@@ -39,55 +51,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/css/style.css",
-			"settings":
-			{
-				"buffer_size": 3711,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/magazine.html",
-			"settings":
-			{
-				"buffer_size": 627,
-				"line_ending": "Unix",
-				"name": "<ion-slide-box on-slide-changed=\"slideHasChanged($"
-			}
-		},
-		{
-			"file": "/Users/matteoquintero/Downloads/tabbedSlideBox/tabSlideBox.js",
-			"settings":
-			{
-				"buffer_size": 5471,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-chats.html",
-			"settings":
-			{
-				"buffer_size": 578,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/app.js",
-			"settings":
-			{
-				"buffer_size": 3400,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/controllers.js",
-			"settings":
-			{
-				"buffer_size": 2616,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -125,23 +88,36 @@
 	},
 	"file_history":
 	[
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-dash.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/institute.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/chat-detail.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/services.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/controllers.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-account.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/app.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-chats.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/css/style.min.css",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/partials/card-two.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/app.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/controllers.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/new-message.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/son.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/medal.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-chats.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-dash.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-account.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/css/style.css",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/partials/card-one.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/date.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/dash-detail.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/dash-answer.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/services.min.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/services.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/magazine.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tabs.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/onezone-datepicker.min.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/controllers.min.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/date.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/partials/card-one.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/partials/card-two.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/taque",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/cordova.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/event-detail.html",
+		"/Users/matteoquintero/Downloads/ionic-google-maps-starter/www/index.html",
+		"/Users/matteoquintero/Downloads/ionic-google-maps-starter/www/js/app.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/dash-answer.html",
+		"/Users/matteoquintero/Downloads/tabbedSlideBox/tabSlideBox.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/css/style.min.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/dash-detail.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/platforms/android/assets/www/js/app.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/platforms/android/assets/www/index.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/date2.html",
@@ -163,7 +139,6 @@
 		"/Users/matteoquintero/Downloads/angular-bootstrap-calendar-master/dist/js/angular-bootstrap-calendar.js",
 		"/Users/matteoquintero/Downloads/angular-bootstrap-calendar-master/karma.conf.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/lib/ionic/js/ionic.bundle.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/services.min.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/nls-date.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/service-date.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/directive-date.js",
@@ -230,6 +205,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"30/04/2015 ",
+			"#a9ca3d",
+			"color",
+			"A0CD50",
+			"color",
+			"highlight.color",
+			"highlight",
+			"-outline",
+			"></i>",
+			"templateUrl: ",
+			"list",
+			"item-icon-right",
+			"</p>",
+			" <p>Reco",
+			"card item",
+			"class=\"card\"",
+			"<div class=\"item",
+			"  </a>",
+			"a href=\"#\"",
 			"png",
 			"../../img/icons/corazonesfera.png",
 			"54px",
@@ -298,195 +292,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/css/style.css",
-					"settings":
-					{
-						"buffer_size": 3711,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3711,
-								3711
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2694.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/magazine.html",
-					"settings":
-					{
-						"buffer_size": 627,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								61,
-								61
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<ion-slide-box on-slide-changed=\"slideHasChanged($",
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/matteoquintero/Downloads/tabbedSlideBox/tabSlideBox.js",
-					"settings":
-					{
-						"buffer_size": 5471,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/templates/tab-chats.html",
-					"settings":
-					{
-						"buffer_size": 578,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								48,
-								0
-							],
-							[
-								578,
-								549
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/app.js",
-					"settings":
-					{
-						"buffer_size": 3400,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3062,
-								3062
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1101.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/Applications/XAMPP/xamppfiles/htdocs/contappta/www/js/controllers.js",
-					"settings":
-					{
-						"buffer_size": 2616,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2246,
-								2258
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 796.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

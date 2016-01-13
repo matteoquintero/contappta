@@ -7,6 +7,22 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'onezone-datepicker'])
 
+.directive('fileModel', ['$parse', function ($parse) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            var model = $parse(attrs.fileModel);
+            var modelSetter = model.assign;
+
+            element.bind('change', function(){
+                scope.$apply(function(){
+                    modelSetter(scope, element[0].files[0]);
+                });
+            });
+        }
+    };
+}])
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -23,11 +39,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider, $sceDelegateProvider) {
 
    $ionicConfigProvider.tabs.position('bottom');
-   $ionicConfigProvider.views.maxCache(5);
+   $ionicConfigProvider.views.maxCache(0);
    $ionicConfigProvider.backButton.text('').icon('ion-ios-arrow-left');
+   $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -39,6 +56,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   .state('tab', {
     url: '/tab',
     abstract: true,
+      cache: false,
     templateUrl: 'templates/tabs.html'
   })
 
@@ -46,6 +64,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/dash',
     views: {
       'tab-dash': {
+          cache: false,
         templateUrl: 'templates/tab-dash.html',
         controller: 'DashCtrl'
       }
@@ -58,6 +77,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/calender',
     views: {
       'tab-account': {
+          cache: false,
         templateUrl: 'templates/date.html',
         controller: 'DateCtrl'
       }
@@ -68,8 +88,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/dash/dash-detail/:noticeId',
     views: {
       'tab-dash': {
+          cache: false,
         templateUrl: 'templates/dash-detail.html',
         controller: 'DashDetailCtrl'
+      }
+    }
+  })
+
+  .state('tab.event-detail', {
+    url: '/dash/event-detail',
+    views: {
+      'tab-account': {
+          cache: false,
+        templateUrl: 'templates/event-detail.html'
       }
     }
   })
@@ -78,6 +109,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/dash/answer/:noticeId',
     views: {
       'tab-dash': {
+          cache: false,
         templateUrl: 'templates/dash-answer.html',
         controller: 'DashDetailCtrl'
       }
@@ -88,6 +120,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       url: '/chats',
       views: {
         'tab-chats': {
+            cache: false,
           templateUrl: 'templates/tab-chats.html',
           controller: 'ChatsCtrl'
         }
@@ -98,6 +131,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       url: '/chats/chat-detail/:chatId',
       views: {
         'tab-chats': {
+            cache: false,
           templateUrl: 'templates/chat-detail.html',
           controller: 'ChatDetailCtrl'
         }
@@ -108,8 +142,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       url: '/institute',
       views: {
         'tab-account': {
+            cache: false,
           templateUrl: 'templates/institute.html',
-          controller: 'InstituteCtrl'
         }
       }
     })
@@ -118,6 +152,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       url: '/son',
       views: {
         'tab-account': {
+            cache: false,
           templateUrl: 'templates/son.html',
         }
       }
@@ -127,6 +162,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       url: '/new-message',
       views: {
         'tab-account': {
+            cache: false,
           templateUrl: 'templates/new-message.html',
         }
       }
@@ -136,6 +172,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       url: '/medal',
       views: {
         'tab-account': {
+            cache: false,
           templateUrl: 'templates/medal.html',
         }
       }
@@ -145,6 +182,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       url: '/magazine',
       views: {
         'tab-account': {
+            cache: false,
           templateUrl: 'templates/magazine.html',
           controller: 'MagazineCtrl'
         }
@@ -155,6 +193,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/account',
     views: {
       'tab-account': {
+          cache: false,
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
       }

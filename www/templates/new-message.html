@@ -6,7 +6,7 @@
 -->
 <ion-view view-title="Nuevo mensaje">
 
-  <ion-content class="padding" id="dash-answer">
+  <ion-content class="padding" id="dash-answer"  ng-controller = "myCtrl">
 
   <copy>
     <strong>En esta sección pued enviar</strong>
@@ -21,13 +21,20 @@
       <input type="text" placeholder="Busca el remitente">
     </label>
 
+
+    <label class="item item-input">
+      <i class="icon ion-file placeholder-icon"></i>
+      <input type="file" file-model="myFile" placeholder="Seleccionar archivo">
+    </label>
+
+
     <label class="item item-input item-floating-label">
       <span class="input-label">Mensaje</span>
       <textarea type="text" placeholder="Escribe tu mensaje"></textarea>
     </label>
 
       <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class="tab-item" href="#" >
+        <a class="tab-item" href="#" ng-click="uploadFile()" >
           <i class="icon ion-ios-redo-outline"></i>
           Enviar mensaje
         </a>

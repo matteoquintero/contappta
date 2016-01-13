@@ -39,19 +39,18 @@ angular.module('starter.controllers', [])
 
         if (value=="Sat Dec 12 2015 00:00:00 GMT-0500 (COT)") {
 
+          $state.go("tab.event-detail", {a:1, b:2}, {inherit:false});
+
+
         }
       }
   };
-
-
 
 })
 
 .controller('DashCtrl', function($scope, Notices) {
 
   $scope.notices = Notices.all();
-
-
 
 })
 
@@ -93,8 +92,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('InstituteCtrl', function($scope, $ionicLoading, $compile) {
-
-
 
       function initialize() {
         var myLatlng = new google.maps.LatLng(4.713719,-74.067697);
@@ -163,12 +160,23 @@ angular.module('starter.controllers', [])
 
 })
 
-
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
   $scope.messages = Chats.getMessage($stateParams.chatId);
 
 })
+
+.controller('myCtrl', ['$scope', 'fileUpload', function($scope, fileUpload){
+
+    $scope.uploadFile = function(){
+        var file = $scope.myFile;
+        console.log('file is ' );
+        console.dir(file);
+        var uploadUrl = "_data";
+        fileUpload.uploadFileToUrl(file, uploadUrl);
+    };
+
+}])
 
 .controller('AccountCtrl', function($scope) {
 
