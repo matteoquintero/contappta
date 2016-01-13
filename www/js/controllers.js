@@ -15,8 +15,11 @@ angular.module('starter.controllers', [])
   var endDate=new Date(2024, 1, 26);
   var highlights=[
       {
-          date: new Date(2015, 11, 12),
+          date: new Date(2016, 0, 20),
       },
+      {
+          date: new Date(2016, 0, 10),
+      }
   ];
 
   $scope.onezoneDatepicker = {
@@ -37,12 +40,23 @@ angular.module('starter.controllers', [])
       highlights: highlights,
       callback: function(value){
 
-        if (value=="Sat Dec 12 2015 00:00:00 GMT-0500 (COT)") {
+
+        var date=( ( value.getMonth() + 1 ) + "/" + value.getDate() + "/" + value.getFullYear() );
+
+        console.log(date);
+
+        if (date=="1/20/2016") {
 
           $state.go("tab.event-detail", {a:1, b:2}, {inherit:false});
 
+        }
+
+        if (date=="1/10/2016") {
+
+          $state.go("tab.event-detail", {a:1, b:2}, {inherit:false});
 
         }
+
       }
   };
 

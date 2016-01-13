@@ -205,6 +205,7 @@ a.item{
   font-family: osb;
   letter-spacing: 4px;
   color: rgb(204, 204, 204);
+  text-align: left;
 }
 
 .bar.bar-stable {
@@ -247,7 +248,9 @@ ion-header-bar.bar-stable.bar.bar-header.disable-user-behavior {}
             font-size: 35px;
     }
 .item .badge{
-    top: 29px;
+    top: inherit;
+    right: initial;
+    margin-left: 20px;
 }
 
 
@@ -348,10 +351,10 @@ copy small{
 }
 
 .acount .ion-ios-calendar-outline{
-      background-color: #a9ca3d;
+      background-color: #f49915;
 }
 .acount .ion-ios-bookmarks-outline{
-      background-color: #f49915;
+      background-color: #a9ca3d;
 }
 .acount .ion-university{
       background-color: #2bbcf9;
@@ -412,4 +415,42 @@ background-image: url(../img/stardust.png);box-shadow: 0 1px 3px rgba(0, 0, 0, 0
     position: absolute;
     width: 100%;
     float: left;
+}
+
+.noti{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 16px;
+    right: 65px;
+    line-height: 53px;
+}
+.noti strong{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: #f49915;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    margin-top: 17px;
+    margin-right: 5px;
+}
+.noti span{}
+
+video{
+  width: 100%;
+}
+
+.bar.bar-stable .title small{color: #656565;font-size: 13px;font-family: osb;letter-spacing: 0px;}
+
+.noti-tab{
+
 }

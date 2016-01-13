@@ -84,8 +84,31 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
+
+  .state('tab.chats-son', {
+    url: '/chats-son',
+    views: {
+      'tab-account': {
+          cache: false,
+        templateUrl: 'templates/chats-son.html',
+        controller: 'ChatsCtrl'
+      }
+    }
+  })
+
+  .state('tab.chat-detail-son', {
+    url: '/chat-detail-son/:chatId',
+    views: {
+      'tab-account': {
+          cache: false,
+        templateUrl: 'templates/chat-detail-son.html',
+        controller: 'ChatDetailCtrl'
+      }
+    }
+  })
+
   .state('tab.dash-detail', {
-    url: '/dash/dash-detail/:noticeId',
+    url: '/dash-detail/:noticeId',
     views: {
       'tab-dash': {
           cache: false,
@@ -96,7 +119,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
   .state('tab.event-detail', {
-    url: '/dash/event-detail',
+    url: '/event-detail',
     views: {
       'tab-account': {
           cache: false,
@@ -106,7 +129,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
   .state('tab.dash-answer', {
-    url: '/dash/answer/:noticeId',
+    url: '/answer/:noticeId',
     views: {
       'tab-dash': {
           cache: false,
@@ -128,7 +151,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
 
     .state('tab.chat-detail', {
-      url: '/chats/chat-detail/:chatId',
+      url: '/chat-detail/:chatId',
       views: {
         'tab-chats': {
             cache: false,
