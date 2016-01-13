@@ -36,6 +36,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    // then override any default you want
+    window.plugins.nativepagetransitions.globalOptions.duration = 500;
+    window.plugins.nativepagetransitions.globalOptions.iosdelay = 350;
+    window.plugins.nativepagetransitions.globalOptions.androiddelay = 350;
+    window.plugins.nativepagetransitions.globalOptions.winphonedelay = 350;
+    window.plugins.nativepagetransitions.globalOptions.slowdownfactor = 4;
+    // these are used for slide left/right only currently
+    window.plugins.nativepagetransitions.globalOptions.fixedPixelsTop = 0;
+    window.plugins.nativepagetransitions.globalOptions.fixedPixelsBottom = 0;
+
+
   });
 })
 
@@ -44,7 +56,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
    $ionicConfigProvider.tabs.position('bottom');
    $ionicConfigProvider.views.maxCache(0);
    $ionicConfigProvider.backButton.text('').icon('ion-ios-arrow-left');
-   $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
+   $ionicConfigProvider.views.transition('none');
+
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -56,7 +69,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   .state('tab', {
     url: '/tab',
     abstract: true,
-      cache: false,
+    cache: false,
     templateUrl: 'templates/tabs.html'
   })
 

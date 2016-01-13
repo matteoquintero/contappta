@@ -206,6 +206,7 @@ a.item{
   letter-spacing: 4px;
   color: rgb(204, 204, 204);
   text-align: left;
+  margin-left: 25px;
 }
 
 .bar.bar-stable {
@@ -229,8 +230,16 @@ ion-header-bar.bar-stable.bar.bar-header.disable-user-behavior {}
 }
 
 .bar-stable .button.button-clear{
-    top: 5px;
     color: #187095;
+    font-size: 43px;
+    min-height: 65px;
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    width: 30px;
+    text-align: center;
+    top: 0;
+    background: rgba(204, 204, 204, 0.21);
 }
 
 
@@ -453,4 +462,8 @@ video{
 
 .noti-tab{
 
+}
+
+#instiuto i::before{
+    color: #ccc;
 }
