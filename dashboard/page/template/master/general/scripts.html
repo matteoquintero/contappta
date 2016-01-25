@@ -1,0 +1,15 @@
+{#if $smarty.const.SITE =='local'#}
+<script type="text/javascript" src="{#'resources/js/general/routes-local.js'|fileversion#}"></script>
+{#elseif $smarty.const.SITE =='production'#}
+<script type="text/javascript" src="{#'resources/js/general/routes-production.js'|fileversion#}"></script>
+{#/if#}
+<!-- jQuery 2.1.4 -->
+<script src="{#'resources/js/vendor/jquery.js'|fileversion#}"></script>
+<script src="{#'resources/js/vendor/jquery-validate.js'|fileversion#}"></script>
+<script src="{#'resources/js/vendor/bootstrap.js'|fileversion#}"></script>
+<script src="{#'resources/js/vendor/fastclick.js'|fileversion#}"></script>
+<script src="{#'resources/js/general/onkeypress.js'|fileversion#}"></script>
+<script src="{#'resources/js/general/functions.js'|fileversion#}"></script>
+<script src="{#'resources/js/profile/app.js'|fileversion#}"></script>
+<script src="{#'resources/js/profile/demo.js'|fileversion#}"></script>
+

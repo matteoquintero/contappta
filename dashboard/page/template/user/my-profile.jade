@@ -1,0 +1,47 @@
+|{#include file="master/general/header.html"|filetemplate#}
+link(rel='stylesheet' type='text/css' media='all' href="{#'resources/css/pymes/my-profile.css'|fileversion#}")
+link(rel='stylesheet' type='text/css' media='all' href="{#'resources/css/theme/profile-nav.css'|fileversion#}")
+link(rel="stylesheet" type="text/css" media="all" href="{#'resources/css/theme/tour.css'|fileversion#}")
+body
+	|{#include file="master/profile/profile-nav.html"|filetemplate#}
+	main
+		.cd-app-screen
+			cite
+				p Datos personales
+			fieldset
+				.form-fields-left
+					var
+						label(for="nombre") Nombre
+						p|{#$datausuario.nombre#}
+					var
+						label(for="apellido") Apellidos
+						p|{#$datausuario.apellido#}
+					var
+						label(for="documento") Documento
+						p|{#$datausuario.documento#}
+					var
+						label(for="correo") Correo electrónico
+						p|{#$datausuario.correo#}
+					var
+						label(for="telefono") Teléfono de contacto
+						p|{#$datausuario.telefono#}
+				.form-fields-right
+					var
+						label(for="celular") Celular
+						p|{#$datausuario.celular#}
+					var
+						label(for="direccion") Dirección
+						p|{#$datausuario.direccion#}
+					var
+						label(for="ciudad") Ciudad
+						p|{#$datausuario.ciudad#}
+					var
+						label(for="fechanacimiento") Fecha nacimiento
+						p|{#$datausuario.fechaNacimiento#}
+			figcaption
+				button Editar datos
+	|{#include file="master/general/scripts.html"|filetemplate#}
+	script(type='text/javascript', src="{#'resources/js/vendor/jquery-menu-aim.js'|fileversion#}")
+	script(type='text/javascript', src="{#'resources/js/general/profile-nav.js'|fileversion#}")
+	script(type='text/javascript' src="{#'resources/js/user/my-profile.js'|fileversion#}")
+
