@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.6, created on 2016-01-25 03:26:57
+<?php /* Smarty version 2.6.6, created on 2016-01-25 21:20:21
          compiled from master/profile/profile-nav.html */ ?>
   <body class="hold-transition skin-black sidebar-mini">
     <div class="wrapper">
@@ -195,7 +195,7 @@ resources/images/user2-160x160.jpg" class="img-circle" alt="User Image">
                 <i class="fa fa-institution"></i> <span>Institución</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="<?php echo @constant('BASE'); ?>
+                <li><a href="<?php echo @constant('BASE'); ?>
 crear-institucion"><i class="fa fa-plus"></i> Crear institución</a></li>
                 <li><a href="<?php echo @constant('BASE'); ?>
 instituciones"><i class="fa fa-table"></i> Ver instituciones</a></li>
@@ -203,13 +203,26 @@ instituciones"><i class="fa fa-table"></i> Ver instituciones</a></li>
             </li>
             <li class="treeview">
               <a href="#">
+                <i class="fa fa-institution"></i> <span>Grupo</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="<?php echo @constant('BASE'); ?>
+crear-grupo"><i class="fa fa-plus"></i> Crear grupo</a></li>
+                <li><a href="<?php echo @constant('BASE'); ?>
+grupos"><i class="fa fa-table"></i> Ver grupos</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
                 <i class="fa fa-users"></i> <span>Usuario</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="<?php echo @constant('BASE'); ?>
+                <li><a href="<?php echo @constant('BASE'); ?>
 crear-usuario"><i class="fa fa-plus"></i> Crear usuario</a></li>
                 <li><a href="<?php echo @constant('BASE'); ?>
 usuarios"><i class="fa fa-table"></i> Ver usuarios</a></li>
+                <li><a href="<?php echo @constant('BASE'); ?>
+importar-usuarios"><i class="fa fa-upload"></i>Importar usuarios</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -217,7 +230,7 @@ usuarios"><i class="fa fa-table"></i> Ver usuarios</a></li>
                 <i class="fa fa-users"></i> <span>Noticia</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="<?php echo @constant('BASE'); ?>
+                <li><a href="<?php echo @constant('BASE'); ?>
 crear-noticia"><i class="fa fa-plus"></i> Crear noticia</a></li>
                 <li><a href="<?php echo @constant('BASE'); ?>
 noticias"><i class="fa fa-table"></i> Ver noticias</a></li>
@@ -228,7 +241,7 @@ noticias"><i class="fa fa-table"></i> Ver noticias</a></li>
                 <i class="fa fa-users"></i> <span>Evento</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="<?php echo @constant('BASE'); ?>
+                <li><a href="<?php echo @constant('BASE'); ?>
 crear-evento"><i class="fa fa-plus"></i> Crear evento</a></li>
                 <li><a href="<?php echo @constant('BASE'); ?>
 eventos"><i class="fa fa-table"></i> Ver eventos</a></li>
@@ -239,7 +252,7 @@ eventos"><i class="fa fa-table"></i> Ver eventos</a></li>
                 <i class="fa fa-users"></i> <span>Mensajes</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="<?php echo @constant('BASE'); ?>
+                <li><a href="<?php echo @constant('BASE'); ?>
 crear-mensaje"><i class="fa fa-plus"></i> Crear mensaje</a></li>
                 <li><a href="<?php echo @constant('BASE'); ?>
 mensajes"><i class="fa fa-table"></i> Ver menasajes</a></li>

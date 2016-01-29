@@ -30,7 +30,7 @@ class DataObject_RevistaXInstitucion extends DB_DataObject
 
     function sequenceKey() // keyname, use native, native name
     {
-         return array('id', true, false);
+         return array('id', false, false);
     }
 
     /* the code above is auto generated do not remove the tag below */

@@ -1,0 +1,30 @@
+  {#include file="master/general/header.html"|filetemplate#}
+  </head>
+  <body class="hold-transition login-page">
+    <div class="login-box">
+      <div class="login-logo">
+        <a href="../../index2.html"><b>Cont</b>appta</a>
+      </div><!-- /.login-logo -->
+      <div class="login-box-body">
+        <p class="login-box-msg">Recordar datos</p>
+        <form method="post">
+          <div class="form-group has-feedback">
+            <input type="text" name="email" id="email" class="form-control" placeholder="Correo">
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </div>
+          <div class="row">
+            <div class="col-xs-8">
+            </div><!-- /.col -->
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Recordar</button>
+            </div><!-- /.col -->
+          </div>
+        </form>
+      </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->
+  {#include file="master/general/scripts.html"|filetemplate#}
+  <script src="{#'resources/js/vendor/icheck.js'|fileversion#}"></script>
+  <script src="{#'resources/js/vendor/placeholders.js'|fileversion#}"></script>
+  <script src="{#'resources/js/page/remember.js'|fileversion#}"></script>
+  {#include file="master/general/botoom.html"|filetemplate#}
+

@@ -10,26 +10,32 @@
     $ObjSesion=new Sesion();
     $ObjUtilidad=new Utilidad();
     $ObjInstitucion=new Institucion();
+    $ObjGrupo=new Grupo();
+    $ObjRol=new Rol();
     @$seccion=$_GET["seccion"];
     @$urldata=$_GET["data"];
-    $idUsuario=$_SESSION['usuario']["id"];
+    @$idUsuario=$_SESSION['usuario']["id"];
     //Paginas
-    $page = array("crear-institucion","instituciones","modificar-institucion","soluciones","crear-cuenta","que-es");
+    $page = array( "autenticacion","recordar-datos");
+
     $profile = array(
-      "crear-institucion","transaccion","mi-empresa",
-      "casos-laborales","cerrar-sesion","membresia");
+      "crear-institucion","instituciones","modificar-institucion",
+      "crear-usuario","usuarios","modificar-usuario",
+      "crear-noticia","noticias","modificar-noticia",
+      "crear-grupo","grupos","modificar-grupo"
+      );
 
     //Variable usuario logeado
-    $usuariologeado=$ObjSesion->UsuarioLogeado();
+    $usuariologeado=$ObjSesion->loggeduser();
 
     if ($usuariologeado) {
 
          $modo="all";
-         $data["usuario"]=$_SESSION['usuario']["usuario"];
+         $data["idUsuario"]=$idUsuario;
          $datausuario= $ObjUsuario->get($modo,$data);
          $smarty->assign("datausuario",$datausuario);
          $smarty->assign("usuariologeado",0);
-         array_push($profile,$_SESSION['usuario']["usuario"]);
+         array_push($profile,$datausuario['usuario']);
 
      }else{$smarty->assign("usuariologeado",1);}
 
@@ -43,26 +49,14 @@
 
         switch ($seccion) {
 
-            case "instituciones":
-                $institutes = $ObjInstitucion->get("all","");
-                $smarty->assign("institutes",$institutes);
-                $smarty->display("user/institutes".MIN."html");
+            case "recordar-datos":
+              $smarty->display("page/remember".MIN."html");
             break;
 
-            case "modificar-institucion":
-                $data["idInstitucion"]=$_POST["idInstitucion"];
-                $institute = $ObjInstitucion->get("one",$data);
-                $smarty->assign("institute",$institute);
-                $smarty->display("user/update-institute".MIN."html");
+            case "autenticacion":
+              $smarty->display("page/authentication".MIN."html");
             break;
 
-            case "crear-institucion":
-                $smarty->display("user/create-institute".MIN."html");
-            break;
-
-            case "crear-usuario":
-                $smarty->display("user/create-user".MIN."html");
-            break;
         }
 
     }else if(in_array($seccion, $profile)){
@@ -73,15 +67,92 @@
 
             switch ($seccion) {
 
-                case "reports":
-                    $smarty->display("administrator/reports".MIN."html");
-                break;
+            case "perfil":
+                $user = $ObjInstitucion->get("one", $data);
+                $smarty->assign("user",$user);
+                $smarty->display($datausuario["permiso"]."/profile".MIN."html");
+            break;
 
-                case "categories":
-                    $categories = $ObjCategoria->get("","");
-                    $smarty->assign("categories",$categories);
-                    $smarty->display("administrator/categories".MIN."html");
-                break;
+            case "instituciones":
+                $institutions = $ObjInstitucion->get("all","");
+                $smarty->assign("institutions",$institutions);
+                $smarty->display($datausuario["permiso"]."/institutions".MIN."html");
+            break;
+
+            case "modificar-institucion":
+                $data["idInstitucion"]=$_POST["idInstitucion"];
+                $institution = $ObjInstitucion->get("one",$data);
+                $smarty->assign("institution",$institution);
+                $smarty->display($datausuario["permiso"]."/update-institution".MIN."html");
+            break;
+
+            case "crear-institucion":
+                $smarty->display($datausuario["permiso"]."/create-institution".MIN."html");
+            break;
+
+            case "crear-usuario":
+                $guardians = $ObjUsuario->get("guardian",$data);
+                $smarty->assign("guardians",$guardians);
+                $roles = $ObjRol->get("all","");
+                $smarty->assign("roles",$roles);
+                $groups = $ObjGrupo->get("all","");
+                $smarty->assign("groups",$groups);
+                $institutions = $ObjInstitucion->get("all","");
+                $smarty->assign("institutions",$institutions);
+                $smarty->display($datausuario["permiso"]."/create-user".MIN."html");
+            break;
+
+            case "usuarios":
+                $users = $ObjUsuario->get("all","");
+                $smarty->assign("users",$users);
+                $smarty->display($datausuario["permiso"]."/users".MIN."html");
+            break;
+
+            case "modificar-usuario":
+                $guardians = $ObjUsuario->get("guardian",$data);
+                $smarty->assign("guardians",$guardians);
+                $roles = $ObjRol->get("all","");
+                $smarty->assign("roles",$roles);
+                $groups = $ObjGrupo->get("all","");
+                $smarty->assign("groups",$groups);
+                $institutions = $ObjInstitucion->get("all","");
+                $smarty->assign("institutions",$institutions);
+                $data["idUsuario"]=$_POST["idUsuario"];
+                $user = $ObjUsuario->get("one",$data);
+                $smarty->assign("user",$user);
+                $smarty->display($datausuario["permiso"]."/update-user".MIN."html");
+            break;
+
+            case "modificar-grupo":
+                $institutions = $ObjInstitucion->get("all","");
+                $smarty->assign("institutions",$institutions);
+                $data["idGrupo"]=$_POST["idGrupo"];
+                $group = $ObjGrupo->get("one",$data);
+                $smarty->assign("group",$group);
+                $smarty->display($datausuario["permiso"]."/update-group".MIN."html");
+            break;
+
+            case "crear-grupo":
+                $institutions = $ObjInstitucion->get("all","");
+                $smarty->assign("institutions",$institutions);
+                $smarty->display($datausuario["permiso"]."/create-group".MIN."html");
+            break;
+
+            case "grupos":
+                $groups = $ObjGrupo->get("all","");
+                $smarty->assign("groups",$groups);
+                $smarty->display($datausuario["permiso"]."/groups".MIN."html");
+            break;
+
+            case "crear-noticia":
+                $data["idInstitucion"]=$_SESSION['usuario']["idInstitucion"];
+                $data["idInstitucion"]=3;
+                $users = $ObjUsuario->get("institution",$data);
+                $smarty->assign("users",$users);
+                $groups = $ObjGrupo->get("institution",$data);
+                $smarty->assign("groups",$groups);
+                $smarty->display($datausuario["permiso"]."/create-new".MIN."html");
+            break;
 
             }
 
@@ -90,7 +161,7 @@
     }else{
     	if ($seccion=="") {
     		    $smarty->assign("page",2);
-           	$smarty->display("page/home".MIN."html");
+           	$smarty->display("page/authentication".MIN."html");
     	}else{
            	$smarty->display("errorpage/404".MIN."html");
     	}

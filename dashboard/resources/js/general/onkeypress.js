@@ -89,6 +89,29 @@ jQuery(document).ready(function() {
 
 });
 
+function showerror (form,input,menssage) {
+  $(input).focus();
+  $(input).addClass("error");
+  form.find('.error-form p').html(menssage);
+  form.find('.error-form').show();
+}
+
+$.validator.addMethod("uniqueuser", function(value, element) {
+  if ( !existuser(value) ){
+    return true
+    console.log("existuser(")
+  }
+  return false
+}, "Este usuario ya existe, por favor seleccione otro.");
+
+$.validator.addMethod("uniqueemail", function(value, element) {
+  if ( !existemail(value) ){
+    return true
+    console.log("existemail")
+  }
+  return false
+}, "Este correo ya existe, por favor seleccione otro.");
+
 function showerrors(form){
 
 		if (form.find(".form-error").length==0) {

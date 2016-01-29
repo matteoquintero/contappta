@@ -19,8 +19,12 @@ function IncluirArchivos($Ruta){
 	//Clases
   require(PREFIJO_GENERAL."class/institucion.php");
   require(PREFIJO_GENERAL."class/usuario.php");
+  require(PREFIJO_GENERAL."class/acudiente.php");
+  require(PREFIJO_GENERAL."class/grupo.php");
+  require(PREFIJO_GENERAL."class/rol.php");
+  require(PREFIJO_GENERAL."class/cifrado.php");
   require(PREFIJO_GENERAL."class/sesion.php");
-	require(PREFIJO_GENERAL."class/utilidad.php");
+  require(PREFIJO_GENERAL."class/utilidad.php");
 	//Libs
 	require(PREFIJO_GENERAL."libreria/mail/class.phpmailer.php");
 	require(PREFIJO_GENERAL."libreria/mail/class.smtp.php");

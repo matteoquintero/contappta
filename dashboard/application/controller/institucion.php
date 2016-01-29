@@ -2,11 +2,8 @@
     require("../requires.php");
     $Ruta="../";
     IncluirArchivos($Ruta);
-    $ObjSesion=new Sesion();
     $ObjInstitucion=new Institucion();
     $resultado=false;
-	  @session_start();
-    @$idUsuario=$_SESSION['usuario']["id"];
     @$accion=$_POST["accion"];
 
         if (isset($accion)) {
@@ -14,8 +11,8 @@
             switch ($accion){
 
                 case "create":
-										$data["activo"]=( $_POST["active"] )? "Si" : "No";
-										$data["nombre"]=$_POST["name"];
+										$data["activo"]=( $_POST["active"] ) ? "Si" : "No";
+										$data["institucion"]=$_POST["name"];
                     $data["correo"]=$_POST["email"];
                     $data["direccion"]=$_POST["address"];
 										$data["logo"]=$_POST["logo"];
@@ -27,7 +24,7 @@
                 case 'update':
                     $data["idInstitucion"]=$_POST["idInstitucion"];
                     $data["activo"]=( $_POST["active"] )? "Si" : "No";
-                    $data["nombre"]=$_POST["name"];
+                    $data["institucion"]=$_POST["name"];
                     $data["correo"]=$_POST["email"];
                     $data["direccion"]=$_POST["address"];
                     $data["logo"]=$_POST["logo"];

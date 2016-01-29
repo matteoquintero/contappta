@@ -1,32 +1,68 @@
-function institute(){
-	var form = jQuery('#form-institute');
+function user(){
+	var form = jQuery('#form-user');
 	showerrors(form);
 	form.validate({
 					rules: {
-							name:{
+							user:{
 									required:true,
+                  uniqueuser:true
 							},
-						 email:{
+						 name:{
 						 			required:true,
-                  email:true
 							},
-              address:{
+              lastname:{
                   required:true,
               },
-
+              email:{
+                  required:true,
+                  email:true,
+                  uniqueemail:true
+              },
+             password:{
+                  required:true,
+              },
+              smartphone:{
+                  required:true,
+              },
+             institution:{
+                  required:true,
+              },
+              role:{
+                  required:true,
+              },
+              guardian:{
+                maxlength:4,
+              }
 					},
 					messages: {
-							name:{
-									required:"Por favor, escriba el nombre.",
+							user:{
+									required:"Por favor, escriba el usuario.",
 							},
+              name:{
+                  required:"Por favor, escriba el nombre.",
+              },
+              lastname:{
+                  required:"Por favor, escriba el apellido.",
+              },
               email:{
                   required:"Por favor, escriba el correo.",
                   email:"Correo electronico incorrecto."
               },
-              address:{
-                  required:"Por favor, escriba la dirección.",
+              password:{
+                  required:"Por favor, escriba la contraseña.",
               },
-
+              smartphone:{
+                  required:"Por favor, escriba el celular.",
+              },
+              institution:{
+                  required:"Por favor, seleccione la institución.",
+              },
+              role:{
+                  required:"Por favor, seleccione el rol",
+              },
+              guardian:{
+                  maxlength:"Por favor, seleccione maximo 4 acudientes",
+              },
 					}
 	});
 
@@ -34,6 +70,7 @@ function institute(){
 
       var action=form.attr("data-action");
 	    var finale=sendformajax(action,"usuario",form,"","json");
+
 			switch (finale[0]){
 				case true: redirectpage("usuarios"); break;
 				case false:
@@ -56,5 +93,4 @@ function institute(){
 $(document).ready(function() {
   $(".select2").select2();
   $( "form button" ).click(function() { user() });
-
 });

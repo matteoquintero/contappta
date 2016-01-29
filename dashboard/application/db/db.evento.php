@@ -52,7 +52,7 @@ class DataObject_Evento extends DB_DataObject
 
     function sequenceKey() // keyname, use native, native name
     {
-         return array('id', true, false);
+         return array('id', false, false);
     }
 
     function defaults() // column default values 

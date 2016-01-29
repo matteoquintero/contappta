@@ -1,55 +1,36 @@
 <?php
 
-class Sesion extends Usuario{
+class Sesion{
 
     public function __construct() {
 
     }
-    public function Autenticacion($usuario,$contrasena,$datos,$modo){
+    public function authentication($usuario,$contrasena,$data,$modo){
 
         ini_set("session.cookie_lifetime","7200");
         ini_set("session.gc_maxlifetime","7200");
         @session_start();
-        switch ($modo) {
 
-            case 'networks':
-                $_SESSION['usuario'] = array(
-                    'id' => $datos['idUsuario'],
-                    'usuario' => $datos['usuario'],
-                    'nombre' => $datos['nombre'],
-                    'apellido' => $datos['apellido'],
-                    'correo' => $datos['correo'],
-                    'rol' => $datos['rol'],
-                );
-                $response[0]=true;
-            break;
+        if ( strtolower($usuario) == $data['usuario'] && $contrasena == $data['contrasena'] ) {
+            $_SESSION['usuario'] = array(
+              'id' => $data['idUsuario'],
+              'idInstitucion' => $data['idUsuario'],
+              'usuario' => $data['usuario'],
+              'nombre' => $data['nombre'],
+              'apellido' => $data['apellido'],
+              'permiso' => $data['permiso']
+            );
+            $response[0]=true;
+        }else{ $response[0]=false; }
 
-            case 'C247':
-                if ( strtolower($usuario) == $datos['usuario'] && $contrasena == $datos['contrasena'] ) {
-                    $_SESSION['usuario'] = array(
-                        'id' => $datos['idUsuario'],
-                        'usuario' => $datos['usuario'],
-                        'nombre' => $datos['nombre'],
-                        'apellido' => $datos['apellido'],
-                        'correo' => $datos['correo'],
-                        'rol' => $datos['rol'],
-                    );
-                    $response[0]=true;
-                }else{ $response[0]=false; }
-            break;
-
-            default: $response[0]=false; break;
-
-        }
-
-        $redireccion=$this->Redireccion($response[0],$datos);
-        $response[1]=$redireccion[0];
-        $response[2]=$redireccion[1];
+        $redirect=$this->redirect($response[0],$data);
+        $response[1]=$redirect[0];
+        $response[2]=$redirect[1];
         return $response;
 
     }
 
-    public function UsuarioLogeado() {
+    public function loggeduser() {
 
         @session_start();
         if (!isset($_SESSION['usuario'])) { return false; }
@@ -60,7 +41,7 @@ class Sesion extends Usuario{
     }
 
 
-    public function CerrarSesion() {
+    public function unlogin() {
         @session_start();
         $_SESSION = array();
         if (ini_get("session.use_cookies")) {
@@ -79,24 +60,29 @@ class Sesion extends Usuario{
         return true;
     }
 
-    public function Redireccion($respuesta,$data){
+    public function redirect($logged,$data){
 
-        if ($respuesta == true) {
+        if ($logged == true) {
 
-            $modo="demo";
-            $demo=$this->get($modo,$data);
+            switch ($data["permiso"]) {
+              case 'any':
+                $response[0]='any/perfil';
+              break;
+              case 'app':
+                $response[0]='app/perfil';
+              break;
+              case 'institution':
+                $response[0]='institution/perfil';
+              break;
+            }
 
-            if ($demo) { $resultado[0]=$data["usuario"]; }
-            else{ $resultado[0]='tour'; }
-
-            $this->ActualizarIngreso($data);
 
         }else{
-           $resultado[0]='autenticacion';
-           $resultado[1]='#message=31';
+           $response[0]='autenticacion';
+           $response[1]='#message=31';
         }
 
-        return $resultado;
+        return $response;
     }
 
 }

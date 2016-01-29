@@ -188,12 +188,12 @@ function lackuser(){ return sendajax("lack","usuario"); }
 function user(idUsuario){ return senddataajax('data','usuario',"idUsuario="+idUsuario) }
 function actionsuser(){ return sendajax("actions","productoxusuario"); }
 
-function existmail(correo){
-    var response=senddataajax("email","usuario","correo="+correo.val());
+function existemail(correo){
+    var response=senddataajax("email","usuario","correo="+correo);
     return response[0];
 }
 
 function existuser(usuario){
-    var response=senddataajax("user","usuario","usuario="+usuario.val());
+    var response=senddataajax("user","usuario","usuario="+usuario);
     return response[0];
 }

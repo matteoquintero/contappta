@@ -26,6 +26,11 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
+table button{
+  width: 50%;
+  float: left;
+}
+
 /* Layout */
 .wrapper {
   min-height: 100%;

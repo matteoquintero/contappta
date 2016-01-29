@@ -11,7 +11,7 @@ class Institucion
 		$dbdata = DB_DataObject::Factory('Institucion');
 
 		$dbdata->activo=$data["activo"];
-		$dbdata->nombre=$data["nombre"];
+		$dbdata->institucion=$data["institucion"];
 		$dbdata->correo=$data["correo"];
     $dbdata->direccion=$data["direccion"];
 		$dbdata->logo=$data["logo"];
@@ -37,7 +37,7 @@ class Institucion
     $dbdata = DB_DataObject::Factory('Institucion');
 
     $dbdata->activo=$data["activo"];
-    $dbdata->nombre=$data["nombre"];
+    $dbdata->institucion=$data["institucion"];
     $dbdata->correo=$data["correo"];
     $dbdata->direccion=$data["direccion"];
     $dbdata->logo=$data["logo"];
@@ -67,13 +67,13 @@ class Institucion
 
         $dbdata = DB_DataObject::Factory('Institucion');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("id,activo,nombre,correo,direccion,logo");
+        $dbdata->selectAdd("id,activo,institucion,correo,direccion,logo");
         $dbdata->find();
         $contador=0;
         while( $dbdata->fetch() ){
           $ret[$contador]->idInstitucion = $dbdata->id;
           $ret[$contador]->activo = $dbdata->activo;
-          $ret[$contador]->nombre = $dbdata->nombre;
+          $ret[$contador]->institucion = $dbdata->institucion;
           $ret[$contador]->correo = $dbdata->correo;
           $ret[$contador]->direccion = $dbdata->direccion;
           $ret[$contador]->logo = $dbdata->logo;
@@ -90,13 +90,13 @@ class Institucion
 
         $dbdata = DB_DataObject::Factory('Institucion');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("id,activo,nombre,correo,direccion,logo");
+        $dbdata->selectAdd("id,activo,institucion,correo,direccion,logo");
         $dbdata->whereAdd("id=".$data['idInstitucion']);
         $dbdata->find();
         while( $dbdata->fetch() ){
           $ret['idInstitucion'] = $dbdata->id;
           $ret['activo'] = $dbdata->activo;
-          $ret['nombre'] = $dbdata->nombre;
+          $ret['institucion'] = $dbdata->institucion;
           $ret['correo'] = $dbdata->correo;
           $ret['direccion'] = $dbdata->direccion;
           $ret['logo'] = $dbdata->logo;
@@ -111,30 +111,6 @@ class Institucion
 
 
   }
-
-	public function delete($campos){
-
-		$dbdata = DB_DataObject::Factory('Archivo');
-		$dbdata->eliminado="Si";
-		$dbdata->whereAdd("id = '".$campos["idArchivo"]."'");
-
-		$dbdata->find();
-
-		if ($dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY)) {
-			$resultado[0] = true;
-			$resultado[1] = $dbdata->insert();
-			$resultado[2] = $campos["numeroRegistro"];
-			$resultado[3] = $campos["idTipoCaso"];
-		} else {
-			$resultado[0] = false;
-		}
-
-		$dbdata->free();
-
-		return $resultado;
-
-	}
-
 
 }
 

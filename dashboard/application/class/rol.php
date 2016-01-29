@@ -1,30 +1,26 @@
 <?php
-/**
-*
-*/
 class Rol
 {
 
-	function __construct(){
-	}
+  function __construct(){
+  }
 
-	public function ConsultarRol(){
+  public function get(){
 
-		$dbdata = DB_DataObject::Factory('Rol');
-		$dbdata->selectAdd("id,rol");
-		$dbdata->whereAdd("id != 1");
-		$dbdata->find();
-		$contador=0;
-		while( $dbdata->fetch() ){
-				$ret[$contador]->id_rol = $dbdata->id;
-				$ret[$contador]->rol = $dbdata->rol;
-				$contador++;
-		}
-		$dbdata->free();
-		return $ret;
+    $dbdata = DB_DataObject::Factory('Rol');
+    $dbdata->selectAdd("id,rol");
+    $dbdata->find();
+    $contador=0;
+    while( $dbdata->fetch() ){
+        $ret[$contador]->idRol = $dbdata->id;
+        $ret[$contador]->rol = format($dbdata->rol,"encode");
+        $contador++;
+    }
+    $dbdata->free();
+    return $ret;
 
 
-	}
+  }
 }
 
 ?>

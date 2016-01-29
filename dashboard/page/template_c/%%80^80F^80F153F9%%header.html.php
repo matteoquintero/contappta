@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.6, created on 2016-01-25 01:47:48
+<?php /* Smarty version 2.6.6, created on 2016-01-25 20:08:39
          compiled from master/general/header.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'fileversion', 'master/general/header.html', 10, false),)), $this); ?>
@@ -18,6 +18,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'fileversion
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="<?php echo ((is_array($_tmp='resources/css/vendor/select2.css')) ? $this->_run_mod_handler('fileversion', true, $_tmp) : fileversion($_tmp)); ?>
+">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo ((is_array($_tmp='resources/css/contaapta/AdminLTE.css')) ? $this->_run_mod_handler('fileversion', true, $_tmp) : fileversion($_tmp)); ?>
 ">

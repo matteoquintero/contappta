@@ -3,7 +3,7 @@
  * Table Definition for institucion
  */
 
-class DataObject_Institucion extends DB_DataObject
+class DataObject_Institucion extends DB_DataObject 
 {
     ###START_AUTOCODE
     /* the code below is auto generated do not remove the above tag */
@@ -11,10 +11,10 @@ class DataObject_Institucion extends DB_DataObject
     public $__table = 'institucion';                     // table name
     public $id;                              // int(11)  not_null primary_key auto_increment
     public $activo;                          // string(2)  enum
-    public $nombre;                          // string(100)
-    public $correo;                          // string(45)
-    public $direccion;                       // string(100)
-    public $logo;                            // string(200)
+    public $nombre;                          // string(100)  
+    public $correo;                          // string(45)  
+    public $direccion;                       // string(100)  
+    public $logo;                            // string(200)  
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
@@ -40,10 +40,10 @@ class DataObject_Institucion extends DB_DataObject
 
     function sequenceKey() // keyname, use native, native name
     {
-         return array('id', true, false);
+         return array('id', false, false);
     }
 
-    function defaults() // column default values
+    function defaults() // column default values 
     {
          return array(
              'activo' => 'No',

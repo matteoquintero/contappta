@@ -5,25 +5,24 @@
     $ObjUsuario=new Usuario();
     $ObjSesion=new Sesion();
     $ObjCifrado=new Cifrado();
-    @$AccionPost=$_POST["accion"];
+    @$action=$_POST["accion"];
 
-        if (isset($AccionPost)) {
+        if (isset($action)) {
 
-            switch ($AccionPost) {
+            switch ($action) {
 
                 case "login":
-                    $user=strtolower($_POST["usuario"]);
-                    $password=$ObjCifrado->encryptpassword($_POST["contrasena"]);
+                    $user=strtolower($_POST["user"]);
+                    $password=$ObjCifrado->encryptpassword($_POST["password"]);
                     $data["usuario"]=$user;
                     $mode="sesion";
                     $datauser=$ObjUsuario->get($mode,$data);
-                    $mode="C247";
-                    $response=$ObjSesion->Autenticacion($user,$password,$datauser,$mode);
+                    $response=$ObjSesion->authentication($user,$password,$datauser);
 										echo json_encode($response);
                 break;
 
                 case "unlogin":
-                	$ObjSesion->CerrarSesion();
+                	$ObjSesion->unlogin();
                 break;
 
             }
