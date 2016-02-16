@@ -1,29 +1,23 @@
-<div class="item item-avatar">
+  <div class="item item-avatar">
+    <img src="{{notice.avatar}}">
+    <h2>{{notice.title}}</h2>
+    <p>{{notice.date}}</p>
+  </div>
 
-  <img src="{{notice.avatar}}">
-  <h2>{{notice.title}}</h2>
-  <p>{{notice.date}}</p>
-</div>
+  <div class="item item-body card-two">
+    <div> <img class="full-image" src="{{notice.media}}"> </div>
+    <div> <p>{{notice.descriptionshort}}</p> </div>
+  </div>
 
-<ion-item class="item-body">
-    <div class="video-container">
-      <div overflow-scroll="true">
-         <video autobuffer controls="controls" preload="metadata" webkit-playsinline="webkit-playsinline" class="videoPlayer"><source src="data/video.mp4" type="video/mp4"/></video>
-      </div>
-    </div>
-    <p>{{notice.descriptionshort}}</p>
+  <div class="item tabs tabs-secondary tabs-icon-left">
 
-</ion-item>
+    <a class="tab-item" href="#/tab/dash-detail/{{notice.id}}" transitiontype="slide" direction="left" go-native>
+      <i class="icon ion-ios-glasses-outline"></i>
+      Ver detalle
+    </a>
 
-<div class="item tabs tabs-secondary tabs-icon-left">
-
-  <a class="tab-item" href="#/tab/dash-detail/{{notice.id}}" transitiontype="slide" direction="left" go-native>
-    <i class="icon ion-ios-glasses-outline"></i>
-    Ver detalle
-  </a>
-
-  <a class="tab-item" href="#/tab/answer/{{notice.id}}"  ng-show="{{notice.answer}}" transitiontype="slide" direction="left" go-native>
-    <i class="icon ion-ios-redo-outline"></i>
-    Responder
-  </a>
-</div>
+    <a class="tab-item" href="#/tab/answer/{{notice.id}}" ng-show="{{notice.answer}}" transitiontype="slide" direction="left" go-native>
+      <i class="icon ion-ios-redo-outline"></i>
+      Responder
+    </a>
+  </div>

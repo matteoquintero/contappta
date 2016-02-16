@@ -7,35 +7,46 @@
     $ObjSesion=new Sesion();
     $ObjUtilidad=new Utilidad();
     $ObjAcudiente=new Acudiente();
+    $ObjUsers=new Users();
     $response=false;
 	  @session_start();
-    @$idUsuario=$_SESSION['usuario']["id"];
-    @$ACCION=$_POST["accion"];
+    @$idUsuario=$_SESSION['usuario']["idUsuario"];
+    @$idInstitucion=$_SESSION['usuario']["idInstitucion"];
+    @$usuario=$_SESSION['usuario']["usuario"];
+    @$action=$_POST["accion"];
 
-        if (isset($ACCION)) {
+        if (isset($action)) {
 
-            switch ($ACCION){
+            switch ($action){
 
                 case "create":
 
-                    $data["usuario"]=$_POST['user'];
-                    $data["contrasena"]=$ObjCifrado->encryptpassword($_POST["contrasena"]);
+                    $data["usuario"]=$_POST['username'];
+                    $data["contrasena"]=$ObjCifrado->encryptpassword($_POST["password"]);
                     $data["nombre"]=$_POST["name"];
                     $data["apellido"]=$_POST["lastname"];
                     $data["correo"]=$_POST["email"];
                     $data["celular"]=$_POST["smartphone"];
                     $data["documento"]=$_POST["document"];
                     $data["idRol"]=$_POST["role"];
-                    $data["idInstitucion"]=$_POST["institution"];
+                    $data["idInstitucion"]=$_POST["institute"];
                     $data["idGrupo"]=$_POST["group"];
+                    $data["permiso"]=$_POST["permission"];
+                    $data["foto"]=$_POST["_data/profilepictures/profile-default.png"];
 
-                    $response=$ObjUsuario->insert($data);
+                    $ruta="../../_data/profilepictures/";
+                    $nombre=$_POST['username'];
+                    $nombrefile="file-0";
+                    $foto=$ObjUtilidad->GenerarArchivo($ruta, $nombre, $nombrefile);
+                    $data["foto"]=$foto[1];
+
+                    $response=$ObjUsuario->create($data);
+
                     $data["idHijo"]= $response[1];
-
                    if (empty($_POST["guardian"])) {
                         foreach ($_POST["guardian"] as $key => $value) {
                           $data["idAcudiente"]=$value;
-                          $ObjAcudiente->insert($data);
+                          $ObjAcudiente->create($data);
                         }
                     }
 
@@ -45,18 +56,32 @@
 
                 case "update":
 
-                    $data["usuario"]=$_POST['user'];
-                    $data["contrasena"]=$ObjCifrado->encryptpassword($_POST["contrasena"]);
+                    $data["idUsuario"]=$_POST['user'];
                     $data["nombre"]=$_POST["name"];
                     $data["apellido"]=$_POST["lastname"];
-                    $data["correo"]=$_POST["email"];
                     $data["celular"]=$_POST["smartphone"];
-                    $data["idRol"]=$_POST["idRole"];
-                    $data["idInstitucion"]=$_POST["idInstution"];
-                    $data["idGrupo"]=$_POST["idGroup"];
-                    $data["idPadre"]=$_POST["idFather"];
-                    $data["idMadre"]=$_POST["idMother"];
-                    $response=$ObjUsuario->insert($data);
+                    $data["documento"]=$_POST["document"];
+                    $data["idRol"]=$_POST["role"];
+                    $data["idInstitucion"]=$_POST["institute"];
+                    $data["idGrupo"]=$_POST["group"];
+                    $data["permiso"]=$_POST["permission"];
+                    $data["foto"]=$_POST["_data/profilepictures/profile-default.png"];
+
+                    $ruta="../../_data/profilepictures/";
+                    $nombre=$_POST['namephoto'];
+                    $nombrefile="file-0";
+                    $foto=$ObjUtilidad->GenerarArchivo($ruta, $nombre, $nombrefile);
+                    $data["foto"]=$foto[1];
+
+                    $response=$ObjUsuario->update($data);
+
+                    $data["idHijo"]= $response[1];
+                   if (!empty($_POST["guardian"])) {
+                        foreach ($_POST["guardian"] as $key => $value) {
+                          $data["idAcudiente"]=$value;
+                          $ObjAcudiente->create($data);
+                        }
+                    }
                     echo json_encode($response);
 
                 break;
@@ -64,16 +89,22 @@
                 case "email":
 
                     $email=$_POST["correo"];
-                    $response=$ObjUsuario->existsemail($email);
+                    $response=$ObjUsers->existsemail($email);
                     echo json_encode($response);
 
                 break;
 
                 case "user":
 
-                    $user=$_POST["usario"];
-                    $response=$ObjUsuario->existsuser($user);
+                    $user=$_POST["usuario"];
+                    $response=$ObjUsers->existsuser($user);
                     echo json_encode($response);
+                break;
+
+                case "useractive":
+
+                    echo json_encode(strtolower($usuario));
+
                 break;
 
             }

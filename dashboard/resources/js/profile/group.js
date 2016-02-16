@@ -1,5 +1,5 @@
 function group(){
-	var form = jQuery('#form-group');
+	var form = $('#form-group');
 	showerrors(form);
 	form.validate({
 					rules: {
@@ -31,7 +31,7 @@ function group(){
 	if (form.valid()) {
 
       var action=form.attr("data-action");
-	    var finale=sendformajax(action,"grupo",form,"","json");
+	    var finale=sendformajax(action,"grupo",form);
 			switch (finale[0]){
 				case true: redirectpage("grupos"); break;
 				case false:
@@ -52,8 +52,5 @@ function group(){
 
 
 $(document).ready(function() {
-
-  $(".select2").select2({ placeholder: "Selecciona", allowClear: true});
-  jQuery( "form button" ).click(function() { group() });
-
+  $( "form button" ).click(function() { group() });
 });

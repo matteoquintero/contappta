@@ -62,30 +62,8 @@ class Grupo
 
         $dbdata = DB_DataObject::Factory('Grupo');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("id,grado,identificador");
+        $dbdata->selectAdd("id,idInstitucion,grado,identificador");
         $dbdata->whereAdd("idInstitucion = '".$data["idInstitucion"]."'");
-        $dbdata->find();
-        $contador=0;
-        while( $dbdata->fetch() ){
-          $ret[$contador]->idGrupo = $dbdata->id;
-          $ret[$contador]->grado = $dbdata->grado;
-          $ret[$contador]->identificador = $dbdata->identificador;
-          $contador++;
-        }
-
-        $dbdata->free();
-        return $ret;
-
-      break;
-
-
-      case 'all':
-
-        $dbdata = DB_DataObject::Factory('Grupo');
-        $institution = DB_DataObject::Factory('Institucion');
-        $dbdata->selectAdd();
-        $dbdata->selectAdd("grupo.id,grupo.idInstitucion,institucion.institucion,grupo.grado,grupo.identificador");
-        $dbdata->joinAdd($institution);
         $dbdata->find();
         $contador=0;
         while( $dbdata->fetch() ){
@@ -101,7 +79,6 @@ class Grupo
         return $ret;
 
       break;
-
 
       case 'one':
 

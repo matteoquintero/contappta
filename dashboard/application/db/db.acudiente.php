@@ -9,7 +9,7 @@ class DataObject_Acudiente extends DB_DataObject
     /* the code below is auto generated do not remove the above tag */
 
     public $__table = 'acudiente';                       // table name
-    public $id;                              // int(11)  not_null primary_key
+    public $id;                              // int(11)  not_null primary_key unsigned auto_increment
     public $idHijo;                          // int(11)  
     public $idAcudiente;                     // int(11)  
     public $fechaRegistreo;                  // timestamp(19)  unsigned binary timestamp
@@ -34,7 +34,7 @@ class DataObject_Acudiente extends DB_DataObject
 
     function sequenceKey() // keyname, use native, native name
     {
-         return array('id', false, false);
+         return array('id', true, false);
     }
 
     /* the code above is auto generated do not remove the tag below */

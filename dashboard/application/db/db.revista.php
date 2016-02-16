@@ -9,7 +9,7 @@ class DataObject_Revista extends DB_DataObject
     /* the code below is auto generated do not remove the above tag */
 
     public $__table = 'revista';                         // table name
-    public $id;                              // int(11)  not_null primary_key auto_increment
+    public $id;                              // int(11)  not_null primary_key unsigned auto_increment
     public $revista;                         // string(150)  
     public $paginas;                         // int(11)  
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
@@ -34,7 +34,7 @@ class DataObject_Revista extends DB_DataObject
 
     function sequenceKey() // keyname, use native, native name
     {
-         return array('id', false, false);
+         return array('id', true, false);
     }
 
     function defaults() // column default values 

@@ -9,7 +9,7 @@ class DataObject_Notificacion extends DB_DataObject
     /* the code below is auto generated do not remove the above tag */
 
     public $__table = 'notificacion';                    // table name
-    public $id;                              // int(11)  not_null primary_key auto_increment
+    public $id;                              // int(11)  not_null primary_key unsigned auto_increment
     public $idEmisor;                        // int(11)  
     public $idReceptor;                      // int(11)  
     public $asunto;                          // string(100)  
@@ -38,7 +38,7 @@ class DataObject_Notificacion extends DB_DataObject
 
     function sequenceKey() // keyname, use native, native name
     {
-         return array('id', false, false);
+         return array('id', true, false);
     }
 
     function defaults() // column default values 

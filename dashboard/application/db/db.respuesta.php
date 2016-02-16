@@ -9,10 +9,8 @@ class DataObject_Respuesta extends DB_DataObject
     /* the code below is auto generated do not remove the above tag */
 
     public $__table = 'respuesta';                       // table name
-    public $id;                              // int(11)  not_null primary_key
-    public $idNoticia;                       // int(11)  
-    public $idEmisor;                        // int(11)  
-    public $idReceptor;                      // int(11)  
+    public $id;                              // int(11)  not_null primary_key unsigned auto_increment
+    public $idUsuario;                       // int(11)  
     public $respuesta;                       // blob(65535)  blob
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
@@ -23,9 +21,7 @@ class DataObject_Respuesta extends DB_DataObject
     {
          return array(
              'id' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
-             'idNoticia' =>  DB_DATAOBJECT_INT,
-             'idEmisor' =>  DB_DATAOBJECT_INT,
-             'idReceptor' =>  DB_DATAOBJECT_INT,
+             'idUsuario' =>  DB_DATAOBJECT_INT,
              'respuesta' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
          );
@@ -38,7 +34,7 @@ class DataObject_Respuesta extends DB_DataObject
 
     function sequenceKey() // keyname, use native, native name
     {
-         return array('id', false, false);
+         return array('id', true, false);
     }
 
     function defaults() // column default values 

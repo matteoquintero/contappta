@@ -97,20 +97,32 @@ function showerror (form,input,menssage) {
 }
 
 $.validator.addMethod("uniqueuser", function(value, element) {
-  if ( !existuser(value) ){
-    return true
-    console.log("existuser(")
-  }
-  return false
+
+  return ( existuser(value) ) ? false : true;
+
 }, "Este usuario ya existe, por favor seleccione otro.");
 
 $.validator.addMethod("uniqueemail", function(value, element) {
-  if ( !existemail(value) ){
-    return true
-    console.log("existemail")
-  }
-  return false
+  return ( existemail(value) ) ? false : true;
 }, "Este correo ya existe, por favor seleccione otro.");
+
+
+$.validator.addMethod("require_from_group", function(value, element, options) {
+  var numberRequired = options[0];
+  var selector = options[1];
+  var fields = $(selector, element.form);
+  var filled_fields = fields.filter(function() {
+    // it's more clear to compare with empty string
+    return $(this).val() != "";
+  });
+  var empty_fields = fields.not(filled_fields);
+  // we will mark only first empty field as invalid
+  if (filled_fields.length < numberRequired && empty_fields[0] == element) {
+    return false;
+  }
+  return true;
+// {0} below is the 0th item in the options field
+}, jQuery.format("Please fill out at least {0} of these fields."));
 
 function showerrors(form){
 

@@ -9,8 +9,9 @@ class DataObject_UsuarioXNotificacion extends DB_DataObject
     /* the code below is auto generated do not remove the above tag */
 
     public $__table = 'usuario_x_notificacion';          // table name
-    public $idUsuario;                       // int(11)  not_null primary_key multiple_key
-    public $idNotificacion;                  // int(11)  not_null primary_key multiple_key
+    public $idUsuario;                       // int(11)  not_null primary_key
+    public $idNotificacion;                  // int(11)  not_null primary_key
+    public $vista;                           // string(2)  enum
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('DataObject_UsuarioXNotificacion',$k,$v); }
@@ -20,6 +21,7 @@ class DataObject_UsuarioXNotificacion extends DB_DataObject
          return array(
              'idUsuario' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idNotificacion' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+             'vista' =>  DB_DATAOBJECT_STR,
          );
     }
 
@@ -30,7 +32,14 @@ class DataObject_UsuarioXNotificacion extends DB_DataObject
 
     function sequenceKey() // keyname, use native, native name
     {
-         return array('id', false, false);
+         return array('id', true, false);
+    }
+
+    function defaults() // column default values 
+    {
+         return array(
+             'vista' => 'No',
+         );
     }
 
     /* the code above is auto generated do not remove the tag below */

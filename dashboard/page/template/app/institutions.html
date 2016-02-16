@@ -1,9 +1,7 @@
   {#include file="master/general/header.html"|filetemplate#}
     <link rel="stylesheet" href="{#'resources/css/vendor/datatables-bootstrap.css'|fileversion#}">
   </head>
-  <body>
-
-  {#include file="master/profile/profile-nav.html"|filetemplate#}
+  {#include file="master/profile/nav.html"|filetemplate#}
 
   <section class="content-header">
     <h1>
@@ -26,7 +24,7 @@
                   <h3 class="box-title">Listado de las instituciones</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table id="example1" class="table table-bordered table-striped">
+                  <table id="data" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>Nombre</th>
@@ -37,13 +35,13 @@
                       </tr>
                     </thead>
                     <tbody>
-                      {# foreach from=$institutions item=institution #}
+                      {#foreach from=$institutions item=institution#}
                       <tr>
                         <td>{#$institution->institucion#}</td>
                         <td>{#$institution->correo#}</td>
                         <td>{#$institution->direccion#}</td>
                         <td>{#$institution->activo#}</td>
-                        <td><button class="btn-edit" data-institution="{#$institution->idInstitucion#}">Editar</button></td>
+                        <td><button class="btn-edit btn btn-primary" data-institution="{#$institution->idInstitucion#}">Editar</button></td>
                       </tr>
                       {#/foreach#}
                     </tbody>
@@ -78,15 +76,8 @@
 
       });
 
-      $("#example1").DataTable();
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false
-      });
+      $("#data").DataTable();
+
     });
   </script>
   {#include file="master/general/botoom.html"|filetemplate#}

@@ -9,8 +9,8 @@ class DataObject_RevistaXInstitucion extends DB_DataObject
     /* the code below is auto generated do not remove the above tag */
 
     public $__table = 'revista_x_institucion';           // table name
-    public $idRevista;                       // int(11)  not_null primary_key multiple_key
-    public $idInstitucion;                   // int(11)  not_null primary_key multiple_key
+    public $idRevista;                       // int(11)  not_null primary_key
+    public $idInstitucion;                   // int(11)  not_null primary_key
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('DataObject_RevistaXInstitucion',$k,$v); }
@@ -30,7 +30,7 @@ class DataObject_RevistaXInstitucion extends DB_DataObject
 
     function sequenceKey() // keyname, use native, native name
     {
-         return array('id', false, false);
+         return array('id', true, false);
     }
 
     /* the code above is auto generated do not remove the tag below */

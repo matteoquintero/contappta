@@ -1,8 +1,6 @@
   {#include file="master/general/header.html"|filetemplate#}
   </head>
-  <body>
-
-  {#include file="master/profile/profile-nav.html"|filetemplate#}
+  {#include file="master/profile/nav.html"|filetemplate#}
 
   <section class="content-header">
     <h1>
@@ -29,6 +27,17 @@
           <!-- form start -->
           <form role="form" autocomplete="off" id="form-institution" data-action="create">
             <div class="box-body">
+
+              <div class="form-group">
+                <label for="institutionType">Tipo institución</label>
+                <select class="form-control select2" name="institutionType" id="institutionType" data-placeholder="Seleecione el tipo de la institución" style="width: 100%;">
+                  <option></option>
+                  {#foreach from=$institutionTypes item=institutionType#}
+                    <option value="{#$institutionType->idTipoInstitucion#}">{#$institutionType->tipoInstitucion#}</option>
+                  {#/foreach#}
+                </select>
+              </div>
+
               <div class="form-group">
                 <label for="name">Nombre</label>
                 <input type="text" class="form-control" name="name" id="name" placeholder="Digite el nombre de la institución">
@@ -48,7 +57,7 @@
               </div>
               <div class="checkbox">
                 <label>
-                  <input id="active" name="active" type="checkbox" value="check"> Activar
+                  <input id="active" name="active" type="checkbox" value="Si"> Activar
                 </label>
               </div>
             </div><!-- /.box-body -->

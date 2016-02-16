@@ -9,18 +9,16 @@ class DataObject_Noticia extends DB_DataObject
     /* the code below is auto generated do not remove the above tag */
 
     public $__table = 'noticia';                         // table name
-    public $id;                              // int(11)  not_null primary_key auto_increment
-    public $idInstitucion;                   // int(11)  not_null multiple_key
+    public $id;                              // int(11)  not_null primary_key unsigned auto_increment
+    public $idInstitucion;                   // int(11)  not_null
     public $idEmisor;                        // int(11)  not_null
-    public $idReceptor;                      // int(11)  not_null
-    public $idTipoReceptor;                  // int(11)  not_null multiple_key
-    public $idPlantilla;                     // int(11)  not_null multiple_key
+    public $idPlantilla;                     // int(11)  not_null
     public $asunto;                          // string(100)  
     public $descripcion;                     // blob(65535)  blob
     public $media;                           // string(250)  
-    public $vista;                           // string(2)  enum
     public $aprobada;                        // string(2)  enum
-    public $fechaPublicacion;                // datetime(19)  binary
+    public $respuesta;                       // string(2)  enum
+    public $fechaPublicacion;                // date(10)  binary
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
@@ -32,15 +30,13 @@ class DataObject_Noticia extends DB_DataObject
              'id' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idInstitucion' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idEmisor' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
-             'idReceptor' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
-             'idTipoReceptor' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idPlantilla' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'asunto' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'media' =>  DB_DATAOBJECT_STR,
-             'vista' =>  DB_DATAOBJECT_STR,
              'aprobada' =>  DB_DATAOBJECT_STR,
-             'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
+             'respuesta' =>  DB_DATAOBJECT_STR,
+             'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
              'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
          );
     }
@@ -52,7 +48,7 @@ class DataObject_Noticia extends DB_DataObject
 
     function sequenceKey() // keyname, use native, native name
     {
-         return array('id', false, false);
+         return array('id', true, false);
     }
 
     function defaults() // column default values 
@@ -61,8 +57,8 @@ class DataObject_Noticia extends DB_DataObject
              'asunto' => '',
              'descripcion' => '',
              'media' => '',
-             'vista' => '',
-             'aprobada' => '',
+             'aprobada' => 'No',
+             'respuesta' => 'No',
          );
     }
 

@@ -113,6 +113,40 @@ function randomint(min, max) {
 
 function defaultclick () { return false; }
 
+function sendformfileajax(accion,controller,form,inputfile){
+    form.fadeOut();
+
+    var dataform = new FormData();
+
+    var file_data = inputfile[0].files;
+    for(var i = 0;i<file_data.length;i++){
+        dataform.append("file-"+i, file_data[i]);
+    }
+
+    var other_data = form.serializeArray();
+    $.each(other_data,function(key,input){
+        dataform.append(input.name,input.value);
+    });
+
+    dataform.append("accion",accion);
+
+    var modo=0;
+    jQuery.ajax({
+        url: getroutecontroller()+controller+".php",
+        type: "POST",
+        async:false,
+        cache: false,
+        dataType: "json",
+        contentType: false,
+        processData: false,
+        data: dataform,
+      error: function(jqXHR, textStatus, errorThrown) {
+      },
+    }).done(function( resultado ){ modo=resultado; });
+    return modo;
+
+}
+
 function senddataajax(accion,controller,param){
 
     var data=(param!="") ? param+"&accion="+accion : "accion="+accion;
@@ -142,17 +176,15 @@ function sendajax(accion,controller){
     return modo;
 }
 
-function sendformajax(accion,controller,form,param,datatype){
+function sendformajax(accion,controller,form){
 
     form.fadeOut();
-    datatype=(datatype!="") ? datatype : datatype="json";
     var dataform=(form) ? form.serialize()+"&accion="+accion : "accion="+accion;
-    dataform+=(param!="") ? "&"+param : "";
     var modo=0;
     jQuery.ajax({
         url: getroutecontroller()+controller+".php",
         type: "POST",
-        dataType: datatype,
+        dataType: "json",
         cache: false,
         async:false,
         data: dataform,
@@ -189,11 +221,9 @@ function user(idUsuario){ return senddataajax('data','usuario',"idUsuario="+idUs
 function actionsuser(){ return sendajax("actions","productoxusuario"); }
 
 function existemail(correo){
-    var response=senddataajax("email","usuario","correo="+correo);
-    return response[0];
+    return senddataajax("email","usuario","correo="+correo);
 }
 
 function existuser(usuario){
-    var response=senddataajax("user","usuario","usuario="+usuario);
-    return response[0];
+    return senddataajax("user","usuario","usuario="+usuario);
 }

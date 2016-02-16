@@ -1,45 +1,17 @@
 <ion-view view-title="Cuenta">
-
-    <ion-content class="content has-header ionic-pseudo">
-
-      <div class="list acount">
-
-        <a class="item item-icon-left" href="#/tab/new-message" transitiontype="slide" direction="left" go-native>
-          <i class="icon ion-plus-round"></i>
-          Nuevo mensaje
-        </a>
-
-        <a class="item item-icon-left" href="#/tab/calender" transitiontype="slide" direction="left" go-native>
-          <i class="icon ion-ios-calendar-outline"></i>
-          Calendario
-          <div class="noti"><strong>2</strong> en <span class="badge badge-assertive">Enero</span></div>
-        </a>
-
-        <a class="item item-icon-left" href="#/tab/magazine" transitiontype="slide" direction="left" go-native>
-          <i class="icon ion-ios-bookmarks-outline"></i>
-          Revistas
-        </a>
-
-
-        <a class="item item-icon-left" href="#/tab/institute" transitiontype="slide" direction="left" go-native>
-          <i class="icon ion-university"></i>
-          Colegio
-        </a>
-
-
-
-        <div class="item item-divider">
-          Hijos
-        </div>
-
-        <a class="item item-icon-left" href="#/tab/son" transitiontype="slide" direction="left" go-native>
-          <i class="icon ion-ios-person-outline"></i>
-          Camilo Trujillo
-        </a>
-
+  <ion-content class="content has-header ionic-pseudo">
+    <div class="list acount">
+      <div ng-switch on="{{idRol}}">
+          <div ng-switch-when="1"><div ng-include="'partials/account-parent.html'"></div></div>
+          <div ng-switch-when="2"><div ng-include="'partials/account-parent.html'"></div></div>
+          <div ng-switch-when="3"><div ng-include="'partials/account-institute.html'"></div></div>
+          <div ng-switch-when="4"><div ng-include="'partials/account-institute.html'"></div></div>
+          <div ng-switch-when="5"><div ng-include="'partials/account-student.html'"></div></div>
+          <div ng-switch-when="6"><div ng-include="'partials/account-student.html'"></div></div>
+          <div ng-switch-when="7"><div ng-include="'partials/account-institute.html'"></div></div>
+          <div ng-switch-when="8"><div ng-include="'partials/account-institute.html'"></div></div>
       </div>
-
-    </ion-content>
-
+    </div>
+  </ion-content>
 </ion-view>
 

@@ -3,17 +3,17 @@
  * Table Definition for grupo
  */
 
-class DataObject_Grupo extends DB_DataObject
+class DataObject_Grupo extends DB_DataObject 
 {
     ###START_AUTOCODE
     /* the code below is auto generated do not remove the above tag */
 
     public $__table = 'grupo';                           // table name
-    public $id;                              // int(11)  not_null primary_key auto_increment
-    public $idInstitucion;                   // int(11)
-    public $grado;                           // string(45)
-    public $identificador;                   // string(45)
-    public $descripcion;                     // string(150)
+    public $id;                              // int(11)  not_null primary_key unsigned auto_increment
+    public $idInstitucion;                   // int(11)  
+    public $grado;                           // string(45)  
+    public $identificador;                   // string(45)  
+    public $descripcion;                     // string(150)  
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
@@ -38,10 +38,10 @@ class DataObject_Grupo extends DB_DataObject
 
     function sequenceKey() // keyname, use native, native name
     {
-         return array('id', false, false);
+         return array('id', true, false);
     }
 
-    function defaults() // column default values
+    function defaults() // column default values 
     {
          return array(
              'grado' => '',
@@ -52,11 +52,4 @@ class DataObject_Grupo extends DB_DataObject
 
     /* the code above is auto generated do not remove the tag below */
     ###END_AUTOCODE
-
-    function links()
-    {
-        $links = array();
-        $links["idInstitucion"] = "institucion:id";
-        return $links;
-    }
 }

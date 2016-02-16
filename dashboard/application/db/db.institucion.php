@@ -9,9 +9,9 @@ class DataObject_Institucion extends DB_DataObject
     /* the code below is auto generated do not remove the above tag */
 
     public $__table = 'institucion';                     // table name
-    public $id;                              // int(11)  not_null primary_key auto_increment
+    public $id;                              // int(11)  not_null primary_key unsigned auto_increment
     public $activo;                          // string(2)  enum
-    public $nombre;                          // string(100)  
+    public $institucion;                     // string(100)  
     public $correo;                          // string(45)  
     public $direccion;                       // string(100)  
     public $logo;                            // string(200)  
@@ -25,7 +25,7 @@ class DataObject_Institucion extends DB_DataObject
          return array(
              'id' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'activo' =>  DB_DATAOBJECT_STR,
-             'nombre' =>  DB_DATAOBJECT_STR,
+             'institucion' =>  DB_DATAOBJECT_STR,
              'correo' =>  DB_DATAOBJECT_STR,
              'direccion' =>  DB_DATAOBJECT_STR,
              'logo' =>  DB_DATAOBJECT_STR,
@@ -40,14 +40,14 @@ class DataObject_Institucion extends DB_DataObject
 
     function sequenceKey() // keyname, use native, native name
     {
-         return array('id', false, false);
+         return array('id', true, false);
     }
 
     function defaults() // column default values 
     {
          return array(
              'activo' => 'No',
-             'nombre' => '',
+             'institucion' => '',
              'correo' => '',
              'direccion' => '',
              'logo' => '',

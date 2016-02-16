@@ -1,9 +1,10 @@
 function user(){
-	var form = jQuery('#form-user');
+  var form = $('#form-user');
+	var inputfile = $('#photo');
 	showerrors(form);
 	form.validate({
 					rules: {
-							user:{
+							username:{
 									required:true,
                   uniqueuser:true
 							},
@@ -32,10 +33,13 @@ function user(){
               },
               guardian:{
                 maxlength:4,
-              }
+              },
+              permission:{
+                  required:true,
+              },
 					},
 					messages: {
-							user:{
+							username:{
 									required:"Por favor, escriba el usuario.",
 							},
               name:{
@@ -46,7 +50,7 @@ function user(){
               },
               email:{
                   required:"Por favor, escriba el correo.",
-                  email:"Correo electronico incorrecto."
+                  email:"Correo electronico incorrecto.",
               },
               password:{
                   required:"Por favor, escriba la contraseña.",
@@ -63,13 +67,17 @@ function user(){
               guardian:{
                   maxlength:"Por favor, seleccione maximo 4 acudientes",
               },
+              permission:{
+                  required:"Por favor, seleccione el permiso",
+              },
+
 					}
 	});
 
 	if (form.valid()) {
 
       var action=form.attr("data-action");
-	    var finale=sendformajax(action,"usuario",form,"","json");
+	    var finale=sendformfileajax(action,"usuario",form,inputfile);
 
 			switch (finale[0]){
 				case true: redirectpage("usuarios"); break;

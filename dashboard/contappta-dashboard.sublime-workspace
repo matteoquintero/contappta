@@ -1,0 +1,572 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ins",
+				"idInstitucion"
+			],
+			[
+				"tr",
+				"trim"
+			],
+			[
+				"ste",
+				"step2"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"sel",
+				"selected"
+			],
+			[
+				"perm",
+				"Permisos"
+			],
+			[
+				"res",
+				"respuesta"
+			],
+			[
+				"dat",
+				"data"
+			],
+			[
+				"id",
+				"idInstitucion"
+			],
+			[
+				"d",
+				"dbdata"
+			],
+			[
+				"fo",
+				"foreach	foreach …"
+			],
+			[
+				"da",
+				"datausuario"
+			],
+			[
+				"dt",
+				"data"
+			],
+			[
+				"usua",
+				"usuario"
+			],
+			[
+				"data",
+				"datasection"
+			],
+			[
+				"user",
+				"users"
+			],
+			[
+				"Inst",
+				"idInstitucion"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"exi",
+				"exits"
+			],
+			[
+				"ac",
+				"active"
+			],
+			[
+				"cl",
+				"click-function	click-function"
+			],
+			[
+				"in",
+				"institución"
+			],
+			[
+				"err",
+				"error-php	error-php"
+			],
+			[
+				"tre",
+				"true"
+			],
+			[
+				"me",
+				"media"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"line",
+				"line-height"
+			],
+			[
+				"ite",
+				"item"
+			],
+			[
+				"item",
+				"item-thumbnail-left"
+			],
+			[
+				"be",
+				"be	:before"
+			],
+			[
+				"card",
+				"card-two"
+			],
+			[
+				"start",
+				"startDate"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"sta",
+				"starter"
+			],
+			[
+				"de",
+				"description"
+			],
+			[
+				"di",
+				"display"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 349.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 471.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/news.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/messages.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/contappta-dashboard.sublime-workspace",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/requires.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/messages.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/index.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/configdown.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/.htaccess",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/page/authentication.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db-cred.inc.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/news.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/noticia.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/general/functions.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/test/youtubevideo/www/js/app.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/test/youtubevideo/www/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/test/youtubevideo/www/css/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/test/youtubevideo/node_modules/angular-youtube-embed/src/demo/the.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/test/youtubevideo/node_modules/angular-youtube-embed/src/demo/advanced.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/test/youtubevideo/node_modules/angular-youtube-embed/src/demo/the.js",
+		"/Users/matteoquintero/Desktop/contaapta_2016-02-05.sql",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-any.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-institution.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-app.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/create-user.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/update-user.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/users.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/mensaje.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/new.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/message.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/institucion.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/institutions.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/institution.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/update-institution.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/create-institution.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/usuario.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/answers-news.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-new.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/update-new.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-event.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-message.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-new.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/update-event.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/update-message.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-event.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-event.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/events.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.evento.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/evento.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/evento.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.events.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/noticia.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/users.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-message.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-user.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-user.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/user.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/profile.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/css/contaapta/AdminLTE.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/usuario.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/config.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/sesion.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/grupo.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/sesion.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/senders-messages.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/events.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/messages.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/sendersmessages.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/message.min.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/resources/AdminLTE-2.3.0/pages/forms/advanced.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/event.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/users.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/general/footer.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/general/scripts.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-group.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/general/header.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/css/vendor/daterangepicker-bs3.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/css/vendor/bootstrap.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-new.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/sendersevents.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/demo.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/senders-events.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/eventoreceptor.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/group.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/mensaje.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-message.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/noticiareceptor.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/mensajereceptor.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.messages.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/institucion.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/grupo.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/requires.ini.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/utilidad.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/sendersnew.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/acudiente.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/profile/profile.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/cartero.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/css/contaapta/skin-black.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/news.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/vendor/jquery-inputmask.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/css/contaapta/contappta.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/senders-news.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/guardians-user.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/groups.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/answers-news.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/plantilla.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/rol.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-group.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/user.min.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/profile.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/create-new.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/sendersnews.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/news.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/update-group.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.grupo.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.usuario.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/answersnews.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.news.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/vendor/bootstrap.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/usersnews.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.institucion.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/gen/db/DBOgen.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/gen/db/DBO.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/senders-new.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/DBO.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/page/remember.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-admininstitute.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/errorpage/404.jade"
+	],
+	"find":
+	{
+		"height": 33.5
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"<open files>,/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard",
+			"<open files>",
+			"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard",
+			"<open files>,/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard",
+			"<open files>",
+			"/Applications/XAMPP/xamppfiles/htdocs/contappta/www"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER",
+			"Administrador",
+			"institution",
+			" #}",
+			"{# ",
+			" #}",
+			"{# ",
+			" #}",
+			"{# ",
+			"aprobada",
+			"Aprovado",
+			"Aprovar",
+			"aprobada",
+			"Usuario-",
+			"user",
+			"_SESSION",
+			"$userdata.id",
+			"_SESSION",
+			"id",
+			"ObjUsuario",
+			"sendersmessages",
+			"fechaInicio",
+			",fechaFin",
+			"fechaFin",
+			"message",
+			"fechaRegistro",
+			"fechaInicio",
+			"mensaje",
+			"Mensaje",
+			"mensaje",
+			"reservation",
+			"reservationtime",
+			"reservation",
+			"Evevents",
+			"mensaje",
+			"messages",
+			"mensaje",
+			"idMensaje",
+			"message",
+			"sendersmessages",
+			"receptor",
+			"receptores",
+			"mensaje",
+			"idMensaje",
+			"message",
+			"mensaje",
+			"message",
+			"new",
+			"Mensaje",
+			"MensajeReceptor",
+			"idMensaje",
+			"Messages",
+			"idMensaje",
+			"new",
+			"SendersMessages",
+			"Messages",
+			"sendersmessages",
+			"messages",
+			"Message",
+			"ObjMessages",
+			"message",
+			"idevento",
+			"Mensaje",
+			"mensaje",
+			"Messages",
+			"mensaje",
+			"new",
+			"idNoticia",
+			"noticias",
+			"debugLevel",
+			"fechaPublicacion",
+			"id",
+			"News",
+			"Noticia",
+			"NoticiaR",
+			"$ObjGrupo->get(\"",
+			"ObjGrupo",
+			"idNoticia",
+			"SendersNews",
+			"\");\n",
+			"sendersmessages",
+			"new",
+			"receptores",
+			"$new",
+			"sendersnews",
+			"ObjNews",
+			"new",
+			"idNoticia",
+			"news",
+			"noticia",
+			"idNoticia",
+			"News",
+			"Noticia",
+			"idNoticia",
+			"ObjNoticia",
+			"ObjUsers",
+			"ObjUtilidad",
+			"ObjNoticiaReceptor",
+			"ObjUsuario",
+			"Usuario",
+			"usuario",
+			"Usuario",
+			"\"./\".$prefijo",
+			"ObjUsuario",
+			"ObjNoticia",
+			"sendersnews",
+			"SendersNews",
+			"sendersnews",
+			"SendersNews",
+			"noticia",
+			"Noticia",
+			"noticia",
+			"Aprovar",
+			"approved",
+			"}",
+			"{",
+			"*",
+			" #}",
+			"{# ",
+			"active",
+			"sender",
+			"template",
+			"hover",
+			"204d74",
+			"367fa9",
+			"3c8dbc",
+			"groups",
+			"label"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"9BB939",
+			"a9ca3d",
+			"{# ",
+			"institucion.institucion",
+			"<form role=\"form\" autocomplete=\"off\"",
+			"a9ca3d"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 160.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 294.0,
+	"status_bar_visible": true
+}

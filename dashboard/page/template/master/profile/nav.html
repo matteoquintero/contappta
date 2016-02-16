@@ -1,0 +1,62 @@
+    <body class="hold-transition skin-black sidebar-mini">
+    <div class="wrapper">
+      <header class="main-header">
+        <a href="{#$smarty.const.BASE#}" class="logo">
+          <span class="logo-mini"><b>C</b>A</span>
+          <span class="logo-lg"><b>Cont</b>appta</span>
+        </a>
+        <nav class="navbar navbar-static-top" role="navigation">
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="{#$smarty.const.BASE#}{#$userdata.foto#}" class="user-image" alt="User Image">
+                  <span class="hidden-xs">{#$userdata.nombre#} {#$userdata.apellido#}</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="user-header">
+                    <img src="{#$smarty.const.BASE#}{#$userdata.foto#}" class="img-circle" alt="User Image">
+                    <p>
+                      {#$userdata.nombre#} {#$userdata.apellido#}
+                      <small>{#$userdata.usuario#}</small>
+                    </p>
+                  </li>
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="{#$smarty.const.BASE#}{#$userdata.usuario#}" class="btn btn-default btn-flat">Perfil</a>
+                    </div>
+                    <div class="pull-right">
+                      <a href="{#$smarty.const.BASE#}cerrar-sesion" class="btn btn-default btn-flat">Cerrar sesión</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <aside class="main-sidebar">
+        <section class="sidebar">
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="{#$smarty.const.BASE#}{#$userdata.foto#}" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+              <p>{#$userdata.nombre#} {#$userdata.apellido#}</p>
+            </div>
+          </div>
+
+          {#if $userdata.permiso eq "any"#}
+              {#include file="master/profile/nav-any.html"|filetemplate#}
+          {#elseif $userdata.permiso eq "app"#}
+              {#include file="master/profile/nav-app.html"|filetemplate#}
+          {#elseif $userdata.permiso eq "institution"#}
+              {#include file="master/profile/nav-institution.html"|filetemplate#}
+          {#/if#}
+
+        </section>
+      </aside>
+      <div class="content-wrapper">

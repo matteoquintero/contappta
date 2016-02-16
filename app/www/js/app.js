@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'onezone-datepicker'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'onezone-datepicker','youtube-embed'])
 
 .directive('fileModel', ['$parse', function ($parse) {
     return {
@@ -57,8 +57,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
    $ionicConfigProvider.views.maxCache(0);
    $ionicConfigProvider.backButton.text('').icon('ion-ios-arrow-left');
    $ionicConfigProvider.views.transition('none');
-
-
+   $sceDelegateProvider.resourceUrlWhitelist([
+      'self',
+      'https://www.youtube.com/**'
+    ]);
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
@@ -66,6 +68,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   $stateProvider
 
   // setup an abstract state for the tabs directive
+
+  .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl'
+  })
+
   .state('tab', {
     url: '/tab',
     abstract: true,
@@ -93,29 +102,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           cache: false,
         templateUrl: 'templates/date.html',
         controller: 'DateCtrl'
-      }
-    }
-  })
-
-
-  .state('tab.chats-son', {
-    url: '/chats-son',
-    views: {
-      'tab-account': {
-          cache: false,
-        templateUrl: 'templates/chats-son.html',
-        controller: 'ChatsCtrl'
-      }
-    }
-  })
-
-  .state('tab.chat-detail-son', {
-    url: '/chat-detail-son/:chatId',
-    views: {
-      'tab-account': {
-          cache: false,
-        templateUrl: 'templates/chat-detail-son.html',
-        controller: 'ChatDetailCtrl'
       }
     }
   })
@@ -237,6 +223,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/login');
+
 
 });

@@ -1,10 +1,11 @@
 <ion-view view-title="Inicio <small>Jadín Infantil Kids World</small>">
   <ion-content class="padding">
 
-    <div class="list card {{notice.stylecard}}" ng-repeat="notice in notices">
-      <div ng-switch on="{{notice.typecard}}">
+    <div class="list card" ng-repeat="notice in notices">
+      <div ng-switch on="{{notice.template}}">
           <div ng-switch-when="1"><div ng-include="'partials/card-one.html'"></div></div>
           <div ng-switch-when="2"><div ng-include="'partials/card-two.html'"></div></div>
+          <div ng-switch-when="3"><div ng-include="'partials/card-three.html'"></div></div>
       </div>
     </div>
 

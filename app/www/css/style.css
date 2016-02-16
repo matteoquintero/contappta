@@ -30,14 +30,20 @@ p,button{
 
 }
 
+.item .tab-item{
+    font-size: 15px!important;
+    font-family: 'osb';
+    color: #fff!important;
+    text-transform: uppercase;
+}
+
 .card {
     border-width: 7px 0 0 0;
     border-color: #a9ca3d;
     border-style: solid;
 }
 
-.card-one a,
-.card-two a{
+.card a{
   font-family: 'osl';
   text-transform: uppercase;
   font-size: 14px !important;
@@ -72,59 +78,34 @@ a.item{
   background-color: #a9ca3d;
 }
 
-
-.card-one{
-}
-
-.card-one .item-avatar{
-}
-
-.card-one .item-avatar img{}
-.card-one .item-avatar h2{
-    letter-spacing: 3px;
-    color: #a9ca3d;
-}
-.card-one .item-avatar p{}
-
-.card-one .item-body {}
-.card-one .item-body img{
-    border: 0.100em solid #ECECEC;
-}
-.card-one .item-body p{
-    font-size: 20px;
-    line-height: 25px;
-}
-
-.card-one .tabs a{}
-.card-one .tabs i{}
-
-
-
-.card-two{
+.card:nth-child(even){
     border-color: #f49915;
 }
 
-.card-two .item-avatar{}
+.card:nth-child(odd) .item-avatar h2{
+    color: #a9ca3d;
+}
 
-.card-two .item-avatar img{}
-.card-two .item-avatar h2{
+.card:nth-child(odd) .item-body img{
+    border: 0.100em solid #ECECEC;
+}
+
+.card:nth-child(even) .item-avatar h2{
     color: #f49915;
     letter-spacing: 3px;
 }
-.card-two .item-avatar p{}
 
-.card-two .item-body {}
-.card-two .item-body div:nth-child(1){
+.card-two div:nth-child(1){
     width: 40%;
     float: left;
 }
-.card-two .item-body div:nth-child(2){
+.card-two div:nth-child(2){
     width: 60%;
     float: left;
 }
 
 
-.card-two .item-body img{
+.card-two img{
     border-radius: 100%;
     border: 0.200em solid #EFEFEF;
     height: 120px;
@@ -132,7 +113,7 @@ a.item{
     display: block;
     margin: 0 auto;
 }
-.card-two .item-body p{
+.card-two p{
     font-size: 19px;
     line-height: 25px;
     text-align: left;
@@ -140,12 +121,29 @@ a.item{
     display: block;
 }
 
-.card-two .tabs a{}
-.card-two .tabs i{}
-
-#dash-detail{
+#dash-detail,#login{
   background: #fff;
 }
+
+#login img{
+    width: 100%;
+    padding-top: 5px;
+    margin-bottom: 20px;
+}
+#login button{
+  margin: 0 auto;
+  overflow: hidden;
+  width: 90%;
+  position: relative;
+  border-radius: 40px;
+  font-size: 20px;
+}
+
+#login label{border: 0;border-bottom: 0.080em solid #11c1f3;border-radius: 0;margin-bottom: 20px;margin: 0 auto 20px auto;     overflow: hidden;     width: 90%;}
+
+#login label input{font-family: osl;color: #11c1f3;font-size: 20px;padding-left: 14px;line-height: 20px;}
+
+#login .icon{color: #11c1f3;font-size: 25px;}
 
 #dash-detail h1{
     text-align: left;
@@ -328,13 +326,15 @@ copy small{
 
 .list .item>h4{
     letter-spacing: 1px;
-    color: #FFF;
-    font-size: 34px;
+    color: #BDBCBC;
+    font-size: 20px;
     font-family: osl;
-    line-height: 75px;
-    position: absolute;
-    width: 100%;
+    line-height: 20px;
     float: left;
+    position: relative;
+    display: block;
+    margin-left: 20px;
+    margin-top: 11px;
 }
 
 .medal {}
@@ -360,6 +360,7 @@ copy small{
     margin: 5% 0;
     letter-spacing: 3px;
     text-align: center;
+    color: #827F7F;
 }
 
 .medal .card-one h3 {
@@ -409,39 +410,59 @@ color: #fff;
 }
 
 #detail-message .item-thumbnail-left{
-    background-image: url(../img/stardust.png);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    background-color: transparent;
-    border-radius: 8px;
+    background-color: #fff;
+    border-radius: 3px;
+    margin: 0 10px;
+    height: 70px;
+    min-height: inherit;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 0;
 }
-#detail-message img{
+#detail-message .item-thumbnail-left img{
     border-radius: 100%;
-    border: 3px solid rgb(255, 255, 255);
+    border: 0.070em solid rgb(255, 255, 255);
+    width: 60px;
+    height: 60px;
+    top: 4px;
+    position: relative;
+    float: left;
+    display: block;
 }
 .date{
     float: right;
     position: absolute;
     right: 10px;
-    bottom: 6px;
+    bottom: 2px;
     font-size: 11px;
     font-family: osb;
-    color: #717171;
+    color: rgba(113, 113, 113, 0.43);
 }
 
-
-#son .item-thumbnail-left.item{
-    background-image: url(../img/stardust.png);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    background-color: transparent;
-    border-radius: 8px;
+#son .item-thumbnail-left{
+    background-color: #fff;
+    border-radius: 3px;
+    margin: 0;
+    height: 70px;
+    min-height: inherit;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 0;
 }
-#son img{
+#son .item-thumbnail-left img{
     border-radius: 100%;
-    border: 3px solid rgb(255, 255, 255);
+    border: 0.070em solid rgb(255, 255, 255);
+    width: 60px;
+    height: 60px;
+    top: 4px;
+    position: relative;
+    float: left;
+    display: block;
 }
-#son strong{font-size: 21px;color: #fff;font-family: osb;letter-spacing: 3px;}
 
-#son p{color: #fff;font-size: 17px;letter-spacing: -1px;}
+#son strong{font-size: 21px;color: #ccc;font-family: osb;letter-spacing: 3px;margin-left: 20px;margin-top: 10px;display: block;position: relative;float: left;width: 78%;}
+#son .item-thumbnail-left p{
+    margin-left: 20px;
+}
+#son p{color: #ccc;font-size: 17px;letter-spacing: -1px;float: left;position: relative;display: block;margin-top: 2px;}
 
 .noti{
     display: -webkit-box;
@@ -549,3 +570,44 @@ p.info {
     margin: 2% auto;
 }
 
+ .embed-responsive {
+      position: relative;
+      display: block;
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .embed-responsive.embed-responsive-16by9 {
+      padding-bottom: 56.25%;
+    }
+
+    .embed-responsive-item {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+.button.button-positive.active, .button.button-positive.activated {
+    border-color: #29A0D2;
+    background-color: #27AFE8;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button.button-calm {
+    border-color: #0a9dc7;
+    background-color: #11c1f3;
+    color: #fff;
+    font-family: osb;
+}
+
+
+#detail-message .card{
+    border-width: 3px 0 0 0;
+    margin: 10px 10px;
+}
+#detail-message .item-content{padding: 2px 0 0 10px;}

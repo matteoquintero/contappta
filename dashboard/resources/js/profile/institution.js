@@ -1,5 +1,7 @@
 function institution(){
 	var form = jQuery('#form-institution');
+  var inputfile = $('#logo');
+
 	showerrors(form);
 	form.validate({
 					rules: {
@@ -13,7 +15,6 @@ function institution(){
               address:{
                   required:true,
               },
-
 					},
 					messages: {
 							name:{
@@ -32,8 +33,9 @@ function institution(){
 	if (form.valid()) {
 
       var action=form.attr("data-action");
-	    var finale=sendformajax(action,"institucion",form,"","json");
-			switch (finale[0]){
+      var finale=sendformfileajax(action,"institucion",form,inputfile);
+
+		  switch (finale[0]){
 				case true: redirectpage("instituciones"); break;
 				case false:
           switch(action){

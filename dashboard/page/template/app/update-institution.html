@@ -1,8 +1,6 @@
   {#include file="master/general/header.html"|filetemplate#}
   </head>
-  <body>
-
-  {#include file="master/profile/profile-nav.html"|filetemplate#}
+  {#include file="master/profile/nav.html"|filetemplate#}
 
   <section class="content-header">
     <h1>
@@ -11,7 +9,7 @@
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      <li><a href="#">Institución</a></li>
+      <li><a href="#">Instituciónes</a></li>
       <li class="active">Editar institución</li>
     </ol>
   </section>
@@ -29,9 +27,25 @@
           <!-- form start -->
           <form role="form" autocomplete="off" id="form-institution" data-action="update">
             <div class="box-body">
+                  <div class="form-group">
+                      <label for="typeInstitution">Tipo institución</label>
+                      <select class="form-control select2" name="typeInstitution" id="typeInstitution" data-placeholder="Seleecione el tipo" style="width: 100%;">
+                        <option></option>
+                        {#foreach from=$typesInstitutions item=typeInstitution#}
+                          {#if !($institution.idTipoInstitucion===$typeInstitution->idTipoInstitucion)#}
+                            <option value="{#$typeInstitution->idTipoInstitucion#}">{#$typeInstitution->tipoInstitucion#}</option>
+                          {#else#}
+                            <option value="{#$typeInstitution->idTipoInstitucion#}" selected>{#$typeInstitution->tipoReconocimiento#}</option>
+                          {#/if#}
+
+                        {#/foreach#}
+                      </select>
+                    </div>
+
+
               <div class="form-group">
                 <label for="name">Nombre</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Digite el nombre de la institución" value="{#$institution.nombre#}">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Digite el nombre de la institución" value="{#$institution.institucion#}">
               </div>
               <div class="form-group">
                 <label for="email">Correo</label>
@@ -49,14 +63,14 @@
               <div class="checkbox">
                 <label>
                   {#if $institution.activo=="Si"#}
-                    <input id="active" name="active" type="checkbox" value="check" checked> Activar
+                    <input id="active" name="active" type="checkbox" value="Si" checked> Activar
                   {#else#}
-                    <input id="active" name="active" type="checkbox" value="check"> Activar
+                    <input id="active" name="active" type="checkbox" value="Si"> Activar
                   {#/if#}
                 </label>
               </div>
             </div><!-- /.box-body -->
-            <input type="hidden" name="idInstitucion" value="{#$institution.idInstitucion#}">
+            <input type="hidden" name="institution" value="{#$institution.idInstitucion#}">
             <div class="box-footer">
               <button type="button" class="btn btn-primary" data-action="update">Enviar</button>
             </div>
