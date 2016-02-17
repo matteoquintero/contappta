@@ -150,7 +150,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
 
     .state('tab.chat-detail', {
-      url: '/chat-detail/:chatId',
+      url: '/chat-detail/:chatId/:user',
       views: {
         'tab-chats': {
             cache: false,
@@ -166,6 +166,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         'tab-account': {
             cache: false,
           templateUrl: 'templates/institute.html',
+          controller: 'Institute'
         }
       }
     })

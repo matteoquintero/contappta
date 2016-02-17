@@ -6,13 +6,17 @@
   IncluirArchivos($Ruta);
   $ObjUsers=new Users();
   $ObjSesion=new Sesion();
+  $ObjInstitutions=new Institutions();
   $ObjCifrado=new Cifrado();
   $user=strtolower($_REQUEST["user"]);
   $password=$ObjCifrado->encryptpassword($_REQUEST["password"]);
   $data["usuario"]=$user;
-  $mode="sesion";
+  $mode="app";
   $datauser=$ObjUsers->get($mode,$data);
-  $response=$ObjSesion->authentication($user,$password,$datauser);
+  $institution=$ObjInstitutions->get($mode,$datauser);
+  $response=$ObjSesion->authenticationapp($user,$password,$datauser);
+  $response[1]=$datauser;
+  $response[2]=$institution;
   echo json_encode($response);
 ?>
 

@@ -64,9 +64,9 @@ class Users
         $dbdata = DB_DataObject::Factory('Users');
         $dbdata->selectAdd();
         $dbdata->selectAdd("idUsuario,idRol,idInstitucion,idGrupo,nombre,permiso");
-        $dbdata->selectAdd("apellido,foto,celular,usuario,correo,documento,permiso");
-        $dbdata->selectAdd("rol,institucion,grado,identificador");
-        $dbdata->whereAdd("idUsuario = '".$data["idUsuario"]."'");
+        $dbdata->selectAdd("apellido,foto,celular,usuario,contrasena,correo,documento,permiso");
+        $dbdata->selectAdd("rol,institucion,tipoInstitucion,grado,identificador,logo");
+        $dbdata->whereAdd("usuario = '".$data["usuario"]."'");
         $dbdata->find();
 
         if( $dbdata->fetch() ){
@@ -77,13 +77,16 @@ class Users
           $ret['nombre'] = $dbdata->nombre;
           $ret['apellido'] = $dbdata->apellido;
           $ret['foto'] = "http://localhost/contappta/dashboard/".$dbdata->foto;
+          $ret['logo'] = "http://localhost/contappta/dashboard/".$dbdata->logo;
           $ret['celular'] = $dbdata->celular;
           $ret['usuario'] = $dbdata->usuario;
+          $ret['contrasena'] = $dbdata->contrasena;
           $ret['correo'] = $dbdata->correo;
           $ret['documento'] = $dbdata->documento;
           $ret['permiso'] = $dbdata->permiso;
           $ret['rol'] = $dbdata->rol;
           $ret['institucion'] = $dbdata->institucion;
+          $ret['tipoInstitucion'] = $dbdata->tipoInstitucion;
           $ret['grado'] = $dbdata->grado;
           $ret['identificador'] = $dbdata->identificador;
 

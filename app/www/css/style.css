@@ -611,3 +611,7 @@ p.info {
     margin: 10px 10px;
 }
 #detail-message .item-content{padding: 2px 0 0 10px;}
+
+.list.acount.card a{
+    color: #737373!important;
+}

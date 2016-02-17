@@ -18,7 +18,8 @@ angular.module('starter.controllers', [])
                 template: 'Por favor revisa tus credenciales'
             });
         });
-    }
+    };
+
 })
 
 .controller('DateCtrl', function($scope,$state,$location) {
@@ -80,6 +81,9 @@ angular.module('starter.controllers', [])
 
   news.all().then(function(response) { $scope.notices=response; });
 
+  var user = JSON.parse(window.localStorage['user'] || '{}');
+  $scope.user=user;
+
 })
 
 .controller('DashDetailCtrl', function($scope, $stateParams, news) {
@@ -115,7 +119,7 @@ angular.module('starter.controllers', [])
 .controller('ChatDetailCtrl', function($scope, $stateParams, chats, users) {
 
   chats.get($stateParams.chatId).then(function(response) { $scope.messages=response; });
-  users.get($stateParams.chatId).then(function(response) { $scope.user=response; });
+  users.get($stateParams.user).then(function(response) { $scope.user=response; });
 
 })
 
@@ -212,6 +216,27 @@ angular.module('starter.controllers', [])
 
 }])
 
+.controller('Institute', function($scope) {
+
+  var institution = JSON.parse(window.localStorage['institution'] || '{}');
+  $scope.institution=institution;
+
+})
+
+.controller('DataCtrl', function($scope) {
+
+  var user = JSON.parse(window.localStorage['user'] || '{}');
+  var institution = JSON.parse(window.localStorage['institution'] || '{}');
+  $scope.user=user;
+  $scope.institution=institution;
+
+})
+
 .controller('AccountCtrl', function($scope) {
-  $scope.idRol=window.localStorage['idRol'];
+
+  var user = JSON.parse(window.localStorage['user'] || '{}');
+  var institution = JSON.parse(window.localStorage['institution'] || '{}');
+  $scope.user=user;
+  $scope.institution=institution;
+
 });

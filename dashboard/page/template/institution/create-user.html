@@ -50,16 +50,16 @@
                     <input type="text" class="form-control" name="email" id="email" placeholder="Digite el correo del usuario">
                   </div>
                   <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Digite la contraseña del usuario">
+                  </div>
+                  <div class="form-group">
                     <label for="photo">Foto</label>
                     <input type="file" name="photo" id="photo">
                     <p class="help-block">Foto del usuario.</p>
                   </div>
               </div>
               <div class="col-md-6">
-                 <div class="form-group">
-                    <label for="password">Contraseña</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Digite la contraseña del usuario">
-                  </div>
                   <div class="form-group">
                     <label for="smartphone">Celular</label>
                     <input type="text" class="form-control" name="smartphone" id="smartphone" placeholder="Digite el celular del usuario">
@@ -88,6 +88,15 @@
                       <option></option>
                       {#foreach from=$groups item=group#}
                         <option value="{#$group->idGrupo#}">{#$group->grado#}-{#$group->identificador#}</option>
+                      {#/foreach#}
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="honor">Reconocimiento</label>
+                    <select class="form-control select2" id="honor" name="honor[]" multiple style="width: 100%;" data-placeholder="Seleecione reconocimientos">
+                      <option></option>
+                      {#foreach from=$honors item=honor#}
+                        <option value="{#$honor->idReconocimiento#}">{#$honor->reconocimiento#}</option>
                       {#/foreach#}
                     </select>
                   </div>

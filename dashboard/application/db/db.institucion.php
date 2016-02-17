@@ -10,6 +10,7 @@ class DataObject_Institucion extends DB_DataObject
 
     public $__table = 'institucion';                     // table name
     public $id;                              // int(11)  not_null primary_key unsigned auto_increment
+    public $idTipoInstitucion;               // int(11)  
     public $activo;                          // string(2)  enum
     public $institucion;                     // string(100)  
     public $correo;                          // string(45)  
@@ -24,6 +25,7 @@ class DataObject_Institucion extends DB_DataObject
     {
          return array(
              'id' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+             'idTipoInstitucion' =>  DB_DATAOBJECT_INT,
              'activo' =>  DB_DATAOBJECT_STR,
              'institucion' =>  DB_DATAOBJECT_STR,
              'correo' =>  DB_DATAOBJECT_STR,

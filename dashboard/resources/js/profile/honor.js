@@ -1,14 +1,14 @@
 function honor(){
 	var form = $('#form-honors');
-  var inputfile = $('#logo');
 
 	showerrors(form);
 	form.validate({
 					rules: {
-              typeHonor:{
-                   required:true
+              namehonor:{
+                   required:true,
+                   maxlength:20
               },
-              honor:{
+              typeHonor:{
                    required:true
               },
               description:{
@@ -16,11 +16,12 @@ function honor(){
               }
 					},
 					messages: {
+              namehonor:{
+                  required:"Por favor, escriba el nombre del reconocimiento.",
+                  maxlength:"El nombre reconocimiento no debe superar los 20 caractres.",
+              },
               typeHonor:{
                   required:"Por favor, seleccione el tipo de reconocimiento.",
-              },
-              honor:{
-                  required:"Por favor, escriba el reconocimiento.",
               },
               description:{
                   required:"Por favor, escriba la descripción.",
@@ -31,7 +32,7 @@ function honor(){
 	if (form.valid()) {
 
     var action=form.attr("data-action");
-    var finale=sendformfileajax(action,"reconocimiento",form,inputfile);
+    var finale=sendformajax(action,"reconocimiento",form);
 		switch (finale[0]){
 				case true: redirectpage("reconocimientos"); break;
 				case false:
@@ -52,5 +53,6 @@ function honor(){
 
 
 $(document).ready(function() {
+  $(".select2").select2();
   $( "form button" ).click(function() { honor() });
 });

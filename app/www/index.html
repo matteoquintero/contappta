@@ -37,11 +37,11 @@
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
-    <ion-nav-bar class="bar-stable">
+    <ion-nav-bar class="bar-stable" ng-controller="DataCtrl">
       <ion-nav-back-button class="button-clear" transitiontype="slide" direction="right" go-native>
         <i class="ion-ios-arrow-left"></i>
       </ion-nav-back-button>
-      <img src="img/logo-jardin.png" alt="">
+      <img src="{{user.logo}}" alt="">
     </ion-nav-bar>
     <!--
       The views will be rendered in the <ion-nav-view> directive below

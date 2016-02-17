@@ -12,8 +12,7 @@ class DataObject_Mensaje extends DB_DataObject
     public $id;                              // int(11)  not_null primary_key unsigned auto_increment
     public $idInstitucion;                   // int(11)  not_null
     public $idEmisor;                        // int(11)  not_null
-    public $asunto;                          // string(100)  
-    public $descripcion;                     // blob(65535)  blob
+    public $mensaje;                         // blob(65535)  blob
     public $media;                           // string(250)  
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
@@ -26,8 +25,7 @@ class DataObject_Mensaje extends DB_DataObject
              'id' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idInstitucion' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idEmisor' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
-             'asunto' =>  DB_DATAOBJECT_STR,
-             'descripcion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
+             'mensaje' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'media' =>  DB_DATAOBJECT_STR,
              'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
          );
@@ -46,8 +44,7 @@ class DataObject_Mensaje extends DB_DataObject
     function defaults() // column default values 
     {
          return array(
-             'asunto' => '',
-             'descripcion' => '',
+             'mensaje' => '',
              'media' => '',
          );
     }

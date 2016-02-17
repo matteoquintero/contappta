@@ -36,8 +36,8 @@ angular.module('starter.services', [])
             $http(req).then(function (response) {
 
               if (response.data[0]===true) {
-                  window.localStorage['idUser'] = response.data[3];
-                  window.localStorage['idRol'] = response.data[4];
+                  window.localStorage['user'] = JSON.stringify(response.data[1]);
+                  window.localStorage['institution'] = JSON.stringify(response.data[2]);
                   deferred.resolve('Welcome ' + name + '!');
               } else {
                   deferred.reject('Wrong credentials.');
@@ -187,6 +187,10 @@ angular.module('starter.services', [])
 })
 
 .factory('news', function($http) {
+
+  var user = JSON.parse(window.localStorage['user'] || '{}');
+  var idUser=user["idUsuario"];
+
   var news = {
     all: function() {
 
@@ -197,7 +201,7 @@ angular.module('starter.services', [])
          'Content-Type': ' application/json '
        },
        params: {
-        reciver: window.localStorage['idUser'] ,
+        reciver:idUser,
         mode:"news"
         }
       };
@@ -242,7 +246,7 @@ angular.module('starter.services', [])
          'Content-Type': ' application/json '
        },
        params: {
-        user: id,
+        user: id
         }
       };
 
@@ -255,8 +259,10 @@ angular.module('starter.services', [])
   return users;
 })
 
-
 .factory('chats', function($http) {
+
+  var user = JSON.parse(window.localStorage['user'] || '{}');
+  var idUser=user["idUsuario"];
 
   var chats = {
     all: function() {
@@ -268,7 +274,7 @@ angular.module('starter.services', [])
          'Content-Type': ' application/json '
        },
        params: {
-        reciver: window.localStorage['idUser'] ,
+        reciver: idUser ,
         mode:"transmitters"
         }
       };
@@ -288,7 +294,7 @@ angular.module('starter.services', [])
        },
        params: {
         transmitter: id,
-        reciver: window.localStorage['idUser'] ,
+        reciver: idUser ,
         mode:"transmitter"
         }
       };

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-05 02:57:20
+/* Smarty version 3.1.29, created on 2016-02-16 06:15:08
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-message.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56b40180ef3289_62605359',
+  'unifunc' => 'content_56c2b05c9b3911_07896082',
   'file_dependency' => 
   array (
     '6da50dad1b116643c6a2b3604e745df478a35311' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-message.html',
-      1 => 1454637435,
+      1 => 1455599686,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56b40180ef3289_62605359 ($_smarty_tpl) {
+function content_56c2b05c9b3911_07896082 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -58,17 +58,12 @@ function content_56b40180ef3289_62605359 ($_smarty_tpl) {
               <div class="col-md-12">
 
                   <div class="form-group">
-                    <label for="subject">Asunto</label>
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Digite el el asunto" value="<?php echo $_smarty_tpl->tpl_vars['message']->value['asunto'];?>
-">
-                  </div>
-                  <div class="form-group">
-                    <label for="description">Descripción</label>
-                    <textarea type="text" class="form-control" name="description" id="description" placeholder="Digite la descripción"><?php echo $_smarty_tpl->tpl_vars['message']->value['descripcion'];?>
+                    <label for="dispatch">Mensaje</label>
+                    <textarea type="text" class="form-control message" name="dispatch" id="dispatch" placeholder="Digite el mensaje"><?php echo $_smarty_tpl->tpl_vars['message']->value['mensaje'];?>
 </textarea>
                   </div>
 
-                  <div class="form-group" id="group-image">
+                  <div class="form-group message" id="group-image">
                     <label for="image">Imagen</label>
                     <input type="file" name="image" id="image">
                     <p class="help-block">Imagen de la noticia.</p>

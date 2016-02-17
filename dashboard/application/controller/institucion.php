@@ -14,7 +14,8 @@
                 case "create":
 
 										$data["activo"]=( $_POST["active"] ) ? "Si" : "No";
-										$data["institucion"]=$_POST["name"];
+                    $data["institucion"]=$_POST["name"];
+										$data["idTipoInstitucion"]=$_POST["institutionType"];
                     $data["correo"]=$_POST["email"];
                     $data["direccion"]=$_POST["address"];
                     $data["logo"]=$_POST["_data/logosinstitutions/institution-default.png"];
@@ -33,6 +34,7 @@
                 case 'update':
                     $data["activo"]=( $_POST["active"] ) ? "Si" : "No";
                     $data["institucion"]=$_POST["name"];
+                    $data["idTipoInstitucion"]=$_POST["institutionType"];
                     $data["idInstitucion"]=$_POST["institution"];
                     $data["correo"]=$_POST["email"];
                     $data["direccion"]=$_POST["address"];

@@ -12,7 +12,8 @@
 
                 case "create":
 
-										$data["reconocimiento"]=$_POST["honor"];
+                    $data["idInstitucion"]=$_POST["institute"];
+										$data["reconocimiento"]=$_POST["namehonor"];
                     $data["idTipoReconocimiento"]=$_POST["typeHonor"];
                     $data["descripcion"]=$_POST["description"];
 
@@ -23,7 +24,9 @@
 
                 case 'update':
 
-                    $data["reconocimiento"]=$_POST["honor"];
+                    $data["idReconocimiento"]=$_POST["honor"];
+                    $data["idInstitucion"]=$_POST["institute"];
+                    $data["reconocimiento"]=$_POST["namehonor"];
                     $data["idTipoReconocimiento"]=$_POST["typeHonor"];
                     $data["descripcion"]=$_POST["description"];
 

@@ -19,8 +19,7 @@
 
                     $data["idInstitucion"]=$_POST["institute"];
                     $data["idEmisor"]=$idUsuario;
-                    $data["asunto"]=$_POST["subject"];
-                    $data["descripcion"]=$_POST["description"];
+                    $data["mensaje"]=$_POST["dispatch"];
 
                     $ruta="../../_data/messages/";
                     $nombre="message-".rand(1000,20000);
@@ -86,8 +85,7 @@
                 case 'update':
 
                     $data["idMensaje"]=$_POST["message"];
-                    $data["asunto"]=$_POST["subject"];
-                    $data["descripcion"]=$_POST["description"];
+                    $data["mensaje"]=$_POST["dispatch"];
 
                     $response=$ObjMensaje->update($data);
                     echo json_encode($response);

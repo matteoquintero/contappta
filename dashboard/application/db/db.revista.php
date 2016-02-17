@@ -10,8 +10,9 @@ class DataObject_Revista extends DB_DataObject
 
     public $__table = 'revista';                         // table name
     public $id;                              // int(11)  not_null primary_key unsigned auto_increment
+    public $idInstitucion;                   // int(11)  
     public $revista;                         // string(150)  
-    public $paginas;                         // int(11)  
+    public $descripcion;                     // blob(65535)  blob
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
@@ -21,8 +22,9 @@ class DataObject_Revista extends DB_DataObject
     {
          return array(
              'id' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+             'idInstitucion' =>  DB_DATAOBJECT_INT,
              'revista' =>  DB_DATAOBJECT_STR,
-             'paginas' =>  DB_DATAOBJECT_INT,
+             'descripcion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
          );
     }
@@ -41,6 +43,7 @@ class DataObject_Revista extends DB_DataObject
     {
          return array(
              'revista' => '',
+             'descripcion' => '',
          );
     }
 

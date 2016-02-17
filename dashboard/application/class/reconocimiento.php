@@ -10,6 +10,7 @@ class Reconocimiento
 
 		$dbdata = DB_DataObject::Factory('Reconocimiento');
 
+    $dbdata->idInstitucion=$data["idInstitucion"];
     $dbdata->reconocimiento=$data["reconocimiento"];
     $dbdata->idTipoReconocimiento=$data["idTipoReconocimiento"];
     $dbdata->descripcion=$data["descripcion"];
@@ -35,6 +36,7 @@ class Reconocimiento
 
     $dbdata = DB_DataObject::Factory('Reconocimiento');
 
+    $dbdata->idInstitucion=$data["idInstitucion"];
     $dbdata->reconocimiento=$data["reconocimiento"];
     $dbdata->idTipoReconocimiento=$data["idTipoReconocimiento"];
     $dbdata->descripcion=$data["descripcion"];
@@ -52,8 +54,6 @@ class Reconocimiento
     $dbdata->free();
 
     return $resultado;
-
-  }
 
   }
 

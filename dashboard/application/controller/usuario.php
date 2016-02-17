@@ -8,6 +8,7 @@
     $ObjUtilidad=new Utilidad();
     $ObjAcudiente=new Acudiente();
     $ObjUsers=new Users();
+    $ObjReconocimientoUsuario=new ReconocimientoUsuario();
     $response=false;
 	  @session_start();
     @$idUsuario=$_SESSION['usuario']["idUsuario"];
@@ -43,10 +44,18 @@
                     $response=$ObjUsuario->create($data);
 
                     $data["idHijo"]= $response[1];
-                   if (empty($_POST["guardian"])) {
+                   if (!empty($_POST["guardian"])) {
                         foreach ($_POST["guardian"] as $key => $value) {
                           $data["idAcudiente"]=$value;
-                          $ObjAcudiente->create($data);
+                          $response=$ObjAcudiente->create($data);
+                        }
+                    }
+
+                    $data["idUsuario"]= $response[1];
+                   if (!empty($_POST["honor"])) {
+                        foreach ($_POST["honor"] as $key => $value) {
+                          $data["idReconocimiento"]=$value;
+                          $response=$ObjReconocimientoUsuario->create($data);
                         }
                     }
 
@@ -79,9 +88,18 @@
                    if (!empty($_POST["guardian"])) {
                         foreach ($_POST["guardian"] as $key => $value) {
                           $data["idAcudiente"]=$value;
-                          $ObjAcudiente->create($data);
+                          $response=$ObjAcudiente->create($data);
                         }
                     }
+
+                    $data["idUsuario"]= $response[1];
+                   if (!empty($_POST["honor"])) {
+                        foreach ($_POST["honor"] as $key => $value) {
+                          $data["idReconocimiento"]=$value;
+                          $response=$ObjReconocimientoUsuario->create($data);
+                        }
+                    }
+
                     echo json_encode($response);
 
                 break;

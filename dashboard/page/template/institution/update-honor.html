@@ -1,16 +1,15 @@
   {#include file="master/general/header.html"|filetemplate#}
-  <link rel="stylesheet" href="{#'resources/css/vendor/daterangepicker-bs3.css'|fileversion#}">
   </head>
   {#include file="master/profile/nav.html"|filetemplate#}
   <section class="content-header">
     <h1>
-      Crear reconocimiento
+      Modificar reconocimiento
       <small>formulario para crear reconocimientos</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
       <li><a href="#">Reconocimientos</a></li>
-      <li class="active">Crear reconocimiento</li>
+      <li class="active">Modificar reconocimiento</li>
     </ol>
   </section>
   <!-- Main content -->
@@ -30,8 +29,8 @@
                   <div class="col-md-12">
 
                     <div class="form-group">
-                      <label for="honor">Reconocimiento</label>
-                      <input type="text" class="form-control" name="honor" id="honor" placeholder="Digite el reconocimiento" value="{#$honor.reconocimiento#}">
+                      <label for="namehonor">Nombre reconocimiento</label>
+                      <input type="text" class="form-control" name="namehonor" id="namehonor" placeholder="Digite el nombre del reconocimiento" value="{#$honor.reconocimiento#}">
                     </div>
 
                     <div class="form-group">
@@ -39,7 +38,7 @@
                       <select class="form-control select2" name="typeHonor" id="typeHonor" data-placeholder="Seleecione el tipo" style="width: 100%;">
                         <option></option>
                         {#foreach from=$typesHonors item=typeHonor#}
-                          {#if !($honor.idTipoReconocimiento===$typeHonor->TipoReconocimiento)#}
+                          {#if !($honor.idTipoReconocimiento===$typeHonor->idTipoReconocimiento)#}
                             <option value="{#$typeHonor->idTipoReconocimiento#}">{#$typeHonor->tipoReconocimiento#}</option>
                           {#else#}
                             <option value="{#$typeHonor->idTipoReconocimiento#}" selected>{#$typeHonor->tipoReconocimiento#}</option>
@@ -59,6 +58,7 @@
               </div>
             </div><!-- /.box-body -->
             <input type="hidden" name="institute" id="institute" value="{#$userdata.idInstitucion#}">
+            <input type="hidden" name="honor" id="honor" value="{#$honor.idReconocimiento#}">
             <div class="box-footer">
               <button type="button" class="btn btn-primary">Enviar</button>
             </div>
@@ -69,5 +69,6 @@
   </section><!-- /.content -->
   {#include file="master/general/footer.html"|filetemplate#}
   {#include file="master/general/scripts.html"|filetemplate#}
+  <script src="{#'resources/js/vendor/select2.js'|fileversion#}"></script>
   <script src="{#'resources/js/profile/honor.js'|fileversion#}"></script>
   {#include file="master/general/botoom.html"|filetemplate#}

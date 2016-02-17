@@ -1,7 +1,7 @@
 <ion-view view-title="Cuenta">
   <ion-content class="content has-header ionic-pseudo">
     <div class="list acount">
-      <div ng-switch on="{{idRol}}">
+      <div ng-switch on="{{user.idRol}}">
           <div ng-switch-when="1"><div ng-include="'partials/account-parent.html'"></div></div>
           <div ng-switch-when="2"><div ng-include="'partials/account-parent.html'"></div></div>
           <div ng-switch-when="3"><div ng-include="'partials/account-institute.html'"></div></div>

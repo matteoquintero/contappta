@@ -9,7 +9,6 @@
     IncluirArchivos($Ruta);
     $ObjSesion=new Sesion();
     $ObjUtilidad=new Utilidad();
-    $ObjInstitucion=new Institucion();
     $ObjGrupo=new Grupo();
     $ObjRol=new Rol();
     $ObjCifrado=new Cifrado();
@@ -143,6 +142,9 @@
                 $guardians = $ObjUsers->get("guardian",$data);
                 $smarty->assign("guardians",$guardians);
 
+                $honors = $ObjHonors->get("institution",$data);
+                $smarty->assign("honors",$honors);
+
                 $groups = $ObjGrupo->get("institution",$data);
                 $smarty->assign("groups",$groups);
 
@@ -158,6 +160,8 @@
                 $data["idHijo"]=$_POST["idUsuario"];
                 $users = $ObjUsers->get("guardiansson",$data);
                 $smarty->assign("users",$users);
+
+
 
                 $smarty->display($userdata["permiso"]."/guardians-user".MIN."html");
 
@@ -184,11 +188,11 @@
                 $groups = $ObjGrupo->get("institution",$data);
                 $smarty->assign("groups",$groups);
 
+                $honors = $ObjHonors->get("institution",$data);
+                $smarty->assign("honors",$honors);
+
                 $roles = $ObjRol->get("all","");
                 $smarty->assign("roles",$roles);
-
-                $institutions = $ObjInstitucion->get("all","");
-                $smarty->assign("institutions",$institutions);
 
                 $data["idUsuario"]=$_POST["idUsuario"];
                 $user = $ObjUsers->get("one",$data);
@@ -199,9 +203,6 @@
             break;
 
             case "modificar-grupo":
-
-                $institutions = $ObjInstitucion->get("all","");
-                $smarty->assign("institutions",$institutions);
 
                 $data["idGrupo"]=$_POST["idGrupo"];
                 $group = $ObjGrupo->get("one",$data);
@@ -388,6 +389,9 @@
                 $honor = $ObjHonors->get("one",$data);
                 $smarty->assign("honor",$honor);
 
+                $typesHonors = $ObjTipoReconocimiento->get("all","");
+                $smarty->assign("typesHonors",$typesHonors);
+
                 $smarty->display($userdata["permiso"]."/update-honor".MIN."html");
 
             break;
@@ -395,7 +399,7 @@
 
             case "crear-revista":
 
-                $smarty->display($userdata["permiso"]."/create-honor".MIN."html");
+                $smarty->display($userdata["permiso"]."/create-magazine".MIN."html");
 
             break;
 

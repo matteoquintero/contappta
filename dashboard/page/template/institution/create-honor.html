@@ -1,5 +1,4 @@
   {#include file="master/general/header.html"|filetemplate#}
-  <link rel="stylesheet" href="{#'resources/css/vendor/daterangepicker-bs3.css'|fileversion#}">
   </head>
   {#include file="master/profile/nav.html"|filetemplate#}
   <section class="content-header">
@@ -30,16 +29,16 @@
                   <div class="col-md-12">
 
                     <div class="form-group">
-                      <label for="honor">Reconocimiento</label>
-                      <input type="text" class="form-control" name="honor" id="honor" placeholder="Digite el reconocimiento">
+                      <label for="namehonor">Nombre reconocimiento</label>
+                      <input type="text" class="form-control" name="namehonor" id="namehonor" placeholder="Digite el nombre del reconocimiento">
                     </div>
 
                     <div class="form-group">
                       <label for="typeHonor">Tipo reconocimiento</label>
                       <select class="form-control select2" name="typeHonor" id="typeHonor" data-placeholder="Seleecione el tipo" style="width: 100%;">
                         <option></option>
-                        {#foreach from=$typeHonors item=typeHonor#}
-                          <option value="{#$typeHonor->idTipo#}">{#$typeHonor->tipo#}</option>
+                        {#foreach from=$typesHonors item=typeHonor#}
+                          <option value="{#$typeHonor->idTipoReconocimiento#}">{#$typeHonor->tipoReconocimiento#}</option>
                         {#/foreach#}
                       </select>
                     </div>
@@ -64,5 +63,6 @@
   </section><!-- /.content -->
   {#include file="master/general/footer.html"|filetemplate#}
   {#include file="master/general/scripts.html"|filetemplate#}
+  <script src="{#'resources/js/vendor/select2.js'|fileversion#}"></script>
   <script src="{#'resources/js/profile/honor.js'|fileversion#}"></script>
   {#include file="master/general/botoom.html"|filetemplate#}

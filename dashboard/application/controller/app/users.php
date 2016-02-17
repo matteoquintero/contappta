@@ -5,7 +5,7 @@
     $Ruta="../../";
     IncluirArchivos($Ruta);
     $ObjUsers=new Users();
-    $data["idUsuario"]=$_REQUEST["user"];
+    $data["usuario"]=$_REQUEST["user"];
     $response=$ObjUsers->get("app",$data);
     echo json_encode($response);
 ?>

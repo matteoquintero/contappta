@@ -29,7 +29,6 @@
                 <tr>
                   <th>Reconocimiento</th>
                   <th>Tipo</th>
-                  <th>Fecha registro</th>
                   <th>Acciones</th>
                 </tr>
               </thead>
@@ -37,8 +36,7 @@
                 {#foreach from=$honors item=honor#}
                 <tr>
                   <td>{#$honor->reconocimiento#}</td>
-                  <td>{#$honor->tipo#}</td>
-                  <td>{#$honor->fechaRegistro#}</td>
+                  <td>{#$honor->tipoReconocimiento#}</td>
                   <td>
                     <button class="btn btn-primary btn-edit" data-honor="{#$honor->idReconocimiento#}">Editar</button>
                   </td>
@@ -49,7 +47,6 @@
                 <tr>
                   <th>Reconocimiento</th>
                   <th>Tipo</th>
-                  <th>Fecha publicación</th>
                   <th>Acciones</th>
                 </tr>
               </tfoot>

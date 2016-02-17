@@ -102,6 +102,16 @@
                     $data["respuesta"]=( $_POST["answer"] ) ? "Si" : "No";
                     $data["fechaPublicacion"]=$_POST["datepublication"];
 
+                    if (empty($_POST["video"])) {
+                      $ruta="../../_data/news/";
+                      $nombre="new-".rand(1000,20000);
+                      $nombrefile="file-0";
+                      $foto=$ObjUtilidad->GenerarArchivo($ruta, $nombre, $nombrefile);
+                      $data["media"]=$foto[1];
+                    }else{
+                      $data["media"]=$_POST["video"];
+                    }
+
                     $response=$ObjNoticia->update($data);
                     echo json_encode($response);
 

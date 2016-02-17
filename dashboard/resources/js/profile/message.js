@@ -9,7 +9,7 @@ function message(){
 									required:true,
                   minlength:true
 							},
-              message:{
+              dispatch:{
                    require_from_group: [1, ".message"]
               },
               image:{
@@ -21,7 +21,7 @@ function message(){
 									required:"Por favor, selecione al menos un remitente.",
                   minlength:"Por favor, selecione al menos un remitente.",
 							},
-              message:{
+              dispatch:{
                   require_from_group:"Por favor, escriba un mensaje o suba una imagen.",
               },
               image:{

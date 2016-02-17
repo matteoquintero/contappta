@@ -79,7 +79,7 @@ function user(){
       var action=form.attr("data-action");
 	    var finale=sendformfileajax(action,"usuario",form,inputfile);
 
-			switch (finale[0]){
+			/*switch (finale[0]){
 				case true: redirectpage("usuarios"); break;
 				case false:
           switch(action){
@@ -91,7 +91,7 @@ function user(){
             break;
           }
         break;
-			}
+			}*/
 
 	}else{return false;}
 	return false;

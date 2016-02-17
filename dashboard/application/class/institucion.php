@@ -11,7 +11,8 @@ class Institucion
 		$dbdata = DB_DataObject::Factory('Institucion');
 
 		$dbdata->activo=$data["activo"];
-		$dbdata->institucion=$data["institucion"];
+    $dbdata->institucion=$data["institucion"];
+		$dbdata->idTipoInstitucion=$data["idTipoInstitucion"];
 		$dbdata->correo=$data["correo"];
     $dbdata->direccion=$data["direccion"];
 		$dbdata->logo=$data["logo"];
@@ -37,6 +38,7 @@ class Institucion
     $dbdata = DB_DataObject::Factory('Institucion');
     $dbdata->activo=$data["activo"];
     $dbdata->institucion=$data["institucion"];
+    $dbdata->idTipoInstitucion=$data["idTipoInstitucion"];
     $dbdata->correo=$data["correo"];
     $dbdata->direccion=$data["direccion"];
     $dbdata->logo=$data["logo"];

@@ -1,6 +1,6 @@
 
 
-<ion-view  view-title="Instituto">
+<ion-view  view-title="{{institution.tipoInstitucion}}">
 
     <ion-content class="paddingcontent has-header ionic-pseudo" id="instiuto">
 
@@ -8,22 +8,22 @@
 
     <div class="item item-icon-left">
       <i class="icon ion-ios-lightbulb-outline"></i>
-        Jardín infantíl Kids World
+        {{institution.institucion}}
     </div>
 
     <div class="item item-icon-left">
       <i class="icon ion-ios-location-outline"></i>
-      Kr 57 N 128 - 03 Barrio Las Villas
+        {{institution.direccion}}
     </div>
 
-      <a class="item item-icon-left" href="tel:+6042164">
+      <a class="item item-icon-left" href="tel:+{{institution.telefono}}">
         <i class="icon ion-ios-telephone-outline"></i>
-        604 21 64
+        {{institution.telefono}}
       </a>
 
     <a class="item item-icon-left" href="mailto:info@kidsworld.com.co">
       <i class="icon ion-ios-email-outline"></i>
-      info@kidsworld.com.co
+      {{institution.correo}}
     </a>
 
   </div>

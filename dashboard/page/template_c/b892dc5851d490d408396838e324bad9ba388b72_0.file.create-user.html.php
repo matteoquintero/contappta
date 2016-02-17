@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-13 23:33:28
+/* Smarty version 3.1.29, created on 2016-02-16 03:00:39
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-user.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56bfaf38ad6255_12236642',
+  'unifunc' => 'content_56c282c7a030e3_88969796',
   'file_dependency' => 
   array (
     'b892dc5851d490d408396838e324bad9ba388b72' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-user.html',
-      1 => 1455402556,
+      1 => 1455588037,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56bfaf38ad6255_12236642 ($_smarty_tpl) {
+function content_56c282c7a030e3_88969796 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -77,16 +77,16 @@ function content_56bfaf38ad6255_12236642 ($_smarty_tpl) {
                     <input type="text" class="form-control" name="email" id="email" placeholder="Digite el correo del usuario">
                   </div>
                   <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Digite la contraseña del usuario">
+                  </div>
+                  <div class="form-group">
                     <label for="photo">Foto</label>
                     <input type="file" name="photo" id="photo">
                     <p class="help-block">Foto del usuario.</p>
                   </div>
               </div>
               <div class="col-md-6">
-                 <div class="form-group">
-                    <label for="password">Contraseña</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Digite la contraseña del usuario">
-                  </div>
                   <div class="form-group">
                     <label for="smartphone">Celular</label>
                     <input type="text" class="form-control" name="smartphone" id="smartphone" placeholder="Digite el celular del usuario">
@@ -173,6 +173,34 @@ $_smarty_tpl->tpl_vars['group'] = $__foreach_group_2_saved_local_item;
 }
 if ($__foreach_group_2_saved_item) {
 $_smarty_tpl->tpl_vars['group'] = $__foreach_group_2_saved_item;
+}
+?>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="honor">Reconocimiento</label>
+                    <select class="form-control select2" id="honor" name="honor[]" multiple style="width: 100%;" data-placeholder="Seleecione reconocimientos">
+                      <option></option>
+                      <?php
+$_from = $_smarty_tpl->tpl_vars['honors']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_honor_3_saved_item = isset($_smarty_tpl->tpl_vars['honor']) ? $_smarty_tpl->tpl_vars['honor'] : false;
+$_smarty_tpl->tpl_vars['honor'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['honor']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['honor']->value) {
+$_smarty_tpl->tpl_vars['honor']->_loop = true;
+$__foreach_honor_3_saved_local_item = $_smarty_tpl->tpl_vars['honor'];
+?>
+                        <option value="<?php echo $_smarty_tpl->tpl_vars['honor']->value->idReconocimiento;?>
+"><?php echo $_smarty_tpl->tpl_vars['honor']->value->reconocimiento;?>
+</option>
+                      <?php
+$_smarty_tpl->tpl_vars['honor'] = $__foreach_honor_3_saved_local_item;
+}
+if ($__foreach_honor_3_saved_item) {
+$_smarty_tpl->tpl_vars['honor'] = $__foreach_honor_3_saved_item;
 }
 ?>
                     </select>

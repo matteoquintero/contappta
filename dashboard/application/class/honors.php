@@ -77,13 +77,14 @@ class Honors
 
       case 'one':
 
-        $dbdata = DB_DataObject::Factory('News');
+        $dbdata = DB_DataObject::Factory('Honors');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("idReconocimiento,reconocimiento,tipoReconocimiento,descripcion");
+        $dbdata->selectAdd("idReconocimiento,idTipoReconocimiento,reconocimiento,tipoReconocimiento,descripcion");
         $dbdata->whereAdd("idReconocimiento='".$data['idReconocimiento']."'");
         $dbdata->find();
         while( $dbdata->fetch() ){
           $ret["idReconocimiento"] = $dbdata->idReconocimiento;
+          $ret["idTipoReconocimiento"] = $dbdata->idTipoReconocimiento;
           $ret["reconocimiento"] = $dbdata->reconocimiento;
           $ret['tipoReconocimiento'] = $dbdata->tipoReconocimiento;
           $ret['descripcion'] = $dbdata->descripcion;

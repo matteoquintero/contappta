@@ -5,7 +5,20 @@ class Sesion{
     public function __construct() {
 
     }
+
+    public function authenticationapp($usuario,$contrasena,$data){
+
+        if ( strtolower($usuario) == $data['usuario'] && $contrasena == $data['contrasena'] ) {
+            $response[0]=true;
+        }else{ $response[0]=false; }
+
+        return $response;
+
+    }
+
+
     public function authentication($usuario,$contrasena,$data){
+
         ini_set("session.cookie_lifetime","7200");
         ini_set("session.gc_maxlifetime","7200");
         @session_start();
@@ -23,8 +36,6 @@ class Sesion{
         $redirect=$this->redirect($response[0],$data);
         $response[1]=$redirect[0];
         $response[2]=$redirect[1];
-        $response[3]=$data['idUsuario'];
-        $response[4]=$data['idRol'];
         return $response;
 
     }
@@ -62,12 +73,9 @@ class Sesion{
     public function redirect($logged,$data){
 
         if ($logged == true) {
-
           $response[0]=$data['usuario'];
-
         }else{
            $response[0]='autenticacion';
-           $response[1]='#message=31';
         }
 
         return $response;

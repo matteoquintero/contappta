@@ -1,5 +1,4 @@
   {#include file="master/general/header.html"|filetemplate#}
-  <link rel="stylesheet" href="{#'resources/css/vendor/daterangepicker-bs3.css'|fileversion#}">
   </head>
   {#include file="master/profile/nav.html"|filetemplate#}
   <section class="content-header">
@@ -24,14 +23,14 @@
             <h3 class="box-title">Complete los datos para crear un revista</h3>
           </div><!-- /.box-header -->
           <!-- form start -->
-          <form role="form" autocomplete="off" id="form-honors" data-action="create">
+          <form role="form" autocomplete="off" id="form-magazines" data-action="create">
             <div class="box-body">
               <div class="row">
                   <div class="col-md-12">
 
                     <div class="form-group">
-                      <label for="magazine">Revista</label>
-                      <input type="text" class="form-control" name="magazine" id="magazine" placeholder="Digite el reconocimiento">
+                      <label for="namemagazine">Revista</label>
+                      <input type="text" class="form-control" name="namemagazine" id="namemagazine" placeholder="Digite el nombre de la revista">
                     </div>
 
                     <div class="form-group">
@@ -54,5 +53,5 @@
   </section><!-- /.content -->
   {#include file="master/general/footer.html"|filetemplate#}
   {#include file="master/general/scripts.html"|filetemplate#}
-  <script src="{#'resources/js/profile/honor.js'|fileversion#}"></script>
+  <script src="{#'resources/js/profile/magazine.js'|fileversion#}"></script>
   {#include file="master/general/botoom.html"|filetemplate#}

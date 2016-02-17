@@ -50,13 +50,15 @@ class Messages
 
         while( $dbdata->fetch() ){
           $ret[$contador]->id = $dbdata->idEmisor;
-          $ret[$contador]->name = $dbdata->nombre." (".$dbdata->rol.")";
+          $ret[$contador]->name = $dbdata->nombre;
+          $ret[$contador]->rol = $dbdata->rol;
           if (isset($dbdata->media)) {
             $ret[$contador]->media = "http://localhost/contappta/dashboard/".$dbdata->media;
             $ret[$contador]->data = true;
           }
           $ret[$contador]->description = $dbdata->mensaje;
           $ret[$contador]->date = $dbdata->fechaRegistro;
+          $ret[$contador]->usuario = $dbdata->usuario;
           $ret[$contador]->lastText = "...";
 
           $ret[$contador]->face = "http://localhost/contappta/dashboard/".$dbdata->foto;

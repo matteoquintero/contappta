@@ -13,7 +13,7 @@
                 case "create":
 
                     $data["idInstitucion"]=$_POST["institute"];
-										$data["revista"]=$_POST["magazine"];
+										$data["revista"]=$_POST["namemagazine"];
                     $data["descripcion"]=$_POST["description"];
 
 										$response=$ObjRevista->create($data);
@@ -23,8 +23,9 @@
 
                 case 'update':
 
+                    $data["idRevista"]=$_POST["magazine"];
                     $data["idInstitucion"]=$_POST["institute"];
-                    $data["revista"]=$_POST["magazine"];
+                    $data["revista"]=$_POST["namemagazine"];
                     $data["descripcion"]=$_POST["description"];
 
                     $response=$ObjRevista->update($data);

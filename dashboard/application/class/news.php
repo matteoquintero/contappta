@@ -54,13 +54,13 @@ class News
           $ret[$contador]->avatar = "http://localhost/contappta/dashboard/".$dbdata->foto;
 
           switch ($dbdata->idPlantilla) {
-            case 1:
-              $ret[$contador]->media = "http://localhost/contappta/dashboard/".$dbdata->media;
-            break;
             case 2:
               $ret[$contador]->media = "http://localhost/contappta/dashboard/".$dbdata->media;
             break;
             case 3:
+              $ret[$contador]->media = "http://localhost/contappta/dashboard/".$dbdata->media;
+            break;
+            case 4:
               $ret[$contador]->media = $dbdata->media;
             break;
           }

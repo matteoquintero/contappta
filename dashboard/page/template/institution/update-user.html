@@ -88,6 +88,15 @@
                     </select>
                   </div>
                   <div class="form-group">
+                    <label for="honor">Reconocimiento</label>
+                    <select class="form-control select2" id="honor" name="honor[]" multiple style="width: 100%;" data-placeholder="Seleecione reconocimientos">
+                      <option></option>
+                      {#foreach from=$honors item=honor#}
+                        <option value="{#$honor->idReconocimiento#}">{#$honor->reconocimiento#}</option>
+                      {#/foreach#}
+                    </select>
+                  </div>
+                  <div class="form-group">
                     <label for="permission">Permisos</label>
                     <select class="form-control select2" id="permission" name="permission" style="width: 100%;" data-placeholder="Seleecione el permiso">
                       <option></option>
