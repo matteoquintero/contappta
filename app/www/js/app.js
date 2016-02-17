@@ -172,11 +172,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
 
     .state('tab.son', {
-      url: '/son',
+      url: '/son/:user',
       views: {
         'tab-account': {
             cache: false,
-          templateUrl: 'templates/son.html',
+            templateUrl: 'templates/son.html',
+            controller: 'Son'
         }
       }
     })

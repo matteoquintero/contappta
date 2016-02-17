@@ -123,6 +123,12 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('Son', function($scope, $stateParams, chats, users) {
+
+  users.get($stateParams.user).then(function(response) { $scope.user=response; });
+  honors.get($stateParams.user).then(function(response) { $scope.honors=response; });
+
+})
 
 .controller('MagazineCtrl', ['$scope', '$ionicModal', '$ionicSlideBoxDelegate', function ($scope, $ionicModal, $ionicSlideBoxDelegate) {
 
@@ -232,11 +238,14 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope,sons) {
+
+  sons.all().then(function(response) { $scope.sons=response; });
 
   var user = JSON.parse(window.localStorage['user'] || '{}');
   var institution = JSON.parse(window.localStorage['institution'] || '{}');
   $scope.user=user;
   $scope.institution=institution;
+
 
 });

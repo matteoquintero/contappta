@@ -234,6 +234,34 @@ angular.module('starter.services', [])
   return news;
 })
 
+.factory('sons', function($http) {
+
+  var user = JSON.parse(window.localStorage['user'] || '{}');
+  var idUser=user["idUsuario"];
+
+  var sons = {
+    all: function() {
+
+      var req = {
+       method: 'POST',
+       url: 'http://localhost/contappta/dashboard/application/controller/app/sons.php',
+       headers: {
+         'Content-Type': ' application/json '
+       },
+       params: {
+        user:idUser
+        }
+      };
+
+      var promise = $http(req).then(function (response) {
+        return response.data;
+      });
+      return promise;
+    }
+  };
+  return sons;
+})
+
 .factory('users', function($http) {
 
   var users = {

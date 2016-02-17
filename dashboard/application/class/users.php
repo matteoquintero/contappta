@@ -59,6 +59,43 @@ class Users
 	public function get($modo,$data){
 		switch ($modo) {
 
+      case 'app-son':
+
+        $dbdata = DB_DataObject::Factory('Users');
+        $dbdata->selectAdd();
+        $dbdata->selectAdd("idUsuario,idRol,idInstitucion,idGrupo,nombre,permiso");
+        $dbdata->selectAdd("apellido,foto,celular,usuario,contrasena,correo,documento,permiso");
+        $dbdata->selectAdd("rol,institucion,tipoInstitucion,grado,identificador,logo");
+        $dbdata->whereAdd("idUsuario IN(".$this->sonsguardian($data["idAcudiente"]).")");
+        $dbdata->find();
+
+        $contador=0;
+
+        while( $dbdata->fetch() ){
+          $ret[$contador]->idUsuario = $dbdata->idUsuario;
+          $ret[$contador]->idRol = $dbdata->idRol;
+          $ret[$contador]->idInstitucion = $dbdata->idInstitucion;
+          $ret[$contador]->idGrupo = $dbdata->idGrupo;
+          $ret[$contador]->nombre = $dbdata->nombre;
+          $ret[$contador]->apellido = $dbdata->apellido;
+          $ret[$contador]->foto = "http://localhost/contappta/dashboard/".$dbdata->foto;
+          $ret[$contador]->logo = "http://localhost/contappta/dashboard/".$dbdata->logo;
+          $ret[$contador]->celular = $dbdata->celular;
+          $ret[$contador]->usuario = $dbdata->usuario;
+          $ret[$contador]->correo = $dbdata->correo;
+          $ret[$contador]->documento = $dbdata->documento;
+          $ret[$contador]->permiso = $dbdata->permiso;
+          $ret[$contador]->rol = $dbdata->rol;
+          $ret[$contador]->institucion = $dbdata->institucion;
+          $ret[$contador]->grado = $dbdata->grado;
+          $ret[$contador]->identificador = $dbdata->identificador;
+          $contador++;
+        }
+        $dbdata->free();
+        return $ret;
+
+      break;
+
       case 'app':
 
         $dbdata = DB_DataObject::Factory('Users');
@@ -285,7 +322,7 @@ class Users
 
         $contador=0;
 
-        if( $dbdata->fetch() ){
+        while( $dbdata->fetch() ){
           $ret[$contador]->idUsuario = $dbdata->idUsuario;
           $ret[$contador]->idRol = $dbdata->idRol;
           $ret[$contador]->idInstitucion = $dbdata->idInstitucion;
@@ -349,6 +386,21 @@ class Users
     return $guardians;
   }
 
+  private function sonsguardian($guardian){
+    $dbdata = DB_DataObject::Factory('acudiente');
+    $dbdata->selectAdd();
+    $dbdata->selectAdd("idHijo");
+    $dbdata->whereAdd("idAcudiente='$guardian'");
+    $dbdata->find();
+      $contador=0;
+    while( $dbdata->fetch() ){
+      $ret[$contador] = $dbdata->idHijo;
+      $contador++;
+    }
+    $dbdata->free();
+    $sons = implode (",", $ret);
+    return $sons;
+  }
 
 	function cleanuser($user){
 		$newuser=str_replace(array('_','.','-'," ","+"),"",$user);
