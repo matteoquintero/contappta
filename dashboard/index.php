@@ -119,6 +119,10 @@
             case "modificar-institucion":
 
                 $data["idInstitucion"]=$_POST["idInstitucion"];
+
+                $institutionsTypes = $ObjTipoInstitucion->get("all","");
+                $smarty->assign("institutionsTypes",$institutionsTypes);
+
                 $institution = $ObjInstitutions->get("one",$data);
                 $smarty->assign("institution",$institution);
 
@@ -128,8 +132,8 @@
 
             case "crear-institucion":
 
-                $typesInstitutions = $ObjTipoInstitucion->get("all","");
-                $smarty->assign("typesInstitutions",$typesInstitutions);
+                $institutionsTypes = $ObjTipoInstitucion->get("all","");
+                $smarty->assign("institutionsTypes",$institutionsTypes);
 
                 $smarty->display($userdata["permiso"]."/create-institution".MIN."html");
 
@@ -430,8 +434,6 @@
 
     }else{
     	if ($seccion=="") {
-    		    $smarty->assign("page",2);
-           	$smarty->display("page/authentication".MIN."html");
     	}else{
            	$smarty->display("errorpage/404".MIN."html");
     	}

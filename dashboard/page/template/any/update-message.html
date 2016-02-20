@@ -31,15 +31,11 @@
               <div class="col-md-12">
 
                   <div class="form-group">
-                    <label for="subject">Asunto</label>
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Digite el el asunto" value="{#$message.asunto#}">
-                  </div>
-                  <div class="form-group">
-                    <label for="description">Descripción</label>
-                    <textarea type="text" class="form-control" name="description" id="description" placeholder="Digite la descripción">{#$message.descripcion#}</textarea>
+                    <label for="dispatch">Mensaje</label>
+                    <textarea type="text" class="form-control message" name="dispatch" id="dispatch" placeholder="Digite el mensaje">{#$message.mensaje#}</textarea>
                   </div>
 
-                  <div class="form-group" id="group-image">
+                  <div class="form-group message" id="group-image">
                     <label for="image">Imagen</label>
                     <input type="file" name="image" id="image">
                     <p class="help-block">Imagen de la noticia.</p>

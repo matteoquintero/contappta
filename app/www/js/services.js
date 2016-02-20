@@ -23,7 +23,7 @@ angular.module('starter.services', [])
 
             var req = {
              method: 'POST',
-             url: 'http://localhost/contappta/dashboard/application/controller/app/login.php',
+             url: 'http://www.contappa.com/application/controller/app/login.php',
              headers: {
                'Content-Type': ' application/json '
              },
@@ -196,7 +196,7 @@ angular.module('starter.services', [])
 
       var req = {
        method: 'POST',
-       url: 'http://localhost/contappta/dashboard/application/controller/app/news.php',
+       url: 'http://www.contappa.com/application/controller/app/news.php',
        headers: {
          'Content-Type': ' application/json '
        },
@@ -215,7 +215,7 @@ angular.module('starter.services', [])
 
       var req = {
        method: 'POST',
-       url: 'http://localhost/contappta/dashboard/application/controller/app/news.php',
+       url: 'http://www.contappa.com/application/controller/app/news.php',
        headers: {
          'Content-Type': ' application/json '
        },
@@ -234,6 +234,76 @@ angular.module('starter.services', [])
   return news;
 })
 
+
+.factory('events', function($http) {
+
+  var user = JSON.parse(window.localStorage['user'] || '{}');
+  var idUser=user["idUsuario"];
+
+  var events = {
+    calender: function() {
+
+      var req = {
+       method: 'POST',
+       url: 'http://www.contappa.com/application/controller/app/events.php',
+       headers: {
+         'Content-Type': ' application/json '
+       },
+       params: {
+        reciver:idUser,
+        mode:"app-calender"
+        }
+      };
+
+      var promise = $http(req).then(function (response) {
+        return response.data;
+      });
+      return promise;
+    },
+    date: function(dateevent) {
+
+      var req = {
+       method: 'POST',
+       url: 'http://www.contappa.com/application/controller/app/events.php',
+       headers: {
+         'Content-Type': ' application/json '
+       },
+       params: {
+        reciver:idUser,
+        dateevent:dateevent,
+        mode:"app-date"
+        }
+      };
+
+      var promise = $http(req).then(function (response) {
+        return response.data;
+      });
+      return promise;
+    },
+    eventId: function(even) {
+
+      var req = {
+       method: 'POST',
+       url: 'http://www.contappa.com/application/controller/app/events.php',
+       headers: {
+         'Content-Type': ' application/json '
+       },
+       params: {
+        reciver:idUser,
+        even:even,
+        mode:"app-id"
+        }
+      };
+
+      var promise = $http(req).then(function (response) {
+        return response.data;
+      });
+      return promise;
+    }
+  };
+  return events;
+})
+
 .factory('sons', function($http) {
 
   var user = JSON.parse(window.localStorage['user'] || '{}');
@@ -244,7 +314,7 @@ angular.module('starter.services', [])
 
       var req = {
        method: 'POST',
-       url: 'http://localhost/contappta/dashboard/application/controller/app/sons.php',
+       url: 'http://www.contappa.com/application/controller/app/sons.php',
        headers: {
          'Content-Type': ' application/json '
        },
@@ -262,6 +332,32 @@ angular.module('starter.services', [])
   return sons;
 })
 
+.factory('honors', function($http) {
+
+  var honors = {
+    get: function(id) {
+
+      var req = {
+       method: 'POST',
+       url: 'http://www.contappa.com/application/controller/app/honors.php',
+       headers: {
+         'Content-Type': ' application/json '
+       },
+       params: {
+        user: id
+        }
+      };
+
+      var promise = $http(req).then(function (response) {
+        return response.data;
+      });
+      return promise;
+    }
+  };
+  return honors;
+})
+
+
 .factory('users', function($http) {
 
   var users = {
@@ -269,7 +365,7 @@ angular.module('starter.services', [])
 
       var req = {
        method: 'POST',
-       url: 'http://localhost/contappta/dashboard/application/controller/app/users.php',
+       url: 'http://www.contappa.com/application/controller/app/users.php',
        headers: {
          'Content-Type': ' application/json '
        },
@@ -297,7 +393,7 @@ angular.module('starter.services', [])
 
       var req = {
        method: 'POST',
-       url: 'http://localhost/contappta/dashboard/application/controller/app/messages.php',
+       url: 'http://www.contappa.com/application/controller/app/messages.php',
        headers: {
          'Content-Type': ' application/json '
        },
@@ -316,7 +412,7 @@ angular.module('starter.services', [])
 
       var req = {
        method: 'POST',
-       url: 'http://localhost/contappta/dashboard/application/controller/app/messages.php',
+       url: 'http://www.contappa.com/application/controller/app/messages.php',
        headers: {
          'Content-Type': ' application/json '
        },

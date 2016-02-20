@@ -17,7 +17,8 @@ class Noticia
     $dbdata->media=$data["media"];
     $dbdata->aprobada=$data["aprobada"];
     $dbdata->respuesta=$data["respuesta"];
-		$dbdata->fechaPublicacion=$data["fechaPublicacion"];
+    $dbdata->publica=$data["publica"];
+    $dbdata->fechaPublicacion=(empty($data["fechaPublicacion"]))? date("Y/m/d"):$data["fechaPublicacion"];
 
     $create=$dbdata->insert();
 
@@ -44,6 +45,8 @@ class Noticia
     $dbdata->media=$data["media"];
     $dbdata->aprobada=$data["aprobada"];
     $dbdata->respuesta=$data["respuesta"];
+    $dbdata->publicada=$data["publicada"];
+    $dbdata->eliminada=$data["eliminada"];
     $dbdata->fechaPublicacion=$data["fechaPublicacion"];
 
     $dbdata->whereAdd("id = '".$data["idNoticia"]."'");

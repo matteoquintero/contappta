@@ -16,6 +16,8 @@ class DataObject_Institucion extends DB_DataObject
     public $correo;                          // string(45)  
     public $direccion;                       // string(100)  
     public $logo;                            // string(200)  
+    public $telefono;                        // string(150)  
+    public $celular;                         // string(200)  
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
@@ -31,6 +33,8 @@ class DataObject_Institucion extends DB_DataObject
              'correo' =>  DB_DATAOBJECT_STR,
              'direccion' =>  DB_DATAOBJECT_STR,
              'logo' =>  DB_DATAOBJECT_STR,
+             'telefono' =>  DB_DATAOBJECT_STR,
+             'celular' =>  DB_DATAOBJECT_STR,
              'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
          );
     }
@@ -53,6 +57,8 @@ class DataObject_Institucion extends DB_DataObject
              'correo' => '',
              'direccion' => '',
              'logo' => '',
+             'telefono' => '',
+             'celular' => '',
          );
     }
 

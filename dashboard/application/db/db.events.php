@@ -13,6 +13,8 @@ class DataObject_Events extends DB_DataObject
     public $asunto;                          // string(100)  
     public $descripcion;                     // blob(65535)  blob
     public $aprobado;                        // string(2)  enum
+    public $eliminado;                       // string(2)  enum
+    public $publicado;                       // string(2)  enum
     public $fechaInicio;                     // date(10)  binary
     public $fechaFin;                        // date(10)  binary
     public $fechaPublicacion;                // datetime(19)  binary
@@ -38,6 +40,8 @@ class DataObject_Events extends DB_DataObject
              'asunto' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'aprobado' =>  DB_DATAOBJECT_STR,
+             'eliminado' =>  DB_DATAOBJECT_STR,
+             'publicado' =>  DB_DATAOBJECT_STR,
              'fechaInicio' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
              'fechaFin' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
              'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
@@ -72,6 +76,8 @@ class DataObject_Events extends DB_DataObject
              'asunto' => '',
              'descripcion' => '',
              'aprobado' => '',
+             'eliminado' => 'No',
+             'publicado' => 'No',
              'usuario' => '',
              'apellido' => '',
              'foto' => '',

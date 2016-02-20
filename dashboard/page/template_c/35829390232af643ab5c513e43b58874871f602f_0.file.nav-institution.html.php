@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-16 03:19:49
+/* Smarty version 3.1.29, created on 2016-02-19 00:50:04
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-institution.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c28745534928_77031778',
+  'unifunc' => 'content_56c658ac8e4bd7_15302513',
   'file_dependency' => 
   array (
     '35829390232af643ab5c513e43b58874871f602f' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-institution.html',
-      1 => 1455589187,
+      1 => 1455839391,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c28745534928_77031778 ($_smarty_tpl) {
+function content_56c658ac8e4bd7_15302513 ($_smarty_tpl) {
 ?>
 
           <ul class="sidebar-menu">
@@ -83,7 +83,7 @@ mensajes"><i class="fa fa-table"></i> Ver menasajes</a></li>
             </li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-child"></i> <span>Reconocimientos</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa ion-ribbon-a"></i> <span>Reconocimientos</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li><a href="<?php echo @constant('BASE');?>

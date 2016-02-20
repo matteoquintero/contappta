@@ -22,6 +22,7 @@
                     $data["asunto"]=$_POST["subject"];
                     $data["descripcion"]=$_POST["description"];
                     $data["aprobado"]=( $_POST["approved"] ) ? "Si" : "No";
+                    $data["publicado"]=( $_POST["publishnow"] ) ? "Si" : "No";
                     $data["fechaPublicacion"]=$_POST["datepublication"];
 
                     $dateevent=explode("-",$_POST["dateevent"]);
@@ -89,6 +90,8 @@
                     $data["asunto"]=$_POST["subject"];
                     $data["descripcion"]=$_POST["description"];
                     $data["aprobado"]=( $_POST["approved"] ) ? "Si" : "No";
+                    $data["publicado"]=( $_POST["publishnow"] ) ? "Si" : "No";
+                    $data["eliminado"]=( $_POST["deleted"] ) ? "Si" : "No";
                     $data["fechaPublicacion"]=$_POST["datepublication"];
 
                     $dateevent=explode("-",$_POST["dateevent"]);

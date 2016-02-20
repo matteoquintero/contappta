@@ -13,7 +13,9 @@ class Institucion
 		$dbdata->activo=$data["activo"];
     $dbdata->institucion=$data["institucion"];
 		$dbdata->idTipoInstitucion=$data["idTipoInstitucion"];
-		$dbdata->correo=$data["correo"];
+    $dbdata->correo=$data["correo"];
+    $dbdata->telefono=$data["telefono"];
+		$dbdata->celular=$data["celular"];
     $dbdata->direccion=$data["direccion"];
 		$dbdata->logo=$data["logo"];
 		$dbdata->find();
@@ -40,6 +42,8 @@ class Institucion
     $dbdata->institucion=$data["institucion"];
     $dbdata->idTipoInstitucion=$data["idTipoInstitucion"];
     $dbdata->correo=$data["correo"];
+    $dbdata->telefono=$data["telefono"];
+    $dbdata->celular=$data["celular"];
     $dbdata->direccion=$data["direccion"];
     $dbdata->logo=$data["logo"];
 

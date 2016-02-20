@@ -11,8 +11,9 @@
   $user=strtolower($_REQUEST["user"]);
   $password=$ObjCifrado->encryptpassword($_REQUEST["password"]);
   $data["usuario"]=$user;
-  $mode="app";
+  $mode="app-sesion";
   $datauser=$ObjUsers->get($mode,$data);
+  $mode="app";
   $institution=$ObjInstitutions->get($mode,$datauser);
   $response=$ObjSesion->authenticationapp($user,$password,$datauser);
   $response[1]=$datauser;

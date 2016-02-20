@@ -7,9 +7,9 @@ function events(){
 									required:true,
                   minlength:true
 							},
-						 subject:{
-						 			required:true,
-							},
+             subject:{
+                  required:true,
+              },
               description:{
                   required:true,
               },
@@ -17,8 +17,15 @@ function events(){
                 required:true
               },
               datepublication:{
-                required:true
+                required: function (element) {
+                     if($("#publishnow").is(':checked')){
+                      return false;
+                     }else{
+                      return true;
+                     }
+                  }
               }
+
 
 					},
 					messages: {
@@ -36,8 +43,9 @@ function events(){
                   required:"Por favor, escriba la fecha del evento.",
               },
               datepublication:{
-                  required:"Por favor, escriba la fecha a publicar.",
-              },
+                  required:"Por favor, escriba la fecha a publicar o si se publica ahora mismo",
+              }
+
 					}
 	});
 

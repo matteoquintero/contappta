@@ -16,7 +16,9 @@ class DataObject_Noticia extends DB_DataObject
     public $asunto;                          // string(100)  
     public $descripcion;                     // blob(65535)  blob
     public $media;                           // string(250)  
+    public $publicada;                       // string(2)  enum
     public $aprobada;                        // string(2)  enum
+    public $eliminada;                       // string(2)  enum
     public $respuesta;                       // string(2)  enum
     public $fechaPublicacion;                // date(10)  binary
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
@@ -34,7 +36,9 @@ class DataObject_Noticia extends DB_DataObject
              'asunto' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'media' =>  DB_DATAOBJECT_STR,
+             'publicada' =>  DB_DATAOBJECT_STR,
              'aprobada' =>  DB_DATAOBJECT_STR,
+             'eliminada' =>  DB_DATAOBJECT_STR,
              'respuesta' =>  DB_DATAOBJECT_STR,
              'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
              'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
@@ -57,7 +61,9 @@ class DataObject_Noticia extends DB_DataObject
              'asunto' => '',
              'descripcion' => '',
              'media' => '',
+             'publicada' => 'No',
              'aprobada' => 'No',
+             'eliminada' => 'No',
              'respuesta' => 'No',
          );
     }

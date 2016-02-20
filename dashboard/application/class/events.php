@@ -11,6 +11,68 @@ class Events
 
     switch ($modo) {
 
+      case 'app-calender':
+
+        $dbdata = DB_DataObject::Factory('Events');
+        $dbdata->selectAdd();
+        $dbdata->selectAdd("fechaInicio");
+        $dbdata->whereAdd("aprobado='Si'");
+        $dbdata->whereAdd("idEvento IN(".$this->eventsreciver($data["idReceptor"]).")");
+        $dbdata->find();
+        $contador=0;
+        while( $dbdata->fetch() ){
+          $ret[$contador]->fechaInicio = $dbdata->fechaInicio;
+          $contador++;
+        }
+
+        $dbdata->free();
+        return $ret;
+
+      break;
+
+      case 'app-date':
+
+        $dbdata = DB_DataObject::Factory('Events');
+        $dbdata->selectAdd();
+        $dbdata->selectAdd("idEvento,asunto");
+        $dbdata->whereAdd("aprobado='Si'");
+        $dbdata->whereAdd("fechaInicio ='".$data["fechaInicio"]."'");
+        $dbdata->whereAdd("idEvento IN(".$this->eventsreciver($data["idReceptor"]).")");
+        $dbdata->find();
+        $contador=0;
+        while( $dbdata->fetch() ){
+          $ret[$contador]->idEvento = $dbdata->idEvento;
+          $ret[$contador]->asunto = $dbdata->asunto;
+          $contador++;
+        }
+
+        $dbdata->free();
+        return $ret;
+
+      break;
+
+      case 'app-id':
+
+        $dbdata = DB_DataObject::Factory('Events');
+        $dbdata->selectAdd();
+        $dbdata->selectAdd("idEvento,aprobado,asunto,descripcion,fechaInicio,fechaFin,fechaPublicacion");
+        $dbdata->whereAdd("aprobado='Si'");
+        $dbdata->whereAdd("idEvento='".($data["idEvento"])."'");
+        $dbdata->find();
+        if( $dbdata->fetch() ){
+          $ret["id"] = $dbdata->idEvento;
+          $ret["asunto"] = $dbdata->asunto;
+          $ret["fechaInicio"] = $dbdata->fechaInicio;
+          $ret["fechaFin"] = $dbdata->fechaFin;
+          $ret["descripcion"] = $dbdata->descripcion;
+          $ret["avatar"] = RUTADATA.$dbdata->foto;
+        }
+
+        $dbdata->free();
+        return $ret;
+
+      break;
+
       case 'all':
 
         $dbdata = DB_DataObject::Factory('Events');
@@ -39,12 +101,14 @@ class Events
 
         $dbdata = DB_DataObject::Factory('Events');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("idEvento,aprobado,asunto,descripcion,fechaInicio,fechaFin,fechaPublicacion");
+        $dbdata->selectAdd("idEvento,aprobado,publicado,eliminado,asunto,descripcion,fechaInicio,fechaFin,fechaPublicacion");
         $dbdata->whereAdd("idEvento=".$data['idEvento']);
         $dbdata->find();
         while( $dbdata->fetch() ){
           $ret["idEvento"] = $dbdata->idEvento;
           $ret['aprobado'] = $dbdata->aprobado;
+          $ret['publicado'] = $dbdata->publicado;
+          $ret['eliminado'] = $dbdata->eliminado;
           $ret['asunto'] = $dbdata->asunto;
           $ret['descripcion'] = $dbdata->descripcion;
           $ret['fechaInicio'] = $dbdata->fechaInicio;
@@ -60,6 +124,22 @@ class Events
     }
 
 
+  }
+
+private function eventsreciver($reciver){
+    $dbdata = DB_DataObject::Factory('EventoXReceptor');
+    $dbdata->selectAdd();
+    $dbdata->selectAdd("idEvento");
+    $dbdata->whereAdd("idReceptor='$reciver'");
+    $dbdata->find();
+      $contador=0;
+    while( $dbdata->fetch() ){
+      $ret[$contador] = $dbdata->idEvento;
+      $contador++;
+    }
+    $dbdata->free();
+    $events = implode (",", $ret);
+    return $events;
   }
 
 }

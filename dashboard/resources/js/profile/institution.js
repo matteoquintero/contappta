@@ -56,6 +56,7 @@ function institution(){
 
 $(document).ready(function() {
 
-  jQuery( "form button" ).click(function() { institution() });
+  $(".select2").select2();
+  $( "form button" ).click(function() { institution() });
 
 });

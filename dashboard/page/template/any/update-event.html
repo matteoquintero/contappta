@@ -32,7 +32,6 @@
 
                <div class="col-md-6">
 
-
                   <div class="form-group">
                     <label for="subject">Asunto</label>
                     <input type="text" class="form-control" name="subject" id="subject" placeholder="Digite el el asunto" value="{#$event.asunto#}">
@@ -45,37 +44,37 @@
                     </div>
                     <div class="col-md-6">
 
-                      <div class="form-group">
-                        <label for="datepublication">Fecha publicación:</label>
-                        <div class="input-group">
-                          <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                          </div>
-                          <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication" value="{#$event.fechaPublicacion#}">
-                        </div>
-                      </div>
-
                     <div class="form-group">
                       <label>Fecha evento:</label>
                       <div class="input-group">
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="text" class="form-control pull-right" id="dateevent" name="dateevent" value="{#$event.fechaInicio#}-{#$event.fechaFin#}">
+                        <input disabled type="text" class="form-control pull-right" id="dateevent" name="dateevent" value='{#$event.fechaInicio|date_format:"%G/%m/%d"#} - {#$event.fechaFin|date_format:"%G/%m/%d"#}'>
                       </div>
                     </div>
 
+                  {#if $event.publicado==="No"#}
 
-                  <div class="checkbox">
-                    <label>
-                      {#if $event.aprobado=="Si"#}
-                        <input id="approved" name="approved" type="checkbox" value="Si" checked> Aprobado
-                      {#else#}
-                        <input id="approved" name="approved" type="checkbox" value="Si"> Aprobado
-                      {#/if#}
-                    </label>
-                  </div>
+                    <div class="form-group">
+                      <label for="datepublication">Fecha publicación:</label>
+                      <div class="input-group">
+                        <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                        </div>
+                        <input disabled type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication" value="{#$event.fechaPublicacion#}">
+                      </div>
+                    </div>
 
+                  {#else#}
+
+                    <div class="form-group checkbox">
+                      <label>
+                          <input id="publishnow" name="publishnow" type="checkbox" value="Si"checked disabled> Publicar ahora mismo
+                      </label>
+                    </div>
+
+                  {#/if#}
 
                     </div>
 

@@ -18,6 +18,8 @@
 										$data["idTipoInstitucion"]=$_POST["institutionType"];
                     $data["correo"]=$_POST["email"];
                     $data["direccion"]=$_POST["address"];
+                    $data["telefono"]=$_POST["phone"];
+                    $data["celular"]=$_POST["smartphone"];
                     $data["logo"]=$_POST["_data/logosinstitutions/institution-default.png"];
 
                     $ruta="../../_data/logosinstitutions/";
@@ -38,6 +40,8 @@
                     $data["idInstitucion"]=$_POST["institution"];
                     $data["correo"]=$_POST["email"];
                     $data["direccion"]=$_POST["address"];
+                    $data["telefono"]=$_POST["phone"];
+                    $data["celular"]=$_POST["smartphone"];
 
                     $ruta="../../_data/logosinstitutions/";
                     $nombre=strtolower(str_replace(' ', '', $_POST["name"]));

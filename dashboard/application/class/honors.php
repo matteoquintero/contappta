@@ -36,37 +36,18 @@ class Honors
 
         $dbdata = DB_DataObject::Factory('Honors');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("idNoticia,asunto,aprobada,fechaPublicacion,respuesta,descripcion,foto,idPlantilla,media");
-        $dbdata->whereAdd("aprobada='Si'");
-        if($data["mode"]=="Honors"){
-          $dbdata->whereAdd("idNoticia IN(".$this->Honorsreciver($data["idReceptor"]).")");
-        }else if($data["mode"]=="new"){
-          $dbdata->whereAdd("idNoticia='".($data["idNoticia"])."'");
-        }
+        $dbdata->selectAdd("idReconocimiento,idTipoReconocimiento,idInstitucion,reconocimiento,descripcion,logo,tipoReconocimiento");
+        $dbdata->whereAdd("idReconocimiento IN(".$this->honorsuser($data["idUsuario"]).")");
         $dbdata->find();
         $contador=0;
         while( $dbdata->fetch() ){
-          $ret[$contador]->id = $dbdata->idNoticia;
-          $ret[$contador]->title = $dbdata->asunto;
-          $ret[$contador]->date = $dbdata->fechaPublicacion;
-          $ret[$contador]->descriptionshort = substr($dbdata->descripcion."...", 0,50);
-          $ret[$contador]->description = $dbdata->descripcion;
-          $ret[$contador]->avatar = "http://localhost/contappta/dashboard/".$dbdata->foto;
-
-          switch ($dbdata->idPlantilla) {
-            case 1:
-              $ret[$contador]->media = "http://localhost/contappta/dashboard/".$dbdata->media;
-            break;
-            case 2:
-              $ret[$contador]->media = "http://localhost/contappta/dashboard/".$dbdata->media;
-            break;
-            case 3:
-              $ret[$contador]->media = $dbdata->media;
-            break;
-          }
-
-          $ret[$contador]->template = $dbdata->idPlantilla;
-          $ret[$contador]->answer = ($dbdata->respuesta==="Si") ? true : false;
+          $ret[$contador]->idReconocimiento = $dbdata->idReconocimiento;
+          $ret[$contador]->idTipoReconocimiento = $dbdata->idTipoReconocimiento;
+          $ret[$contador]->idInstitucion = $dbdata->idInstitucion;
+          $ret[$contador]->reconocimiento =$dbdata->reconocimiento;
+          $ret[$contador]->descripcion = $dbdata->descripcion;
+          $ret[$contador]->logo = RUTADATA.$dbdata->logo;
+          $ret[$contador]->tipoReconocimiento = $dbdata->tipoReconocimiento;
           $contador++;
         }
 
@@ -100,15 +81,15 @@ class Honors
 
   }
 
-  private function newsreciver($reciver){
-    $dbdata = DB_DataObject::Factory('NoticiaXReceptor');
+  private function honorsuser($idUsuario){
+    $dbdata = DB_DataObject::Factory('ReconocimientoXUsuario');
     $dbdata->selectAdd();
-    $dbdata->selectAdd("idNoticia");
-    $dbdata->whereAdd("idReceptor='$reciver'");
+    $dbdata->selectAdd("idReconocimiento");
+    $dbdata->whereAdd("idUsuario='$idUsuario'");
     $dbdata->find();
       $contador=0;
     while( $dbdata->fetch() ){
-      $ret[$contador] = $dbdata->idNoticia;
+      $ret[$contador] = $dbdata->idReconocimiento;
       $contador++;
     }
     $dbdata->free();

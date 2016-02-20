@@ -39,21 +39,33 @@
                     <textarea type="text" class="form-control" name="description" id="description" placeholder="Digite la descripción">{#$new.descripcion#}</textarea>
                   </div>
 
-                  <div class="checkbox">
-                    <label>
-                      {#if $new.respuesta=="Si"#}
-                        <input id="answer" name="answer" type="checkbox" value="Si" checked> Con respuesta
-                      {#else#}
-                        <input id="answer" name="answer" type="checkbox" value="Si"> Con respuesta
-                      {#/if#}
-                    </label>
+               {#if $new.idPlantilla="2"#}
+                  <div class="form-group">
+                    <label for="image">Imagen</label>
+                    <input type="file" name="image" id="image">
+                    <p class="help-block">Imagen de la noticia.</p>
                   </div>
+               {#elseif $new.idPlantilla="3"#}
+                  <div class="form-group">
+                    <label for="image">Imagen</label>
+                    <input type="file" name="image" id="image">
+                    <p class="help-block">Imagen de la noticia.</p>
+                  </div>
+               {#elseif $new.idPlantilla="4"#}
+                  <div class="form-group">
+                    <label for="video">Url video</label>
+                    <input type="text" class="form-control" name="video" id="video" placeholder="Digite la url" value="{#$new.media#}">
+                  </div>
+                {#/if#}
+
+
               </div>
               <div class="col-md-6">
 
-                {#if $smarty.now|date_format:"%y/%m/%d" > $new.fechaPublicacion#}
 
-                  <div class="form-group">
+                {#if $new.publicada==="No"#}
+
+                    <div class="form-group">
                     <label for="datepublication">Fecha publicación:</label>
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -63,26 +75,25 @@
                     </div>
                   </div>
 
+                {#else#}
+
+                  <div class="form-group checkbox">
+                    <label>
+                        <input id="publishnow" name="publishnow" type="checkbox" value="Si" checked disabled> Publicar ahora mismo
+                    </label>
+                  </div>
+
                 {#/if#}
 
-               {#if $new.idPlantilla="1"#}
-                  <div class="form-group">
-                    <label for="image">Imagen</label>
-                    <input type="file" name="image" id="image">
-                    <p class="help-block">Imagen de la noticia.</p>
+                  <div class="checkbox">
+                    <label>
+                      {#if $new.aprobada=="Si"#}
+                        <input id="approved" name="approved" type="checkbox" value="Si" checked disabled> Aprovar
+                      {#else#}
+                        <input id="approved" name="approved" type="checkbox" value="Si"> Aprovar
+                      {#/if#}
+                    </label>
                   </div>
-               {#elseif $new.idPlantilla="2"#}
-                  <div class="form-group">
-                    <label for="image">Imagen</label>
-                    <input type="file" name="image" id="image">
-                    <p class="help-block">Imagen de la noticia.</p>
-                  </div>
-               {#elseif $new.idPlantilla="3"#}
-                  <div class="form-group">
-                    <label for="video">Url video</label>
-                    <input type="text" class="form-control" name="video" id="video" placeholder="Digite la url" value="{#$new.media#}">
-                  </div>
-                {#/if#}
 
               </div>
 

@@ -13,10 +13,11 @@ class Evento
     $dbdata->idEmisor=$data["idEmisor"];
     $dbdata->asunto=$data["asunto"];
     $dbdata->descripcion=$data["descripcion"];
-    $dbdata->fechaPublicacion=$data["fechaPublicacion"];
+    $dbdata->fechaPublicacion=(empty($data["fechaPublicacion"]))? date("Y/m/d"):$data["fechaPublicacion"];
     $dbdata->fechaInicio=$data["fechaInicio"];
     $dbdata->fechaFin=$data["fechaFin"];
     $dbdata->aprobado=$data["aprobado"];
+    $dbdata->publicado=$data["publicado"];
 
     $create=$dbdata->insert();
 
@@ -44,6 +45,8 @@ class Evento
     $dbdata->fechaInicio=$data["fechaInicio"];
     $dbdata->fechaFin=$data["fechaFin"];
     $dbdata->aprobado=$data["aprobado"];
+    $dbdata->publicado=$data["publicado"];
+    $dbdata->eliminado=$data["eliminado"];
 
     $dbdata->whereAdd("id = '".$data["idEvento"]."'");
 

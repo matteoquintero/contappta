@@ -92,7 +92,22 @@ a.item{
 
 .card:nth-child(even) .item-avatar h2{
     color: #f49915;
-    letter-spacing: 3px;
+}
+
+.medal .card:nth-child(odd) .card-image div{
+   background-color: #a9ca3d;
+}
+
+.medal .card:nth-child(even) .card-image div{
+   background-color: #f49915;
+}
+
+.medal .card:nth-child(odd) h3{
+  color: #a9ca3d;
+}
+
+.medal .card:nth-child(even) h3{
+  color: #f49915;
 }
 
 .card-two div:nth-child(1){
@@ -126,9 +141,10 @@ a.item{
 }
 
 #login img{
-    width: 100%;
+    width: 80%;
     padding-top: 5px;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    display: block;
 }
 #login button{
   margin: 0 auto;
@@ -152,6 +168,7 @@ a.item{
     font-family: osl;
     border-bottom: 2px solid #E0E0E0;
     margin-top: 10%;
+    padding-bottom: 10px;
 }
 #dash-detail h6{
     text-align: right;
@@ -298,7 +315,7 @@ ion-header-bar.bar-stable.bar.bar-header.disable-user-behavior {}
 copy{width: 100%;position: relative;display: block;overflow: hidden;padding: 2% 0;margin: 1% 0 4% 0;}
 
 copy strong{
-    font-size: 25px;
+    font-size: 30px;
     color: #AFAFAF;
     margin-right: 10px;
     letter-spacing: -1px;
@@ -309,11 +326,11 @@ copy span{
     font-size: 25px;
     color: #187095;
     line-height: 34px;
-    margin: 0px 5px 0px -8px;
+    margin: 0px 5px 0px -5px;
 }
 copy small{
     font-family: osl;
-    font-size: 13px;
+    font-size: 18px;
     color: #6F6E6E;
 }
 
@@ -358,9 +375,8 @@ copy small{
 }
 .medal .card h3 {
     margin: 5% 0;
-    letter-spacing: 3px;
     text-align: center;
-    color: #827F7F;
+    font-size: 30px;
 }
 
 .medal .card-one h3 {
@@ -374,6 +390,10 @@ copy small{
       background-color: #187095;
 }
 
+.acount .ion-power{
+      background-color: #187095;
+}
+
 .acount .ion-ios-calendar-outline{
       background-color: #f49915;
 }
@@ -384,7 +404,7 @@ copy small{
       background-color: #2bbcf9;
 }
 .acount .ion-ios-person-outline{
-      background-color: #187095;
+      background-color: #454E52;
 }
 
 .acount .item-icon-left .icon::before{
@@ -406,8 +426,11 @@ color: #fff;
 .card-image img{
     position: relative;
     display: block;
-    margin: 0 auto;
+    margin: 7% auto 0 auto;
+    height: 85%;
 }
+
+.card-image div{width: 200px;height: 200px;margin: 0 auto;overflow: hidden;background: #000;border-radius: 100%;}
 
 #detail-message .item-thumbnail-left{
     background-color: #fff;
@@ -461,8 +484,11 @@ color: #fff;
 #son strong{font-size: 21px;color: #ccc;font-family: osb;letter-spacing: 3px;margin-left: 20px;margin-top: 10px;display: block;position: relative;float: left;width: 78%;}
 #son .item-thumbnail-left p{
     margin-left: 20px;
+    font-family: osb;
+    color: #2bbcf9;
+    font-size: 18px;
 }
-#son p{color: #ccc;font-size: 17px;letter-spacing: -1px;float: left;position: relative;display: block;margin-top: 2px;}
+#son p{font-size: 20px;float: left;position: relative;display: block;margin-top: 2px;line-height: 28px;padding-bottom: 10px;}
 
 .noti{
     display: -webkit-box;
@@ -503,7 +529,7 @@ video{
 }
 
 #instiuto i::before{
-    color: #ccc;
+    color: #FFF;
 }
 
 
@@ -615,3 +641,35 @@ p.info {
 .list.acount.card a{
     color: #737373!important;
 }
+
+.acount .ion-ios-lightbulb-outline{
+  background-color: #a9ca3d;
+}
+
+.acount .ion-ios-location-outline{
+  background-color: #2bbcf9;
+}
+
+.acount .ion-android-phone-portrait{
+  background-color: #f49915;
+}
+
+.acount .ion-ios-email-outline{
+  background-color: #187095;
+}
+
+#event a:nth-child(4n+1) i{
+  background-color: #a9ca3d;
+}
+#event a:nth-child(4n+2) i{
+  background-color: #2bbcf9;
+}
+#event a:nth-child(4n+3) i{
+  background-color: #f49915;
+}
+#event a:nth-child(4n+4) i{
+  background-color: #187095;
+}
+
+
+

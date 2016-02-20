@@ -22,6 +22,7 @@ class DataObject_Users extends DB_DataObject
     public $idRol;                           // int(11)  not_null
     public $rol;                             // string(100)  
     public $idInstitucion;                   // int(11)  not_null
+    public $tipoInstitucion;                 // string(150)  
     public $institucion;                     // string(100)  
     public $logo;                            // string(200)  
     public $idGrupo;                         // int(11)  not_null
@@ -47,6 +48,7 @@ class DataObject_Users extends DB_DataObject
              'idRol' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'rol' =>  DB_DATAOBJECT_STR,
              'idInstitucion' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+             'tipoInstitucion' =>  DB_DATAOBJECT_STR,
              'institucion' =>  DB_DATAOBJECT_STR,
              'logo' =>  DB_DATAOBJECT_STR,
              'idGrupo' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
@@ -79,6 +81,7 @@ class DataObject_Users extends DB_DataObject
              'contrasena' => '',
              'permiso' => 'any',
              'rol' => '',
+             'tipoInstitucion' => '',
              'institucion' => '',
              'logo' => '',
              'grado' => '',

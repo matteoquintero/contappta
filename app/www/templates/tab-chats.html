@@ -1,7 +1,7 @@
 <ion-view view-title="Mensajes">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chat-detail/{{chat.id}}/{{chat.usuario}}" transitiontype="slide" direction="left" go-native>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chat-detail/{{chat.id}}" transitiontype="slide" direction="left" go-native>
         <img ng-src="{{chat.face}}">
         <h2>{{chat.rol}} {{chat.name}}</h2>
         <p>{{chat.lastText}}</p>

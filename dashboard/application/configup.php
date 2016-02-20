@@ -2,6 +2,7 @@
 	define('BASE', '/');
 	define('SITE', 'production');
 	define('MIN', '.');
+  define('RUTADATA', '"http://contappta.com/"');
 	function format($message,$mode=""){
 
 		switch ($mode) {

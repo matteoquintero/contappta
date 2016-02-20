@@ -25,16 +25,17 @@
                     $data["descripcion"]=$_POST["description"];
                     $data["aprobada"]=( $_POST["approved"] ) ? "Si" : "No";
                     $data["respuesta"]=( $_POST["answer"] ) ? "Si" : "No";
+                    $data["publicada"]=( $_POST["publishnow"] ) ? "Si" : "No";
                     $data["fechaPublicacion"]=$_POST["datepublication"];
 
-                    if (empty($_POST["video"])) {
+                    if (empty($_POST["videoid"])) {
                       $ruta="../../_data/news/";
                       $nombre="new-".rand(1000,20000);
                       $nombrefile="file-0";
                       $foto=$ObjUtilidad->GenerarArchivo($ruta, $nombre, $nombrefile);
                       $data["media"]=$foto[1];
                     }else{
-                      $data["media"]=$_POST["video"];
+                      $data["media"]=$_POST["videoid"];
                     }
 
 										$response=$ObjNoticia->create($data);
@@ -100,6 +101,8 @@
                     $data["descripcion"]=$_POST["description"];
                     $data["aprobada"]=( $_POST["approved"] ) ? "Si" : "No";
                     $data["respuesta"]=( $_POST["answer"] ) ? "Si" : "No";
+                    $data["publicada"]=( $_POST["publishnow"] ) ? "Si" : "No";
+                    $data["eliminada"]=( $_POST["deleted"] ) ? "Si" : "No";
                     $data["fechaPublicacion"]=$_POST["datepublication"];
 
                     if (empty($_POST["video"])) {

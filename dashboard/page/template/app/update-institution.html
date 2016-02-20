@@ -27,15 +27,17 @@
           <!-- form start -->
           <form role="form" autocomplete="off" id="form-institution" data-action="update">
             <div class="box-body">
+            <div class="row">
+              <div class="col-md-6">
                   <div class="form-group">
-                      <label for="typeInstitution">Tipo institución</label>
-                      <select class="form-control select2" name="typeInstitution" id="typeInstitution" data-placeholder="Seleecione el tipo" style="width: 100%;">
+                      <label for="institutionType">Tipo institución</label>
+                      <select class="form-control select2" name="institutionType" id="institutionType" data-placeholder="Seleecione el tipo" style="width: 100%;">
                         <option></option>
-                        {#foreach from=$typesInstitutions item=typeInstitution#}
-                          {#if !($institution.idTipoInstitucion===$typeInstitution->idTipoInstitucion)#}
-                            <option value="{#$typeInstitution->idTipoInstitucion#}">{#$typeInstitution->tipoInstitucion#}</option>
+                        {#foreach from=$institutionsTypes item=institutionType#}
+                          {#if !($institution.idTipoInstitucion===$institutionType->idTipoInstitucion)#}
+                            <option value="{#$institutionType->idTipoInstitucion#}">{#$institutionType->tipoInstitucion#}</option>
                           {#else#}
-                            <option value="{#$typeInstitution->idTipoInstitucion#}" selected>{#$typeInstitution->tipoReconocimiento#}</option>
+                            <option value="{#$institutionType->idTipoInstitucion#}" selected>{#$institutionType->tipoInstitucion#}</option>
                           {#/if#}
 
                         {#/foreach#}
@@ -55,6 +57,16 @@
                 <label for="address">Dirección</label>
                 <input type="address" class="form-control" name="address" id="address" placeholder="Digite la dirección de la institución" value="{#$institution.direccion#}">
               </div>
+              </div>
+              <div class="col-md-6">
+              <div class="form-group">
+                <label for="smartphone">Celular</label>
+                <input type="smartphone" class="form-control" name="smartphone" id="smartphone" placeholder="Digite el celular de la institución" value="{#$institution.celular#}">
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefono</label>
+                <input type="phone" class="form-control" name="phone" id="phone" placeholder="Digite el telefono de la institución" value="{#$institution.telefono#}">
+              </div>
               <div class="form-group">
                 <label for="logo">Logo</label>
                 <input type="file" name="logo" id="logo">
@@ -68,6 +80,8 @@
                     <input id="active" name="active" type="checkbox" value="Si"> Activar
                   {#/if#}
                 </label>
+              </div>
+              </div>
               </div>
             </div><!-- /.box-body -->
             <input type="hidden" name="institution" value="{#$institution.idInstitucion#}">
@@ -84,6 +98,7 @@
 
   {#include file="master/general/footer.html"|filetemplate#}
   {#include file="master/general/scripts.html"|filetemplate#}
+  <script src="{#'resources/js/vendor/select2.js'|fileversion#}"></script>
   <script src="{#'resources/js/profile/institution.js'|fileversion#}"></script>
   {#include file="master/general/botoom.html"|filetemplate#}
 

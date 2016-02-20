@@ -22,21 +22,31 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('DateCtrl', function($scope,$state,$location) {
+.controller('DateCtrl', function($scope,$state,$location,events) {
+
+  Array.prototype.containsdate = function(obj) {
+      var i = this.length;
+      while (i--) {
+
+          if (this[i]["date"].toString() === obj.toString()) {
+              return true;
+          }
+      }
+      return false;
+  }
 
   var date= new Date();
   var months=['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
   var daysOfTheWeek=['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'];
-  var startDate=new Date(1989, 1, 26);
+  var startDate=new Date(2015, 1, 26);
   var endDate=new Date(2024, 1, 26);
-  var highlights=[
-      {
-          date: new Date(2016, 0, 20),
-      },
-      {
-          date: new Date(2016, 0, 10),
-      }
-  ];
+  var highlights=[];
+  events.calender().then(function(response) {
+    for (var i = 0; i < response.length; i++) {
+      var fecha=response[i]["fechaInicio"].split("-");
+      highlights.push({date: new Date(parseInt(fecha[0]), (parseInt(fecha[1])-1), parseInt(fecha[2]))})
+    }
+  });
 
   $scope.onezoneDatepicker = {
       date: date, // MANDATORY
@@ -56,24 +66,26 @@ angular.module('starter.controllers', [])
       highlights: highlights,
       callback: function(value){
 
-
-        var date=( ( value.getMonth() + 1 ) + "/" + value.getDate() + "/" + value.getFullYear() );
-
-
-        if (date=="1/20/2016") {
-
-          $state.go("tab.event-detail", {a:1, b:2}, {inherit:false});
-
-        }
-
-        if (date=="1/10/2016") {
-
-          $state.go("tab.event-detail", {a:1, b:2}, {inherit:false});
-
-        }
+          if (highlights.containsdate(value)) {
+            var fechaevento=( ( value.getFullYear() ) + "-" + (value.getMonth() + 1) + "-" + value.getDate() );
+            $state.go("tab.event-detail", {dateevent:fechaevento}, {inherit:false});
+          }
 
       }
   };
+
+})
+
+.controller('EventDetailCtrl', function($scope, $stateParams, events) {
+
+  $scope.fechaevento=$stateParams.dateevent;
+  events.date($stateParams.dateevent).then(function(response) { $scope.events=response;});
+
+})
+
+.controller('EventIdDetailCtrl', function($scope, $stateParams, events) {
+
+  events.eventId($stateParams.idEvent).then(function(response) { $scope.events=response; });
 
 })
 
@@ -119,14 +131,14 @@ angular.module('starter.controllers', [])
 .controller('ChatDetailCtrl', function($scope, $stateParams, chats, users) {
 
   chats.get($stateParams.chatId).then(function(response) { $scope.messages=response; });
-  users.get($stateParams.user).then(function(response) { $scope.user=response; });
+  users.get($stateParams.chatId).then(function(response) { $scope.user=response; });
 
 })
 
-.controller('Son', function($scope, $stateParams, chats, users) {
+.controller('Son', function($scope, $stateParams, users, honors) {
 
-  users.get($stateParams.user).then(function(response) { $scope.user=response; });
-  honors.get($stateParams.user).then(function(response) { $scope.honors=response; });
+  users.get($stateParams.user).then(function(response) { $scope.user=response;});
+  honors.get($stateParams.user).then(function(response) { $scope.honors=response;});
 
 })
 

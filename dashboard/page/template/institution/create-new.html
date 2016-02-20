@@ -75,16 +75,6 @@
                   </div>
                   <div class="col-md-6">
 
-                      <div class="form-group">
-                        <label for="datepublication">Fecha publicación:</label>
-                        <div class="input-group">
-                          <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                          </div>
-                          <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication">
-                        </div>
-                      </div>
-
                       <div class="form-group" id="group-video">
                         <label for="video">Url video</label>
                         <input type="text" class="form-control" name="video" id="video" placeholder="Digite la url">
@@ -96,13 +86,29 @@
                         <p class="help-block">Imagen de la noticia.</p>
                       </div>
 
-                      <div class="checkbox">
+                      <div class="form-group">
+                        <label for="datepublication">Fecha publicación:</label>
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </div>
+                          <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication">
+                        </div>
+                      </div>
+
+                      <div class="form-group checkbox">
+                        <label>
+                            <input id="publishnow" name="publishnow" type="checkbox" value="Si"> Publicar ahora mismo
+                        </label>
+                      </div>
+
+                      <div class="form-group checkbox">
                         <label>
                           <input id="approved" name="approved" type="checkbox" value="Si"> Aprobada
                         </label>
                       </div>
 
-                      <div class="checkbox">
+                      <div class="form-group checkbox">
                         <label>
                           <input id="answer" name="answer" type="checkbox" value="Si"> Con respuesta
                         </label>
@@ -113,6 +119,7 @@
               </div>
             </div><!-- /.box-body -->
             <input type="hidden" name="institute" id="institute" value="{#$userdata.idInstitucion#}">
+            <input type="hidden" name="videoid" id="videoid" >
             <div class="box-footer">
               <button type="button" class="btn btn-primary" id="btn-step-1">Siguiente</button>
               <button type="button" class="btn btn-primary" id="btn-step-2">Enviar</button>

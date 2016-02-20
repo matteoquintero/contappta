@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-14 03:49:53
+/* Smarty version 3.1.29, created on 2016-02-20 04:51:50
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-message.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56bfeb5179ce38_34998407',
+  'unifunc' => 'content_56c7e2d65ea5d0_12479755',
   'file_dependency' => 
   array (
     'cb6ec9012cd363fccb2f1db363b883b6173f109f' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-message.html',
-      1 => 1455418191,
+      1 => 1455940206,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56bfeb5179ce38_34998407 ($_smarty_tpl) {
+function content_56c7e2d65ea5d0_12479755 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -115,8 +115,8 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_1_saved_item;
                       </div>
 
                     <div class="form-group">
-                      <label for="message">Mensaje</label>
-                      <textarea type="text" class="message form-control" name="message" id="message" placeholder="Digite la descripción"></textarea>
+                      <label for="dispatch">Mensaje</label>
+                      <textarea type="text" class="message form-control" name="dispatch" id="dispatch" placeholder="Digite el mensaje"></textarea>
                     </div>
 
                       <div class="form-group" id="group-image">

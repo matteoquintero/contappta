@@ -115,6 +115,7 @@ function defaultclick () { return false; }
 
 function sendformfileajax(accion,controller,form,inputfile){
     form.fadeOut();
+    form.find(':input:disabled').removeAttr('disabled');
 
     var dataform = new FormData();
 
@@ -179,6 +180,8 @@ function sendajax(accion,controller){
 function sendformajax(accion,controller,form){
 
     form.fadeOut();
+    form.find(':input:disabled').removeAttr('disabled');
+
     var dataform=(form) ? form.serialize()+"&accion="+accion : "accion="+accion;
     var modo=0;
     jQuery.ajax({

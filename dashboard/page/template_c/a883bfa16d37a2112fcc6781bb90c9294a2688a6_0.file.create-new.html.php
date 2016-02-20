@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-14 03:48:19
+/* Smarty version 3.1.29, created on 2016-02-20 05:06:12
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-new.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56bfeaf3907d32_61525447',
+  'unifunc' => 'content_56c7e6349d2191_89049775',
   'file_dependency' => 
   array (
     'a883bfa16d37a2112fcc6781bb90c9294a2688a6' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-new.html',
-      1 => 1455418098,
+      1 => 1455941165,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56bfeaf3907d32_61525447 ($_smarty_tpl) {
+function content_56c7e6349d2191_89049775 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -164,16 +164,6 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_2_saved_item;
                   </div>
                   <div class="col-md-6">
 
-                      <div class="form-group">
-                        <label for="datepublication">Fecha publicación:</label>
-                        <div class="input-group">
-                          <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                          </div>
-                          <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication">
-                        </div>
-                      </div>
-
                       <div class="form-group" id="group-video">
                         <label for="video">Url video</label>
                         <input type="text" class="form-control" name="video" id="video" placeholder="Digite la url">
@@ -185,9 +175,25 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_2_saved_item;
                         <p class="help-block">Imagen de la noticia.</p>
                       </div>
 
+                      <div class="form-group">
+                        <label for="datepublication">Fecha publicación:</label>
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </div>
+                          <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication">
+                        </div>
+                      </div>
+
                       <div class="form-group checkbox">
                         <label>
-                          <input id="answer" name="answer" type="checkbox" value="Si"> Con respuesta
+                            <input id="publishnow" name="publishnow" type="checkbox" value="Si"> Publicar ahora mismo
+                        </label>
+                      </div>
+
+                      <div class="form-group checkbox">
+                        <label>
+                          <input id="approved" name="approved" type="checkbox" value="Si"> Aprobada
                         </label>
                       </div>
 

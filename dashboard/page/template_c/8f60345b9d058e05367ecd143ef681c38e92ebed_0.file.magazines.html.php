@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-16 03:31:55
+/* Smarty version 3.1.29, created on 2016-02-19 05:33:07
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/magazines.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c28a1be89280_95239933',
+  'unifunc' => 'content_56c69b03c94246_87590611',
   'file_dependency' => 
   array (
     '8f60345b9d058e05367ecd143ef681c38e92ebed' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/magazines.html',
-      1 => 1455589907,
+      1 => 1455671400,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c28a1be89280_95239933 ($_smarty_tpl) {
+function content_56c69b03c94246_87590611 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>

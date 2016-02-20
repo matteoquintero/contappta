@@ -15,6 +15,8 @@ class DataObject_Institutions extends DB_DataObject
     public $institucion;                     // string(100)  
     public $correo;                          // string(45)  
     public $direccion;                       // string(100)  
+    public $telefono;                        // string(150)  
+    public $celular;                         // string(200)  
     public $logo;                            // string(200)  
     public $tipoInstitucion;                 // string(150)  
     public $descripcion;                     // string(255)  
@@ -31,6 +33,8 @@ class DataObject_Institutions extends DB_DataObject
              'institucion' =>  DB_DATAOBJECT_STR,
              'correo' =>  DB_DATAOBJECT_STR,
              'direccion' =>  DB_DATAOBJECT_STR,
+             'telefono' =>  DB_DATAOBJECT_STR,
+             'celular' =>  DB_DATAOBJECT_STR,
              'logo' =>  DB_DATAOBJECT_STR,
              'tipoInstitucion' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR,
@@ -55,6 +59,8 @@ class DataObject_Institutions extends DB_DataObject
              'institucion' => '',
              'correo' => '',
              'direccion' => '',
+             'telefono' => '',
+             'celular' => '',
              'logo' => '',
              'tipoInstitucion' => '',
              'descripcion' => '',

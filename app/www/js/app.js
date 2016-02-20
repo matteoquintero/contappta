@@ -118,11 +118,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
   .state('tab.event-detail', {
-    url: '/event-detail',
+    url: '/event-detail/:dateevent',
     views: {
       'tab-account': {
-          cache: false,
-        templateUrl: 'templates/event-detail.html'
+        cache: false,
+        templateUrl: 'templates/event-detail.html',
+        controller: 'EventDetailCtrl'
+      }
+    }
+  })
+
+  .state('tab.event-id', {
+    url: '/event-id/:idEvent',
+    views: {
+      'tab-account': {
+        cache: false,
+        templateUrl: 'templates/event-id.html',
+        controller: 'EventIdDetailCtrl'
       }
     }
   })
@@ -150,7 +162,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
 
     .state('tab.chat-detail', {
-      url: '/chat-detail/:chatId/:user',
+      url: '/chat-detail/:chatId',
       views: {
         'tab-chats': {
             cache: false,

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-16 02:22:52
+/* Smarty version 3.1.29, created on 2016-02-18 14:52:08
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/honors.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c279ecdc0f05_93742099',
+  'unifunc' => 'content_56c5cc88b76917_72075134',
   'file_dependency' => 
   array (
     '6b4708f41d34e5b939cb9a81fe76dbff1fbbf842' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/honors.html',
-      1 => 1455585771,
+      1 => 1455671400,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c279ecdc0f05_93742099 ($_smarty_tpl) {
+function content_56c5cc88b76917_72075134 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>

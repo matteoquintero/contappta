@@ -51,14 +51,14 @@ class News
           $ret[$contador]->date = $dbdata->fechaPublicacion;
           $ret[$contador]->descriptionshort = substr($dbdata->descripcion."...", 0,50);
           $ret[$contador]->description = $dbdata->descripcion;
-          $ret[$contador]->avatar = "http://localhost/contappta/dashboard/".$dbdata->foto;
+          $ret[$contador]->avatar = RUTADATA.$dbdata->foto;
 
           switch ($dbdata->idPlantilla) {
             case 2:
-              $ret[$contador]->media = "http://localhost/contappta/dashboard/".$dbdata->media;
+              $ret[$contador]->media = RUTADATA.$dbdata->media;
             break;
             case 3:
-              $ret[$contador]->media = "http://localhost/contappta/dashboard/".$dbdata->media;
+              $ret[$contador]->media = RUTADATA.$dbdata->media;
             break;
             case 4:
               $ret[$contador]->media = $dbdata->media;
@@ -79,7 +79,7 @@ class News
 
         $dbdata = DB_DataObject::Factory('News');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("idNoticia,idPlantilla,asunto,descripcion,media,aprobada,respuesta,fechaPublicacion");
+        $dbdata->selectAdd("idNoticia,idPlantilla,asunto,descripcion,media,aprobada,publicada,eliminada,respuesta,fechaPublicacion");
         $dbdata->whereAdd("idNoticia='".$data['idNoticia']."'");
         $dbdata->find();
         while( $dbdata->fetch() ){
@@ -88,6 +88,8 @@ class News
           $ret['asunto'] = $dbdata->asunto;
           $ret['descripcion'] = $dbdata->descripcion;
           $ret['aprobada'] = $dbdata->aprobada;
+          $ret['publicada'] = $dbdata->publicada;
+          $ret['eliminada'] = $dbdata->eliminada;
           $ret['respuesta'] = $dbdata->respuesta;
           $ret['media'] = $dbdata->media;
           $ret['fechaPublicacion'] = $dbdata->fechaPublicacion;

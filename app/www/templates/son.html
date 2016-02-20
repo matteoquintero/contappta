@@ -1,84 +1,31 @@
-
-
 <ion-view  view-title="Hijo">
   <ion-content class="padding" data-tap-disabled="true" id="son">
 
   <div class="item item-thumbnail-left">
-    <img src="img/hijo.jpg">
-    <strong>Camilo Trujillo</strong>
-    <p>3er grado</p>
+    <img src="{{user.foto}}">
+    <strong>{{user.nombre}} {{user.apellido}}</strong>
+    <p>{{user.grado}}{{user.identificador}}</p>
   </div>
 
     <ion-list class="medal">
 
-      <ion-item class="card item-icon-right item-text-wrap" >
-      <div class="card-image">
-          <img src="img/medal-one.png" alt="">
-          <i class="icon ion-ios-americanfootball-outline"></i>
-      </div>
+      <ion-item class="card item-icon-right item-text-wrap" ng-repeat="honor in honors">
 
-      <div class="card-text">
-
-        <h3>Reconocimiento 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel sed ullam architecto dolorum cupiditate. Nobis dolor enim, earum voluptatem temporibus neque, aliquam, sunt maxime rem culpa perspiciatis atque doloremque.</p>
-
-      </div>
-
-
-      </ion-item>
-
-      <ion-item class="card item-icon-right item-text-wrap" >
-            <div class="card-image">
-          <img src="img/medal-two.png" alt="">
-          <i class="icon ion-ios-alarm-outline"></i>
+        <div class="card-image">
+            <div>
+              <img src="{{honor.logo}}" alt="">
+            </div>
         </div>
 
-      <div class="card-text">
+        <div class="card-text">
 
-        <h3>Reconocimiento 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel sed ullam architecto dolorum cupiditate. Nobis dolor enim, earum voluptatem temporibus neque, aliquam, sunt maxime rem culpa perspiciatis atque doloremque.</p>
+          <h3>{{honor.reconocimiento}}</h3>
+          <p>{{honor.descripcion}}</p>
 
-      </div>
-      </ion-item>
-
-      <ion-item class="card item-icon-right item-text-wrap" >
-            <div class="card-image">
-          <img src="img/medal-one.png" alt="">
-          <i class="icon ion-ios-camera-outline"></i>
         </div>
-      <div class="card-text">
 
-        <h3>Reconocimiento 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel sed ullam architecto dolorum cupiditate. Nobis dolor enim, earum voluptatem temporibus neque, aliquam, sunt maxime rem culpa perspiciatis atque doloremque.</p>
-
-      </div>
       </ion-item>
 
-      <ion-item class="card item-icon-right item-text-wrap" >
-            <div class="card-image">
-          <img src="img/medal-two.png" alt="">
-          <i class="icon ion-ios-bookmarks-outline"></i>
-        </div>
-      <div class="card-text">
-
-        <h3>Reconocimiento 4</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel sed ullam architecto dolorum cupiditate. Nobis dolor enim, earum voluptatem temporibus neque, aliquam, sunt maxime rem culpa perspiciatis atque doloremque.</p>
-
-      </div>
-      </ion-item>
-
-      <ion-item class="card item-icon-right item-text-wrap" >
-            <div class="card-image">
-          <img src="img/medal-one.png" alt="">
-          <i class="icon ion-ios-americanfootball-outline"></i>
-        </div>
-      <div class="card-text">
-
-        <h3>Reconocimiento 5</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel sed ullam architecto dolorum cupiditate. Nobis dolor enim, earum voluptatem temporibus neque, aliquam, sunt maxime rem culpa perspiciatis atque doloremque.</p>
-
-      </div>
-      </ion-item>
 
     </ion-list>
   </ion-content>

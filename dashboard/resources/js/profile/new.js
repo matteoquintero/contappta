@@ -42,7 +42,13 @@ function step2(){
                   required:true,
               },
               datepublication:{
-                required:true
+                required: function (element) {
+                     if($("#publishnow").is(':checked')){
+                      return false;
+                     }else{
+                      return true;
+                     }
+                  }
               }
 					},
 					messages: {
@@ -57,14 +63,20 @@ function step2(){
                   required:"Por favor, escriba la descripción.",
               },
               datepublication:{
-                  required:"Por favor, escriba la fecha a publicar.",
-              },
+                  required:"Por favor, escriba la fecha a publicar o si se publica ahora mismo",
+              }
 					}
 	});
 
 	if (form.valid()) {
 
     var action=form.attr("data-action");
+    var url=$("#video").val();
+    if (url) {
+      var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+      $("#videoid").val(videoid[1]);
+    }
+
     var finale=sendformfileajax(action,"noticia",form,inputfile);
 		switch (finale[0]){
 				case true: redirectpage("noticias"); break;

@@ -1,5 +1,3 @@
-
-
 <ion-view  view-title="{{institution.tipoInstitucion}}">
 
     <ion-content class="paddingcontent has-header ionic-pseudo" id="instiuto">
@@ -16,12 +14,13 @@
         {{institution.direccion}}
     </div>
 
-      <a class="item item-icon-left" href="tel:+{{institution.telefono}}">
-        <i class="icon ion-ios-telephone-outline"></i>
-        {{institution.telefono}}
+
+      <a class="item item-icon-left" href="tel:+{{institution.celular}}">
+        <i class="icon ion-android-phone-portrait"></i>
+        {{institution.celular}}
       </a>
 
-    <a class="item item-icon-left" href="mailto:info@kidsworld.com.co">
+    <a class="item item-icon-left" href="mailto:{{institution.correo}}">
       <i class="icon ion-ios-email-outline"></i>
       {{institution.correo}}
     </a>

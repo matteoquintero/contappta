@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-05 07:09:41
+/* Smarty version 3.1.29, created on 2016-02-19 01:38:24
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-event.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56b43ca56cf4b6_60258972',
+  'unifunc' => 'content_56c664007fd498_11509442',
   'file_dependency' => 
   array (
     'b67cc570e3ee794d1b9e3c6634ac2e4ee51bd63b' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-event.html',
-      1 => 1454652215,
+      1 => 1455238905,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56b43ca56cf4b6_60258972 ($_smarty_tpl) {
+function content_56c664007fd498_11509442 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -101,7 +101,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['user']->value) {
 $_smarty_tpl->tpl_vars['user']->_loop = true;
 $__foreach_user_1_saved_local_item = $_smarty_tpl->tpl_vars['user'];
 ?>
-                              <option value="<?php echo $_smarty_tpl->tpl_vars['user']->value->idUsario;?>
+                              <option value="<?php echo $_smarty_tpl->tpl_vars['user']->value->idUsuario;?>
 -user"><?php echo $_smarty_tpl->tpl_vars['user']->value->nombre;?>
  (<?php echo $_smarty_tpl->tpl_vars['user']->value->usuario;?>
 )</option>

@@ -53,7 +53,7 @@ class Messages
           $ret[$contador]->name = $dbdata->nombre;
           $ret[$contador]->rol = $dbdata->rol;
           if (isset($dbdata->media)) {
-            $ret[$contador]->media = "http://localhost/contappta/dashboard/".$dbdata->media;
+            $ret[$contador]->media = RUTADATA.$dbdata->media;
             $ret[$contador]->data = true;
           }
           $ret[$contador]->description = $dbdata->mensaje;
@@ -61,7 +61,7 @@ class Messages
           $ret[$contador]->usuario = $dbdata->usuario;
           $ret[$contador]->lastText = "...";
 
-          $ret[$contador]->face = "http://localhost/contappta/dashboard/".$dbdata->foto;
+          $ret[$contador]->face = RUTADATA.$dbdata->foto;
           $contador++;
         }
 
