@@ -28,11 +28,21 @@ $include_path = ini_get("include_path");
 
 require_once("MDB2.php");
 require_once("DB/DataObject.php");
+require_once("MDB2/Driver/mysql.php");
+
+$DB_DSN = array(
+  'phptype' => 'mysql',
+  'username' => DB_USER,
+  'password' => DB_PASS,
+  'hostspec' => DB_HOST,
+  'database' => DB_NAME,
+  'charset' => 'utf8',
+);
 
 $optionsDataObject = &PEAR::getStaticProperty('DB_DataObject','options');
 $optionsDataObject = array(
     'debug'            => 0, // Permite detallar las consultas que ejecuta, tiene hasta 3 niveles de detalle
-    'database'         => 'mysql://'.DB_USER.':'.DB_PASS.'@'.DB_HOST.'/'.DB_NAME.'', // Configura la base de datos
+    'database'         => $DB_DSN, // Configura la base de datos
     'require_prefix'   => 'db/',
     'schema_location'  => '',
     'class_location'   => '',

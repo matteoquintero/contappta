@@ -85,7 +85,7 @@ class Grupo
         $dbdata = DB_DataObject::Factory('Grupo');
         $dbdata->selectAdd();
         $dbdata->selectAdd("id,idInstitucion,grado,identificador");
-        $dbdata->whereAdd("id=".$data['idGrupo']);
+        $dbdata->whereAdd("id='".$data['idGrupo']."'");
         $dbdata->find();
         while( $dbdata->fetch() ){
           $ret["idGrupo"] = $dbdata->id;

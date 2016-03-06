@@ -3,6 +3,8 @@
     $Ruta="../";
     IncluirArchivos($Ruta);
     $ObjRevista=new Revista();
+    $ObjPagina=new Pagina();
+    $ObjUtilidad=new Utilidad();
     $resultado=false;
     @$accion=$_POST["accion"];
 
@@ -12,12 +14,36 @@
 
                 case "create":
 
-                    $data["idInstitucion"]=$_POST["institute"];
-										$data["revista"]=$_POST["namemagazine"];
-                    $data["descripcion"]=$_POST["description"];
+                    $consecutivo=$ObjRevista->getconsecutive();
+                    $identificador=chr(rand(ord("A"), ord("Z"))).rand(0,9).chr(rand(ord("A"), ord("Z"))).$consecutivo;
+                    $datamagazine["idInstitucion"]=$_POST["institute"];
+										$datamagazine["revista"]=$_POST["namemagazine"];
+                    $datamagazine["descripcion"]=$_POST["description"];
+                    $datamagazine["numeroPaginas"]=$_POST["numberPages"];
+                    $datamagazine["identificador"]=$identificador;
+                    $datamagazine["consecutivo"]=$consecutivo;
 
-										$response=$ObjRevista->create($data);
-										echo json_encode($response);
+                    $magazine=$ObjRevista->create($datamagazine);
+
+                    $datapage["idRevista"]=$magazine[1];
+                    $ruta="../../_data/magazines/".$identificador."/";
+
+
+                    for ($i=0; $i < 3; $i++) {
+
+                      $nombre=$i;
+                      $nombrefile="file-".$i;
+
+                      $pagina=$ObjUtilidad->GenerarArchivo($ruta, $nombre, $nombrefile);
+
+                      $datapage["numeroPagina"]=$i;
+                      $datapage["media"]=$pagina[1];
+
+                      $ObjPagina->create($datapage);
+
+                    }
+
+										echo json_encode($magazine);
 
                 break;
 

@@ -4,8 +4,80 @@
 		"selected_items":
 		[
 			[
+				"do",
+				"documento"
+			],
+			[
+				"dat",
+				"datauser"
+			],
+			[
+				"con",
+				"consecutivo"
+			],
+			[
+				"for",
+				"for	for …"
+			],
+			[
+				"f",
+				"for	for …"
+			],
+			[
+				"fo",
+				"foreach	foreach …"
+			],
+			[
+				"ra",
+				"rand"
+			],
+			[
+				"public",
+				"publicada"
+			],
+			[
+				"id",
+				"idEmisor"
+			],
+			[
+				"noti",
+				"notificaciones"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"publ",
+				"publicado"
+			],
+			[
+				"pu",
+				"publicada"
+			],
+			[
+				"gro",
+				"groups"
+			],
+			[
 				"ins",
-				"institución"
+				"institutions"
+			],
+			[
+				"slec",
+				"selected"
+			],
+			[
+				"us",
+				"username"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"pas",
+				"password"
 			],
 			[
 				"tr",
@@ -40,20 +112,8 @@
 				"respuesta"
 			],
 			[
-				"dat",
-				"data"
-			],
-			[
-				"id",
-				"idInstitucion"
-			],
-			[
 				"d",
 				"dbdata"
-			],
-			[
-				"fo",
-				"foreach	foreach …"
 			],
 			[
 				"da",
@@ -163,6 +223,38 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "application/controller/app/news.php",
+			"settings":
+			{
+				"buffer_size": 630,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/class/news.php",
+			"settings":
+			{
+				"buffer_size": 4569,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "actions.php",
+			"settings":
+			{
+				"buffer_size": 1014,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".htaccess",
+			"settings":
+			{
+				"buffer_size": 493,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -200,134 +292,134 @@
 	},
 	"file_history":
 	[
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/config.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/news.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/messages.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/institutions.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/honors.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/events.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/rol.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/users.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/configdown.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/configup.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/event.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/update-new.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/noticia.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-new.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/new.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-new.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-event.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/update-event.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-new.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/messages.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/messages.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-message.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-message.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-message.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/update-message.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/new.min.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/import.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/usuario.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/requires.ini.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/config.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/pagina.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/magazines.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/magazines.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/excel/test.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-event.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/login.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/events.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/.htaccess",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/index.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-event.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/prueba.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-new.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/update-new.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/update-event.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/data.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/guardians-user.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/notifications.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/guardians-user.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/mvc/js/agenda.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/news.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/events.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/notificacion.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/noticia.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/evento.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/actions.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-new.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-event.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/evento.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/noticia.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/evento.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/grupo.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/general/functions.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/senders-news.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.events.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.evento.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/create-user.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/institution.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/tipoinstitucion.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/create-institution.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/update-institution.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/institucion.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/institucion.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/user.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-institution.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/honors.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/users.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/sons.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/usuario.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/mensaje.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/download.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/import-users.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/message.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/mensajereceptor.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-message.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/mensaje.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/mensaje.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/css/contaapta/contappta.css",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/sesion.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/revista.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/revista.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/magazines.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-magazine.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-magazine.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.mensaje.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.revista.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.noticia.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/mensaje.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/magazine.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/honor.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-honor.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/guardians-user.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-honor.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/answers-news.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-user.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-user.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/reconocimientousuario.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/honors.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-group.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/reconocimiento.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/tiporeconocimiento.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/reconocimiento.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.reconocimiento.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.honors.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/requires.ini.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db-cred.inc.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template_c/35829390232af643ab5c513e43b58874871f602f_0.file.nav-institution.html.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/institutions.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/anneling.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-any.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.usuario.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/message.min.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/general/onkeypress.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/profile.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/senders-events.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/profile.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/profile.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/users.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/update-user.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-app.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/guardians-user.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/institution.min.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-magazine.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/revista.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/revista.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/transaction.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-new.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/magazines.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/utilidad.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/overlay-file-case.min.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/index.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.notifications.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/notifications.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/vendor/moment.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/cronjob_heByjuMese",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/new.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/notificacionreceptor.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/news.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/users.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-institution.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-any.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-app.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.notificacion.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/excel/SpreadsheetReader_XLSX.php",
+		"/Users/matteoquintero/Downloads/excel/cargaExcel.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/import.js",
+		"/Users/matteoquintero/Downloads/excel/test.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/usuario.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/acudiente.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-group.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/pymes/application/controller/usuario.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/grupo.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/overlay-photo.min.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/event.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/events.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/utilidad.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/DBO.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/chats.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/chats.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/sons.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/messages.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/users.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/users.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/news.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/vendor/daterangepicker.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-event.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/messages.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/magazines.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/honors.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/institutions.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/honors.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/groups.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/institutions.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/groups.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/events.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/answers-news.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-user.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/senders-events.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/senders-messages.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/senders-news.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/messages.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/email.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/username.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/general/onkeypress.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/profile.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-user-name.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-email.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-password.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/password.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/general/functions.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-username.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/respuesta.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/respuesta.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/noticiausuario.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/new.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/noticiareceptor.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/users.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/login.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/institutions.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/honors.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/events.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/news.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template_c/b271292423ba4733e718e62a5893ae3531082887_0.file.create-message.html.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template_c/b67cc570e3ee794d1b9e3c6634ac2e4ee51bd63b_0.file.create-event.html.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template_c/cb6ec9012cd363fccb2f1db363b883b6173f109f_0.file.create-message.html.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template_c/dadb2f5f88dda42973d4541fdbf8c62b846ede9b_0.file.create-new.html.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template_c/f3686d98bcd2b3b5b9a7ab25e8358fcf6661e225_0.file.create-event.html.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template_c/a883bfa16d37a2112fcc6781bb90c9294a2688a6_0.file.create-new.html.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.chats.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/app/messages.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.conversacion.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/prueba.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/conversacion.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.mensajeXUsuario.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/mensajeusuario.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db-cred.inc.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/DBO-bk.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.acudiente.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/requires.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.noticiaXReceptor.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/db/db.mensajeXReceptor.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/sesion.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/contappta-dashboard.sublime-workspace",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/page/authentication.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/test/youtubevideo/www/js/app.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/test/youtubevideo/www/index.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/test/youtubevideo/www/css/style.css",
-		"/Applications/XAMPP/xamppfiles/htdocs/test/youtubevideo/node_modules/angular-youtube-embed/src/demo/the.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/test/youtubevideo/node_modules/angular-youtube-embed/src/demo/advanced.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/test/youtubevideo/node_modules/angular-youtube-embed/src/demo/the.js",
-		"/Users/matteoquintero/Desktop/contaapta_2016-02-05.sql"
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/db-cred.inc.php"
 	],
 	"find":
 	{
@@ -335,7 +427,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 92.5,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard",
@@ -352,134 +444,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"\"http://localhost/contappta/dashboard/\"",
-			"new-publish",
-			" = ",
-			"$contador]->",
-			"idNoticia",
-			"News",
-			"title",
-			"fechaInicio",
-			"news",
-			"Noticia",
-			"new",
-			"aprobada",
-			":%G/%m/%d",
-			"aprobado",
-			"newpublish",
-			"new-",
-			"direccion",
-			"institutionType",
-			"typeInstitution",
-			"typesInstitutions",
-			"idUsuario",
-			"usuario",
-			"hnorsuser",
-			"guardians",
-			"guardiansson",
-			"message",
-			"Sesion",
-			" = ",
-			"$contador]->",
-			"Cifrado",
-			"Sesion",
-			"Users",
-			"institucion",
-			"data-honor",
-			"honors",
-			"crear",
-			"magazine",
-			"honor",
-			"reconocimiento",
-			"honors",
-			"magazine",
-			"revistas",
-			"reconocimiento",
-			"ObjInstitucion",
-			"Institucion",
-			"idAcudiente",
-			"Acudiente",
-			"group",
-			"honor",
-			"idReconocimiento",
-			"maxlenght",
-			"\"./\".$prefijo",
-			"recocimiento",
-			"honor",
-			"idReconocimiento",
-			"honors",
-			"Honors",
-			"honors",
-			"reconocimiento",
-			"Reconocimiento",
-			"reconocimiento",
-			"honor",
-			"reconocimientos",
-			"Reconocimientos",
-			"reconocimientos",
-			"Reconocimiento",
-			"reconocimiento",
-			"Reconocimiento",
-			"identificador",
-			"grado",
-			"idRevista",
-			"identificador",
-			"grado",
+			"\"rol\"",
+			"Rol",
+			"rol",
+			"ObjUtilidad",
+			"idInstitucion",
+			"Magazines",
+			"idInstitucion",
 			"Grupo",
-			"Mensaje",
-			"mensaje",
-			"Mensaje",
-			"mensaje",
-			"Mensaje",
-			"logo",
-			"idTipoInstitucion",
-			"logo",
-			"Institucion",
-			"institucion",
-			"Institucion",
-			"institucion",
-			"Institucion",
-			"tipoReconocimiento",
-			"TipoReconocimiento",
-			"tipoReconocimiento",
-			"TipoReconocimiento",
-			"Honors",
-			"tipoReconocimiento",
-			"TipoReconocimiento",
-			"ipoReconocimient",
-			"typeHonor",
-			"role",
-			"honor",
-			"reconocimiento",
-			"Reconocimiento",
-			"reconocimiento",
-			"ipo",
-			"idTipo",
-			"AnswersNews",
-			"event",
-			"Event",
-			"event",
-			"Event",
-			"event",
-			"Event",
-			"event",
-			"groups",
-			"evento",
-			"Plantilla",
+			"example1",
+			"Notifcacion",
+			"datanew",
+			"data",
+			"idEvento",
+			"new",
+			"// ",
+			"Aprovar",
+			"numbrePages",
+			"Revista",
+			"numberPages",
+			"namemagazine",
+			"image",
 			"asunto",
-			"idPlantilla",
-			"idNoticia",
-			"idReconocimiento",
-			"fechaPublicacion",
+			"idEmisor",
+			"idNotificacion",
+			"idInstitucion",
+			"Evento",
+			"data",
+			"descripcion",
+			"identificador",
+			"descripcion",
 			"aprobada",
-			"asunto",
 			"idNoticia",
+			"idConversacion",
+			"data",
+			"Notificacion",
+			"idInstitucion",
+			"idNoticia",
+			"  $data[\"",
+			" $data[\"",
+			"$data[\"",
+			"data",
+			"datanotification",
+			" $data[\"",
+			"data",
+			"datanotification",
+			"new",
+			"response",
+			"Noticia",
+			"News",
+			"magazine",
+			"user",
+			"acudientes",
+			"Noticia",
+			"jNoticia",
+			"755",
+			");\n",
+			"events",
+			"evento",
+			"subject",
+			"noticia",
+			"publica",
+			"Evento",
+			"operationdate",
+			"idNoticia",
+			"Events",
+			"new",
 			"news",
 			"News",
 			"news",
 			"News",
-			"news",
-			"News"
+			"Conversacion",
+			"asunto",
+			"activo",
+			"Institucion",
+			"Feb",
+			"We",
+			"acudientes",
+			"passwordrepeat",
+			"passwordold",
+			"passwordrepeat",
+			"passwordold",
+			"button type=\"button\"",
+			"username",
+			"usuario",
+			"username",
+			"contraseña",
+			"passwordold",
+			"honor",
+			"passwordold",
+			"nombre",
+			"idRol",
+			"idGrupo",
+			"idUsuario",
+			"reconocimiento",
+			"user",
+			"correo",
+			"description",
+			"typeHonor",
+			"namehonor",
+			"password",
+			"passwordold",
+			"name",
+			"NoticiaUsuario",
+			"ObjNoticiaUsuario",
+			"idConversacion",
+			"Receptor",
+			"idConversacion",
+			"idInstitucion",
+			"Mensaje",
+			"usuario",
+			"_POST",
+			"idConversacion",
+			"idEmisor",
+			"Usuario",
+			"Usuari",
+			"Dos",
+			"Uno",
+			"idUsuarioUno",
+			"Dos",
+			"Uno",
+			"Emisor",
+			"Receptor",
+			"UsuarioUno",
+			"Receptor",
+			"mensaje",
+			"idReceptor",
+			"Receptor",
+			"dUsuario"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -506,8 +598,133 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "application/controller/app/news.php",
+					"settings":
+					{
+						"buffer_size": 630,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								371,
+								371
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/class/news.php",
+					"settings":
+					{
+						"buffer_size": 4569,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1656,
+								1656
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 590.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "actions.php",
+					"settings":
+					{
+						"buffer_size": 1014,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								251,
+								251
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": ".htaccess",
+					"settings":
+					{
+						"buffer_size": 493,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

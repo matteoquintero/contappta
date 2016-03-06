@@ -13,6 +13,9 @@ class Revista
     $dbdata->idInstitucion=$data["idInstitucion"];
     $dbdata->revista=$data["revista"];
     $dbdata->descripcion=$data["descripcion"];
+    $dbdata->numeroPaginas=$data["numeroPaginas"];
+    $dbdata->identificador=$data["identificador"];
+    $dbdata->consecutivo=$data["consecutivo"];
 
     $create=$dbdata->insert();
 
@@ -54,6 +57,21 @@ class Revista
 
   }
 
+  public function getconsecutive(){
+    $dbdata = DB_DataObject::Factory('Revista');
+    $dbdata->selectAdd("consecutivo");
+    $dbdata->orderBy("consecutivo desc");
+    $dbdata->limit(1);
+    $consecutivo=1;
+    $dbdata->find();
+    if( $dbdata->fetch() ){
+      $consecutivo = intval($dbdata->consecutivo)+1;
+    }
+
+    $dbdata->free();
+    return $consecutivo;
+  }
+
   public function get($modo,$data){
 
     switch ($modo) {
@@ -84,7 +102,7 @@ class Revista
         $dbdata = DB_DataObject::Factory('Revista');
         $dbdata->selectAdd();
         $dbdata->selectAdd("id,idInstitucion,revista,descripcion");
-        $dbdata->whereAdd("id=".$data['idRevista']);
+        $dbdata->whereAdd("id='".$data['idRevista']."'");
         $dbdata->find();
         while( $dbdata->fetch() ){
           $ret["idRevista"] = $dbdata->id;

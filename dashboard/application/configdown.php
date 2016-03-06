@@ -2,7 +2,7 @@
 	define('BASE', '/contappta/dashboard/');
 	define('SITE', 'local');
 	define('MIN', '.');
-  define('RUTADATA', '"http://localhost/contappta/dashboard/"');
+  define('RUTADATA', 'http://localhost/contappta/dashboard/');
 	function format($message,$mode=""){
 
 		switch ($mode) {

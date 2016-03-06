@@ -35,7 +35,7 @@ function IncluirArchivos($Ruta){
   require(PREFIJO_GENERAL."class/messages.php");
   require(PREFIJO_GENERAL."class/sendersmessages.php");
   require(PREFIJO_GENERAL."class/mensaje.php");
-  require(PREFIJO_GENERAL."class/mensajereceptor.php");
+  require(PREFIJO_GENERAL."class/conversacion.php");
   require(PREFIJO_GENERAL."class/events.php");
   require(PREFIJO_GENERAL."class/sendersevents.php");
   require(PREFIJO_GENERAL."class/evento.php");
@@ -47,6 +47,13 @@ function IncluirArchivos($Ruta){
   require(PREFIJO_GENERAL."class/tiporeconocimiento.php");
   require(PREFIJO_GENERAL."class/reconocimiento.php");
   require(PREFIJO_GENERAL."class/reconocimientousuario.php");
+  require(PREFIJO_GENERAL."class/chats.php");
+  require(PREFIJO_GENERAL."class/respuesta.php");
+  require(PREFIJO_GENERAL."class/notificacion.php");
+  require(PREFIJO_GENERAL."class/notificacionreceptor.php");
+  require(PREFIJO_GENERAL."class/notifications.php");
+  require(PREFIJO_GENERAL."class/pagina.php");
+  require(PREFIJO_GENERAL."class/magazines.php");
 }
 function printVar( $variable, $title = "" ){ $var = print_r( $variable, true ); echo "<pre style='background-color:#000000; color:#00FF00; border: dashed thin #FFFFFF;position:relative;width: 100%;z-index: 9999;'><strong>[$title]</strong> $var</pre>"; }
 function replace_unicode_escape_sequence($match) { return mb_convert_encoding(pack('H*', $match[1]), 'UTF-8', 'UCS-2BE'); }

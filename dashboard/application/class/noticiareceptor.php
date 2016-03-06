@@ -29,6 +29,26 @@ class NoticiaReceptor
 
 	}
 
+  public function view($data){
+
+    $dbdata = DB_DataObject::Factory('NoticiaXReceptor');
+
+    $dbdata->vista="Si";
+    $dbdata->whereAdd("idReceptor = '".$data["idReceptor"]."'");
+    $dbdata->whereAdd("idNoticia = '".$data["idNoticia"]."'");
+    $dbdata->find();
+
+    if ($dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY)) {
+      $resultado[0] = true;
+    } else {
+      $resultado[0] = false;
+    }
+
+    $dbdata->free();
+
+    return $resultado;
+
+  }
 
 }
 

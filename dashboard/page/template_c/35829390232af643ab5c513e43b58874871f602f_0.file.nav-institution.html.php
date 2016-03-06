@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-19 00:50:04
+/* Smarty version 3.1.29, created on 2016-03-02 04:00:34
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-institution.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c658ac8e4bd7_15302513',
+  'unifunc' => 'content_56d65752e68f22_90898021',
   'file_dependency' => 
   array (
     '35829390232af643ab5c513e43b58874871f602f' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-institution.html',
-      1 => 1455839391,
+      1 => 1456887630,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c658ac8e4bd7_15302513 ($_smarty_tpl) {
+function content_56d65752e68f22_90898021 ($_smarty_tpl) {
 ?>
 
           <ul class="sidebar-menu">
@@ -104,7 +104,8 @@ revistas"><i class="fa fa-table"></i> Ver revistas</a></li>
               </ul>
             </li>
             <li>
-              <a href="#">
+              <a href="<?php echo @constant('BASE');?>
+notificaciones">
                 <i class="fa fa-magic"></i> <span>Notificaciones</span>
               </a>
             </li>

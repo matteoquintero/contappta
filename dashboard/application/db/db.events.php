@@ -10,6 +10,7 @@ class DataObject_Events extends DB_DataObject
 
     public $__table = 'events';                          // table name
     public $idEvento;                        // int(11)  not_null unsigned
+    public $idNotificacion;                  // int(11)  
     public $asunto;                          // string(100)  
     public $descripcion;                     // blob(65535)  blob
     public $aprobado;                        // string(2)  enum
@@ -17,7 +18,7 @@ class DataObject_Events extends DB_DataObject
     public $publicado;                       // string(2)  enum
     public $fechaInicio;                     // date(10)  binary
     public $fechaFin;                        // date(10)  binary
-    public $fechaPublicacion;                // datetime(19)  binary
+    public $fechaPublicacion;                // date(10)  binary
     public $fechaRegistro;                   // timestamp(19)  unsigned binary
     public $idEmisor;                        // int(11)  not_null
     public $usuario;                         // string(100)  not_null
@@ -37,6 +38,7 @@ class DataObject_Events extends DB_DataObject
     {
          return array(
              'idEvento' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+             'idNotificacion' =>  DB_DATAOBJECT_INT,
              'asunto' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'aprobado' =>  DB_DATAOBJECT_STR,
@@ -44,7 +46,7 @@ class DataObject_Events extends DB_DataObject
              'publicado' =>  DB_DATAOBJECT_STR,
              'fechaInicio' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
              'fechaFin' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
-             'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
+             'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
              'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
              'idEmisor' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'usuario' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,

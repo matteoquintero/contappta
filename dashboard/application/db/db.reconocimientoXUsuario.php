@@ -11,6 +11,7 @@ class DataObject_ReconocimientoXUsuario extends DB_DataObject
     public $__table = 'reconocimiento_x_usuario';        // table name
     public $idReconocimiento;                // int(11)  
     public $idUsuario;                       // int(11)  
+    public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('DataObject_ReconocimientoXUsuario',$k,$v); }
@@ -20,6 +21,7 @@ class DataObject_ReconocimientoXUsuario extends DB_DataObject
          return array(
              'idReconocimiento' =>  DB_DATAOBJECT_INT,
              'idUsuario' =>  DB_DATAOBJECT_INT,
+             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
          );
     }
 

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-18 14:52:12
+/* Smarty version 3.1.29, created on 2016-02-27 02:46:56
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/news.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c5cc8c2a05d3_23236142',
+  'unifunc' => 'content_56d1001081ce25_37783175',
   'file_dependency' => 
   array (
     '29f35e15d8d8f8edfa91c4488657e8ad651590d1' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/news.html',
-      1 => 1455671400,
+      1 => 1456532314,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c5cc8c2a05d3_23236142 ($_smarty_tpl) {
+function content_56d1001081ce25_37783175 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -145,28 +145,12 @@ respuestas-noticia" method="post" id="form-answer">
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
+ src="<?php echo fileversion('resources/js/profile/news.js');?>
+"><?php echo '</script'; ?>
 >
-    $(function () {
-
-      $( ".btn-edit" ).click(function() {
-        $("#form-edit input").val( $(this).attr("data-new") );
-        $("#form-edit").submit();
-      });
-
-      $( ".btn-sender" ).click(function() {
-        $("#form-sender input").val( $(this).attr("data-new") );
-        $("#form-sender").submit();
-      });
-
-      $( ".btn-answer" ).click(function() {
-        $("#form-answer input").val( $(this).attr("data-new") );
-        $("#form-answer").submit();
-      });
-
-      $("#data").DataTable();
-
-    });
-  <?php echo '</script'; ?>
+  <?php echo '<script'; ?>
+ src="<?php echo fileversion('resources/js/profile/data.js');?>
+"><?php echo '</script'; ?>
 >
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/botoom.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>

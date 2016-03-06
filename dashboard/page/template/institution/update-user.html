@@ -70,7 +70,11 @@
                     <select name="guardian[]" id="guardian" multiple class="form-control select2" style="width: 100%;" data-placeholder="Seleecione los acudientes">
                       <option></option>
                       {#foreach from=$guardians item=guardian#}
+                      {#if $guardian->idUsuario|in_array:$user.acudientes#}
+                        <option selected value="{#$guardian->idUsuario#}">{#$guardian->nombre#} {#$guardian->apellido#}</option>
+                      {#else#}
                         <option value="{#$guardian->idUsuario#}">{#$guardian->nombre#} {#$guardian->apellido#}</option>
+                      {#/if#}
                       {#/foreach#}
                     </select>
                   </div>
@@ -92,7 +96,11 @@
                     <select class="form-control select2" id="honor" name="honor[]" multiple style="width: 100%;" data-placeholder="Seleecione reconocimientos">
                       <option></option>
                       {#foreach from=$honors item=honor#}
+                      {#if $honor->idReconocimiento|in_array:$user.reconocimientos#}
+                        <option selected value="{#$honor->idReconocimiento#}">{#$honor->reconocimiento#}</option>
+                      {#else#}
                         <option value="{#$honor->idReconocimiento#}">{#$honor->reconocimiento#}</option>
+                      {#/if#}
                       {#/foreach#}
                     </select>
                   </div>

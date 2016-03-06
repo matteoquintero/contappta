@@ -1,4 +1,4 @@
-<ion-view view-title="Revista">
+<ion-view view-title="Revista" hide-tabs>
   <ion-content class="padding">
   <copy>
     <strong>Accede a la revista escolar</strong>
@@ -6,53 +6,31 @@
     <small>de tu colegio.</small>
   </copy>
 
-     <ion-slide-box>
+     <ion-slide-box >
 
-        <ion-slide ng-click="openModal()">
+        <ion-slide ng-click="openModal({{magazine.idRevista}})" ng-repeat="magazine in magazines">
           <div class="slide-wrapper">
-
-            <img class="slider-img" src="data/magazine/file-page1.jpg"/>
-
-          </div>
-        </ion-slide>
-
-        <ion-slide>
-          <div class="slide-wrapper">
-
-            <img class="slider-img" src="img/magazine/1.jpg"/>
-
-          </div>
-        </ion-slide>
-
-        <ion-slide>
-          <div class="slide-wrapper">
-
-            <img class="slider-img" src="img/magazine/2.jpg"/>
-
-          </div>
-        </ion-slide>
-
-        <ion-slide>
-          <div class="slide-wrapper">
-
-            <img class="slider-img" src="img/magazine/3.jpg"/>
-
+            <img class="slider-img" src="{{magazine.portada}}"/>
           </div>
         </ion-slide>
 
       </ion-slide-box>
 
-          <script id="image-modal.html" type="text/ng-template">
-              <div class="modal image-modal transparent"
-                   ng-click="closeModal()">
-                <ion-slide-box on-slide-changed="slideChanged(index)"
-                               show-pager="false">
-                  <ion-slide ng-repeat="oImage in aImages">
-                    <img ng-src="{{oImage.src}}" class="fullscreen-image" />
-                    <p class="info">{{oImage.msg}}</p>
-                  </ion-slide>
-                </ion-slide-box>
-              </div>
-          </script>
+      <script id="image-modal.html" type="text/ng-template">
+          <div class="modal image-modal transparent">
+            <ion-slide-box on-slide-changed="slideChanged(index)"
+                           show-pager="false">
+              <ion-slide ng-repeat="oImage in aImages">
+                <img ng-src="{{oImage.src}}" class="fullscreen-image" />
+                <p class="info">{{oImage.msg}}</p>
+                <ion-button class="ion-chevron-right" ng-click="next()"></ion-button>
+                <ion-button class="ion-chevron-left" ng-click="previous()"></ion-button>
+                <ion-button class="ion-close"  ng-click="closeModal()" ></ion-button>
+              </ion-slide>
+
+            </ion-slide-box>
+          </div>
+      </script>
+
   </ion-content>
 </ion-view>

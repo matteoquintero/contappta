@@ -25,8 +25,9 @@
           <!-- form start -->
           <form role="form" autocomplete="off" id="form-magazines" data-action="create">
             <div class="box-body">
+
               <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-6">
 
                     <div class="form-group">
                       <label for="namemagazine">Revista</label>
@@ -34,13 +35,28 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="description">Descripción</label>
-                      <textarea type="text" class="form-control" name="description" id="description" placeholder="Digite la descripción"></textarea>
+                      <label for="numberPages">Numero de paginas</label>
+                      <input type="text" class="form-control" name="numberPages" id="numberPages" placeholder="Digite el numero de paginas">
                     </div>
 
                   </div>
 
+                  <div class="col-md-6">
+
+                    <div class="form-group">
+                      <label for="description">Descripción</label>
+                      <textarea type="text" class="form-control" name="description" id="description" placeholder="Digite la descripción"></textarea>
+                    </div>
+
+                   <div class="form-group">
+                      <label for="pages">Paginas</label>
+                      <input type="file" name="pages" id="pages" multiple>
+                      <p class="help-block">El nombre de las imagenes deben estar en relación con el numero de la pagina, ejemplo:<br> portada = 1.jpg <br> pagina 2 = 2.png</p>
+                    </div>
+
+                  </div>
               </div>
+
             </div><!-- /.box-body -->
             <input type="hidden" name="institute" id="institute" value="{#$userdata.idInstitucion#}">
             <div class="box-footer">

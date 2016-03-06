@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-05 00:10:23
+/* Smarty version 3.1.29, created on 2016-02-20 07:39:13
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/general/header.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56b3da5fe766b0_63660990',
+  'unifunc' => 'content_56c80a11bdf6a9_32287299',
   'file_dependency' => 
   array (
     '49a26873e932802f3108544664ff2d914e697a01' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/general/header.html',
-      1 => 1454627413,
+      1 => 1455946592,
       2 => 'file',
     ),
   ),
@@ -19,13 +19,13 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56b3da5fe766b0_63660990 ($_smarty_tpl) {
+function content_56c80a11bdf6a9_32287299 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="es"/>
     <title><?php echo $_smarty_tpl->tpl_vars['datasection']->value['title'];?>
 </title>
     <!-- Tell the browser to be responsive to screen width -->

@@ -40,9 +40,10 @@ class Institutions
         $dbdata = DB_DataObject::Factory('Institutions');
         $dbdata->selectAdd();
         $dbdata->selectAdd("idInstitucion,activo,institucion,correo,direccion,logo,idTipoInstitucion,tipoInstitucion,telefono,celular");
-        $dbdata->whereAdd("idInstitucion=".$data['idInstitucion']);
+        $dbdata->whereAdd("idInstitucion='".$data['idInstitucion']."'");
         $dbdata->find();
-        if( $dbdata->fetch() ){
+
+        while( $dbdata->fetch() ){
           $ret['idInstitucion'] = $dbdata->idInstitucion;
           $ret['activo'] = $dbdata->activo;
           $ret['institucion'] = $dbdata->institucion;
@@ -65,7 +66,7 @@ class Institutions
         $dbdata = DB_DataObject::Factory('Institutions');
         $dbdata->selectAdd();
         $dbdata->selectAdd("idInstitucion,activo,institucion,correo,direccion,logo,telefono,celular,idTipoInstitucion,tipoInstitucion");
-        $dbdata->whereAdd("idInstitucion=".$data['idInstitucion']);
+        $dbdata->whereAdd("idInstitucion='".$data['idInstitucion']."'");
         $dbdata->find();
         while( $dbdata->fetch() ){
           $ret['idInstitucion'] = $dbdata->idInstitucion;

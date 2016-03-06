@@ -7,7 +7,6 @@ class Sesion{
     }
 
     public function authenticationapp($usuario,$contrasena,$data){
-
         if ( strtolower($usuario) == $data['usuario'] && $contrasena == $data['contrasena'] ) {
             $response[0]=true;
         }else{ $response[0]=false; }

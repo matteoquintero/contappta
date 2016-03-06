@@ -10,19 +10,24 @@ class DataObject_Messages extends DB_DataObject
 
     public $__table = 'messages';                        // table name
     public $idMensaje;                       // int(11)  not_null unsigned
-    public $mensaje;                         // blob(65535)  blob
-    public $media;                           // string(250)  
-    public $fechaRegistro;                   // timestamp(19)  unsigned binary
-    public $idEmisor;                        // int(11)  not_null
-    public $nombre;                          // string(100)  
-    public $apellido;                        // string(100)  
-    public $foto;                            // string(150)  
+    public $idNotificacion;                  // int(11)  
     public $idInstitucion;                   // int(11)  not_null
-    public $institucion;                     // string(100)  
-    public $logo;                            // string(200)  
-    public $idRol;                           // int(11)  not_null
-    public $rol;                             // string(100)  
-    public $usuario;                         // string(100)  not_null
+    public $idConversacion;                  // int(11)  
+    public $mensaje;                         // blob(65535)  blob
+    public $visto;                           // string(2)  enum
+    public $eliminado;                       // string(2)  enum
+    public $media;                           // string(250)  
+    public $idReceptor;                      // int(11)  
+    public $nombreReceptor;                  // string(201)  
+    public $usuarioReceptor;                 // string(100)  
+    public $rolReceptor;                     // string(100)  
+    public $fotoReceptor;                    // string(150)  
+    public $idEmisor;                        // int(11)  not_null
+    public $nombreEmisor;                    // string(201)  
+    public $usuarioEmisor;                   // string(100)  
+    public $rolEmisor;                       // string(100)  
+    public $fotoEmisor;                      // string(150)  
+    public $fechaRegistro;                   // timestamp(19)  unsigned binary
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('DataObject_Messages',$k,$v); }
@@ -31,19 +36,24 @@ class DataObject_Messages extends DB_DataObject
     {
          return array(
              'idMensaje' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
-             'mensaje' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
-             'media' =>  DB_DATAOBJECT_STR,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
-             'idEmisor' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
-             'nombre' =>  DB_DATAOBJECT_STR,
-             'apellido' =>  DB_DATAOBJECT_STR,
-             'foto' =>  DB_DATAOBJECT_STR,
+             'idNotificacion' =>  DB_DATAOBJECT_INT,
              'idInstitucion' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
-             'institucion' =>  DB_DATAOBJECT_STR,
-             'logo' =>  DB_DATAOBJECT_STR,
-             'idRol' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
-             'rol' =>  DB_DATAOBJECT_STR,
-             'usuario' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,
+             'idConversacion' =>  DB_DATAOBJECT_INT,
+             'mensaje' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
+             'visto' =>  DB_DATAOBJECT_STR,
+             'eliminado' =>  DB_DATAOBJECT_STR,
+             'media' =>  DB_DATAOBJECT_STR,
+             'idReceptor' =>  DB_DATAOBJECT_INT,
+             'nombreReceptor' =>  DB_DATAOBJECT_STR,
+             'usuarioReceptor' =>  DB_DATAOBJECT_STR,
+             'rolReceptor' =>  DB_DATAOBJECT_STR,
+             'fotoReceptor' =>  DB_DATAOBJECT_STR,
+             'idEmisor' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+             'nombreEmisor' =>  DB_DATAOBJECT_STR,
+             'usuarioEmisor' =>  DB_DATAOBJECT_STR,
+             'rolEmisor' =>  DB_DATAOBJECT_STR,
+             'fotoEmisor' =>  DB_DATAOBJECT_STR,
+             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
          );
     }
 
@@ -62,14 +72,17 @@ class DataObject_Messages extends DB_DataObject
          return array(
              'idMensaje' => 0,
              'mensaje' => '',
+             'visto' => 'No',
+             'eliminado' => 'No',
              'media' => '',
-             'nombre' => '',
-             'apellido' => '',
-             'foto' => '',
-             'institucion' => '',
-             'logo' => '',
-             'rol' => '',
-             'usuario' => '',
+             'nombreReceptor' => '',
+             'usuarioReceptor' => '',
+             'rolReceptor' => '',
+             'fotoReceptor' => '',
+             'nombreEmisor' => '',
+             'usuarioEmisor' => '',
+             'rolEmisor' => '',
+             'fotoEmisor' => '',
          );
     }
 

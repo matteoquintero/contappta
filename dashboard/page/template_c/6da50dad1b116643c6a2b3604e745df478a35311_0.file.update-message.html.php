@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-16 06:15:08
+/* Smarty version 3.1.29, created on 2016-03-03 06:17:04
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-message.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c2b05c9b3911_07896082',
+  'unifunc' => 'content_56d7c8d095ae05_85594335',
   'file_dependency' => 
   array (
     '6da50dad1b116643c6a2b3604e745df478a35311' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-message.html',
-      1 => 1455599686,
+      1 => 1456982220,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c2b05c9b3911_07896082 ($_smarty_tpl) {
+function content_56d7c8d095ae05_85594335 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -63,7 +63,7 @@ function content_56c2b05c9b3911_07896082 ($_smarty_tpl) {
 </textarea>
                   </div>
 
-                  <div class="form-group message" id="group-image">
+                  <div class="form-group message hide">
                     <label for="image">Imagen</label>
                     <input type="file" name="image" id="image">
                     <p class="help-block">Imagen de la noticia.</p>

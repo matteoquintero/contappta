@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-18 14:52:00
+/* Smarty version 3.1.29, created on 2016-02-26 05:51:06
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/profile.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c5cc8010a074_09049460',
+  'unifunc' => 'content_56cfd9ba2f21d6_38258489',
   'file_dependency' => 
   array (
     'a61e45fbdafb42e6ee1d139b95c533605206a755' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/profile.html',
-      1 => 1455671400,
+      1 => 1456462262,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c5cc8010a074_09049460 ($_smarty_tpl) {
+function content_56cfd9ba2f21d6_38258489 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -183,9 +183,12 @@ $_smarty_tpl->tpl_vars['group'] = $__foreach_group_1_saved_item;
 " name="namephoto">
                   <div class="box-footer">
                     <button type="button" class="btn btn-primary">Enviar</button>
-                    <button type="button" class="btn btn-primary">Modificar contraseña</button>
-                    <button type="button" class="btn btn-primary">Modificar usuario</button>
-                    <button type="button" class="btn btn-primary">Modificar correo</button>
+                    <a href="<?php echo @constant('BASE');?>
+modificar-contrasena" class="btn btn-primary">Modificar contraseña</a>
+                    <a href="<?php echo @constant('BASE');?>
+modificar-nombre-usuario" class="btn btn-primary">Modificar usuario</a>
+                    <a href="<?php echo @constant('BASE');?>
+modificar-correo" class="btn btn-primary">Modificar correo</a>
                   </div>
                 </form>
               </div><!-- /.box -->

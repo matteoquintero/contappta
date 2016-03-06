@@ -10,6 +10,7 @@ class Evento
 
 		$dbdata = DB_DataObject::Factory('Evento');
     $dbdata->idInstitucion=$data["idInstitucion"];
+    $dbdata->idNotificacion=$data["idNotificacion"];
     $dbdata->idEmisor=$data["idEmisor"];
     $dbdata->asunto=$data["asunto"];
     $dbdata->descripcion=$data["descripcion"];
@@ -17,7 +18,7 @@ class Evento
     $dbdata->fechaInicio=$data["fechaInicio"];
     $dbdata->fechaFin=$data["fechaFin"];
     $dbdata->aprobado=$data["aprobado"];
-    $dbdata->publicado=$data["publicado"];
+    $dbdata->publicado=($data["aprobado"]=="No") ? "No" : $data["publicado"];
 
     $create=$dbdata->insert();
 
@@ -45,7 +46,7 @@ class Evento
     $dbdata->fechaInicio=$data["fechaInicio"];
     $dbdata->fechaFin=$data["fechaFin"];
     $dbdata->aprobado=$data["aprobado"];
-    $dbdata->publicado=$data["publicado"];
+    $dbdata->publicado=($data["aprobado"]=="No") ? "No" : $data["publicado"];
     $dbdata->eliminado=$data["eliminado"];
 
     $dbdata->whereAdd("id = '".$data["idEvento"]."'");

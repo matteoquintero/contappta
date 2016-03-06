@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; *; style-src  &apos;self&apos; &apos;unsafe-inline&apos; *">
     <title></title>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos;;script-src * &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos;;">
+
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/fonts.css" rel="stylesheet">
@@ -16,10 +17,12 @@
     -->
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
     <script src="js/onezone-datepicker.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+    <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
+<!-- <script src="cordova.js"></script> -->
 
     <!-- Include YT library and this directive -->
     <script src="https://www.youtube.com/iframe_api"></script>
@@ -37,10 +40,10 @@
       The nav bar that will be updated as we navigate between views.
     -->
     <ion-nav-bar class="bar-stable" ng-controller="DataCtrl">
-      <ion-nav-back-button class="button-clear" transitiontype="slide" direction="right" go-native>
+      <ion-nav-back-button class="button-clear" transitiontype="slide" direction="right" go-native="">
         <i class="ion-ios-arrow-left"></i>
       </ion-nav-back-button>
-      <img src="{{user.logo}}" alt="">
+      <img src="http://contappta.com/_data/logosinstitutions/escueladeartesyletras.png" alt="">
     </ion-nav-bar>
     <!--
       The views will be rendered in the <ion-nav-view> directive below

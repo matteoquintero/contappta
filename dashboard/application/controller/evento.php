@@ -6,6 +6,8 @@
     $ObjEventoReceptor=new EventoReceptor();
     $ObjUtilidad=new Utilidad();
     $ObjUsers=new Users();
+    $ObjNotificacion=new Notificacion();
+    $ObjNotificacionReceptor=new NotificacionReceptor();
     $resultado=false;
     @session_start();
     @$idUsuario=$_SESSION['usuario']["idUsuario"];
@@ -17,24 +19,39 @@
 
                 case "create":
 
-                    $data["idInstitucion"]=$_POST["institute"];
-                    $data["idEmisor"]=$idUsuario;
-                    $data["asunto"]=$_POST["subject"];
-                    $data["descripcion"]=$_POST["description"];
-                    $data["aprobado"]=( $_POST["approved"] ) ? "Si" : "No";
-                    $data["publicado"]=( $_POST["publishnow"] ) ? "Si" : "No";
-                    $data["fechaPublicacion"]=$_POST["datepublication"];
+                    $dataevent["idInstitucion"]=$_POST["institute"];
+                    $dataevent["idEmisor"]=$idUsuario;
+                    $dataevent["asunto"]=$_POST["subject"];
+                    $dataevent["descripcion"]=$_POST["description"];
+                    $dataevent["aprobado"]=( $_POST["approved"] ) ? "Si" : "No";
+                    $dataevent["publicado"]=( $_POST["publishnow"] ) ? "Si" : "No";
+                    $dataevent["fechaPublicacion"]=$_POST["datepublication"];
 
                     $dateevent=explode("-",$_POST["dateevent"]);
-                    $data["fechaInicio"]=trim($dateevent[0]);
-                    $data["fechaFin"]=trim($dateevent[1]);
+                    $dataevent["fechaInicio"]=trim($dateevent[0]);
+                    $dataevent["fechaFin"]=trim($dateevent[1]);
 
-										$response=$ObjEvento->create($data);
+                    $datanotification["idInstitucion"]=$_POST["institute"];
+                    $datanotification["idEmisor"]=$idUsuario;
+                    $datanotification["asunto"]="Evento nuevo";
+                    $datanotification["descripcion"]=$dataevent["asunto"];
+                    $datanotification["enlaceApp"]="enlaceApp";
+                    $datanotification["enlaceDashboard"]="noticias";
+                    $datanotification["publicadaDashboard"]="Si";
+                    $datanotification["publicadaApp"]=($dataevent["aprobado"]=="Si" && $dataevent["publicado"]=="Si") ? "Si" : "No";
+
+                    $notification=$ObjNotificacion->create($datanotification);
+
+                    $dataevent["idNotificacion"]=$notification[1];
+
+										$event=$ObjEvento->create($dataevent);
+
+                    $data["idEvento"]=$event[1];
+                    $data["idNotificacion"]=$notification[1];
 
                    //Receptores
                    if (!empty($_POST["sender"])) {
 
-                        $data["idEvento"]=$response[1];
                         $sendersok=array();
 
                         foreach ($_POST["sender"] as $key => $sender) {
@@ -46,10 +63,15 @@
 
                               $data["idInstitucion"]=$senders[0];
                               $usersinstitution=$ObjUsers->get($senders[1],$data);
+
                               foreach ($usersinstitution as $user) {
                                 if (!in_array($user->idUsuario, $sendersok)) {
+
                                   $data["idReceptor"]=$user->idUsuario;
+
                                   $ObjEventoReceptor->create($data);
+                                  $ObjNotificacionReceptor->create($data);
+
                                   array_push($sendersok,$user->idUsuario);
                                 }
                               }
@@ -59,10 +81,15 @@
 
                               $data["idGrupo"]=$senders[0];
                               $usersgroup=$ObjUsers->get($senders[1],$data);
+
                               foreach ($usersgroup as $user) {
                                 if (!in_array($user->idUsuario, $sendersok)) {
+
                                   $data["idReceptor"]=$user->idUsuario;
+
                                   $ObjEventoReceptor->create($data);
+                                  $ObjNotificacionReceptor->create($data);
+
                                   array_push($sendersok,$user->idUsuario);
                                 }
                               }
@@ -71,8 +98,12 @@
                             case 'user':
 
                               if (!in_array($senders[0], $sendersok)) {
+
                                 $data["idReceptor"]=$senders[0];
+
                                 $ObjEventoReceptor->create($data);
+                                $ObjNotificacionReceptor->create($data);
+
                                 array_push($sendersok,$senders[0]);
                               }
 
@@ -81,24 +112,27 @@
 
                         }
                     }
-                    echo json_encode($response);
+                    echo json_encode($event);
                 break;
 
                 case 'update':
 
-                    $data["idEvento"]=$_POST["event"];
-                    $data["asunto"]=$_POST["subject"];
-                    $data["descripcion"]=$_POST["description"];
-                    $data["aprobado"]=( $_POST["approved"] ) ? "Si" : "No";
-                    $data["publicado"]=( $_POST["publishnow"] ) ? "Si" : "No";
-                    $data["eliminado"]=( $_POST["deleted"] ) ? "Si" : "No";
-                    $data["fechaPublicacion"]=$_POST["datepublication"];
+                    $dataevent["idEvento"]=$_POST["event"];
+                    $dataevent["asunto"]=$_POST["subject"];
+                    $dataevent["descripcion"]=$_POST["description"];
+                    $dataevent["aprobado"]=( $_POST["approved"] ) ? "Si" : "No";
+                    $dataevent["publicado"]=( $_POST["publishnow"] ) ? "Si" : "No";
+                    $dataevent["eliminado"]=( $_POST["deleted"] ) ? "Si" : "No";
+                    $dataevent["fechaPublicacion"]=$_POST["datepublication"];
 
                     $dateevent=explode("-",$_POST["dateevent"]);
-                    $data["fechaInicio"]=trim($dateevent[0]);
-                    $data["fechaFin"]=trim($dateevent[1]);
+                    $dataevent["fechaInicio"]=trim($dateevent[0]);
+                    $dataevent["fechaFin"]=trim($dateevent[1]);
 
-                    $response=$ObjEvento->update($data);
+                    $datanotification["publicadaApp"]=($dataevent["aprobado"]=="Si" && $dataevent["publicado"]=="Si") ? "Si" : "No";
+                    $ObjNotificacion->update($datanotification);
+
+                    $response=$ObjEvento->update($dataevent);
                     echo json_encode($response);
                 break;
 

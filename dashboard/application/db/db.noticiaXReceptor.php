@@ -12,6 +12,7 @@ class DataObject_NoticiaXReceptor extends DB_DataObject
     public $idNoticia;                       // int(11)  not_null
     public $idReceptor;                      // int(11)  not_null
     public $vista;                           // string(2)  enum
+    public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('DataObject_NoticiaXReceptor',$k,$v); }
@@ -22,6 +23,7 @@ class DataObject_NoticiaXReceptor extends DB_DataObject
              'idNoticia' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idReceptor' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'vista' =>  DB_DATAOBJECT_STR,
+             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
          );
     }
 

@@ -140,11 +140,12 @@ a.item{
   background: #fff;
 }
 
-#login img{
-    width: 80%;
+#login .img-bg{
+    width: 100%;
     padding-top: 5px;
-    margin: 0 auto;
+    margin: 35px auto 20px auto;
     display: block;
+    max-height: 300px;
 }
 #login button{
   margin: 0 auto;
@@ -214,6 +215,8 @@ a.item{
     z-index: 10;
     top: 6px;
     right: 10px;
+    border-radius: 100%;
+    border: 0.050em solid #BBBABA;
 }
 
 .modal .info{
@@ -481,12 +484,15 @@ color: #fff;
     display: block;
 }
 
-#son strong{font-size: 21px;color: #ccc;font-family: osb;letter-spacing: 3px;margin-left: 20px;margin-top: 10px;display: block;position: relative;float: left;width: 78%;}
+#son strong{font-size: 21px;color: #ccc;font-family: osb;letter-spacing: 3px;display: block;position: absolute;width: 78%;left: 80px;top: 21px;}
 #son .item-thumbnail-left p{
     margin-left: 20px;
     font-family: osb;
     color: #2bbcf9;
     font-size: 18px;
+    position: absolute;
+    right: 11px;
+    top: 1px;
 }
 #son p{font-size: 20px;float: left;position: relative;display: block;margin-top: 2px;line-height: 28px;padding-bottom: 10px;}
 
@@ -588,12 +594,11 @@ p.info {
     margin: 0 0 24px 0;
 }
 .chat-media img{
-    width: 80%;
     height: inherit;
     border-radius: 0%!important;
     border: 3px solid #ccc!important;
     display: block;
-    margin: 2% auto;
+    margin: 6px 0 0 0;
 }
 
  .embed-responsive {
@@ -671,5 +676,73 @@ p.info {
   background-color: #187095;
 }
 
+#logo-login{
+    position: absolute;
+    width: 170px;
+    display: block;
+    left: calc(50% - 85px);
+    top: -1px;
+}
 
+.bar-footer {
+  overflow: visible !important;
+}
 
+.bar-footer textarea {
+  resize: none;
+  height: 25px;
+  font-family: 'osb';
+  color: #5F5D5D;
+  width: 100%;
+}
+
+/* fixes an ios bug bear */
+button.ion-android-send {
+  padding-top: 2px;
+}
+
+/* add this to keep your footer buttons down
+at the bottom as the textarea resizes */
+.footer-btn-wrap {
+  position: relative;
+  height: 100%;
+  width: 50px;
+  top: -1px;
+}
+
+.footer-btn {
+  position: absolute !important;
+  bottom: 0;
+}
+
+.bar.item-input-inset .item-input-wrapper input {
+  width: 100% !important;
+}
+
+.bar-footer input,
+.bar-footer textarea,
+.bar-footer .item-input,
+.bar-footer .item-input-wrapper {
+  background-color: #f4f4f4 !important;
+}
+
+ion-button{
+  position: absolute;
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 46px;
+  cursor: pointer;
+}
+
+.modal .ion-chevron-right{
+    right: 5px;
+    top: calc(50% - 23px);
+}
+.modal .ion-chevron-left{
+    left: 5px;
+    top: calc(50% - 23px);
+}
+.modal .ion-close{
+    right: 5px;
+    font-size: 30px;
+    top: 5px;
+}

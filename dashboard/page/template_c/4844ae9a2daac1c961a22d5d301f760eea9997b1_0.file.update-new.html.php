@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-19 05:29:42
+/* Smarty version 3.1.29, created on 2016-03-03 06:38:33
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-new.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c69a36264cf6_94899864',
+  'unifunc' => 'content_56d7cdd934b184_34277964',
   'file_dependency' => 
   array (
     '4844ae9a2daac1c961a22d5d301f760eea9997b1' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-new.html',
-      1 => 1455856180,
+      1 => 1456983511,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c69a36264cf6_94899864 ($_smarty_tpl) {
+function content_56d7cdd934b184_34277964 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -68,37 +68,19 @@ function content_56c69a36264cf6_94899864 ($_smarty_tpl) {
 </textarea>
                   </div>
 
-               <?php if (!isset($_smarty_tpl->tpl_vars['new']) || !is_array($_smarty_tpl->tpl_vars['new']->value)) $_smarty_tpl->smarty->ext->_var->createLocalArrayVariable($_smarty_tpl, 'new');
-if ($_smarty_tpl->tpl_vars['new']->value['idPlantilla'] = "2") {?>
-                  <div class="form-group">
+                  <div class="form-group hide">
                     <label for="image">Imagen</label>
                     <input type="file" name="image" id="image">
                     <p class="help-block">Imagen de la noticia.</p>
                   </div>
-               <?php } else { if (!isset($_smarty_tpl->tpl_vars['new']) || !is_array($_smarty_tpl->tpl_vars['new']->value)) $_smarty_tpl->smarty->ext->_var->createLocalArrayVariable($_smarty_tpl, 'new');
-if ($_smarty_tpl->tpl_vars['new']->value['idPlantilla'] = "3") {?>
-                  <div class="form-group">
-                    <label for="image">Imagen</label>
-                    <input type="file" name="image" id="image">
-                    <p class="help-block">Imagen de la noticia.</p>
-                  </div>
-               <?php } else { if (!isset($_smarty_tpl->tpl_vars['new']) || !is_array($_smarty_tpl->tpl_vars['new']->value)) $_smarty_tpl->smarty->ext->_var->createLocalArrayVariable($_smarty_tpl, 'new');
-if ($_smarty_tpl->tpl_vars['new']->value['idPlantilla'] = "4") {?>
-                  <div class="form-group">
-                    <label for="video">Url video</label>
-                    <input type="text" class="form-control" name="video" id="video" placeholder="Digite la url" value="<?php echo $_smarty_tpl->tpl_vars['new']->value['media'];?>
-">
-                  </div>
-                <?php }}}?>
-
 
               </div>
               <div class="col-md-6">
 
 
-                <?php if ($_smarty_tpl->tpl_vars['new']->value['publicada'] === "No") {?>
+              <?php if ($_smarty_tpl->tpl_vars['new']->value['publicada'] === "No") {?>
 
-                    <div class="form-group">
+                  <div class="form-group">
                     <label for="datepublication">Fecha publicación:</label>
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -109,7 +91,39 @@ if ($_smarty_tpl->tpl_vars['new']->value['idPlantilla'] = "4") {?>
                     </div>
                   </div>
 
+                  <div class="form-group checkbox">
+                    <label>
+                      <?php if ($_smarty_tpl->tpl_vars['new']->value['publicada'] == "Si") {?>
+                        <input id="publishnow" name="publishnow" type="checkbox" value="Si" checked > Publicar ahora mismo
+                      <?php } else { ?>
+                        <input id="publishnow" name="publishnow" type="checkbox" value="Si" > Publicar ahora mismo
+                      <?php }?>
+
+                    </label>
+                  </div>
+
+                  <div class="form-group checkbox">
+                    <label>
+                      <?php if ($_smarty_tpl->tpl_vars['new']->value['aprobada'] == "Si") {?>
+                        <input id="approved" name="approved" type="checkbox" value="Si" checked> Aprobada
+                      <?php } else { ?>
+                        <input id="approved" name="approved" type="checkbox" value="Si"> Aprobada
+                      <?php }?>
+                    </label>
+                  </div>
+
                 <?php } else { ?>
+
+                  <div class="form-group">
+                    <label for="datepublication">Fecha publicación:</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                      </div>
+                      <input disabled type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication" value="<?php echo $_smarty_tpl->tpl_vars['new']->value['fechaPublicacion'];?>
+">
+                    </div>
+                  </div>
 
                   <div class="form-group checkbox">
                     <label>
@@ -117,17 +131,15 @@ if ($_smarty_tpl->tpl_vars['new']->value['idPlantilla'] = "4") {?>
                     </label>
                   </div>
 
-                <?php }?>
-
-                  <div class="checkbox">
+                  <div class="form-group checkbox">
                     <label>
-                      <?php if ($_smarty_tpl->tpl_vars['new']->value['aprobada'] == "Si") {?>
-                        <input id="approved" name="approved" type="checkbox" value="Si" checked disabled> Aprovar
-                      <?php } else { ?>
-                        <input id="approved" name="approved" type="checkbox" value="Si"> Aprovar
-                      <?php }?>
+                        <input id="approved" name="approved" type="checkbox" value="Si" checked disabled> Aprobada
                     </label>
                   </div>
+
+                <?php }?>
+
+
 
                   <div class="checkbox">
                     <label>

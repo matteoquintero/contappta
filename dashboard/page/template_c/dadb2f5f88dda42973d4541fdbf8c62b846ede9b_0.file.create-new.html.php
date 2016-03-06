@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-19 01:41:54
+/* Smarty version 3.1.29, created on 2016-03-02 04:10:24
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-new.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c664d2ccba42_58880650',
+  'unifunc' => 'content_56d659a01f08e9_44790551',
   'file_dependency' => 
   array (
     'dadb2f5f88dda42973d4541fdbf8c62b846ede9b' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-new.html',
-      1 => 1455842473,
+      1 => 1455941348,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c664d2ccba42_58880650 ($_smarty_tpl) {
+function content_56d659a01f08e9_44790551 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -181,13 +181,13 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_2_saved_item;
                           <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                           </div>
-                          <input type="text" class="form-control new-publish" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication">
+                          <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication">
                         </div>
                       </div>
 
                       <div class="form-group checkbox">
                         <label>
-                            <input class="new-publish" id="publishnow" name="publishnow" type="checkbox" value="Si"> Publicar ahora mismo
+                            <input id="publishnow" name="publishnow" type="checkbox" value="Si"> Publicar ahora mismo
                         </label>
                       </div>
 
@@ -209,6 +209,7 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_2_saved_item;
             </div><!-- /.box-body -->
             <input type="hidden" name="institute" id="institute" value="<?php echo $_smarty_tpl->tpl_vars['userdata']->value['idInstitucion'];?>
 ">
+            <input type="hidden" name="videoid" id="videoid" >
             <div class="box-footer">
               <button type="button" class="btn btn-primary" id="btn-step-1">Siguiente</button>
               <button type="button" class="btn btn-primary" id="btn-step-2">Enviar</button>

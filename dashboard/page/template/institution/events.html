@@ -67,30 +67,13 @@
       <input type="hidden" name="idEvento">
   </form>
 
-
-
   {#include file="master/general/footer.html"|filetemplate#}
   {#include file="master/general/scripts.html"|filetemplate#}
   <script src="{#'resources/js/vendor/jquery-datatables.js'|fileversion#}"></script>
   <script src="{#'resources/js/vendor/datatables-bootstrap.js'|fileversion#}"></script>
   <script src="{#'resources/js/vendor/jquery-slimscroll.js'|fileversion#}"></script>
-  <script>
-    $(function () {
-
-      $( ".btn-edit" ).click(function() {
-        $("#form-edit input").val( $(this).attr("data-event") );
-        $("#form-edit").submit();
-      });
-
-      $( ".btn-sender" ).click(function() {
-        $("#form-sender input").val( $(this).attr("data-event") );
-        $("#form-sender").submit();
-      });
-
-      $("#data").DataTable();
-
-    });
-  </script>
+  <script src="{#'resources/js/profile/events.js'|fileversion#}"></script>
+  <script src="{#'resources/js/profile/data.js'|fileversion#}"></script>
   {#include file="master/general/botoom.html"|filetemplate#}
 
 

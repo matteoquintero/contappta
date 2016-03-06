@@ -1,6 +1,7 @@
 <?php
+    header('Access-Control-Allow-Headers: X-ACCESS_TOKEN, Access-Control-Allow-Origin, Authorization, Origin, x-requested-with, Content-Type, Content-Range, Content-Disposition, Content-Description');
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
     header('Access-Control-Allow-Origin: *');
-    header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
     require("../../requires.php");
     $Ruta="../../";
     IncluirArchivos($Ruta);

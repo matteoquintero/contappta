@@ -89,6 +89,50 @@ class Utilidad
         return $datasection;
     }
 
+    function operationdate($mode,$startdate,$enddate,$data) {
+
+        $dateresult=false;
+        if ($startdate==="") { $startdate=date('Y-m-d H:i'); }
+        if ($enddate==="") { $enddate=date('Y-m-d H:i'); }
+
+        switch ($mode) {
+
+            case "add-month":
+                $dateopration = strtotime('+' . $data . ' month', strtotime($startdate));
+                $dateresult = date('Y-m-d H:i', $dateopration);
+            break;
+
+            case "add-day":
+                $dateopration = strtotime('+' . $data . ' day', strtotime($startdate));
+                $dateresult = date('Y-m-d H:i', $dateopration);
+            break;
+
+            case "add-day-pse":
+                $dateopration = strtotime('+' . $data . ' day', strtotime($startdate));
+                $dateresult = date('Y-m-d', $dateopration)."T".date('H:i:s', $dateopration);;
+            break;
+
+            case "deduct-month":
+                $dateopration = strtotime('-' . $data . ' month', strtotime($startdate));
+                $dateresult = date('Y-m-d H:i', $dateopration);
+            break;
+
+            case "greater":
+                if ( strtotime($startdate) > strtotime($enddate) ){ $dateresult=true; }
+            break;
+
+            case "equal":
+                if ( strtotime($startdate) === strtotime($enddate) ) { $dateresult=true; }
+            break;
+
+            case "less":
+                if ( strtotime($startdate) < strtotime($enddate) ){ $dateresult=true; }
+            break;
+        }
+
+       return $dateresult;
+
+    }
 
 }
 ?>

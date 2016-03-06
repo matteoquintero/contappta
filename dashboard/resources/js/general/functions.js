@@ -29,7 +29,7 @@ function redirectpage(page,hash){
     };
     jQuery.when( closepage() ).done( function() {
 
-        var user=sendajax("useractive","usuario");
+        var user=sendajax("username","usuario");
         var to=(page=="mi-perfil") ? user : page;
         to=getroute()+to;
 
@@ -225,6 +225,10 @@ function actionsuser(){ return sendajax("actions","productoxusuario"); }
 
 function existemail(correo){
     return senddataajax("email","usuario","correo="+correo);
+}
+
+function oldpassword(password){
+    return senddataajax("oldpassword","usuario","password="+password);
 }
 
 function existuser(usuario){

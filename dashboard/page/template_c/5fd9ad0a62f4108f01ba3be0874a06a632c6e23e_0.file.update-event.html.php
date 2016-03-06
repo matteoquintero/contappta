@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-19 06:22:02
+/* Smarty version 3.1.29, created on 2016-03-03 06:50:02
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-event.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c6a67a32d955_31587600',
+  'unifunc' => 'content_56d7d08a673ac3_64956478',
   'file_dependency' => 
   array (
     '5fd9ad0a62f4108f01ba3be0874a06a632c6e23e' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-event.html',
-      1 => 1455856001,
+      1 => 1456984185,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c6a67a32d955_31587600 ($_smarty_tpl) {
+function content_56d7d08a673ac3_64956478 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_date_format')) require_once '/Applications/XAMPP/xamppfiles/htdocs/smarty/libs/plugins/modifier.date_format.php';
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
@@ -87,38 +87,69 @@ if (!is_callable('smarty_modifier_date_format')) require_once '/Applications/XAM
                       </div>
                     </div>
 
-                  <?php if ($_smarty_tpl->tpl_vars['event']->value['publicado'] === "No") {?>
+              <?php if ($_smarty_tpl->tpl_vars['event']->value['publicado'] === "No") {?>
 
-                    <div class="form-group">
-                      <label for="datepublication">Fecha publicación:</label>
-                      <div class="input-group">
-                        <div class="input-group-addon">
-                          <i class="fa fa-calendar"></i>
-                        </div>
-                        <input disabled type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication" value="<?php echo $_smarty_tpl->tpl_vars['event']->value['fechaPublicacion'];?>
-">
+                  <div class="form-group">
+                    <label for="datepublication">Fecha publicación:</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
                       </div>
+                      <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication" value="<?php echo $_smarty_tpl->tpl_vars['event']->value['fechaPublicacion'];?>
+">
                     </div>
+                  </div>
 
-                  <?php } else { ?>
+                  <div class="form-group checkbox">
+                    <label>
+                      <?php if ($_smarty_tpl->tpl_vars['event']->value['publicado'] == "Si") {?>
+                        <input id="publishnow" name="publishnow" type="checkbox" value="Si" checked > Publicar ahora mismo
+                      <?php } else { ?>
+                        <input id="publishnow" name="publishnow" type="checkbox" value="Si" > Publicar ahora mismo
+                      <?php }?>
 
-                    <div class="form-group checkbox">
-                      <label>
-                          <input id="publishnow" name="publishnow" type="checkbox" value="Si"checked disabled> Publicar ahora mismo
-                      </label>
-                    </div>
-
-                  <?php }?>
+                    </label>
+                  </div>
 
                   <div class="form-group checkbox">
                     <label>
                       <?php if ($_smarty_tpl->tpl_vars['event']->value['aprobado'] == "Si") {?>
-                        <input id="approved" name="approved" type="checkbox" value="Si" checked disabled> Aprobado
+                        <input id="approved" name="approved" type="checkbox" value="Si" checked> Aprobado
                       <?php } else { ?>
                         <input id="approved" name="approved" type="checkbox" value="Si"> Aprobado
                       <?php }?>
                     </label>
                   </div>
+
+                <?php } else { ?>
+
+                  <div class="form-group">
+                    <label for="datepublication">Fecha publicación:</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                      </div>
+                      <input disabled type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication" value="<?php echo $_smarty_tpl->tpl_vars['event']->value['fechaPublicacion'];?>
+">
+                    </div>
+                  </div>
+
+                  <div class="form-group checkbox">
+                    <label>
+                        <input id="publishnow" name="publishnow" type="checkbox" value="Si" checked disabled> Publicar ahora mismo
+                    </label>
+                  </div>
+
+                  <div class="form-group checkbox">
+                    <label>
+                        <input id="approved" name="approved" type="checkbox" value="Si" checked disabled> Aprobada
+                    </label>
+                  </div>
+
+                <?php }?>
+
+
+
 
 
                     </div>

@@ -26,6 +26,7 @@
     $ObjTipoReconocimiento=new TipoReconocimiento();
     $ObjTipoInstitucion=new TipoInstitucion();
     $ObjRevista=new Revista();
+    $ObjNotifications=new Notifications();
 
     @$seccion=$_GET["seccion"];
     @$urldata=$_GET["data"];
@@ -39,10 +40,10 @@
       "crear-noticia","noticias","modificar-noticia","receptores-noticia","respuestas-noticia",
       "crear-mensaje","mensajes","modificar-mensaje","receptores-mensaje",
       "crear-evento","eventos","modificar-evento","receptores-evento",
-      "crear-grupo","grupos","modificar-grupo",
+      "crear-grupo","grupos","modificar-grupo","importar-usuarios",
       "crear-reconocimiento","reconocimientos","modificar-reconocimiento",
-      "crear-revista","revistas","modificar-revista",
-      "perfil"
+      "crear-revista","revistas","modificar-revista","notificaciones",
+      "perfil","modificar-contrasena","modificar-nombre-usuario","modificar-correo"
       );
 
     //Variable usuario logeado
@@ -106,6 +107,25 @@
                 $smarty->display($userdata["permiso"]."/profile".MIN."html");
 
             break;
+
+            case "modificar-nombre-usuario":
+
+                $smarty->display($userdata["permiso"]."/update-user-name".MIN."html");
+
+            break;
+
+            case "modificar-correo":
+
+                $smarty->display($userdata["permiso"]."/update-email".MIN."html");
+
+            break;
+
+            case "modificar-contrasena":
+
+                $smarty->display($userdata["permiso"]."/update-password".MIN."html");
+
+            break;
+
 
             case "instituciones":
 
@@ -183,7 +203,6 @@
             break;
 
             case "modificar-usuario":
-
                 $data["idInstitucion"]=$userdata["idInstitucion"];
 
                 $guardians = $ObjUsers->get("guardian",$data);
@@ -249,7 +268,8 @@
 
             case "noticias":
 
-                $news = $ObjNews->get("all","");
+                $data["idInstitucion"]=$userdata["idInstitucion"];
+                $news = $ObjNews->get("institution",$data);
                 $smarty->assign("news",$news);
 
                 $smarty->display($userdata["permiso"]."/news".MIN."html");
@@ -300,7 +320,8 @@
 
             case "mensajes":
 
-                $messages = $ObjMessages->get("all","");
+                $data["idInstitucion"]=$userdata["idInstitucion"];
+                $messages = $ObjMessages->get("institution",$data);
                 $smarty->assign("messages",$messages);
 
                 $smarty->display($userdata["permiso"]."/messages".MIN."html");
@@ -313,16 +334,6 @@
                 $message = $ObjMessages->get("one",$data);
                 $smarty->assign("message",$message);
                 $smarty->display($userdata["permiso"]."/update-message".MIN."html");
-
-            break;
-
-            case "receptores-mensaje":
-
-                $data["idMensaje"]=$_POST["idMensaje"];
-                $sendersmessages = $ObjSendersMessages->get("message",$data);
-                $smarty->assign("sendersmessages",$sendersmessages);
-
-                $smarty->display($userdata["permiso"]."/senders-messages".MIN."html");
 
             break;
 
@@ -340,7 +351,8 @@
 
             case "eventos":
 
-                $events = $ObjEvents->get("all","");
+                $data["idInstitucion"]=$userdata["idInstitucion"];
+                $events = $ObjEvents->get("institution",$data);
                 $smarty->assign("events",$events);
 
                 $smarty->display($userdata["permiso"]."/events".MIN."html");
@@ -400,6 +412,11 @@
 
             break;
 
+            case "importar-usuarios":
+
+                $smarty->display($userdata["permiso"]."/import-users".MIN."html");
+
+            break;
 
             case "crear-revista":
 
@@ -428,6 +445,16 @@
 
             break;
 
+            case "notificaciones":
+
+                $data["idInstitucion"]=$userdata["idInstitucion"];
+
+                $notifications = $ObjNotifications->get("institution",$data);
+                $smarty->assign("notifications",$notifications);
+
+                $smarty->display($userdata["permiso"]."/notifications".MIN."html");
+
+            break;
             }
 
         }else{ header("Location:".BASE."autenticacion"); }

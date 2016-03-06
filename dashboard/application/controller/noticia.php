@@ -5,7 +5,9 @@
     $Ruta="../";
     IncluirArchivos($Ruta);
     $ObjNoticia=new Noticia();
+    $ObjNotificacion=new Notificacion();
     $ObjNoticiaReceptor=new NoticiaReceptor();
+    $ObjNotificacionReceptor=new NotificacionReceptor();
     $ObjUtilidad=new Utilidad();
     $ObjUsers=new Users();
     $resultado=false;
@@ -18,32 +20,51 @@
 
                 case "create":
 
-                    $data["idInstitucion"]=$_POST["institute"];
-                    $data["idEmisor"]=$idUsuario;
-                    $data["idPlantilla"]=$_POST["template"];
-                    $data["asunto"]=$_POST["subject"];
-                    $data["descripcion"]=$_POST["description"];
-                    $data["aprobada"]=( $_POST["approved"] ) ? "Si" : "No";
-                    $data["respuesta"]=( $_POST["answer"] ) ? "Si" : "No";
-                    $data["publicada"]=( $_POST["publishnow"] ) ? "Si" : "No";
-                    $data["fechaPublicacion"]=$_POST["datepublication"];
+                    $consecutivo=$ObjNoticia->getconsecutive();
+                    $identificador=chr(rand(ord("A"), ord("Z"))).rand(0,9).chr(rand(ord("A"), ord("Z"))).$consecutivo;
+
+                    $datanew["idInstitucion"]=$_POST["institute"];
+                    $datanew["idEmisor"]=$idUsuario;
+                    $datanew["consecutivo"]=$consecutivo;
+                    $datanew["idPlantilla"]=$_POST["template"];
+                    $datanew["asunto"]=$_POST["subject"];
+                    $datanew["descripcion"]=$_POST["description"];
+                    $datanew["aprobada"]=( $_POST["approved"] ) ? "Si" : "No";
+                    $datanew["respuesta"]=( $_POST["answer"] ) ? "Si" : "No";
+                    $datanew["publicada"]=( $_POST["publishnow"] ) ? "Si" : "No";
+                    $datanew["fechaPublicacion"]=$_POST["datepublication"];
 
                     if (empty($_POST["videoid"])) {
                       $ruta="../../_data/news/";
-                      $nombre="new-".rand(1000,20000);
+                      $nombre=$identificador;
                       $nombrefile="file-0";
                       $foto=$ObjUtilidad->GenerarArchivo($ruta, $nombre, $nombrefile);
-                      $data["media"]=$foto[1];
+                      $datanew["media"]=$foto[1];
                     }else{
-                      $data["media"]=$_POST["videoid"];
+                      $datanew["media"]=$_POST["videoid"];
                     }
 
-										$response=$ObjNoticia->create($data);
+                    $datanotification["idInstitucion"]=$_POST["institute"];
+                    $datanotification["idEmisor"]=$idUsuario;
+                    $datanotification["asunto"]="Noticia nueva";
+                    $datanotification["descripcion"]=$datanew["asunto"];
+                    $datanotification["enlaceApp"]="enlaceApp";
+                    $datanotification["enlaceDashboard"]="noticias";
+                    $datanotification["publicadaDashboard"]="Si";
+                    $datanotification["publicadaApp"]=($datanew["aprobada"]=="Si" && $datanew["publicada"]=="Si") ? "Si" : "No";
+
+                    $notification=$ObjNotificacion->create($datanotification);
+
+                    $datanew["idNotificacion"]=$notification[1];
+
+                    $new=$ObjNoticia->create($datanew);
+
+                    $data["idNoticia"]=$new[1];
+                    $data["idNotificacion"]=$notification[1];
 
                    //Receptores
                    if (!empty($_POST["sender"])) {
 
-                        $data["idNoticia"]=$response[1];
                         $sendersok=array();
 
                         foreach ($_POST["sender"] as $key => $sender) {
@@ -55,10 +76,15 @@
 
                               $data["idInstitucion"]=$senders[0];
                               $usersinstitution=$ObjUsers->get($senders[1],$data);
+
                               foreach ($usersinstitution as $user) {
                                 if (!in_array($user->idUsuario, $sendersok)) {
+
                                   $data["idReceptor"]=$user->idUsuario;
+
                                   $ObjNoticiaReceptor->create($data);
+                                  $ObjNotificacionReceptor->create($data);
+
                                   array_push($sendersok,$user->idUsuario);
                                 }
                               }
@@ -68,10 +94,15 @@
 
                               $data["idGrupo"]=$senders[0];
                               $usersgroup=$ObjUsers->get($senders[1],$data);
+
                               foreach ($usersgroup as $user) {
                                 if (!in_array($user->idUsuario, $sendersok)) {
+
                                   $data["idReceptor"]=$user->idUsuario;
+
                                   $ObjNoticiaReceptor->create($data);
+                                  $ObjNotificacionReceptor->create($data);
+
                                   array_push($sendersok,$user->idUsuario);
                                 }
                               }
@@ -81,7 +112,10 @@
 
                               if (!in_array($senders[0], $sendersok)) {
                                 $data["idReceptor"]=$senders[0];
+
                                 $ObjNoticiaReceptor->create($data);
+                                $ObjNotificacionReceptor->create($data);
+
                                 array_push($sendersok,$senders[0]);
                               }
 
@@ -90,32 +124,25 @@
 
                         }
                     }
-                    echo json_encode($response);
+                    echo json_encode($new);
 
                 break;
 
                 case 'update':
 
-                    $data["idNoticia"]=$_POST["new"];
-                    $data["asunto"]=$_POST["subject"];
-                    $data["descripcion"]=$_POST["description"];
-                    $data["aprobada"]=( $_POST["approved"] ) ? "Si" : "No";
-                    $data["respuesta"]=( $_POST["answer"] ) ? "Si" : "No";
-                    $data["publicada"]=( $_POST["publishnow"] ) ? "Si" : "No";
-                    $data["eliminada"]=( $_POST["deleted"] ) ? "Si" : "No";
-                    $data["fechaPublicacion"]=$_POST["datepublication"];
+                    $datanew["idNoticia"]=$_POST["new"];
+                    $datanew["asunto"]=$_POST["subject"];
+                    $datanew["descripcion"]=$_POST["description"];
+                    $datanew["aprobada"]=( $_POST["approved"] ) ? "Si" : "No";
+                    $datanew["respuesta"]=( $_POST["answer"] ) ? "Si" : "No";
+                    $datanew["publicada"]=( $_POST["publishnow"] ) ? "Si" : "No";
+                    $datanew["eliminada"]=( $_POST["deleted"] ) ? "Si" : "No";
+                    $datanew["fechaPublicacion"]=$_POST["datepublication"];
 
-                    if (empty($_POST["video"])) {
-                      $ruta="../../_data/news/";
-                      $nombre="new-".rand(1000,20000);
-                      $nombrefile="file-0";
-                      $foto=$ObjUtilidad->GenerarArchivo($ruta, $nombre, $nombrefile);
-                      $data["media"]=$foto[1];
-                    }else{
-                      $data["media"]=$_POST["video"];
-                    }
+                    $datanotification["publicadaApp"]=($datanew["aprobada"]=="Si" && $datanew["publicada"]=="Si") ? "Si" : "No";
+                    $ObjNotificacion->update($datanotification);
 
-                    $response=$ObjNoticia->update($data);
+                    $response=$ObjNoticia->update($datanew);
                     echo json_encode($response);
 
                 break;

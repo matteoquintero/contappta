@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-19 04:33:25
+/* Smarty version 3.1.29, created on 2016-03-03 06:22:19
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/senders-events.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c68d05cb36c5_20809200',
+  'unifunc' => 'content_56d7ca0b705774_18552145',
   'file_dependency' => 
   array (
     'a41b1cbe1d8e80776ad54f85ded095b5e1ee1734' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/senders-events.html',
-      1 => 1455671400,
+      1 => 1456531980,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c68d05cb36c5_20809200 ($_smarty_tpl) {
+function content_56d7ca0b705774_18552145 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -122,17 +122,8 @@ $_smarty_tpl->tpl_vars['senderevent'] = $__foreach_senderevent_0_saved_item;
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
- src="<?php echo fileversion('resources/js/vendor/jquery-slimscroll.js');?>
+ src="<?php echo fileversion('resources/js/profile/data.js');?>
 "><?php echo '</script'; ?>
->
-  <?php echo '<script'; ?>
->
-    $(function () {
-
-      $("#data").DataTable();
-
-    });
-  <?php echo '</script'; ?>
 >
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/botoom.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>

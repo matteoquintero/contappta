@@ -27,27 +27,35 @@
             <table id="data" class="table table-bordered table-striped">
               <thead>
                 <tr>
+                  <th>Emisor</th>
                   <th>Mensaje</th>
+                  <th>Receptor</th>
                   <th>Fecha registro</th>
+                  <th>Visto</th>
                   <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
                 {#foreach from=$messages item=message#}
                 <tr>
+                  <td>{#$message->nombreEmisor#}</td>
                   <td>{#$message->mensaje#}</td>
+                  <td>{#$message->nombreReceptor#}</td>
                   <td>{#$message->fechaRegistro#}</td>
+                  <td>{#$message->visto#}</td>
                   <td>
                     <button class="btn btn-primary btn-edit" data-message="{#$message->idMensaje#}">Editar</button>
-                    <button class="btn btn-primary btn-sender" data-message="{#$message->idMensaje#}">Ver receptores</button>
                   </td>
                 </tr>
                 {#/foreach#}
               </tbody>
               <tfoot>
                 <tr>
+                  <th>Emisor</th>
                   <th>Mensaje</th>
-                  <th>Fecha publicación</th>
+                  <th>Receptor</th>
+                  <th>Fecha registro</th>
+                  <th>Visto</th>
                   <th>Acciones</th>
                 </tr>
               </tfoot>
@@ -71,23 +79,8 @@
   <script src="{#'resources/js/vendor/jquery-datatables.js'|fileversion#}"></script>
   <script src="{#'resources/js/vendor/datatables-bootstrap.js'|fileversion#}"></script>
   <script src="{#'resources/js/vendor/jquery-slimscroll.js'|fileversion#}"></script>
-  <script>
-    $(function () {
-
-      $( ".btn-edit" ).click(function() {
-        $("#form-edit input").val( $(this).attr("data-message") );
-        $("#form-edit").submit();
-      });
-
-      $( ".btn-sender" ).click(function() {
-        $("#form-sender input").val( $(this).attr("data-message") );
-        $("#form-sender").submit();
-      });
-
-      $("#data").DataTable();
-
-    });
-  </script>
+  <script src="{#'resources/js/profile/messages.js'|fileversion#}"></script>
+  <script src="{#'resources/js/profile/data.js'|fileversion#}"></script>
   {#include file="master/general/botoom.html"|filetemplate#}
 
 

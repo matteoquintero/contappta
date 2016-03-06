@@ -5,7 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'onezone-datepicker','youtube-embed'])
+angular.module('starter', ['ionic','starter.controllers', 'starter.services', 'onezone-datepicker','youtube-embed'])
+
 
 .directive('fileModel', ['$parse', function ($parse) {
     return {
@@ -24,6 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 }])
 
 .run(function($ionicPlatform) {
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -48,121 +50,132 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     window.plugins.nativepagetransitions.globalOptions.fixedPixelsBottom = 0;
 
 
+    var push = new Ionic.Push({
+      "debug": true
+    });
+
+    push.register(function(token) {
+      console.log("Device token:",token.token);
+    });
+
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider, $sceDelegateProvider) {
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider, $sceDelegateProvider, $httpProvider) {
 
    $ionicConfigProvider.tabs.position('bottom');
    $ionicConfigProvider.views.maxCache(0);
    $ionicConfigProvider.backButton.text('').icon('ion-ios-arrow-left');
    $ionicConfigProvider.views.transition('none');
-   $sceDelegateProvider.resourceUrlWhitelist([
-      'self',
-      'https://www.youtube.com/**'
-    ]);
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
-  $stateProvider
+   $sceDelegateProvider.resourceUrlWhitelist(['self','https://www.youtube.com/**']);
 
-  // setup an abstract state for the tabs directive
+    $httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
-  .state('login', {
-      url: '/login',
-      templateUrl: 'templates/login.html',
-      controller: 'LoginCtrl'
-  })
 
-  .state('tab', {
-    url: '/tab',
-    abstract: true,
-    cache: false,
-    templateUrl: 'templates/tabs.html'
-  })
+    // Ionic uses AngularUI Router which uses the concept of states
+    // Learn more here: https://github.com/angular-ui/ui-router
+    // Set up the various states which the app can be in.
+    // Each state's controller can be found in controllers.js
+    $stateProvider
 
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-          cache: false,
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
+    // setup an abstract state for the tabs directive
 
-  // Each tab has its own nav history stack:
+    .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
+    })
 
-  .state('tab.calender', {
-    url: '/calender',
-    views: {
-      'tab-account': {
-          cache: false,
-        templateUrl: 'templates/date.html',
-        controller: 'DateCtrl'
-      }
-    }
-  })
+    .state('tab', {
+      url: '/tab',
+      abstract: true,
+      cache: false,
+      templateUrl: 'templates/tabs.html'
+    })
 
-  .state('tab.dash-detail', {
-    url: '/dash-detail/:noticeId',
-    views: {
-      'tab-dash': {
-          cache: false,
-        templateUrl: 'templates/dash-detail.html',
-        controller: 'DashDetailCtrl'
-      }
-    }
-  })
-
-  .state('tab.event-detail', {
-    url: '/event-detail/:dateevent',
-    views: {
-      'tab-account': {
-        cache: false,
-        templateUrl: 'templates/event-detail.html',
-        controller: 'EventDetailCtrl'
-      }
-    }
-  })
-
-  .state('tab.event-id', {
-    url: '/event-id/:idEvent',
-    views: {
-      'tab-account': {
-        cache: false,
-        templateUrl: 'templates/event-id.html',
-        controller: 'EventIdDetailCtrl'
-      }
-    }
-  })
-
-  .state('tab.dash-answer', {
-    url: '/answer/:noticeId',
-    views: {
-      'tab-dash': {
-          cache: false,
-        templateUrl: 'templates/dash-answer.html',
-        controller: 'DashDetailCtrl'
-      }
-    }
-  })
-
-  .state('tab.chats', {
-      url: '/chats',
+    .state('tab.dash', {
+      url: '/dash',
       views: {
-        'tab-chats': {
+        'tab-dash': {
             cache: false,
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+          templateUrl: 'templates/tab-dash.html',
+          controller: 'DashCtrl'
         }
       }
     })
 
+    // Each tab has its own nav history stack:
+
+    .state('tab.calender', {
+      url: '/calender',
+      views: {
+        'tab-account': {
+            cache: false,
+          templateUrl: 'templates/date.html',
+          controller: 'DateCtrl'
+        }
+      }
+    })
+
+    .state('tab.dash-detail', {
+      url: '/dash-detail/:noticeId',
+      views: {
+        'tab-dash': {
+            cache: false,
+          templateUrl: 'templates/dash-detail.html',
+          controller: 'DashDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.event-detail', {
+      url: '/event-detail/:dateevent',
+      views: {
+        'tab-account': {
+          cache: false,
+          templateUrl: 'templates/event-detail.html',
+          controller: 'EventDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.event-id', {
+      url: '/event-id/:idEvent',
+      views: {
+        'tab-account': {
+          cache: false,
+          templateUrl: 'templates/event-id.html',
+          controller: 'EventIdDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.dash-answer', {
+      url: '/answer/:noticeId',
+      views: {
+        'tab-dash': {
+            cache: false,
+          templateUrl: 'templates/dash-answer.html',
+          controller: 'DashDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.chats', {
+        url: '/chats',
+        views: {
+          'tab-chats': {
+              cache: false,
+            templateUrl: 'templates/tab-chats.html',
+            controller: 'ChatsCtrl'
+          }
+        }
+    })
+
     .state('tab.chat-detail', {
-      url: '/chat-detail/:chatId',
+      url: '/chat-detail/:chatId/:userId',
       views: {
         'tab-chats': {
             cache: false,
@@ -225,19 +238,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-          cache: false,
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+    .state('tab.account', {
+      url: '/account',
+      views: {
+        'tab-account': {
+            cache: false,
+          templateUrl: 'templates/tab-account.html',
+          controller: 'AccountCtrl'
+        }
       }
-    }
-  });
+    });
 
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
-
-
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/login');
 });

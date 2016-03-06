@@ -10,9 +10,11 @@ class DataObject_Pagina extends DB_DataObject
 
     public $__table = 'pagina';                          // table name
     public $id;                              // int(11)  not_null primary_key unsigned auto_increment
-    public $pagina;                          // int(11)  
+    public $idRevista;                       // int(11)  
+    public $numeroPagina;                    // int(11)  
+    public $pagina;                          // string(255)  
     public $media;                           // string(255)  
-    public $fechaRegistro;                   // timestamp(19)  unsigned binary
+    public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('DataObject_Pagina',$k,$v); }
@@ -21,7 +23,9 @@ class DataObject_Pagina extends DB_DataObject
     {
          return array(
              'id' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
-             'pagina' =>  DB_DATAOBJECT_INT,
+             'idRevista' =>  DB_DATAOBJECT_INT,
+             'numeroPagina' =>  DB_DATAOBJECT_INT,
+             'pagina' =>  DB_DATAOBJECT_STR,
              'media' =>  DB_DATAOBJECT_STR,
              'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
          );
@@ -40,6 +44,7 @@ class DataObject_Pagina extends DB_DataObject
     function defaults() // column default values 
     {
          return array(
+             'pagina' => '',
              'media' => '',
          );
     }

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-19 01:10:14
+/* Smarty version 3.1.29, created on 2016-02-27 02:45:45
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/users.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c65d66ac71a4_86702243',
+  'unifunc' => 'content_56d0ffc9d8c6f1_22009766',
   'file_dependency' => 
   array (
     'c608dad85a7290497b5a3f4576a43d922c940a21' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/users.html',
-      1 => 1455671400,
+      1 => 1456531923,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c65d66ac71a4_86702243 ($_smarty_tpl) {
+function content_56d0ffc9d8c6f1_22009766 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -147,23 +147,12 @@ acudientes-usuario" method="post" id="form-guardians">
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
+ src="<?php echo fileversion('resources/js/profile/users.js');?>
+"><?php echo '</script'; ?>
 >
-    $(function () {
-
-      $( ".btn-edit" ).click(function() {
-        $("#form-edit input").val( $(this).attr("data-user") );
-        $("#form-edit").submit();
-      });
-
-      $( ".btn-guardians" ).click(function() {
-        $("#form-guardians input").val( $(this).attr("data-user") );
-        $("#form-guardians").submit();
-      });
-
-      $("#data").DataTable();
-
-    });
-  <?php echo '</script'; ?>
+  <?php echo '<script'; ?>
+ src="<?php echo fileversion('resources/js/profile/data.js');?>
+"><?php echo '</script'; ?>
 >
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/botoom.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>

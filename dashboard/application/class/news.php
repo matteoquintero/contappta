@@ -11,18 +11,41 @@ class News
 
     switch ($modo) {
 
-      case 'all':
+      case 'institution':
 
         $dbdata = DB_DataObject::Factory('News');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("idNoticia,asunto,aprobada,fechaPublicacion,respuesta");
+        $dbdata->selectAdd("idNoticia,idNotificacion,asunto,aprobada,fechaPublicacion,respuesta");
+        $dbdata->whereAdd("idInstitucion = '".$data["idInstitucion"]."'");
         $dbdata->find();
         $contador=0;
         while( $dbdata->fetch() ){
           $ret[$contador]->idNoticia = $dbdata->idNoticia;
+          $ret[$contador]->idNotificacion = $dbdata->idNotificacion;
           $ret[$contador]->asunto = $dbdata->asunto;
           $ret[$contador]->aprobada = $dbdata->aprobada;
           $ret[$contador]->respuesta = $dbdata->respuesta;
+          $ret[$contador]->fechaPublicacion = $dbdata->fechaPublicacion;
+          $contador++;
+        }
+
+        $dbdata->free();
+        return $ret;
+
+      break;
+
+      case 'publication':
+
+        $dbdata = DB_DataObject::Factory('News');
+        $dbdata->selectAdd();
+        $dbdata->selectAdd("fechaPublicacion,idNoticia,idNotificacion");
+        $dbdata->whereAdd("publicada = 'No'");
+        $dbdata->whereAdd("aprobada = 'Si'");
+        $dbdata->find();
+        $contador=0;
+        while( $dbdata->fetch() ){
+          $ret[$contador]->idNoticia = $dbdata->idNoticia;
+          $ret[$contador]->idNotificacion = $dbdata->idNotificacion;
           $ret[$contador]->fechaPublicacion = $dbdata->fechaPublicacion;
           $contador++;
         }
@@ -38,6 +61,7 @@ class News
         $dbdata->selectAdd();
         $dbdata->selectAdd("idNoticia,asunto,aprobada,fechaPublicacion,respuesta,descripcion,foto,idPlantilla,media");
         $dbdata->whereAdd("aprobada='Si'");
+        $dbdata->whereAdd("publicada='Si'");
         if($data["mode"]=="news"){
           $dbdata->whereAdd("idNoticia IN(".$this->newsreciver($data["idReceptor"]).")");
         }else if($data["mode"]=="new"){

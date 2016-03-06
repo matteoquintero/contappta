@@ -10,6 +10,7 @@ class DataObject_Respuesta extends DB_DataObject
 
     public $__table = 'respuesta';                       // table name
     public $id;                              // int(11)  not_null primary_key unsigned auto_increment
+    public $idNoticia;                       // int(11)  
     public $idUsuario;                       // int(11)  
     public $respuesta;                       // blob(65535)  blob
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
@@ -21,6 +22,7 @@ class DataObject_Respuesta extends DB_DataObject
     {
          return array(
              'id' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+             'idNoticia' =>  DB_DATAOBJECT_INT,
              'idUsuario' =>  DB_DATAOBJECT_INT,
              'respuesta' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,

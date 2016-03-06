@@ -13,6 +13,7 @@ class DataObject_Noticia extends DB_DataObject
     public $idInstitucion;                   // int(11)  not_null
     public $idEmisor;                        // int(11)  not_null
     public $idPlantilla;                     // int(11)  not_null
+    public $idNotificacion;                  // int(11)  
     public $asunto;                          // string(100)  
     public $descripcion;                     // blob(65535)  blob
     public $media;                           // string(250)  
@@ -20,6 +21,7 @@ class DataObject_Noticia extends DB_DataObject
     public $aprobada;                        // string(2)  enum
     public $eliminada;                       // string(2)  enum
     public $respuesta;                       // string(2)  enum
+    public $consecutivo;                     // int(11)  
     public $fechaPublicacion;                // date(10)  binary
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
@@ -33,6 +35,7 @@ class DataObject_Noticia extends DB_DataObject
              'idInstitucion' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idEmisor' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idPlantilla' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+             'idNotificacion' =>  DB_DATAOBJECT_INT,
              'asunto' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'media' =>  DB_DATAOBJECT_STR,
@@ -40,6 +43,7 @@ class DataObject_Noticia extends DB_DataObject
              'aprobada' =>  DB_DATAOBJECT_STR,
              'eliminada' =>  DB_DATAOBJECT_STR,
              'respuesta' =>  DB_DATAOBJECT_STR,
+             'consecutivo' =>  DB_DATAOBJECT_INT,
              'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
              'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
          );

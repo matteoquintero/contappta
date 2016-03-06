@@ -21,6 +21,21 @@ class Rol
 
 
   }
+
+  public function getid($rol){
+
+    $dbdata = DB_DataObject::Factory('Rol');
+    $dbdata->selectAdd("id");
+    $dbdata->whereAdd("rol='$rol'");
+    $dbdata->find();
+    if( $dbdata->fetch() ){
+        $idRol = $dbdata->id;
+    }
+    $dbdata->free();
+    return $idRol;
+
+
+  }
 }
 
 ?>

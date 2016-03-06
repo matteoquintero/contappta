@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-19 01:38:24
+/* Smarty version 3.1.29, created on 2016-03-03 01:01:51
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-event.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c664007fd498_11509442',
+  'unifunc' => 'content_56d77eefccd8c2_16186197',
   'file_dependency' => 
   array (
     'b67cc570e3ee794d1b9e3c6634ac2e4ee51bd63b' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-event.html',
-      1 => 1455238905,
+      1 => 1456533696,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c664007fd498_11509442 ($_smarty_tpl) {
+function content_56d77eefccd8c2_16186197 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -129,16 +129,6 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_1_saved_item;
                     </div>
                     <div class="col-md-6">
 
-                      <div class="form-group">
-                        <label for="datepublication">Fecha publicación:</label>
-                        <div class="input-group">
-                          <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                          </div>
-                          <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication">
-                        </div>
-                      </div>
-
                     <div class="form-group">
                       <label>Fecha evento:</label>
                       <div class="input-group">
@@ -147,6 +137,28 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_1_saved_item;
                         </div>
                         <input type="text" class="form-control pull-right" id="dateevent" name="dateevent">
                       </div>
+                    </div>
+
+                      <div class="form-group">
+                        <label for="datepublication">Fecha publicación:</label>
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </div>
+                          <input type="text" class="form-control event-publish" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication">
+                        </div>
+                      </div>
+
+                      <div class="form-group checkbox">
+                        <label>
+                            <input class="event-publish" id="publishnow" name="publishnow" type="checkbox" value="Si"> Publicar ahora mismo
+                        </label>
+                      </div>
+
+                    <div class="checkbox">
+                      <label>
+                        <input id="approved" name="approved" type="checkbox" value="Si"> Aprobado
+                      </label>
                     </div>
 
                     </div>
@@ -183,6 +195,10 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_1_saved_item;
 >
   <?php echo '<script'; ?>
  src="<?php echo fileversion('resources/js/vendor/jquery-inputmask-extensions.js');?>
+"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="<?php echo fileversion('resources/js/vendor/moment-with-locales.js');?>
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>

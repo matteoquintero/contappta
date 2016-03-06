@@ -1,4 +1,11 @@
 {
   "name": "Contappta",
-  "app_id": "39f776c9"
+  "app_id": "8ca62c80",
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.5"
+    }
+  ]
 }

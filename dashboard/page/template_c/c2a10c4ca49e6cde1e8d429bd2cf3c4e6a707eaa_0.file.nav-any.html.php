@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-14 01:58:20
+/* Smarty version 3.1.29, created on 2016-03-03 01:01:44
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-any.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56bfd12c7bd7d5_77622956',
+  'unifunc' => 'content_56d77ee8e2b917_87002126',
   'file_dependency' => 
   array (
     'c2a10c4ca49e6cde1e8d429bd2cf3c4e6a707eaa' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-any.html',
-      1 => 1455411034,
+      1 => 1456887628,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56bfd12c7bd7d5_77622956 ($_smarty_tpl) {
+function content_56d77ee8e2b917_87002126 ($_smarty_tpl) {
 ?>
 
           <ul class="sidebar-menu">
@@ -59,7 +59,8 @@ mensajes"><i class="fa fa-table"></i> Ver menasajes</a></li>
             </li>
 
             <li>
-              <a href="#">
+              <a href="<?php echo @constant('BASE');?>
+notificaciones">
                 <i class="fa fa-envelope"></i> <span>Notificaciones</span>
                 <!--small class="label pull-right bg-yellow">12</small-->
               </a>

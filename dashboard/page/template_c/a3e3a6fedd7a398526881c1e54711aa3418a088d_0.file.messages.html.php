@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-05 07:10:06
+/* Smarty version 3.1.29, created on 2016-02-22 02:56:43
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/messages.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56b43cbe7b57a4_37917760',
+  'unifunc' => 'content_56ca6adb4d05e4_23865013',
   'file_dependency' => 
   array (
     'a3e3a6fedd7a398526881c1e54711aa3418a088d' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/messages.html',
-      1 => 1454571352,
+      1 => 1455940195,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56b43cbe7b57a4_37917760 ($_smarty_tpl) {
+function content_56ca6adb4d05e4_23865013 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -55,7 +55,7 @@ function content_56b43cbe7b57a4_37917760 ($_smarty_tpl) {
             <table id="data" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>Asunto</th>
+                  <th>Mensaje</th>
                   <th>Fecha registro</th>
                   <th>Acciones</th>
                 </tr>
@@ -74,7 +74,7 @@ $_smarty_tpl->tpl_vars['message']->_loop = true;
 $__foreach_message_0_saved_local_item = $_smarty_tpl->tpl_vars['message'];
 ?>
                 <tr>
-                  <td><?php echo $_smarty_tpl->tpl_vars['message']->value->asunto;?>
+                  <td><?php echo $_smarty_tpl->tpl_vars['message']->value->mensaje;?>
 </td>
                   <td><?php echo $_smarty_tpl->tpl_vars['message']->value->fechaRegistro;?>
 </td>
@@ -95,7 +95,7 @@ $_smarty_tpl->tpl_vars['message'] = $__foreach_message_0_saved_item;
               </tbody>
               <tfoot>
                 <tr>
-                  <th>Asunto</th>
+                  <th>Mensaje</th>
                   <th>Fecha publicación</th>
                   <th>Acciones</th>
                 </tr>

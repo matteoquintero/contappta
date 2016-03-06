@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-19 05:33:04
+/* Smarty version 3.1.29, created on 2016-03-03 05:22:42
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-magazine.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c69b004f0ac6_88058333',
+  'unifunc' => 'content_56d7bc1229c204_37273030',
   'file_dependency' => 
   array (
     'b0d30af5cb427df06fea9240d9fb5997d7fb52e3' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-magazine.html',
-      1 => 1455671400,
+      1 => 1456978960,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c69b004f0ac6_88058333 ($_smarty_tpl) {
+function content_56d7bc1229c204_37273030 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -52,8 +52,9 @@ function content_56c69b004f0ac6_88058333 ($_smarty_tpl) {
           <!-- form start -->
           <form role="form" autocomplete="off" id="form-magazines" data-action="create">
             <div class="box-body">
+
               <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-6">
 
                     <div class="form-group">
                       <label for="namemagazine">Revista</label>
@@ -61,13 +62,28 @@ function content_56c69b004f0ac6_88058333 ($_smarty_tpl) {
                     </div>
 
                     <div class="form-group">
-                      <label for="description">Descripción</label>
-                      <textarea type="text" class="form-control" name="description" id="description" placeholder="Digite la descripción"></textarea>
+                      <label for="numberPages">Numero de paginas</label>
+                      <input type="text" class="form-control" name="numberPages" id="numberPages" placeholder="Digite el numero de paginas">
                     </div>
 
                   </div>
 
+                  <div class="col-md-6">
+
+                    <div class="form-group">
+                      <label for="description">Descripción</label>
+                      <textarea type="text" class="form-control" name="description" id="description" placeholder="Digite la descripción"></textarea>
+                    </div>
+
+                   <div class="form-group">
+                      <label for="pages">Paginas</label>
+                      <input type="file" name="pages" id="pages" multiple>
+                      <p class="help-block">El nombre de las imagenes deben estar en relación con el numero de la pagina, ejemplo:<br> portada = 1.jpg <br> pagina 2 = 2.png</p>
+                    </div>
+
+                  </div>
               </div>
+
             </div><!-- /.box-body -->
             <input type="hidden" name="institute" id="institute" value="<?php echo $_smarty_tpl->tpl_vars['userdata']->value['idInstitucion'];?>
 ">

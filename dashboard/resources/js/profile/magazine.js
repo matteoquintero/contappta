@@ -1,5 +1,6 @@
-function honor(){
+function magazine(){
 	var form = $('#form-magazines');
+  var inputfile = $('#pages');
 
 	showerrors(form);
 	form.validate({
@@ -26,7 +27,7 @@ function honor(){
 	if (form.valid()) {
 
     var action=form.attr("data-action");
-    var finale=sendformajax(action,"revista",form);
+    var finale=sendformfileajax(action,"revista",form,inputfile);
 		switch (finale[0]){
 				case true: redirectpage("revistas"); break;
 				case false:
@@ -47,5 +48,5 @@ function honor(){
 
 
 $(document).ready(function() {
-  $( "form button" ).click(function() { honor() });
+  $( "form button" ).click(function() { magazine() });
 });

@@ -12,6 +12,7 @@ class DataObject_EventoXReceptor extends DB_DataObject
     public $idEvento;                        // int(11)  
     public $idReceptor;                      // int(11)  
     public $vista;                           // string(2)  enum
+    public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('DataObject_EventoXReceptor',$k,$v); }
@@ -22,6 +23,7 @@ class DataObject_EventoXReceptor extends DB_DataObject
              'idEvento' =>  DB_DATAOBJECT_INT,
              'idReceptor' =>  DB_DATAOBJECT_INT,
              'vista' =>  DB_DATAOBJECT_STR,
+             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
          );
     }
 

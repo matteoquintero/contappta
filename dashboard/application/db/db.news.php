@@ -10,6 +10,7 @@ class DataObject_News extends DB_DataObject
 
     public $__table = 'news';                            // table name
     public $idNoticia;                       // int(11)  not_null unsigned
+    public $idNotificacion;                  // int(11)  
     public $asunto;                          // string(100)  
     public $descripcion;                     // blob(65535)  blob
     public $media;                           // string(250)  
@@ -39,6 +40,7 @@ class DataObject_News extends DB_DataObject
     {
          return array(
              'idNoticia' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+             'idNotificacion' =>  DB_DATAOBJECT_INT,
              'asunto' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'media' =>  DB_DATAOBJECT_STR,

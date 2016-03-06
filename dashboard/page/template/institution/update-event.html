@@ -54,37 +54,67 @@
                       </div>
                     </div>
 
-                  {#if $event.publicado==="No"#}
+              {#if $event.publicado==="No"#}
 
-                    <div class="form-group">
-                      <label for="datepublication">Fecha publicación:</label>
-                      <div class="input-group">
-                        <div class="input-group-addon">
-                          <i class="fa fa-calendar"></i>
-                        </div>
-                        <input disabled type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication" value="{#$event.fechaPublicacion#}">
+                  <div class="form-group">
+                    <label for="datepublication">Fecha publicación:</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
                       </div>
+                      <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication" value="{#$event.fechaPublicacion#}">
                     </div>
+                  </div>
 
-                  {#else#}
+                  <div class="form-group checkbox">
+                    <label>
+                      {#if $event.publicado=="Si"#}
+                        <input id="publishnow" name="publishnow" type="checkbox" value="Si" checked > Publicar ahora mismo
+                      {#else#}
+                        <input id="publishnow" name="publishnow" type="checkbox" value="Si" > Publicar ahora mismo
+                      {#/if#}
 
-                    <div class="form-group checkbox">
-                      <label>
-                          <input id="publishnow" name="publishnow" type="checkbox" value="Si"checked disabled> Publicar ahora mismo
-                      </label>
-                    </div>
-
-                  {#/if#}
+                    </label>
+                  </div>
 
                   <div class="form-group checkbox">
                     <label>
                       {#if $event.aprobado=="Si"#}
-                        <input id="approved" name="approved" type="checkbox" value="Si" checked disabled> Aprobado
+                        <input id="approved" name="approved" type="checkbox" value="Si" checked> Aprobado
                       {#else#}
                         <input id="approved" name="approved" type="checkbox" value="Si"> Aprobado
                       {#/if#}
                     </label>
                   </div>
+
+                {#else#}
+
+                  <div class="form-group">
+                    <label for="datepublication">Fecha publicación:</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                      </div>
+                      <input disabled type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" placeholder="Digite la fecha" data-mask name="datepublication" id="datepublication" value="{#$event.fechaPublicacion#}">
+                    </div>
+                  </div>
+
+                  <div class="form-group checkbox">
+                    <label>
+                        <input id="publishnow" name="publishnow" type="checkbox" value="Si" checked disabled> Publicar ahora mismo
+                    </label>
+                  </div>
+
+                  <div class="form-group checkbox">
+                    <label>
+                        <input id="approved" name="approved" type="checkbox" value="Si" checked disabled> Aprobada
+                    </label>
+                  </div>
+
+                {#/if#}
+
+
+
 
 
                     </div>

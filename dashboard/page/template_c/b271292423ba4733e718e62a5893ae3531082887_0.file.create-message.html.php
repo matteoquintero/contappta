@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-16 06:25:08
+/* Smarty version 3.1.29, created on 2016-02-21 23:21:03
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-message.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c2b2b44942c9_74953312',
+  'unifunc' => 'content_56ca384f8c4704_09973162',
   'file_dependency' => 
   array (
     'b271292423ba4733e718e62a5893ae3531082887' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-message.html',
-      1 => 1455599662,
+      1 => 1455671400,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c2b2b44942c9_74953312 ($_smarty_tpl) {
+function content_56ca384f8c4704_09973162 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>

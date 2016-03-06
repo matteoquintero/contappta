@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-19 01:56:10
+/* Smarty version 3.1.29, created on 2016-02-27 01:41:40
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-event.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c6682a1396c1_18428717',
+  'unifunc' => 'content_56d0f0c477d384_09413031',
   'file_dependency' => 
   array (
     'f3686d98bcd2b3b5b9a7ab25e8358fcf6661e225' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-event.html',
-      1 => 1455843366,
+      1 => 1456533696,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c6682a1396c1_18428717 ($_smarty_tpl) {
+function content_56d0f0c477d384_09413031 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -195,6 +195,10 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_1_saved_item;
 >
   <?php echo '<script'; ?>
  src="<?php echo fileversion('resources/js/vendor/jquery-inputmask-extensions.js');?>
+"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="<?php echo fileversion('resources/js/vendor/moment-with-locales.js');?>
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-03 06:37:53
+/* Smarty version 3.1.29, created on 2016-02-27 07:19:05
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/answers-news.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56b19231a67323_94268885',
+  'unifunc' => 'content_56d13fd9118ad9_10920902',
   'file_dependency' => 
   array (
     '050917bcc4527a581779db556c717bc14838d70b' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/answers-news.html',
-      1 => 1454389736,
+      1 => 1456532630,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56b19231a67323_94268885 ($_smarty_tpl) {
+function content_56d13fd9118ad9_10920902 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -126,13 +126,8 @@ $_smarty_tpl->tpl_vars['answernew'] = $__foreach_answernew_0_saved_item;
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
->
-    $(function () {
-
-      $("#data").DataTable();
-
-    });
-  <?php echo '</script'; ?>
+ src="<?php echo fileversion('resources/js/profile/data.js');?>
+"><?php echo '</script'; ?>
 >
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/botoom.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>

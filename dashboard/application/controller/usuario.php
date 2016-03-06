@@ -104,6 +104,19 @@
 
                 break;
 
+
+                case "update-private":
+
+                    $data["idUsuario"]=$idUsuario;
+                    $data["contrasena"]=$ObjCifrado->encryptpassword($_POST['password']);
+                    $data["usuario"]=$_POST['username'];
+                    $data["correo"]=$_POST['email'];
+                    $response=$ObjUsuario->updateprivate($data);
+
+                    echo json_encode($response);
+
+                break;
+
                 case "email":
 
                     $email=$_POST["correo"];
@@ -117,6 +130,23 @@
                     $user=$_POST["usuario"];
                     $response=$ObjUsers->existsuser($user);
                     echo json_encode($response);
+
+                break;
+
+                case "username":
+
+                    $data["idUsuario"]=$idUsuario;
+                    $response=$ObjUsers->get("one",$data);
+                    echo json_encode($response["usuario"]);
+
+                break;
+
+                case "oldpassword":
+
+                    $password=$ObjCifrado->encryptpassword($_POST["password"]);
+                    $response=$ObjUsers->oldpassword($idUsuario,$password);
+                    echo json_encode($response);
+
                 break;
 
                 case "useractive":

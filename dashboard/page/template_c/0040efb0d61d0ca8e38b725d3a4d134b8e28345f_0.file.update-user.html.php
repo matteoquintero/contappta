@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-20 00:53:11
+/* Smarty version 3.1.29, created on 2016-02-27 01:04:57
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-user.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c7aae715ff18_39084541',
+  'unifunc' => 'content_56d0e829d73260_76699376',
   'file_dependency' => 
   array (
     '0040efb0d61d0ca8e38b725d3a4d134b8e28345f' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-user.html',
-      1 => 1455671400,
+      1 => 1456531486,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c7aae715ff18_39084541 ($_smarty_tpl) {
+function content_56d0e829d73260_76699376 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -133,10 +133,17 @@ foreach ($_from as $_smarty_tpl->tpl_vars['guardian']->value) {
 $_smarty_tpl->tpl_vars['guardian']->_loop = true;
 $__foreach_guardian_1_saved_local_item = $_smarty_tpl->tpl_vars['guardian'];
 ?>
+                      <?php if (in_array($_smarty_tpl->tpl_vars['guardian']->value->idUsuario,$_smarty_tpl->tpl_vars['user']->value['acudientes'])) {?>
+                        <option selected value="<?php echo $_smarty_tpl->tpl_vars['guardian']->value->idUsuario;?>
+"><?php echo $_smarty_tpl->tpl_vars['guardian']->value->nombre;?>
+ <?php echo $_smarty_tpl->tpl_vars['guardian']->value->apellido;?>
+</option>
+                      <?php } else { ?>
                         <option value="<?php echo $_smarty_tpl->tpl_vars['guardian']->value->idUsuario;?>
 "><?php echo $_smarty_tpl->tpl_vars['guardian']->value->nombre;?>
  <?php echo $_smarty_tpl->tpl_vars['guardian']->value->apellido;?>
 </option>
+                      <?php }?>
                       <?php
 $_smarty_tpl->tpl_vars['guardian'] = $__foreach_guardian_1_saved_local_item;
 }
@@ -198,9 +205,15 @@ foreach ($_from as $_smarty_tpl->tpl_vars['honor']->value) {
 $_smarty_tpl->tpl_vars['honor']->_loop = true;
 $__foreach_honor_3_saved_local_item = $_smarty_tpl->tpl_vars['honor'];
 ?>
+                      <?php if (in_array($_smarty_tpl->tpl_vars['honor']->value->idReconocimiento,$_smarty_tpl->tpl_vars['user']->value['reconocimientos'])) {?>
+                        <option selected value="<?php echo $_smarty_tpl->tpl_vars['honor']->value->idReconocimiento;?>
+"><?php echo $_smarty_tpl->tpl_vars['honor']->value->reconocimiento;?>
+</option>
+                      <?php } else { ?>
                         <option value="<?php echo $_smarty_tpl->tpl_vars['honor']->value->idReconocimiento;?>
 "><?php echo $_smarty_tpl->tpl_vars['honor']->value->reconocimiento;?>
 </option>
+                      <?php }?>
                       <?php
 $_smarty_tpl->tpl_vars['honor'] = $__foreach_honor_3_saved_local_item;
 }

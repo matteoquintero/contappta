@@ -45,6 +45,32 @@ class Usuario extends Users
 
 	}
 
+
+  public function updateprivate($data){
+
+    $dbdata = DB_DataObject::Factory('Usuario');
+    $dbdata->contrasena=$data["contrasena"];
+    $dbdata->correo=$data["correo"];
+    $dbdata->usuario=$data["usuario"];
+
+    $dbdata->whereAdd("id = '".$data["idUsuario"]."'");
+
+    $dbdata->find();
+
+    if ($dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY)) {
+      $resultado[0] = true;
+    } else {
+      $resultado[0] = false;
+    }
+    $resultado[1] = $data["idUsuario"];
+
+    $dbdata->free();
+
+    return $resultado;
+
+  }
+
+
 	public function update($data){
 
     $dbdata = DB_DataObject::Factory('Usuario');

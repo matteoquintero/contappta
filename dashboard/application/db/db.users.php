@@ -20,6 +20,8 @@ class DataObject_Users extends DB_DataObject
     public $contrasena;                      // string(250)  
     public $permiso;                         // string(11)  enum
     public $idRol;                           // int(11)  not_null
+    public $reconocimientos;                 // blob(1024)  blob
+    public $acudientes;                      // blob(1024)  blob
     public $rol;                             // string(100)  
     public $idInstitucion;                   // int(11)  not_null
     public $tipoInstitucion;                 // string(150)  
@@ -46,6 +48,8 @@ class DataObject_Users extends DB_DataObject
              'contrasena' =>  DB_DATAOBJECT_STR,
              'permiso' =>  DB_DATAOBJECT_STR,
              'idRol' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+             'reconocimientos' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
+             'acudientes' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'rol' =>  DB_DATAOBJECT_STR,
              'idInstitucion' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'tipoInstitucion' =>  DB_DATAOBJECT_STR,
@@ -80,6 +84,8 @@ class DataObject_Users extends DB_DataObject
              'foto' => '',
              'contrasena' => '',
              'permiso' => 'any',
+             'reconocimientos' => '',
+             'acudientes' => '',
              'rol' => '',
              'tipoInstitucion' => '',
              'institucion' => '',

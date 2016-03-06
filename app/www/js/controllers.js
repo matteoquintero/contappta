@@ -1,15 +1,10 @@
 angular.module('starter.controllers', [])
 
-.filter('trusted', ['$sce', function ($sce) {
-    return function(url) {
-        return $sce.trustAsResourceUrl(url);
-    };
-}])
-
 .controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
     $scope.data = {};
-
+    window.localStorage.clear();
     $scope.login = function() {
+        window.localStorage.clear();
         LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
             $state.go('tab.dash');
         }).error(function(data) {
@@ -19,6 +14,138 @@ angular.module('starter.controllers', [])
             });
         });
     };
+
+})
+
+.controller('EventDetailCtrl', function($scope, $stateParams, events) {
+
+  $scope.fechaevento=$stateParams.dateevent;
+  events.date($stateParams.dateevent).then(function(response) { $scope.events=response;});
+
+})
+
+.controller('EventIdDetailCtrl', function($scope, $stateParams, events) {
+
+  events.eventId($stateParams.idEvent).then(function(response) { $scope.events=response; });
+
+})
+
+.controller('DashCtrl', function($scope, news) {
+
+  news.all().then(function(response) { $scope.notices=response; });
+
+  var user = JSON.parse(window.localStorage['user'] || '{}');
+  $scope.user=user;
+
+})
+
+.controller('DashDetailCtrl', function($scope, $stateParams,$state, news,respuesta) {
+
+  var user = JSON.parse(window.localStorage['user'] || '{}');
+
+  news.get($stateParams.noticeId).then(function(response) { $scope.notice=response; });
+
+  $scope.sendMessage =  function(sendMessageForm){
+      var datanew={
+        response:$scope.input.message,
+        user:user["idUsuario"],
+        nevv:$stateParams.noticeId
+      };
+      respuesta.create(datanew).then(function(response) { $state.go("tab.dash"); });
+  };
+
+  var datanew={
+    user:user["idUsuario"],
+    nevv:$stateParams.noticeId,
+  };
+
+  news.view(datanew).then();
+
+})
+
+.controller('ChatsCtrl', function($scope, chats,$ionicPopup, $timeout,mensaje,$state) {
+
+  chats.all().then(function(response) { $scope.chats=response; });
+
+  $scope.remove = function(chat) {
+
+   var confirmPopup = $ionicPopup.confirm({
+     title: 'Confirmar',
+     template: 'Esta seguro que desea eliminar este contenido'
+   });
+
+   confirmPopup.then(function(res) {
+     if(res) {
+
+      var datamessage={
+        conversation:chat.idConversacion,
+      };
+
+      mensaje.kill(datamessage).then(function(response) { $state.go("tab.dash"); });
+
+      //chats.remove(chat);
+
+     }
+   });
+
+  };
+})
+
+.controller('ChatDetailCtrl', function($scope, $stateParams, $state,chats, users,mensaje) {
+
+  var user = JSON.parse(window.localStorage['user'] || '{}');
+
+  chats.get($stateParams.chatId).then(function(response) { $scope.messages=response; });
+  users.get($stateParams.userId).then(function(response) { $scope.user=response; });
+
+  $scope.sendMessage =  function(sendMessageForm){
+      var datamessage={
+        message:$scope.input.message,
+        transmitter:user["idUsuario"],
+        reciver:$stateParams.userId,
+        conversation:$stateParams.chatId,
+        institution:user["idInstitucion"]
+      };
+      mensaje.create(datamessage).then(function(response) { $state.go("tab.chats"); });
+  };
+
+  var datamessage={
+    reciver:user["idUsuario"],
+    conversation:$stateParams.chatId,
+  };
+
+  mensaje.view(datamessage).then();
+
+})
+
+.controller('Son', function($scope, $stateParams, users, honors) {
+
+  users.get($stateParams.user).then(function(response) { $scope.user=response;});
+  honors.get($stateParams.user).then(function(response) { $scope.honors=response;});
+
+})
+
+.controller('Institute', function($scope,institutions) {
+  var user = JSON.parse(window.localStorage['user'] || '{}');
+  institutions.get(user["idInstitucion"]).then(function(response) { $scope.institution=response; });
+
+})
+
+.controller('DataCtrl', function($scope,institutions) {
+
+  var user = JSON.parse(window.localStorage['user'] || '{}');
+  $scope.user=user;
+  institutions.get(user["idInstitucion"]).then(function(response) { $scope.institution=response; });
+
+})
+
+.controller('AccountCtrl', function($scope,sons,institutions) {
+
+  sons.all().then(function(response) { $scope.sons=response; });
+
+  var user = JSON.parse(window.localStorage['user'] || '{}');
+  $scope.user=user;
+  institutions.get(user["idInstitucion"]).then(function(response) { $scope.institution=response; });
 
 })
 
@@ -47,6 +174,7 @@ angular.module('starter.controllers', [])
       highlights.push({date: new Date(parseInt(fecha[0]), (parseInt(fecha[1])-1), parseInt(fecha[2]))})
     }
   });
+  console.log("asdasd");
 
   $scope.onezoneDatepicker = {
       date: date, // MANDATORY
@@ -76,97 +204,14 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('EventDetailCtrl', function($scope, $stateParams, events) {
+.controller('MagazineCtrl', ['$scope', '$ionicModal', '$ionicSlideBoxDelegate','magazines', function($scope, $ionicModal, $ionicSlideBoxDelegate, magazines) {
 
-  $scope.fechaevento=$stateParams.dateevent;
-  events.date($stateParams.dateevent).then(function(response) { $scope.events=response;});
+  magazines.all().then(function(response) { $scope.magazines=response; });
 
-})
 
-.controller('EventIdDetailCtrl', function($scope, $stateParams, events) {
-
-  events.eventId($stateParams.idEvent).then(function(response) { $scope.events=response; });
-
-})
-
-.controller('DashCtrl', function($scope, news) {
-
-  news.all().then(function(response) { $scope.notices=response; });
-
-  var user = JSON.parse(window.localStorage['user'] || '{}');
-  $scope.user=user;
-
-})
-
-.controller('DashDetailCtrl', function($scope, $stateParams, news) {
-
-  news.get($stateParams.noticeId).then(function(response) {  $scope.notice=response; });
-
-})
-
-.controller('ChatsCtrl', function($scope, chats,$ionicPopup, $timeout) {
-
-  chats.all().then(function(response) { $scope.chats=response; });
-
-  $scope.remove = function(chat) {
-
-   var confirmPopup = $ionicPopup.confirm({
-     title: 'Confirmar',
-     template: 'Esta seguro que desea eliminar este contenido'
-   });
-
-   confirmPopup.then(function(res) {
-     if(res) {
-      chats.remove(chat);
-
-       console.log('You are sure');
-     } else {
-       console.log('You are not sure');
-     }
-   });
-
-  };
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, chats, users) {
-
-  chats.get($stateParams.chatId).then(function(response) { $scope.messages=response; });
-  users.get($stateParams.chatId).then(function(response) { $scope.user=response; });
-
-})
-
-.controller('Son', function($scope, $stateParams, users, honors) {
-
-  users.get($stateParams.user).then(function(response) { $scope.user=response;});
-  honors.get($stateParams.user).then(function(response) { $scope.honors=response;});
-
-})
-
-.controller('MagazineCtrl', ['$scope', '$ionicModal', '$ionicSlideBoxDelegate', function ($scope, $ionicModal, $ionicSlideBoxDelegate) {
-
-  $scope.data = {
-    allowScroll : false
-  }
-
-    $scope.aImages = [{
-        'src' : 'data/magazine/file-page1.jpg',
-        'msg' : 'Delizar a la izquierda - Tap para salir'
-      }, {
-        'src' : 'data/magazine/file-page2.jpg',
-        'msg' : ''
-      }, {
-        'src' : 'data/magazine/file-page3.jpg',
-        'msg' : ''
-      }, {
-        'src' : 'data/magazine/file-page4.jpg',
-        'msg' : ''
-      }, {
-        'src' : 'data/magazine/file-page5.jpg',
-        'msg' : ''
-      }, {
-        'src' : 'data/magazine/file-page6.jpg',
-        'msg' : ''
-    }];
+    $scope.data = {
+      allowScroll : false
+    }
 
     $ionicModal.fromTemplateUrl('image-modal.html', {
       scope: $scope,
@@ -175,32 +220,41 @@ angular.module('starter.controllers', [])
       $scope.modal = modal;
     });
 
-    $scope.openModal = function() {
-      $ionicSlideBoxDelegate.slide(0);
-      $scope.modal.show();
+    $scope.openModal = function(id) {
+
+      magazines.pages(id).then(function(response) {
+
+        var pages=Array();
+        for (var i = 0; i < response.length; i++) {
+
+          pages.push({
+            'src' : response[i].pagina,
+          });
+        }
+
+        $scope.aImages=pages;
+
+        $ionicSlideBoxDelegate.slide(0);
+        $scope.modal.show();
+
+      });
+
     };
 
     $scope.closeModal = function() {
       $scope.modal.hide();
     };
 
-    // Cleanup the modal when we're done with it!
     $scope.$on('$destroy', function() {
       $scope.modal.remove();
     });
-    // Execute action on hide modal
     $scope.$on('modal.hide', function() {
-      // Execute action
     });
-    // Execute action on remove modal
     $scope.$on('modal.removed', function() {
-      // Execute action
     });
     $scope.$on('modal.shown', function() {
-      console.log('Modal is shown!');
     });
 
-    // Call this functions if you need to manually control the slides
     $scope.next = function() {
       $ionicSlideBoxDelegate.next();
     };
@@ -213,51 +267,10 @@ angular.module('starter.controllers', [])
       $scope.modal.show();
       $ionicSlideBoxDelegate.slide(index);
     }
-
-    // Called each time the slide changes
     $scope.slideChanged = function(index) {
       $scope.slideIndex = index;
     };
   }
 ])
 
-
-.controller('myCtrl', ['$scope', 'fileUpload', function($scope, fileUpload){
-
-    $scope.uploadFile = function(){
-        var file = $scope.myFile;
-        console.log('file is ' );
-        console.dir(file);
-        var uploadUrl = "_data";
-        fileUpload.uploadFileToUrl(file, uploadUrl);
-    };
-
-}])
-
-.controller('Institute', function($scope) {
-
-  var institution = JSON.parse(window.localStorage['institution'] || '{}');
-  $scope.institution=institution;
-
-})
-
-.controller('DataCtrl', function($scope) {
-
-  var user = JSON.parse(window.localStorage['user'] || '{}');
-  var institution = JSON.parse(window.localStorage['institution'] || '{}');
-  $scope.user=user;
-  $scope.institution=institution;
-
-})
-
-.controller('AccountCtrl', function($scope,sons) {
-
-  sons.all().then(function(response) { $scope.sons=response; });
-
-  var user = JSON.parse(window.localStorage['user'] || '{}');
-  var institution = JSON.parse(window.localStorage['institution'] || '{}');
-  $scope.user=user;
-  $scope.institution=institution;
-
-
-});
+;

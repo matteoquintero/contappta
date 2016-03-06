@@ -11,6 +11,7 @@ class DataObject_Evento extends DB_DataObject
     public $__table = 'evento';                          // table name
     public $id;                              // int(11)  not_null primary_key unsigned auto_increment
     public $idInstitucion;                   // int(11)  not_null
+    public $idNotificacion;                  // int(11)  
     public $idEmisor;                        // int(11)  not_null
     public $asunto;                          // string(100)  
     public $descripcion;                     // blob(65535)  blob
@@ -19,7 +20,7 @@ class DataObject_Evento extends DB_DataObject
     public $eliminado;                       // string(2)  enum
     public $fechaInicio;                     // date(10)  binary
     public $fechaFin;                        // date(10)  binary
-    public $fechaPublicacion;                // datetime(19)  binary
+    public $fechaPublicacion;                // date(10)  binary
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
@@ -30,6 +31,7 @@ class DataObject_Evento extends DB_DataObject
          return array(
              'id' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idInstitucion' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+             'idNotificacion' =>  DB_DATAOBJECT_INT,
              'idEmisor' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'asunto' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
@@ -38,7 +40,7 @@ class DataObject_Evento extends DB_DataObject
              'eliminado' =>  DB_DATAOBJECT_STR,
              'fechaInicio' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
              'fechaFin' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
-             'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
+             'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
              'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
          );
     }
