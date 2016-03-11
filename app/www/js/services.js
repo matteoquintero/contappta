@@ -1,13 +1,8 @@
 angular.module('starter.services', [])
 
-
 .service('LoginService', function($q,$http) {
 
-    var appdata={'controller':"http://www.contappta.com/application/controller/app/"};
-    //var appdata={'controller':"http://localhost/contappta/dashboard/application/controller/app/"};
-    window.localStorage['app']=JSON.stringify(appdata);
-    var app = JSON.parse(window.localStorage['app'] || '{}');
-
+    var app = JSON.parse(localStorage.getItem('app') || '{}');
     return {
         loginUser: function(name, pw) {
             var deferred = $q.defer();
@@ -21,16 +16,16 @@ angular.module('starter.services', [])
              },
              params: {
               user: name,
-              password: pw
+              password: pw,
+              devicetoken:localStorage.getItem('devicetoken')
               }
             };
 
             $http(req).then(function (response) {
 
               if (response.data[0]===true) {
-                  window.localStorage.clear();
-                  window.localStorage['app']=JSON.stringify(appdata);
-                  window.localStorage['user'] = JSON.stringify(response.data[1]);
+                  localStorage.setItem('user',JSON.stringify(response.data[1]));
+
                   deferred.resolve();
               } else { deferred.reject(); }
 
@@ -49,10 +44,10 @@ angular.module('starter.services', [])
     }
 })
 
-.factory('news', function($http) {
+.service('news', function($http) {
 
-  var user = JSON.parse(window.localStorage['user'] || '{}');
-  var app = JSON.parse(window.localStorage['app'] || '{}');
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
+  var app = JSON.parse(localStorage.getItem('app') || '{}');
   var idUser=user["idUsuario"];
 
   var news = {
@@ -117,10 +112,10 @@ angular.module('starter.services', [])
   return news;
 })
 
-.factory('magazines', function($http) {
+.service('magazines', function($http) {
 
-  var user = JSON.parse(window.localStorage['user'] || '{}');
-  var app = JSON.parse(window.localStorage['app'] || '{}');
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
+  var app = JSON.parse(localStorage.getItem('app') || '{}');
   var idinstitution=user["idInstitucion"];
 
   var magazines = {
@@ -185,10 +180,10 @@ angular.module('starter.services', [])
   return magazines;
 })
 
-.factory('events', function($http) {
+.service('events', function($http) {
 
-  var user = JSON.parse(window.localStorage['user'] || '{}');
-  var app = JSON.parse(window.localStorage['app'] || '{}');
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
+  var app = JSON.parse(localStorage.getItem('app') || '{}');
   var idUser=user["idUsuario"];
 
   var events = {
@@ -207,9 +202,18 @@ angular.module('starter.services', [])
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
+
+          var dates=[];
+
+          for (var i = 0; i < response.data.length; i++) {
+            var fecha=response.data[i]["fechaInicio"].split("-");
+            dates.push({date: new Date(parseInt(fecha[0]), (parseInt(fecha[1])-1), parseInt(fecha[2]))});
+          }
+
+          localStorage.removeItem("events");
+          localStorage.setItem("events", JSON.stringify(dates) );
+
       });
-      return promise;
     },
     date: function(dateevent) {
 
@@ -255,10 +259,10 @@ angular.module('starter.services', [])
   return events;
 })
 
-.factory('sons', function($http) {
+.service('sons', function($http) {
 
-  var user = JSON.parse(window.localStorage['user'] || '{}');
-  var app = JSON.parse(window.localStorage['app'] || '{}');
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
+  var app = JSON.parse(localStorage.getItem('app') || '{}');
   var idUser=user["idUsuario"];
 
   var sons = {
@@ -284,9 +288,9 @@ angular.module('starter.services', [])
   return sons;
 })
 
-.factory('honors', function($http) {
+.service('honors', function($http) {
 
-  var app = JSON.parse(window.localStorage['app'] || '{}');
+  var app = JSON.parse(localStorage.getItem('app') || '{}');
 
   var honors = {
     get: function(id) {
@@ -311,9 +315,9 @@ angular.module('starter.services', [])
   return honors;
 })
 
-.factory('institutions', function($http) {
+.service('institutions', function($http) {
 
-  var app = JSON.parse(window.localStorage['app'] || '{}');
+  var app = JSON.parse(localStorage.getItem('app') || '{}');
   var institutions = {
     get: function(id) {
 
@@ -337,11 +341,33 @@ angular.module('starter.services', [])
   return institutions;
 })
 
-.factory('users', function($http) {
+.service('users', function($http) {
 
-  var app = JSON.parse(window.localStorage['app'] || '{}');
+  var app = JSON.parse(localStorage.getItem('app') || '{}');
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
+  var idUser=user["idUsuario"];
 
   var users = {
+    contacts: function() {
+
+      var req = {
+       method: 'POST',
+       url: app["controller"]+'users.php',
+       headers: {
+         'Content-Type': ' application/json '
+       },
+       params: {
+        institution: user["idInstitucion"],
+        mode: "users",
+        user: idUser
+        }
+      };
+
+      var promise = $http(req).then(function (response) {
+        return response.data;
+      });
+      return promise;
+    },
     get: function(id) {
 
       var req = {
@@ -351,7 +377,8 @@ angular.module('starter.services', [])
          'Content-Type': ' application/json '
        },
        params: {
-        user: id
+        user: id,
+        mode: "user"
         }
       };
 
@@ -364,10 +391,10 @@ angular.module('starter.services', [])
   return users;
 })
 
-.factory('chats', function($http) {
+.service('chats', function($http) {
 
-  var user = JSON.parse(window.localStorage['user'] || '{}');
-  var app = JSON.parse(window.localStorage['app'] || '{}');
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
+  var app = JSON.parse(localStorage.getItem('app') || '{}');
   var idUser=user["idUsuario"];
 
   var chats = {
@@ -420,9 +447,9 @@ angular.module('starter.services', [])
   return chats;
 })
 
-.factory('respuesta', function($http) {
+.service('respuesta', function($http) {
 
-  var app = JSON.parse(window.localStorage['app'] || '{}');
+  var app = JSON.parse(localStorage.getItem('app') || '{}');
 
   var respuesta = {
     create: function(datanew) {
@@ -450,9 +477,9 @@ angular.module('starter.services', [])
   return respuesta;
 })
 
-.factory('mensaje', function($http) {
+.service('mensaje', function($http) {
 
-  var app = JSON.parse(window.localStorage['app'] || '{}');
+  var app = JSON.parse(localStorage.getItem('app') || '{}');
 
   var mensaje = {
     create: function(datamessage) {
@@ -535,117 +562,6 @@ angular.module('starter.services', [])
         alert("error: " + msg)
       } // called in case you pass in weird values
     );
-  };
-})
-
-.directive('goNative', ['$ionicGesture', '$ionicPlatform', function($ionicGesture, $ionicPlatform) {
-  return {
-    restrict: 'A',
-
-    link: function(scope, element, attrs) {
-
-      $ionicGesture.on('tap', function(e) {
-
-        var direction = attrs.direction;
-        var transitiontype = attrs.transitiontype;
-
-        $ionicPlatform.ready(function() {
-
-          switch (transitiontype) {
-            case "slide":
-              window.plugins.nativepagetransitions.slide({
-                  "direction": direction
-                },
-                function(msg) {
-                  console.log("success: " + msg)
-                },
-                function(msg) {
-                  alert("error: " + msg)
-                }
-              );
-              break;
-            case "flip":
-              window.plugins.nativepagetransitions.flip({
-                  "direction": direction
-                },
-                function(msg) {
-                  console.log("success: " + msg)
-                },
-                function(msg) {
-                  alert("error: " + msg)
-                }
-              );
-              break;
-
-            case "fade":
-              window.plugins.nativepagetransitions.fade({
-
-                },
-                function(msg) {
-                  console.log("success: " + msg)
-                },
-                function(msg) {
-                  alert("error: " + msg)
-                }
-              );
-              break;
-
-            case "drawer":
-              window.plugins.nativepagetransitions.drawer({
-          "origin"         : direction,
-          "action"         : "open"
-                },
-                function(msg) {
-                  console.log("success: " + msg)
-                },
-                function(msg) {
-                  alert("error: " + msg)
-                }
-              );
-              break;
-
-            case "curl":
-              window.plugins.nativepagetransitions.curl({
-          "direction": direction
-                },
-                function(msg) {
-                  console.log("success: " + msg)
-                },
-                function(msg) {
-                  alert("error: " + msg)
-                }
-              );
-              break;
-
-            default:
-              window.plugins.nativepagetransitions.slide({
-                  "direction": direction
-                },
-                function(msg) {
-                  console.log("success: " + msg)
-                },
-                function(msg) {
-                  alert("error: " + msg)
-                }
-              );
-          }
-
-
-        });
-      }, element);
-    }
-  };
-}])
-
-.directive('hideTabs', function($rootScope) {
-  return {
-      restrict: 'A',
-      link: function($scope, $el) {
-          $rootScope.hideTabs = 'tabs-item-hide';
-          $scope.$on('$destroy', function() {
-              $rootScope.hideTabs = '';
-          });
-      }
   };
 });
 

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-14 00:48:15
+/* Smarty version 3.1.29, created on 2016-03-08 04:24:30
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/guardians-user.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56bfc0bf289b48_15978740',
+  'unifunc' => 'content_56de45ee89a4b2_37592037',
   'file_dependency' => 
   array (
     'cfd134a6b9fd557c93b96d1b3cdcc849529f7d14' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/guardians-user.html',
-      1 => 1455407293,
+      1 => 1457059918,
       2 => 'file',
     ),
   ),
@@ -19,12 +19,12 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56bfc0bf289b48_15978740 ($_smarty_tpl) {
+function content_56de45ee89a4b2_37592037 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
 
-    <link rel="stylesheet" href="<?php echo fileversion('resources/css/vendor/datatables-bootstrap.css');?>
+  <link rel="stylesheet" href="<?php echo fileversion('resources/css/vendor/datatables-bootstrap.css');?>
 ">
   </head>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/profile/nav.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
@@ -52,7 +52,7 @@ function content_56bfc0bf289b48_15978740 ($_smarty_tpl) {
                   <h3 class="box-title">Listado de los acudientes</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table id="example1" class="table table-bordered table-striped">
+                  <table id="data" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>Nombre</th>
@@ -129,20 +129,8 @@ modificar-usuario" method="post" id="form-edit"><input type="hidden" name="idUsu
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
->
-    $(function () {
-
-      $( ".btn-edit" ).click(function() {
-
-        $("#form-edit input").val( $(this).attr("data-user") );
-        $("#form-edit").submit();
-
-      });
-
-      $("#data").DataTable();
-
-    });
-  <?php echo '</script'; ?>
+ src="<?php echo fileversion('resources/js/profile/data.js');?>
+"><?php echo '</script'; ?>
 >
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/botoom.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>

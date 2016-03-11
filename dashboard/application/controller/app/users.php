@@ -6,8 +6,21 @@
     $Ruta="../../";
     IncluirArchivos($Ruta);
     $ObjUsers=new Users();
-    $data["idUsuario"]=$_REQUEST["user"];
-    $response=$ObjUsers->get("app",$data);
+
+    switch ($_REQUEST["mode"]) {
+
+      case 'user':
+        $data["idUsuario"]=$_REQUEST["user"];
+        $response=$ObjUsers->get("app",$data);
+      break;
+
+      case 'users':
+        $data["idInstitucion"]=$_REQUEST["institution"];
+        $data["idUsuario"]=$_REQUEST["user"];
+        $response=$ObjUsers->get("users-chats",$data);
+      break;
+
+    }
     echo json_encode($response);
 ?>
 

@@ -13,6 +13,7 @@
   $data["usuario"]=$user;
   $mode="app-sesion";
   $datauser=$ObjUsers->get($mode,$data);
+  $datauser["deviceToken"]=$_REQUEST["devicetoken"];
   $response=$ObjSesion->authenticationapp($user,$password,$datauser);
   $response[1]=$datauser;
   echo json_encode($response);

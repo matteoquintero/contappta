@@ -8,6 +8,7 @@
     $ObjUsers=new Users();
     $ObjNotificacion=new Notificacion();
     $ObjNotificacionReceptor=new NotificacionReceptor();
+    $ObjPhone=new Phone();
     $resultado=false;
     @session_start();
     @$idUsuario=$_SESSION['usuario']["idUsuario"];
@@ -112,6 +113,13 @@
 
                         }
                     }
+
+                    if ($datanotification["publicadaApp"]=="Si") {
+
+                      $ObjPhone->sendnotifications($notification[1]);
+
+                    }
+
                     echo json_encode($event);
                 break;
 
@@ -129,8 +137,17 @@
                     $dataevent["fechaInicio"]=trim($dateevent[0]);
                     $dataevent["fechaFin"]=trim($dateevent[1]);
 
-                    $datanotification["publicadaApp"]=($dataevent["aprobado"]=="Si" && $dataevent["publicado"]=="Si") ? "Si" : "No";
-                    $ObjNotificacion->update($datanotification);
+
+                    if (!$ObjNotificacion->ispublicateapp($_POST["notification"])) {
+
+                      if($dataevent["aprobada"]=="Si" && $dataevent["publicada"]=="Si"){
+                        $ObjNotificacion->publicateapp($_POST["notification"]);
+                        $ObjPhone->sendnotifications($_POST["notification"]);
+                      }
+
+                    }
+
+
 
                     $response=$ObjEvento->update($dataevent);
                     echo json_encode($response);

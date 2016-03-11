@@ -7,9 +7,21 @@ class Sesion{
     }
 
     public function authenticationapp($usuario,$contrasena,$data){
+
         if ( strtolower($usuario) == $data['usuario'] && $contrasena == $data['contrasena'] ) {
+
+            $dbdata = DB_DataObject::Factory('Usuario');
+            $dbdata->deviceToken=$data["deviceToken"];
+            $dbdata->whereAdd("id = '".$data["idUsuario"]."'");
+            $dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY);
+            $dbdata->free();
             $response[0]=true;
-        }else{ $response[0]=false; }
+
+        }else{
+
+         $response[0]=false;
+
+        }
 
         return $response;
 

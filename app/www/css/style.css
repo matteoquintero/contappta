@@ -253,7 +253,6 @@ ion-header-bar.bar-stable.bar.bar-header.disable-user-behavior {}
     top: 63px;
 }
 
-.list{height: 100%;}
 
 .list .item-icon-left{height: 75px;padding-left: 91px;line-height: 45px;font-family: osl;letter-spacing: 1px;color: #737373;}
 
@@ -746,3 +745,14 @@ ion-button{
     font-size: 30px;
     top: 5px;
 }
+#logo-ins{
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 7;
+  width: 40px;
+  height: 40px;
+}
+#detail-message.has-header {
+    bottom: 65px;
+  }

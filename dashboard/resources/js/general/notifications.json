@@ -1,0 +1,16 @@
+{
+  "tokens": [],
+  "profile": "",
+  "notification": {
+    "title": "",
+    "message": "",
+    "android": {
+      "title": "",
+      "message": ""
+    },
+    "ios": {
+      "title": "",
+      "message": ""
+    }
+  }
+}

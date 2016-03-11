@@ -4,16 +4,24 @@
 		"selected_items":
 		[
 			[
+				"local",
+				"localStorage"
+			],
+			[
+				"ng-",
+				"ng-click"
+			],
+			[
+				"m",
+				"magazines"
+			],
+			[
 				"chat",
 				"chats"
 			],
 			[
 				"us",
 				"userId"
-			],
-			[
-				"ng-",
-				"ng-repeat"
 			],
 			[
 				"ins",
@@ -191,6 +199,46 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "www/js/app.js",
+			"settings":
+			{
+				"buffer_size": 5968,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/controllers.js",
+			"settings":
+			{
+				"buffer_size": 8059,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/templates/event-detail.html",
+			"settings":
+			{
+				"buffer_size": 414,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/templates/event-id.html",
+			"settings":
+			{
+				"buffer_size": 568,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/templates/dash-detail.html",
+			"settings":
+			{
+				"buffer_size": 1232,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -228,16 +276,29 @@
 	},
 	"file_history":
 	[
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-chats.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/controllers.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/chat-detail.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-account.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-student.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-parent.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-institute.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/index.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/app.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/controllers.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/services.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/card-one.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/chat-detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/directives.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/css/style.css",
+		"/Users/matteoquintero/Desktop/app/www/js/services.js",
+		"/Users/matteoquintero/Desktop/app/www/js/controllers.js",
+		"/Users/matteoquintero/Desktop/app/www/js/app.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/dash-detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/date.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/event-detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/magazine.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-chats.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-account.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/card-two.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/card-three.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/card-one.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/card-four.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/services.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/mvc/views/home.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/mvc/views/user.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/mvc/models/notasModel.js",
@@ -246,27 +307,19 @@
 		"/Applications/XAMPP/xamppfiles/htdocs/mvc/controllers/notasController.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/old/pymes/resources/js/general/notification-messages.json",
 		"/Applications/XAMPP/xamppfiles/htdocs/old/pymes/resources/js/shoppingcart/banks.json",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/magazine.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/dash-detail.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-dash.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/css/style.css",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tabs.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/login.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-institute.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/index.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/config.xml",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/event-id.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/institute.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/event-detail.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/platforms/android/assets/www/js/controllers.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/platforms/android/assets/www/js/services.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/fonts/opensans-condbold-webfont.eot",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/son.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-parent.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/controllers.min.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-two.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-three.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-student.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/login.js",
 		"/Users/matteoquintero/Downloads/login-logout-animation-concept/css/style.css",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/css/login.css",
@@ -350,12 +403,7 @@
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-new.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/sendersevents.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/demo.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/general/functions.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/senders-events.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/eventoreceptor.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/group.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/mensaje.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/messages.php"
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/general/functions.js"
 	],
 	"find":
 	{
@@ -379,6 +427,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"highlights",
+			"response",
+			"app",
+			"window.localStorage['user'",
+			"window.localStorage['user']",
+			"window.localStorage['app']",
+			"window.localStorage['user'",
+			"yourVariable",
+			"user",
+			"tokendata",
+			"factory",
+			"list",
+			"g-click=\"\"",
+			"idUser",
+			"news",
+			"magazines",
+			"idUser",
 			"Utilidad",
 			"chat",
 			"myArray",
@@ -489,24 +554,7 @@
 			"mensaje",
 			"messages",
 			"mensaje",
-			"idMensaje",
-			"message",
-			"sendersmessages",
-			"receptor",
-			"receptores",
-			"mensaje",
-			"idMensaje",
-			"message",
-			"mensaje",
-			"message",
-			"new",
-			"Mensaje",
-			"MensajeReceptor",
-			"idMensaje",
-			"Messages",
-			"idMensaje",
-			"new",
-			"SendersMessages"
+			"idMensaje"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -530,8 +578,164 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/js/app.js",
+					"settings":
+					{
+						"buffer_size": 5968,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/js/controllers.js",
+					"settings":
+					{
+						"buffer_size": 8059,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1199,
+								1199
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "www/templates/event-detail.html",
+					"settings":
+					{
+						"buffer_size": 414,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								57,
+								57
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "www/templates/event-id.html",
+					"settings":
+					{
+						"buffer_size": 568,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								329,
+								329
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "www/templates/dash-detail.html",
+					"settings":
+					{
+						"buffer_size": 1232,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								321,
+								330
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

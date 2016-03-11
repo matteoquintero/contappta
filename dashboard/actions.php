@@ -4,11 +4,11 @@
     IncluirArchivos($Ruta);
     $ObjNews=new News();
     $ObjNoticia=new Noticia();
-
     $ObjEvents=new Events();
     $ObjEvento=new Evento();
-
     $ObjUtilidad=new Utilidad();
+    $ObjNotificacion=new Notificacion();
+    $ObjPhone=new Phone();
 
     $news=$ObjNews->get("publication","");
     foreach ($news as $new) {
@@ -17,7 +17,8 @@
         $datanew["idNoticia"]=$new->idNoticia;
         $datanew["publicada"]="Si";
         $ObjNoticia->update($datanew);
-
+        $ObjNotificacion->publicateapp($new->idNotificacion);
+        $ObjPhone->sendnotifications($_POST["notification"]);
 
       }
     }
@@ -29,6 +30,8 @@
         $dataevent["idEvento"]=$event->idEvento;
         $dataevent["publicado"]="Si";
         $ObjEvento->update($dataevent);
+        $ObjNotificacion->publicateapp($event->idNotificacion);
+        $ObjPhone->sendnotifications($_POST["notification"]);
 
       }
     }

@@ -1,10 +1,28 @@
 angular.module('starter.controllers', [])
 
+
+.controller('InitCtrl', function($state) {
+
+    var appdata={'controller':"http://www.contappta.com/application/controller/app/"};
+    //var appdata={'controller':"http://localhost/contappta/dashboard/application/controller/app/"};
+    localStorage.setItem('app',JSON.stringify(appdata));
+
+    if ( localStorage.getItem('user') !== null ){
+
+      $state.go('tab.dash');
+
+    }else{
+
+      $state.go('login');
+
+    }
+
+})
+
 .controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
+
     $scope.data = {};
-    window.localStorage.clear();
     $scope.login = function() {
-        window.localStorage.clear();
         LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
             $state.go('tab.dash');
         }).error(function(data) {
@@ -14,6 +32,18 @@ angular.module('starter.controllers', [])
             });
         });
     };
+
+})
+
+.controller('CloseCtrl', function($state) {
+
+  localStorage.removeItem('app');
+  localStorage.removeItem("events");
+  localStorage.removeItem('user');
+  localStorage.removeItem('devicetoken');
+  localStorage.removeItem('institution');
+  localStorage.clear();
+  $state.go('init');
 
 })
 
@@ -30,18 +60,30 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('DashCtrl', function($scope, news) {
+.controller('ContactsCtrl', function($scope, users) {
+
+  users.contacts().then(function(response) { $scope.users=response; });
+
+})
+
+.controller('DashCtrl', function($scope, news, institutions) {
+
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
+
+  institutions.get(user["idInstitucion"]).then(function(response) {
+     $scope.institution=response;
+    localStorage.setItem("institution",JSON.stringify(response));
+  });
 
   news.all().then(function(response) { $scope.notices=response; });
 
-  var user = JSON.parse(window.localStorage['user'] || '{}');
   $scope.user=user;
 
 })
 
 .controller('DashDetailCtrl', function($scope, $stateParams,$state, news,respuesta) {
 
-  var user = JSON.parse(window.localStorage['user'] || '{}');
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
 
   news.get($stateParams.noticeId).then(function(response) { $scope.notice=response; });
 
@@ -93,12 +135,16 @@ angular.module('starter.controllers', [])
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, $state,chats, users,mensaje) {
 
-  var user = JSON.parse(window.localStorage['user'] || '{}');
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
+  $scope.user=user;
 
   chats.get($stateParams.chatId).then(function(response) { $scope.messages=response; });
-  users.get($stateParams.userId).then(function(response) { $scope.user=response; });
+  users.get($stateParams.userId).then(function(response) { $scope.userchat=response; });
 
   $scope.sendMessage =  function(sendMessageForm){
+
+      console.log($scope);
+
       var datamessage={
         message:$scope.input.message,
         transmitter:user["idUsuario"],
@@ -126,26 +172,33 @@ angular.module('starter.controllers', [])
 })
 
 .controller('Institute', function($scope,institutions) {
-  var user = JSON.parse(window.localStorage['user'] || '{}');
-  institutions.get(user["idInstitucion"]).then(function(response) { $scope.institution=response; });
+
+  var institution = JSON.parse(localStorage.getItem('institution') || '{}');
+  $scope.institution=institution;
 
 })
 
 .controller('DataCtrl', function($scope,institutions) {
 
-  var user = JSON.parse(window.localStorage['user'] || '{}');
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
   $scope.user=user;
-  institutions.get(user["idInstitucion"]).then(function(response) { $scope.institution=response; });
+
+  var institution = JSON.parse(localStorage.getItem('institution') || '{}');
+  $scope.institution=institution;
 
 })
 
-.controller('AccountCtrl', function($scope,sons,institutions) {
+.controller('AccountCtrl', function($scope,sons,institutions,events) {
+
+  events.calender();
 
   sons.all().then(function(response) { $scope.sons=response; });
 
-  var user = JSON.parse(window.localStorage['user'] || '{}');
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
   $scope.user=user;
-  institutions.get(user["idInstitucion"]).then(function(response) { $scope.institution=response; });
+
+  var institution = JSON.parse(localStorage.getItem('institution') || '{}');
+  $scope.institution=institution;
 
 })
 
@@ -167,14 +220,12 @@ angular.module('starter.controllers', [])
   var daysOfTheWeek=['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'];
   var startDate=new Date(2015, 1, 26);
   var endDate=new Date(2024, 1, 26);
+
   var highlights=[];
-  events.calender().then(function(response) {
-    for (var i = 0; i < response.length; i++) {
-      var fecha=response[i]["fechaInicio"].split("-");
-      highlights.push({date: new Date(parseInt(fecha[0]), (parseInt(fecha[1])-1), parseInt(fecha[2]))})
-    }
-  });
-  console.log("asdasd");
+  var events=JSON.parse(localStorage.getItem('events'));
+  for (var i = 0; i < events.length; i++) {
+    highlights.push( { date: new Date( events[i].date ) } );
+  }
 
   $scope.onezoneDatepicker = {
       date: date, // MANDATORY
@@ -191,7 +242,7 @@ angular.module('starter.controllers', [])
       calendarMode: true,
       hideCancelButton: false,
       hideSetButton: false,
-      highlights: highlights,
+      highlights:highlights,
       callback: function(value){
 
           if (highlights.containsdate(value)) {
@@ -207,7 +258,6 @@ angular.module('starter.controllers', [])
 .controller('MagazineCtrl', ['$scope', '$ionicModal', '$ionicSlideBoxDelegate','magazines', function($scope, $ionicModal, $ionicSlideBoxDelegate, magazines) {
 
   magazines.all().then(function(response) { $scope.magazines=response; });
-
 
     $scope.data = {
       allowScroll : false

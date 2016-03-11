@@ -29,13 +29,13 @@ function IncluirArchivos($Ruta){
   require(PREFIJO_GENERAL."class/news.php");
   require(PREFIJO_GENERAL."class/sendersnews.php");
   require(PREFIJO_GENERAL."class/answersnews.php");
+  require(PREFIJO_GENERAL."class/conversacion.php");
   require(PREFIJO_GENERAL."class/users.php");
   require(PREFIJO_GENERAL."class/usuario.php");
   require(PREFIJO_GENERAL."class/plantilla.php");
   require(PREFIJO_GENERAL."class/messages.php");
   require(PREFIJO_GENERAL."class/sendersmessages.php");
   require(PREFIJO_GENERAL."class/mensaje.php");
-  require(PREFIJO_GENERAL."class/conversacion.php");
   require(PREFIJO_GENERAL."class/events.php");
   require(PREFIJO_GENERAL."class/sendersevents.php");
   require(PREFIJO_GENERAL."class/evento.php");
@@ -49,6 +49,7 @@ function IncluirArchivos($Ruta){
   require(PREFIJO_GENERAL."class/reconocimientousuario.php");
   require(PREFIJO_GENERAL."class/chats.php");
   require(PREFIJO_GENERAL."class/respuesta.php");
+  require(PREFIJO_GENERAL."class/phone.php");
   require(PREFIJO_GENERAL."class/notificacion.php");
   require(PREFIJO_GENERAL."class/notificacionreceptor.php");
   require(PREFIJO_GENERAL."class/notifications.php");

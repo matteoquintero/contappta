@@ -19,6 +19,7 @@ class Usuario extends Users
     $dbdata->contrasena=$data["contrasena"];
     $dbdata->foto=$data["foto"];
     $dbdata->celular=$data["celular"];
+    $dbdata->permiso=$data["permiso"];
 		$correo=$data["correo"];
 		$usuario=(empty($data["usuario"])) ? $data["nombre"] : $data["usuario"];
 		$existsuser=$this->existsuser($usuario);
@@ -44,7 +45,6 @@ class Usuario extends Users
 		return $resultado;
 
 	}
-
 
   public function updateprivate($data){
 
@@ -82,6 +82,7 @@ class Usuario extends Users
     $dbdata->documento=$data["documento"];
     $dbdata->foto=$data["foto"];
     $dbdata->celular=$data["celular"];
+    $dbdata->permiso=$data["permiso"];
 
 		$dbdata->whereAdd("id = '".$data["idUsuario"]."'");
 

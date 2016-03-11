@@ -5,24 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic','starter.controllers', 'starter.services', 'onezone-datepicker','youtube-embed'])
-
-
-.directive('fileModel', ['$parse', function ($parse) {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs) {
-            var model = $parse(attrs.fileModel);
-            var modelSetter = model.assign;
-
-            element.bind('change', function(){
-                scope.$apply(function(){
-                    modelSetter(scope, element[0].files[0]);
-                });
-            });
-        }
-    };
-}])
+angular.module('starter', ['ionic','starter.controllers', 'starter.services','starter.directives', 'onezone-datepicker','youtube-embed'])
 
 .run(function($ionicPlatform) {
 
@@ -49,16 +32,35 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services', 'o
     window.plugins.nativepagetransitions.globalOptions.fixedPixelsTop = 0;
     window.plugins.nativepagetransitions.globalOptions.fixedPixelsBottom = 0;
 
-
-    var push = new Ionic.Push({
-      "debug": true
+    var push = PushNotification.init({
+        "android": {
+            "senderID": "1046886258974",
+            "icon": "icon",
+            "badge": "true"
+        },
+        "ios": {
+            "alert": "true",
+            "badge": "true",
+            "sound": "true"
+        }
     });
 
-    push.register(function(token) {
-      console.log("Device token:",token.token);
+    push.on('registration', function(data) {
+
+      localStorage.setItem("devicetoken",data.registrationId);
+
     });
+
+    push.on('notification', function(data) {
+
+    });
+
+    push.on('error', function(e) {
+    });
+
 
   });
+
 })
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider, $sceDelegateProvider, $httpProvider) {
@@ -86,6 +88,16 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services', 'o
         url: '/login',
         templateUrl: 'templates/login.html',
         controller: 'LoginCtrl'
+    })
+
+    .state('cerrar', {
+        url: '/cerrar',
+        controller: 'CloseCtrl'
+    })
+
+    .state('init', {
+        url: '/init',
+        controller: 'InitCtrl'
     })
 
     .state('tab', {
@@ -152,17 +164,6 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services', 'o
       }
     })
 
-    .state('tab.dash-answer', {
-      url: '/answer/:noticeId',
-      views: {
-        'tab-dash': {
-            cache: false,
-          templateUrl: 'templates/dash-answer.html',
-          controller: 'DashDetailCtrl'
-        }
-      }
-    })
-
     .state('tab.chats', {
         url: '/chats',
         views: {
@@ -170,6 +171,17 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services', 'o
               cache: false,
             templateUrl: 'templates/tab-chats.html',
             controller: 'ChatsCtrl'
+          }
+        }
+    })
+
+    .state('tab.contacts', {
+        url: '/contacts',
+        views: {
+          'tab-chats': {
+              cache: false,
+            templateUrl: 'templates/contacts.html',
+            controller: 'ContactsCtrl'
           }
         }
     })
@@ -207,26 +219,6 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services', 'o
       }
     })
 
-    .state('tab.new-message', {
-      url: '/new-message',
-      views: {
-        'tab-account': {
-            cache: false,
-          templateUrl: 'templates/new-message.html',
-        }
-      }
-    })
-
-    .state('tab.medal', {
-      url: '/medal',
-      views: {
-        'tab-account': {
-            cache: false,
-          templateUrl: 'templates/medal.html',
-        }
-      }
-    })
-
     .state('tab.magazine', {
       url: '/magazine',
       views: {
@@ -250,5 +242,5 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services', 'o
     });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/init');
 });

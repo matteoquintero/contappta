@@ -126,11 +126,12 @@ class Events
 
         $dbdata = DB_DataObject::Factory('Events');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("idEvento,aprobado,publicado,eliminado,asunto,descripcion,fechaInicio,fechaFin,fechaPublicacion");
+        $dbdata->selectAdd("idEvento,idNotificacion,aprobado,publicado,eliminado,asunto,descripcion,fechaInicio,fechaFin,fechaPublicacion");
         $dbdata->whereAdd("idEvento='".$data['idEvento']."'");
         $dbdata->find();
         while( $dbdata->fetch() ){
           $ret["idEvento"] = $dbdata->idEvento;
+          $ret["idNotificacion"] = $dbdata->idNotificacion;
           $ret['aprobado'] = $dbdata->aprobado;
           $ret['publicado'] = $dbdata->publicado;
           $ret['eliminado'] = $dbdata->eliminado;

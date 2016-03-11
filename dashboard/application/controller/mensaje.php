@@ -6,8 +6,9 @@
     $ObjConversacion=new Conversacion();
     $ObjUtilidad=new Utilidad();
     $ObjUsers=new Users();
-    $ObjNotifcacion=new Notifcacion();
+    $ObjNotificacion=new Notificacion();
     $ObjNotificacionReceptor=new NotificacionReceptor();
+    $ObjPhone=new Phone();
     $resultado=false;
     @session_start();
     @$idUsuario=$_SESSION['usuario']["idUsuario"];
@@ -42,7 +43,7 @@
                     $datanotification["publicadaDashboard"]="Si";
                     $datanotification["publicadaApp"]="Si";
 
-                    $notification=$ObjNotifcacion->create($datanotification);
+                    $notification=$ObjNotificacion->create($datanotification);
                    //Receptores
 
                     $data["idNotificacion"]=$notification[1];
@@ -120,6 +121,8 @@
                       }
 
                     }
+
+                    $ObjPhone->sendnotifications($notification[1]);
 
                     echo json_encode($response);
                 break;

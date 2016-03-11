@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-03-02 04:10:04
+/* Smarty version 3.1.29, created on 2016-03-08 20:41:55
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/notifications.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56d6598c6c6932_78709917',
+  'unifunc' => 'content_56df2b035935c4_34724618',
   'file_dependency' => 
   array (
     'c6d68fe832743767f20195800809a832d5159443' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/notifications.html',
-      1 => 1456886406,
+      1 => 1457059922,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56d6598c6c6932_78709917 ($_smarty_tpl) {
+function content_56df2b035935c4_34724618 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -52,7 +52,7 @@ function content_56d6598c6c6932_78709917 ($_smarty_tpl) {
                   <h3 class="box-title">Listado de los notificaciones</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table id="example1" class="table table-bordered table-striped">
+                  <table id="data" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>Nombre</th>

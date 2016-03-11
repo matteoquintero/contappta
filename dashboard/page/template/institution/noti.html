@@ -1,0 +1,53 @@
+<html ng-app="io">
+  <head></head>
+     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-route.js"></script>
+  <script>
+
+
+var Agenda = angular.module("io", ["$http"])
+
+
+// Define relevant info
+var jwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyODIzZjExZS0wMDcyLTQyMDQtODA3Yi0xYjg3NmZmNDAxZDAifQ.eB4arPz5dt1WqYUY_3kXPSLyO4dv3-35URd_CKUBUAA';
+var tokens = ['DEV-ba64c7bf-89ec-4206-8000-670b78392499'];
+var profile = 'prosp';
+
+// Build the request object
+var req = {
+  method: 'POST',
+  url: 'https://api.ionic.io/push/notifications',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + jwt
+  },
+  data: {
+    "tokens": tokens,
+    "profile": profile,
+    "notification": {
+      "title": "Hi",
+      "message": "Hello world!",
+      "android": {
+        "title": "Hey",
+        "message": "Hello Android!"
+      },
+      "ios": {
+        "title": "Howdy",
+        "message": "Hello iOS!"
+      }
+    }
+  }
+};
+
+// Make the API call
+$http(req).success(function(resp){
+  // Handle success
+  console.log("Ionic Push: Push success", resp);
+}).error(function(error){
+  // Handle error
+  console.log("Ionic Push: Push error", error);
+});
+
+});
+  </script>
+</html>

@@ -1,4 +1,5 @@
-<ion-view view-title="Inicio <small>{{user.institucion}}</small>">
+<img id="logo-ins" src="{{institution.logo}}" alt="">
+<ion-view view-title="Inicio <small>{{institution.institucion}}</small>">
   <ion-content class="padding">
     <div class="list card" ng-repeat="notice in notices">
       <div ng-switch on="{{notice.template}}">
@@ -8,6 +9,5 @@
           <div ng-switch-when="4"><div ng-include="'partials/card-four.html'"></div></div>
       </div>
     </div>
-
   </ion-content>
 </ion-view>

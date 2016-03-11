@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-19 05:33:15
+/* Smarty version 3.1.29, created on 2016-03-08 21:33:43
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/groups.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c69b0ba03329_95149013',
+  'unifunc' => 'content_56df3727577f80_81065904',
   'file_dependency' => 
   array (
     'eafa6c4750997f35bb4e5332841e7fc835ab92b6' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/groups.html',
-      1 => 1455671400,
+      1 => 1456532558,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c69b0ba03329_95149013 ($_smarty_tpl) {
+function content_56df3727577f80_81065904 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -121,20 +121,12 @@ modificar-grupo" method="post" id="form-edit"><input type="hidden" name="idGrupo
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
+ src="<?php echo fileversion('resources/js/profile/groups.js');?>
+"><?php echo '</script'; ?>
 >
-    $(function () {
-
-      $( ".btn-edit" ).click(function() {
-
-        $("#form-edit input").val( $(this).attr("data-group") );
-        $("#form-edit").submit();
-
-      });
-
-      $("#data").DataTable();
-
-    });
-  <?php echo '</script'; ?>
+  <?php echo '<script'; ?>
+ src="<?php echo fileversion('resources/js/profile/data.js');?>
+"><?php echo '</script'; ?>
 >
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/botoom.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>

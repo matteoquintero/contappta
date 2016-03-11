@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-14 01:54:07
+/* Smarty version 3.1.29, created on 2016-03-08 21:35:30
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-app.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56bfd02ff10654_14134921',
+  'unifunc' => 'content_56df37920a5a29_95289464',
   'file_dependency' => 
   array (
     'e362225ed1bbe11eff587b3b48926cc3fbc1a939' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/profile/nav-app.html',
-      1 => 1455411216,
+      1 => 1457469328,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56bfd02ff10654_14134921 ($_smarty_tpl) {
+function content_56df37920a5a29_95289464 ($_smarty_tpl) {
 ?>
 
           <ul class="sidebar-menu">
@@ -46,12 +46,6 @@ crear-usuario"><i class="fa fa-plus"></i> Crear usuario</a></li>
 usuarios"><i class="fa fa-table"></i> Ver usuarios</a></li>
               </ul>
             </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-envelope"></i> <span>Notificaciones</span>
-              </a>
-            </li>
-            <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Ayuda</span></a></li>
 
           </ul>
 <?php }

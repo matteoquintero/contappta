@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-03-03 06:38:33
+/* Smarty version 3.1.29, created on 2016-03-08 04:06:14
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-new.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56d7cdd934b184_34277964',
+  'unifunc' => 'content_56de41a6b116a7_39532941',
   'file_dependency' => 
   array (
     '4844ae9a2daac1c961a22d5d301f760eea9997b1' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-new.html',
-      1 => 1456983511,
+      1 => 1457405100,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56d7cdd934b184_34277964 ($_smarty_tpl) {
+function content_56de41a6b116a7_39532941 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -156,6 +156,8 @@ function content_56d7cdd934b184_34277964 ($_smarty_tpl) {
             </div><!-- /.box-body -->
             <input type="hidden" name="new" id="new" value="<?php echo $_smarty_tpl->tpl_vars['new']->value['idNoticia'];?>
 ">
+            <input type="hidden" name="notification" id="notification" value="<?php echo $_smarty_tpl->tpl_vars['new']->value['idNotificacion'];?>
+">
             <div class="box-footer">
               <button type="button" id="btn-update" class="btn btn-primary">Enviar</button>
             </div>
@@ -164,7 +166,7 @@ function content_56d7cdd934b184_34277964 ($_smarty_tpl) {
 
       </div><!--/.col (left) -->
 
-    </div>   <!-- /.row -->
+    </div><!-- /.row -->
   </section><!-- /.content -->
 
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/footer.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);

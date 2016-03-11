@@ -1,6 +1,14 @@
 <ion-view view-title="Mensajes">
   <ion-content>
     <ion-list>
+
+      <ion-item class="item-avatar item-icon-right" type="item-text-wrap" href="#/tab/contacts" transitiontype="slide" direction="left" go-native>
+        <img ng-src="http://www.contappta.com/_data/app/contacts.png">
+        <h2>Contactos</h2>
+        <p>Tap para ver los contactos</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chat-detail/{{chat.idConversacion}}/{{chat.idEmisor}}" transitiontype="slide" direction="left" go-native>
         <img ng-src="{{chat.fotoEmisor}}">
         <h2>{{chat.rolEmisor}} {{chat.usuarioEmisor}}</h2>

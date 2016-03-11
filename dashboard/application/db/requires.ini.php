@@ -34,4 +34,5 @@ require(PREFIJO_GENERAL."db/db.tipoReconocimiento.php");
 require(PREFIJO_GENERAL."db/db.users.php");
 require(PREFIJO_GENERAL."db/db.usuario.php");
 require(PREFIJO_GENERAL."db/db.magazines.php");
+require(PREFIJO_GENERAL."db/db.reciversnotifications.php");
 ?>

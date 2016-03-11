@@ -1,6 +1,6 @@
 <?php
 
-class Users
+class Users extends Conversacion
 {
 
 	function __construct(){
@@ -164,29 +164,20 @@ class Users
 
         $dbdata = DB_DataObject::Factory('Users');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("idUsuario,idRol,idInstitucion,idGrupo,nombre,permiso,contrasena");
-        $dbdata->selectAdd("apellido,foto,logo,celular,usuario,correo,documento,permiso");
-        $dbdata->selectAdd("rol,institucion,grado,identificador");
+        $dbdata->selectAdd("idUsuario,idInstitucion,nombre");
+        $dbdata->selectAdd("apellido,foto,usuario");
+        $dbdata->selectAdd("rol,grado,identificador");
         $dbdata->whereAdd("idUsuario = '".$data["idUsuario"]."'");
         $dbdata->find();
 
         while( $dbdata->fetch() ){
           $ret["idUsuario"] = $dbdata->idUsuario;
-          $ret["idRol"] = $dbdata->idRol;
           $ret["idInstitucion"] = $dbdata->idInstitucion;
-          $ret["idGrupo"] = $dbdata->idGrupo;
           $ret["nombre"] = $dbdata->nombre;
-          $ret["contrasena"] = $dbdata->contrasena;
           $ret["apellido"] = $dbdata->apellido;
           $ret["foto"] = RUTADATA.$dbdata->foto;
-          $ret["logo"] = RUTADATA.$dbdata->logo;
-          $ret["celular"] = $dbdata->celular;
           $ret["usuario"] = $dbdata->usuario;
-          $ret["correo"] = $dbdata->correo;
-          $ret["documento"] = $dbdata->documento;
-          $ret["permiso"] = $dbdata->permiso;
           $ret["rol"] = $dbdata->rol;
-          $ret["institucion"] = $dbdata->institucion;
           $ret["grado"] = $dbdata->grado;
           $ret["identificador"] = $dbdata->identificador;
         }
@@ -223,6 +214,38 @@ class Users
           $ret[$contador]->institucion = $dbdata->institucion;
           $ret[$contador]->grado = $dbdata->grado;
           $ret[$contador]->identificador = $dbdata->identificador;
+          $contador++;
+        }
+        $dbdata->free();
+        return $ret;
+
+      break;
+
+
+      case 'users-chats':
+
+        $dbdata = DB_DataObject::Factory('Users');
+        $dbdata->selectAdd();
+        $dbdata->selectAdd("idUsuario,usuario,nombre,apellido,foto,rol");
+        $dbdata->whereAdd("idInstitucion = '".$data["idInstitucion"]."'");
+        $dbdata->whereAdd("idUsuario != '".$data["idUsuario"]."'");
+        $dbdata->find();
+
+        $contador=0;
+
+        while( $dbdata->fetch() ){
+
+          $data["idEmisor"]=$data["idUsuario"];
+          $data["idReceptor"]=$dbdata->idUsuario;
+          $conversation=$this->create($data);
+
+          $ret[$contador]->idConversacion = $conversation[1];
+          $ret[$contador]->idUsuario = $dbdata->idUsuario;
+          $ret[$contador]->usuario = $dbdata->usuario;
+          $ret[$contador]->nombre = $dbdata->nombre;
+          $ret[$contador]->apellido = $dbdata->apellido;
+          $ret[$contador]->foto = RUTADATA.$dbdata->foto;
+          $ret[$contador]->rol = $dbdata->rol;
           $contador++;
         }
         $dbdata->free();
