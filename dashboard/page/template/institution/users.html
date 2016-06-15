@@ -43,7 +43,15 @@
                         <td>{#$user->celular#}</td>
                         <td>
                           <button class="btn btn-primary btn-edit" data-user="{#$user->idUsuario#}">Editar</button>
-                          <button class="btn btn-primary btn-guardians" data-user="{#$user->idUsuario#}">Ver acudientes</button>
+                          {#if $user->acudientes!=""#}
+                          <button class="btn btn-primary btn-guardians" data-user="{#$user->idUsuario#}">Acudientes</button>
+                          {#/if#}
+
+                          {#if $user->idRol=="5" || $user->idRol=="6" #}
+                          <button class="btn btn-primary btn-recognitions" data-user="{#$user->idUsuario#}">Reconocimientos</button>
+                          {#/if#}
+
+                          <button class="btn btn-primary btn-clear" data-user="{#$user->idUsuario#}">Eliminar</button>
                         </td>
                       </tr>
                       {#/foreach#}
@@ -63,15 +71,18 @@
             </div><!-- /.col -->
           </div><!-- /.row -->
         </section><!-- /.content -->
-        <form action="{#$smarty.const.BASE#}modificar-usuario" method="post" id="form-edit"><input type="hidden" name="idUsuario"></form>
 
-  <form action="{#$smarty.const.BASE#}modificar-usuario" method="post" id="form-edit">
-      <input type="hidden" name="idUsuario">
-  </form>
-  <form action="{#$smarty.const.BASE#}acudientes-usuario" method="post" id="form-guardians">
-      <input type="hidden" name="idUsuario">
-  </form>
+        <form action="{#$smarty.const.BASE#}modificar-usuario" method="post" id="form-edit">
+            <input type="hidden" name="idUsuario">
+        </form>
 
+        <form action="{#$smarty.const.BASE#}acudientes-usuario" method="post" id="form-guardians">
+            <input type="hidden" name="idUsuario">
+        </form>
+
+        <form action="{#$smarty.const.BASE#}reconocimientos-usuario" method="post" id="form-recognitions">
+            <input type="hidden" name="idUsuario">
+        </form>
 
   {#include file="master/general/footer.html"|filetemplate#}
   {#include file="master/general/scripts.html"|filetemplate#}

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-05 07:09:51
+/* Smarty version 3.1.29, created on 2016-03-19 16:30:46
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/events.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56b43caf5890f4_20773778',
+  'unifunc' => 'content_56edc506eabf47_26521317',
   'file_dependency' => 
   array (
     'c8a8b87023cf36a584f8fc21ec76c69c3a9df071' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/events.html',
-      1 => 1454629131,
+      1 => 1456532612,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56b43caf5890f4_20773778 ($_smarty_tpl) {
+function content_56edc506eabf47_26521317 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -119,8 +119,6 @@ receptores-evento" method="post" id="form-sender">
       <input type="hidden" name="idEvento">
   </form>
 
-
-
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/footer.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
 
@@ -140,23 +138,12 @@ receptores-evento" method="post" id="form-sender">
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
+ src="<?php echo fileversion('resources/js/profile/events.js');?>
+"><?php echo '</script'; ?>
 >
-    $(function () {
-
-      $( ".btn-edit" ).click(function() {
-        $("#form-edit input").val( $(this).attr("data-event") );
-        $("#form-edit").submit();
-      });
-
-      $( ".btn-sender" ).click(function() {
-        $("#form-sender input").val( $(this).attr("data-event") );
-        $("#form-sender").submit();
-      });
-
-      $("#data").DataTable();
-
-    });
-  <?php echo '</script'; ?>
+  <?php echo '<script'; ?>
+ src="<?php echo fileversion('resources/js/profile/data.js');?>
+"><?php echo '</script'; ?>
 >
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/botoom.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>

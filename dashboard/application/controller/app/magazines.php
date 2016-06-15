@@ -7,22 +7,30 @@
     IncluirArchivos($Ruta);
     $ObjMagazines=new Magazines();
     $ObjPagina=new Pagina();
+    $ObjNotificacionReceptor=new NotificacionReceptor();
     switch ($_REQUEST["mode"]) {
 
       case 'magazines':
         $data["idInstitucion"]=$_REQUEST["institution"];
         $response=$ObjMagazines->get("institution",$data);
-        echo json_encode($response);
       break;
 
       case 'pages':
         $data["idRevista"]=$_REQUEST["magazine"];
         $response=$ObjPagina->get("magazine",$data);
-        echo json_encode($response);
+      break;
+
+      case 'view':
+
+        $data["idReceptor"]=$_REQUEST["user"];
+        $data["idTipo"]=$_REQUEST["magazine"];
+        $ObjNotificacionReceptor->view($data);
+
       break;
 
     }
-
+    if ($response=="") {$response[0]->data=false; }
+    echo json_encode($response);
 ?>
 
 

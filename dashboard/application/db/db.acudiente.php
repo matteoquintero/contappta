@@ -3,16 +3,16 @@
  * Table Definition for acudiente
  */
 
-class DataObject_Acudiente extends DB_DataObject 
+class DataObject_Acudiente extends DB_DataObject
 {
     ###START_AUTOCODE
     /* the code below is auto generated do not remove the above tag */
 
     public $__table = 'acudiente';                       // table name
     public $id;                              // int(11)  not_null primary_key unsigned auto_increment
-    public $idHijo;                          // int(11)  
-    public $idAcudiente;                     // int(11)  
-    public $fechaRegistreo;                  // timestamp(19)  unsigned binary timestamp
+    public $idHijo;                          // int(11)
+    public $idAcudiente;                     // int(11)
+    public $fechaRegistro;                  // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('DataObject_Acudiente',$k,$v); }
@@ -23,7 +23,7 @@ class DataObject_Acudiente extends DB_DataObject
              'id' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idHijo' =>  DB_DATAOBJECT_INT,
              'idAcudiente' =>  DB_DATAOBJECT_INT,
-             'fechaRegistreo' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 

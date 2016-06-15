@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-20 05:06:12
+/* Smarty version 3.1.29, created on 2016-03-20 23:55:05
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-new.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c7e6349d2191_89049775',
+  'unifunc' => 'content_56ef7ea9598396_79373021',
   'file_dependency' => 
   array (
     'a883bfa16d37a2112fcc6781bb90c9294a2688a6' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/create-new.html',
-      1 => 1455941165,
+      1 => 1457059986,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c7e6349d2191_89049775 ($_smarty_tpl) {
+function content_56ef7ea9598396_79373021 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -193,7 +193,7 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_2_saved_item;
 
                       <div class="form-group checkbox">
                         <label>
-                          <input id="approved" name="approved" type="checkbox" value="Si"> Aprobada
+                          <input id="answer" name="answer" type="checkbox" value="Si"> Con respuesta
                         </label>
                       </div>
 
@@ -203,6 +203,7 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_2_saved_item;
             </div><!-- /.box-body -->
             <input type="hidden" name="institute" id="institute" value="<?php echo $_smarty_tpl->tpl_vars['userdata']->value['idInstitucion'];?>
 ">
+            <input type="hidden" name="videoid" id="videoid" >
             <div class="box-footer">
               <button type="button" class="btn btn-primary" id="btn-step-1">Siguiente</button>
               <button type="button" class="btn btn-primary" id="btn-step-2">Enviar</button>

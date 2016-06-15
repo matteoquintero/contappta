@@ -6,32 +6,23 @@
     $Ruta="../../";
     IncluirArchivos($Ruta);
     $ObjMensaje=new Mensaje();
+    $ObjNotificacionReceptor=new NotificacionReceptor();
     switch ($_REQUEST["mode"]) {
-      case 'create':
-        $data["idEmisor"]=$_REQUEST["transmitter"];
-        $data["idInstitucion"]=$_REQUEST["institution"];
-        $data["mensaje"]=$_REQUEST["message"];
-        $data["idReceptor"]=$_REQUEST["reciver"];
-        $data["idConversacion"]=$_REQUEST["conversation"];
-        $response=$ObjMensaje->create($data);
-        echo json_encode($response);
-      break;
-
       case "view":
         $data["idReceptor"]=$_REQUEST["reciver"];
         $data["idConversacion"]=$_REQUEST["conversation"];
+        $ObjNotificacionReceptor->viewmessages($data);
         $response=$ObjMensaje->view($data);
-        echo json_encode($response);
       break;
 
       case "remove":
         $data["idConversacion"]=$_REQUEST["conversation"];
         $response=$ObjMensaje->delete($data);
-        echo json_encode($response);
       break;
 
     }
-
+    if ($response=="") {$response[0]->data=false; }
+    echo json_encode($response);
 ?>
 
 

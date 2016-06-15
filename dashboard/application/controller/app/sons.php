@@ -8,6 +8,7 @@
     $ObjUsers=new Users();
     $data["idAcudiente"]=$_REQUEST["user"];
     $response=$ObjUsers->get("app-son",$data);
+    if ($response=="") {$response[0]->data=false; }
     echo json_encode($response);
 ?>
 

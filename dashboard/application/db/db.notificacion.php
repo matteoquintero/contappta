@@ -35,7 +35,7 @@ class DataObject_Notificacion extends DB_DataObject
              'publicadaApp' =>  DB_DATAOBJECT_STR,
              'enlaceDashboard' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'enlaceApp' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 

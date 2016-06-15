@@ -11,6 +11,9 @@ class DataObject_NotificacionXReceptor extends DB_DataObject
     public $__table = 'notificacion_x_receptor';         // table name
     public $idNotificacion;                  // int(11)  not_null
     public $idReceptor;                      // int(11)  not_null
+    public $idTipo;                          // int(11)  
+    public $idConversacion;                  // int(11)  
+    public $tipo;                            // string(11)  enum
     public $vista;                           // string(2)  enum
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
@@ -22,8 +25,11 @@ class DataObject_NotificacionXReceptor extends DB_DataObject
          return array(
              'idNotificacion' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idReceptor' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+             'idTipo' =>  DB_DATAOBJECT_INT,
+             'idConversacion' =>  DB_DATAOBJECT_INT,
+             'tipo' =>  DB_DATAOBJECT_STR,
              'vista' =>  DB_DATAOBJECT_STR,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 
@@ -40,6 +46,7 @@ class DataObject_NotificacionXReceptor extends DB_DataObject
     function defaults() // column default values 
     {
          return array(
+             'tipo' => '',
              'vista' => 'No',
          );
     }

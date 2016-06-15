@@ -13,6 +13,7 @@ class Grupo
 		$dbdata->idInstitucion=$data["idInstitucion"];
 		$dbdata->grado=$data["grado"];
 		$dbdata->identificador=$data["identificador"];
+          $dbdata->fechaRegistro=date('Y-m-d H:i:s');
 		$dbdata->find();
 
 		if ($dbdata->fetch()) {
@@ -29,6 +30,27 @@ class Grupo
 		return $resultado;
 
 	}
+
+  public function clear($id){
+
+    $dbdata = DB_DataObject::Factory('Grupo');
+
+    $dbdata->clear="Si";
+    $dbdata->whereAdd("id = $id");
+
+    $dbdata->find();
+
+    if ($dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY)) {
+      $resultado[0] = true;
+    } else {
+      $resultado[0] = false;
+    }
+
+    $dbdata->free();
+
+    return $resultado;
+
+  }
 
   public function update($data){
 
@@ -64,6 +86,7 @@ class Grupo
         $dbdata->selectAdd();
         $dbdata->selectAdd("id,idInstitucion,grado,identificador");
         $dbdata->whereAdd("idInstitucion = '".$data["idInstitucion"]."'");
+        $dbdata->whereAdd("clear = 'No'");
         $dbdata->find();
         $contador=0;
         while( $dbdata->fetch() ){
@@ -86,6 +109,7 @@ class Grupo
         $dbdata->selectAdd();
         $dbdata->selectAdd("id,idInstitucion,grado,identificador");
         $dbdata->whereAdd("id='".$data['idGrupo']."'");
+        $dbdata->whereAdd("clear = 'No'");
         $dbdata->find();
         while( $dbdata->fetch() ){
           $ret["idGrupo"] = $dbdata->id;

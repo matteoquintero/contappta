@@ -15,4 +15,9 @@
         $("#form-answer").submit();
       });
 
+      $( ".btn-clear" ).click(function() {
+        senddataajax("clear","noticia","new="+$(this).attr("data-new"));
+        redirectpage("noticias");
+      });
+
     });

@@ -17,10 +17,12 @@ class DataObject_Evento extends DB_DataObject
     public $descripcion;                     // blob(65535)  blob
     public $aprobado;                        // string(2)  enum
     public $publicado;                       // string(2)  enum
-    public $eliminado;                       // string(2)  enum
-    public $fechaInicio;                     // date(10)  binary
-    public $fechaFin;                        // date(10)  binary
-    public $fechaPublicacion;                // date(10)  binary
+    public $recordatorioDia;                 // string(2)  enum
+    public $recordatorioMinuto;              // string(2)  enum
+    public $fechaInicio;                     // datetime(19)  binary
+    public $fechaFin;                        // datetime(19)  binary
+    public $fechaPublicacion;                // datetime(19)  binary
+    public $clear;                           // string(2)  enum
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
@@ -37,11 +39,13 @@ class DataObject_Evento extends DB_DataObject
              'descripcion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'aprobado' =>  DB_DATAOBJECT_STR,
              'publicado' =>  DB_DATAOBJECT_STR,
-             'eliminado' =>  DB_DATAOBJECT_STR,
-             'fechaInicio' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
-             'fechaFin' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
-             'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'recordatorioDia' =>  DB_DATAOBJECT_STR,
+             'recordatorioMinuto' =>  DB_DATAOBJECT_STR,
+             'fechaInicio' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
+             'fechaFin' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
+             'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
+             'clear' =>  DB_DATAOBJECT_STR,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 
@@ -62,7 +66,9 @@ class DataObject_Evento extends DB_DataObject
              'descripcion' => '',
              'aprobado' => '',
              'publicado' => 'No',
-             'eliminado' => 'No',
+             'recordatorioDia' => 'No',
+             'recordatorioMinuto' => 'No',
+             'clear' => 'No',
          );
     }
 

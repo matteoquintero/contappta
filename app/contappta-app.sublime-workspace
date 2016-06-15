@@ -4,6 +4,74 @@
 		"selected_items":
 		[
 			[
+				"idU",
+				"idUser"
+			],
+			[
+				"messa",
+				"messages"
+			],
+			[
+				"not",
+				"notifications"
+			],
+			[
+				"new",
+				"news"
+			],
+			[
+				"re",
+				"response"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"ima",
+				"imageData"
+			],
+			[
+				"im",
+				"imageData"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"pa",
+				"padding-right"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"datai",
+				"dataimage"
+			],
+			[
+				"data",
+				"datamessage"
+			],
+			[
+				"use",
+				"user"
+			],
+			[
+				"get",
+				"getItem"
+			],
+			[
 				"local",
 				"localStorage"
 			],
@@ -38,10 +106,6 @@
 			[
 				"for",
 				"for	for (…) {…}"
-			],
-			[
-				"res",
-				"response"
 			],
 			[
 				"tab",
@@ -108,10 +172,6 @@
 				"usuario"
 			],
 			[
-				"data",
-				"datasection"
-			],
-			[
 				"user",
 				"users"
 			],
@@ -134,10 +194,6 @@
 			[
 				"cl",
 				"click-function	click-function"
-			],
-			[
-				"in",
-				"institución"
 			],
 			[
 				"err",
@@ -176,10 +232,6 @@
 				"startDate"
 			],
 			[
-				"fon",
-				"font-size"
-			],
-			[
 				"text",
 				"text-transform"
 			],
@@ -200,10 +252,10 @@
 	"buffers":
 	[
 		{
-			"file": "www/js/app.js",
+			"file": "www/js/services.js",
 			"settings":
 			{
-				"buffer_size": 5968,
+				"buffer_size": 15030,
 				"line_ending": "Unix"
 			}
 		},
@@ -211,31 +263,7 @@
 			"file": "www/js/controllers.js",
 			"settings":
 			{
-				"buffer_size": 8059,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/templates/event-detail.html",
-			"settings":
-			{
-				"buffer_size": 414,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/templates/event-id.html",
-			"settings":
-			{
-				"buffer_size": 568,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/templates/dash-detail.html",
-			"settings":
-			{
-				"buffer_size": 1232,
+				"buffer_size": 12030,
 				"line_ending": "Unix"
 			}
 		}
@@ -276,29 +304,59 @@
 	},
 	"file_history":
 	[
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/css/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/config.xml",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/platforms/android/AndroidManifest.xml",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/platforms/android/CordovaLib/build/intermediates/bundles/release/AndroidManifest.xml",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/gulpfile.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/info.txt",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/send-message.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/profile.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/services.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/controllers.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/directives.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-student.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-parent.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-institute.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/index.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/app.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/controllers.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/services.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/card-one.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/chat-detail.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/directives.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/css/style.css",
-		"/Users/matteoquintero/Desktop/app/www/js/services.js",
-		"/Users/matteoquintero/Desktop/app/www/js/controllers.js",
-		"/Users/matteoquintero/Desktop/app/www/js/app.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/dash-detail.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/date.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/event-detail.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/magazine.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-chats.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-account.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/magazine.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/magazines.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/card-two.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/card-three.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/card-four.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/card-one.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/contacts.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-dash.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/chat-detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-account.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/login.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tabs.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/usuario.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/event-id.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/dash-detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/date.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/institute.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/son.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/image-modal.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/onezone-datepicker.min.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/asd.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/IonicProject/www/js/app.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/IonicProject/www/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/camarita/foto/www/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/camarita/foto/www/js/app.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/camarita/foto/www/js/controllers.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/camarita/foto/www/templates/tab-dash.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/cam/CameraPluginDemo/www/js/app.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/cam/CameraPluginDemo/www/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/push/www/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/push/www/js/index.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/deviceToken.js",
+		"/Users/matteoquintero/Desktop/app/www/js/services.js",
+		"/Users/matteoquintero/Desktop/app/www/js/controllers.js",
+		"/Users/matteoquintero/Desktop/app/www/js/app.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/mvc/views/home.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/mvc/views/user.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/mvc/models/notasModel.js",
@@ -307,16 +365,9 @@
 		"/Applications/XAMPP/xamppfiles/htdocs/mvc/controllers/notasController.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/old/pymes/resources/js/general/notification-messages.json",
 		"/Applications/XAMPP/xamppfiles/htdocs/old/pymes/resources/js/shoppingcart/banks.json",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-dash.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tabs.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/login.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/config.xml",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/event-id.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/institute.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/platforms/android/assets/www/js/controllers.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/platforms/android/assets/www/js/services.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/fonts/opensans-condbold-webfont.eot",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/son.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/controllers.min.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-two.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-three.html",
@@ -354,7 +405,6 @@
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/institution.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/update-institution.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/create-institution.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/usuario.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/answers-news.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-new.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/any/update-new.html",
@@ -381,29 +431,7 @@
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/profile.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/css/contaapta/AdminLTE.css",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/usuario.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/config.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/page/authentication.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/sesion.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/grupo.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/controller/sesion.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/senders-messages.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/events.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/messages.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/sendersmessages.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/message.min.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/resources/AdminLTE-2.3.0/pages/forms/advanced.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/event.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/users.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/general/footer.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/general/scripts.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-group.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/master/general/header.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/css/vendor/daterangepicker-bs3.css",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/css/vendor/bootstrap.css",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-new.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/class/sendersevents.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/profile/demo.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/resources/js/general/functions.js"
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/application/config.php"
 	],
 	"find":
 	{
@@ -414,6 +442,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"/Applications/XAMPP/xamppfiles/htdocs/contappta/app",
 			"<open files>,/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard",
 			"<open files>",
 			"/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard",
@@ -427,6 +456,121 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"19",
+			"android:versionCode",
+			"18",
+			"code",
+			"android:versionCode",
+			"versionCode",
+			"18",
+			"com.ionicframework.contappta762670",
+			"datanew",
+			"Nombre",
+			"message",
+			"profile",
+			"idUser",
+			"letter",
+			"}\n",
+			"letter-spacing",
+			"dataone",
+			",{},{reload: true}",
+			"magazine",
+			"son",
+			"event-id",
+			"chat-detail",
+			"dash-detail",
+			"SplashScreen",
+			", {inherit:false}",
+			", {inherit:false})",
+			"#/tab/chat-detail/",
+			"magazines",
+			"button",
+			"opc",
+			"button",
+			"buttons-magazine",
+			"ng-show=\"magazine.ultimo\"",
+			"no-animation",
+			"buttons-magazine",
+			"buttons-modal",
+			"$ionicModal,",
+			"one",
+			"Modal",
+			"ionicSlideBoxDelegate",
+			"city",
+			"magazines",
+			"magazine",
+			"localStorage",
+			"localSotarage\n",
+			"{\n",
+			"localStorage",
+			"datauser",
+			"datamessage",
+			"datanew",
+			"instute",
+			"student",
+			"ANY",
+			"chat",
+			"ab(",
+			"\">",
+			"href=\"#/tab/",
+			",$timeout,notifications",
+			"response",
+			"$scope.doRefresh();",
+			"')",
+			"ng-click",
+			"response",
+			" user:",
+			"user",
+			"ng-controller=\"InitCtrl\"",
+			"InitCtrl",
+			"cache-view=\"false\"",
+			"\"",
+			"portada",
+			"\n",
+			"slide",
+			"0",
+			"mode",
+			"news",
+			"datanew",
+			"nevv",
+			"users.php",
+			"response.data.trim()!='false'",
+			"response.data.trim()!='null'",
+			"maga",
+			"\n          ",
+			"logion",
+			"imageData",
+			":'",
+			"=> ",
+			"= ",
+			";",
+			"ftOptions.",
+			"==\";\n",
+			"onUploadSuccess",
+			"https:",
+			"console.log",
+			"viewUploadedPictures",
+			"tab.chats",
+			"tab.dash",
+			"detail",
+			"paramone",
+			"detail-message",
+			"asd",
+			"$parent",
+			",\n",
+			"();\n",
+			"institution",
+			"ton>--",
+			"  </button>--",
+			"<button class=\"button button-icon icon ion-image footer-btn",
+			"cache: false,",
+			"g-model=\"input.message\"",
+			"input.message",
+			"!response",
+			"news",
+			"chats",
+			"Emisor",
+			"chat",
 			"highlights",
 			"response",
 			"app",
@@ -439,122 +583,7 @@
 			"tokendata",
 			"factory",
 			"list",
-			"g-click=\"\"",
-			"idUser",
-			"news",
-			"magazines",
-			"idUser",
-			"Utilidad",
-			"chat",
-			"myArray",
-			"  var datamessage={\n    reciver:user[\"idUsuario\"],\n    conversation:$stateParams.chatId,\n  };\n\n  mensaje.view(datamessage).then();",
-			"edad",
-			"nombre",
-			"id",
-			"honors",
-			"data/magazine/",
-			"aImages",
-			"datamessage",
-			"mensaje",
-			"transmitter",
-			"reciver",
-			"datamessage",
-			"footer-btn",
-			"conversation",
-			"sendMessage",
-			"'http://www.contappta.com/application/controller/app/",
-			"'http://www.contappta.com/application/controller/app/login.php'",
-			"var user = JSON.parse(window.localStorage['user'] || '{}');",
-			"http://www.contappta.com/application/controller/app/",
-			"//www.",
-			"idInstucion",
-			"users",
-			"localStorage['institution']",
-			"localStorage['user']",
-			"localStorage['institution']",
-			"http:",
-			"http://",
-			"contappa",
-			"\n",
-			"http://www.contappa.com/application/controller/app/",
-			"//localhost/contappta/dashboard/application/controller/app/",
-			"http://localhost/contappta/dashboard/application/controller/app/",
-			"+n",
-			"event",
-			"notice",
-			"dateevent",
-			"date",
-			"year",
-			"new",
-			"news",
-			"ion-",
-			"console.log(response); ",
-			"users",
-			"son",
-			".item-thumbnail-left.item",
-			"console",
-			"three",
-			"Chats",
-			"messages",
-			"chats",
-			"Chats",
-			"News",
-			"Chats",
-			"idUser",
-			"localStorage['idUsuario']",
-			"card-two",
-			"card-one",
-			"esponse",
-			"data",
-			"chats",
-			"chatId",
-			"chats",
-			"myService",
-			"typecard",
-			"id",
-			"idNoticia",
-			"item-body",
-			".card-two ",
-			".card-two",
-			".card-two ",
-			"ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER",
-			"Administrador",
-			"institution",
-			" #}",
-			"{# ",
-			" #}",
-			"{# ",
-			" #}",
-			"{# ",
-			"aprobada",
-			"Aprovado",
-			"Aprovar",
-			"aprobada",
-			"Usuario-",
-			"user",
-			"_SESSION",
-			"$userdata.id",
-			"_SESSION",
-			"id",
-			"ObjUsuario",
-			"sendersmessages",
-			"fechaInicio",
-			",fechaFin",
-			"fechaFin",
-			"message",
-			"fechaRegistro",
-			"fechaInicio",
-			"mensaje",
-			"Mensaje",
-			"mensaje",
-			"reservation",
-			"reservationtime",
-			"reservation",
-			"Evevents",
-			"mensaje",
-			"messages",
-			"mensaje",
-			"idMensaje"
+			"g-click=\"\""
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -562,6 +591,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			" cache-view=\"false\" can-swipe-back=\"false\" ",
 			"9BB939",
 			"a9ca3d",
 			"{# ",
@@ -578,15 +608,15 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "www/js/app.js",
+					"file": "www/js/services.js",
 					"settings":
 					{
-						"buffer_size": 5968,
+						"buffer_size": 15030,
 						"regions":
 						{
 						},
@@ -617,15 +647,15 @@
 					"file": "www/js/controllers.js",
 					"settings":
 					{
-						"buffer_size": 8059,
+						"buffer_size": 12030,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1199,
-								1199
+								4095,
+								4095
 							]
 						],
 						"settings":
@@ -638,100 +668,7 @@
 							"trim_trailing_white_space_on_save": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "www/templates/event-detail.html",
-					"settings":
-					{
-						"buffer_size": 414,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								57,
-								57
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "www/templates/event-id.html",
-					"settings":
-					{
-						"buffer_size": 568,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								329,
-								329
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "www/templates/dash-detail.html",
-					"settings":
-					{
-						"buffer_size": 1232,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								321,
-								330
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1616.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -770,9 +707,13 @@
 		]
 	},
 	"menu_visible": true,
+	"output.coffeecompile_output":
+	{
+		"height": 48.0
+	},
 	"output.exec":
 	{
-		"height": 53.0
+		"height": 22.0
 	},
 	"replace":
 	{

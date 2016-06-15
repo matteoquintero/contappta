@@ -123,7 +123,7 @@ function sendformfileajax(accion,controller,form,inputfile){
     for(var i = 0;i<file_data.length;i++){
         dataform.append("file-"+i, file_data[i]);
     }
-
+    dataform.append("files",file_data.length);
     var other_data = form.serializeArray();
     $.each(other_data,function(key,input){
         dataform.append(input.name,input.value);

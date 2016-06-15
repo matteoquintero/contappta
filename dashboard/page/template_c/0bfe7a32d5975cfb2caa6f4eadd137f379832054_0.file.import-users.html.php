@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-03-01 04:43:29
+/* Smarty version 3.1.29, created on 2016-03-28 22:42:44
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/import-users.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56d50fe1b5bc37_11164335',
+  'unifunc' => 'content_56f9f9b489d564_23253647',
   'file_dependency' => 
   array (
     '0bfe7a32d5975cfb2caa6f4eadd137f379832054' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/import-users.html',
-      1 => 1456803807,
+      1 => 1459222910,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56d50fe1b5bc37_11164335 ($_smarty_tpl) {
+function content_56f9f9b489d564_23253647 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -71,7 +71,7 @@ application/controller/import.php" role="form" method="post" autocomplete="off" 
           </form>
           <form action="<?php echo @constant('BASE');?>
 application/controller/download.php" method="post" id="form-download" class="hide" target="_blank" enctype="multipart/form-data">
-              <input name="ruta" value="_data/formats/formato.xlsx">
+              <input name="ruta" value="_data/formats/formato.xls">
               <input name="nombre" value="formato.xlsx">
             </form>
 

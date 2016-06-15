@@ -27,7 +27,7 @@ class DataObject_Pagina extends DB_DataObject
              'numeroPagina' =>  DB_DATAOBJECT_INT,
              'pagina' =>  DB_DATAOBJECT_STR,
              'media' =>  DB_DATAOBJECT_STR,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 

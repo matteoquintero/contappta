@@ -16,7 +16,7 @@ class Revista
     $dbdata->numeroPaginas=$data["numeroPaginas"];
     $dbdata->identificador=$data["identificador"];
     $dbdata->consecutivo=$data["consecutivo"];
-
+      $dbdata->fechaRegistro=date('Y-m-d H:i:s');
     $create=$dbdata->insert();
 
     if ($create) {
@@ -32,6 +32,28 @@ class Revista
 		return $resultado;
 
 	}
+
+  public function clear($id){
+
+    $dbdata = DB_DataObject::Factory('Revista');
+
+    $dbdata->clear="Si";
+    $dbdata->whereAdd("id = $id");
+
+    $dbdata->find();
+
+    if ($dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY)) {
+      $resultado[0] = true;
+    } else {
+      $resultado[0] = false;
+    }
+
+    $dbdata->free();
+
+    return $resultado;
+
+  }
+
 
   public function update($data){
 

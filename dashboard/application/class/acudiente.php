@@ -3,32 +3,32 @@
 class Acudiente
 {
 
-	function __construct(){
+  function __construct(){
 
-	}
+  }
 
-	public function create($data){
+  public function create($data){
 
-		$dbdata = DB_DataObject::Factory('Acudiente');
+    $dbdata = DB_DataObject::Factory('Acudiente');
+    $dbdata->idHijo=$data["idHijo"];
+    $dbdata->idAcudiente=$data["idAcudiente"];
+    $dbdata->fechaRegistro=date('Y-m-d H:i:s');
+    $dbdata->find();
 
-		$dbdata->idHijo=$data["idHijo"];
-		$dbdata->idAcudiente=$data["idAcudiente"];
-		$dbdata->find();
+    if ($dbdata->fetch()) {
+      $resultado[0] = false;
+    } else {
 
-		if ($dbdata->fetch()) {
-			$resultado[0] = false;
-		} else {
+      $resultado[0] = true;
+      $resultado[1] = $dbdata->insert();
 
-			$resultado[0] = true;
-			$resultado[1] = $dbdata->insert();
+    }
 
-		}
+    $dbdata->free();
 
-		$dbdata->free();
+    return $resultado;
 
-		return $resultado;
-
-	}
+  }
 
 
 }

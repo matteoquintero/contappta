@@ -11,6 +11,7 @@
     $data["fechaInicio"]=$_REQUEST["dateevent"];
     $mode=$_REQUEST["mode"];
     $response=$ObjEvents->get($mode,$data);
+    if ($response=="") {$response[0]->data=false; }
     echo json_encode($response);
 ?>
 

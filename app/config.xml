@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.contappta762670" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.mq.contappta" versionCode="2" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Contappta</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Proyecto de comunicación institucional.
     </description>
-  <author email="you@example.com" href="http://example.com.com/">
-      Your Name Here
+  <author email="contappta@gmail.com" href="http://contappta.co/">
+      Contappta
     </author>
   <content src="index.html"/>
+  <preference name="AndroidPersistentFileLocation" value="Compatibility" />
   <access origin="*"/>
   <access launch-external="yes" origin="tel:*"/>
   <access launch-external="yes" origin="mailto:*"/>
@@ -18,7 +19,7 @@
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="android-minSdkVersion" value="16"/>
   <preference name="BackupWebStorage" value="none"/>
-  <preference name="SplashScreen" value="screen"/>
+  <preference name="SplashScreen" value="none"/>
   <preference name="SplashScreenDelay" value="3000"/>
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar"/>

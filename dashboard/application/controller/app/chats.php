@@ -9,6 +9,7 @@
     $data["idUsuario"]=$_REQUEST["user"];
     $mode=$_REQUEST["mode"];
     $response=$ObjChats->get($mode,$data);
+    if ($response=="") {$response[0]->data=false; }
     echo json_encode($response);
 ?>
 

@@ -6,10 +6,12 @@
     $Ruta="../../";
     IncluirArchivos($Ruta);
     $ObjNoticiaReceptor=new NoticiaReceptor();
+    $ObjNotificacionReceptor=new NotificacionReceptor();
     $data["idReceptor"]=$_REQUEST["user"];
     $data["idNoticia"]=$_REQUEST["nevv"];
-    $response=$ObjNoticiaReceptor->view($data);
-    echo json_encode($response);
+    $data["idTipo"]=$_REQUEST["nevv"];
+    $ObjNotificacionReceptor->view($data);
+    $ObjNoticiaReceptor->view($data);
 ?>
 
 

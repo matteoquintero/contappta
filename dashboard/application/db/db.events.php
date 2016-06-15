@@ -14,11 +14,10 @@ class DataObject_Events extends DB_DataObject
     public $asunto;                          // string(100)  
     public $descripcion;                     // blob(65535)  blob
     public $aprobado;                        // string(2)  enum
-    public $eliminado;                       // string(2)  enum
     public $publicado;                       // string(2)  enum
-    public $fechaInicio;                     // date(10)  binary
-    public $fechaFin;                        // date(10)  binary
-    public $fechaPublicacion;                // date(10)  binary
+    public $fechaInicio;                     // datetime(19)  binary
+    public $fechaFin;                        // datetime(19)  binary
+    public $fechaPublicacion;                // datetime(19)  binary
     public $fechaRegistro;                   // timestamp(19)  unsigned binary
     public $idEmisor;                        // int(11)  not_null
     public $usuario;                         // string(100)  not_null
@@ -42,12 +41,11 @@ class DataObject_Events extends DB_DataObject
              'asunto' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'aprobado' =>  DB_DATAOBJECT_STR,
-             'eliminado' =>  DB_DATAOBJECT_STR,
              'publicado' =>  DB_DATAOBJECT_STR,
-             'fechaInicio' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
-             'fechaFin' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
-             'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'fechaInicio' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
+             'fechaFin' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
+             'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
              'idEmisor' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'usuario' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,
              'apellido' =>  DB_DATAOBJECT_STR,
@@ -78,7 +76,6 @@ class DataObject_Events extends DB_DataObject
              'asunto' => '',
              'descripcion' => '',
              'aprobado' => '',
-             'eliminado' => 'No',
              'publicado' => 'No',
              'usuario' => '',
              'apellido' => '',

@@ -10,7 +10,7 @@ class DataObject_Reciversnotifications extends DB_DataObject
 
     public $__table = 'reciversnotifications';           // table name
     public $idNotificacion;                  // int(11)  not_null
-    public $vista;                           // string(2)  enum
+    public $vista;                           // string(6)  enum
     public $idReceptor;                      // int(11)  not_null
     public $deviceToken;                     // blob(65535)  blob
     public $usuario;                         // string(100)  not_null

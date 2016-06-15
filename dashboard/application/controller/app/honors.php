@@ -8,6 +8,7 @@
     $ObjHonors=new Honors();
     $data["idUsuario"]=$_REQUEST["user"];
     $response=$ObjHonors->get("app",$data);
+    if ($response=="") {$response[0]->data=false; }
     echo json_encode($response);
 ?>
 

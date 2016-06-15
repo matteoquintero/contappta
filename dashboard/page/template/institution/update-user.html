@@ -92,19 +92,6 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="honor">Reconocimiento</label>
-                    <select class="form-control select2" id="honor" name="honor[]" multiple style="width: 100%;" data-placeholder="Seleecione reconocimientos">
-                      <option></option>
-                      {#foreach from=$honors item=honor#}
-                      {#if $honor->idReconocimiento|in_array:$user.reconocimientos#}
-                        <option selected value="{#$honor->idReconocimiento#}">{#$honor->reconocimiento#}</option>
-                      {#else#}
-                        <option value="{#$honor->idReconocimiento#}">{#$honor->reconocimiento#}</option>
-                      {#/if#}
-                      {#/foreach#}
-                    </select>
-                  </div>
-                  <div class="form-group">
                     <label for="permission">Permisos</label>
                     <select class="form-control select2" id="permission" name="permission" style="width: 100%;" data-placeholder="Seleecione el permiso">
                       <option></option>
@@ -124,6 +111,7 @@
             </div><!-- /.box-body -->
             <input type="hidden" name="user" value="{#$user.idUsuario#}">
             <input type="hidden" name="namephoto" value="{#$user.usuario#}">
+            <input type="hidden" name="institute" value="{#$user.idInstitucion#}">
             <div class="box-footer">
               <button type="button" class="btn btn-primary">Enviar</button>
             </div>

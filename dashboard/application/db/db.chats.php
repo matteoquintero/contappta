@@ -13,7 +13,6 @@ class DataObject_Chats extends DB_DataObject
     public $idMensaje;                       // int(11)  not_null unsigned
     public $mensaje;                         // blob(65535)  blob
     public $visto;                           // string(2)  enum
-    public $eliminado;                       // string(2)  enum
     public $media;                           // string(250)  
     public $fechaRegistro;                   // timestamp(19)  unsigned binary
     public $idUsuarioUno;                    // int(11)  
@@ -37,9 +36,8 @@ class DataObject_Chats extends DB_DataObject
              'idMensaje' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'mensaje' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'visto' =>  DB_DATAOBJECT_STR,
-             'eliminado' =>  DB_DATAOBJECT_STR,
              'media' =>  DB_DATAOBJECT_STR,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
              'idUsuarioUno' =>  DB_DATAOBJECT_INT,
              'nombreUsuarioUno' =>  DB_DATAOBJECT_STR,
              'usuarioUsuarioUno' =>  DB_DATAOBJECT_STR,
@@ -70,7 +68,6 @@ class DataObject_Chats extends DB_DataObject
              'idMensaje' => 0,
              'mensaje' => '',
              'visto' => 'No',
-             'eliminado' => 'No',
              'media' => '',
              'nombreUsuarioUno' => '',
              'usuarioUsuarioUno' => '',

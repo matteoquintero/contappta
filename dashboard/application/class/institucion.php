@@ -18,6 +18,7 @@ class Institucion
 		$dbdata->celular=$data["celular"];
     $dbdata->direccion=$data["direccion"];
 		$dbdata->logo=$data["logo"];
+          $dbdata->fechaRegistro=date('Y-m-d H:i:s');
 		$dbdata->find();
 
 		if ($dbdata->fetch()) {
@@ -34,6 +35,28 @@ class Institucion
 		return $resultado;
 
 	}
+
+
+  public function clear($id){
+
+    $dbdata = DB_DataObject::Factory('Institucion');
+
+    $dbdata->clear="Si";
+    $dbdata->whereAdd("id = $id");
+
+    $dbdata->find();
+
+    if ($dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY)) {
+      $resultado[0] = true;
+    } else {
+      $resultado[0] = false;
+    }
+
+    $dbdata->free();
+
+    return $resultado;
+
+  }
 
   public function update($data){
 

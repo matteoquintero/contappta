@@ -17,9 +17,9 @@ class DataObject_Mensaje extends DB_DataObject
     public $idNotificacion;                  // int(11)  
     public $mensaje;                         // blob(65535)  blob
     public $media;                           // string(250)  
-    public $eliminado;                       // string(2)  enum
     public $visto;                           // string(2)  enum
     public $consecutivo;                     // int(11)  
+    public $clear;                           // string(2)  enum
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
@@ -36,10 +36,10 @@ class DataObject_Mensaje extends DB_DataObject
              'idNotificacion' =>  DB_DATAOBJECT_INT,
              'mensaje' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'media' =>  DB_DATAOBJECT_STR,
-             'eliminado' =>  DB_DATAOBJECT_STR,
              'visto' =>  DB_DATAOBJECT_STR,
              'consecutivo' =>  DB_DATAOBJECT_INT,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'clear' =>  DB_DATAOBJECT_STR,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 
@@ -58,8 +58,8 @@ class DataObject_Mensaje extends DB_DataObject
          return array(
              'mensaje' => '',
              'media' => '',
-             'eliminado' => 'No',
              'visto' => 'No',
+             'clear' => 'No',
          );
     }
 

@@ -15,10 +15,10 @@ class Chats
 
         $dbdata = DB_DataObject::Factory('Chats');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("idConversacion,mensaje,media,idUsuarioUno,usuarioUsuarioUno,rolUsuarioUno,fechaRegistro");
-        $dbdata->selectAdd("fotoUsuarioUno,idUsuarioDos,usuarioUsuarioDos,rolUsuarioDos,fotoUsuarioDos");
+        $dbdata->selectAdd("idConversacion,mensaje,media,fechaRegistro");
+        $dbdata->selectAdd("idUsuarioUno,nombreUsuarioUno,rolUsuarioUno,fotoUsuarioUno");
+        $dbdata->selectAdd("idUsuarioDos,nombreUsuarioDos,rolUsuarioDos,fotoUsuarioDos");
         $dbdata->whereAdd("idConversacion IN(".$this->conversations($data["idUsuario"]).")");
-        $dbdata->whereAdd("eliminado='no'");
 
         $dbdata->find();
         $contador=0;
@@ -31,12 +31,12 @@ class Chats
           if ($data["idUsuario"]==$dbdata->idUsuarioUno) {
 
             $ret[$contador]->idReceptor = $dbdata->idUsuarioUno;
-            $ret[$contador]->usuarioReceptor = $dbdata->usuarioUsuarioUno;
+            $ret[$contador]->nombreReceptor = $dbdata->nombreUsuarioUno;
             $ret[$contador]->rolReceptor = $dbdata->rolUsuarioUno;
             $ret[$contador]->fotoReceptor = RUTADATA.$dbdata->fotoUsuarioUno;
 
             $ret[$contador]->idEmisor = $dbdata->idUsuarioDos;
-            $ret[$contador]->usuarioEmisor = $dbdata->usuarioUsuarioDos;
+            $ret[$contador]->nombreEmisor = $dbdata->nombreUsuarioDos;
             $ret[$contador]->rolEmisor = $dbdata->rolUsuarioDos;
             $ret[$contador]->fotoEmisor = RUTADATA.$dbdata->fotoUsuarioDos;
 
@@ -44,12 +44,12 @@ class Chats
           }else if ($data["idUsuario"]==$dbdata->idUsuarioDos){
 
             $ret[$contador]->idEmisor = $dbdata->idUsuarioUno;
-            $ret[$contador]->usuarioEmisor = $dbdata->usuarioUsuarioUno;
+            $ret[$contador]->nombreEmisor = $dbdata->nombreUsuarioUno;
             $ret[$contador]->rolEmisor = $dbdata->rolUsuarioUno;
             $ret[$contador]->fotoEmisor = RUTADATA.$dbdata->fotoUsuarioUno;
 
             $ret[$contador]->idReceptor = $dbdata->idUsuarioDos;
-            $ret[$contador]->usuarioReceptor = $dbdata->usuarioUsuarioDos;
+            $ret[$contador]->nombreReceptor = $dbdata->nombreUsuarioDos;
             $ret[$contador]->rolReceptor = $dbdata->rolUsuarioDos;
             $ret[$contador]->fotoReceptor = RUTADATA.$dbdata->fotoUsuarioDos;
 

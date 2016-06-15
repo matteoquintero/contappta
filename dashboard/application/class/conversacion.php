@@ -21,6 +21,7 @@ class Conversacion
       $dbdata = DB_DataObject::Factory('Conversacion');
       $dbdata->idUsuarioUno=$data["idReceptor"];
   		$dbdata->idUsuarioDos=$data["idEmisor"];
+      $dbdata->fechaRegistro=date('Y-m-d H:i:s');
       $resultado[0] = true;
       $resultado[1] = $dbdata->insert();
       $dbdata->free();

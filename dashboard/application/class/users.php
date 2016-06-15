@@ -73,11 +73,12 @@ class Users extends Conversacion
 
   public function idbydocument($document){
     $dbdata = DB_DataObject::Factory('Users');
+    $dbdata->selectAdd();
     $dbdata->selectAdd("idUsuario");
     $dbdata->whereAdd(" documento='$document' ");
     $dbdata->find();
     if( $dbdata->fetch() ){
-      return true;
+      $idUsuario=$dbdata->idUsuario;
     }
     $dbdata->free();
     return $idUsuario;
@@ -154,6 +155,78 @@ class Users extends Conversacion
           $ret["institucion"] = $dbdata->institucion;
           $ret["grado"] = $dbdata->grado;
           $ret["identificador"] = $dbdata->identificador;
+          switch ($dbdata->idRol) {
+            case 1:
+              $insornat=false;
+              $menu="parent";
+            break;
+            case 2:
+              $insornat=false;
+              $menu="parent";
+            break;
+            case 3:
+              $insornat=true;
+              $menu="institute";
+            break;
+            case 4:
+              $insornat=true;
+              $menu="institute";
+            break;
+            case 5:
+              $insornat=false;
+              $menu="student";
+            break;
+            case 6:
+              $insornat=false;
+              $menu="student";
+            break;
+            case 7:
+              $insornat=true;
+              $menu="institute";
+            break;
+            case 8:
+              $insornat=true;
+              $menu="institute";
+            break;
+            case 9:
+              $insornat=false;
+              $menu="parent";
+            break;
+            case 10:
+              $insornat=false;
+              $menu="parent";
+            break;
+            case 11:
+              $insornat=false;
+              $menu="parent";
+            break;
+            case 12:
+              $insornat=false;
+              $menu="parent";
+            break;
+            case 13:
+              $insornat=false;
+              $menu="parent";
+            break;
+            case 14:
+              $insornat=false;
+              $menu="parent";
+            break;
+            case 15:
+              $insornat=false;
+              $menu="parent";
+            break;
+            case 16:
+              $insornat=false;
+              $menu="parent";
+            break;
+            case 17:
+              $insornat=false;
+              $menu="parent";
+            break;
+          }
+          $ret["insornat"] = $insornat;
+          $ret["menu"] = $menu;
         }
         $dbdata->free();
         return $ret;
@@ -259,7 +332,7 @@ class Users extends Conversacion
         $dbdata->selectAdd();
         $dbdata->selectAdd("idUsuario,idRol,idInstitucion,idGrupo,nombre,permiso");
         $dbdata->selectAdd("apellido,foto,celular,usuario,correo,documento,permiso");
-        $dbdata->selectAdd("rol,institucion,grado,identificador");
+        $dbdata->selectAdd("rol,institucion,grado,identificador,acudientes,reconocimientos");
         $dbdata->whereAdd("idInstitucion = '".$data["idInstitucion"]."'");
         $dbdata->find();
 
@@ -281,6 +354,8 @@ class Users extends Conversacion
           $ret[$contador]->rol = $dbdata->rol;
           $ret[$contador]->institucion = $dbdata->institucion;
           $ret[$contador]->grado = $dbdata->grado;
+          $ret[$contador]->acudientes = $dbdata->acudientes;
+          $ret[$contador]->reconocimientos = $dbdata->reconocimientos;
           $ret[$contador]->identificador = $dbdata->identificador;
           $contador++;
         }
@@ -404,7 +479,6 @@ class Users extends Conversacion
         $dbdata->selectAdd("idUsuario,idRol,idInstitucion,idGrupo,nombre,permiso");
         $dbdata->selectAdd("apellido,foto,celular,usuario,correo,documento,permiso");
         $dbdata->selectAdd("rol,institucion,grado,identificador");
-        $dbdata->whereAdd("idUsuario = '".$data["idUsuario"]."'");
         $dbdata->find();
 
         $contador=0;

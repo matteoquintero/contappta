@@ -6,6 +6,8 @@
     $Ruta="../../";
     IncluirArchivos($Ruta);
     $ObjUsers=new Users();
+    $ObjNotificacionReceptor=new NotificacionReceptor();
+    $ObjReconocimientoUsuario=new ReconocimientoUsuario();
 
     switch ($_REQUEST["mode"]) {
 
@@ -20,7 +22,24 @@
         $response=$ObjUsers->get("users-chats",$data);
       break;
 
+      case 'view':
+
+
+        $data["idHijo"]=$_REQUEST["son"];
+        $recousers=$ObjReconocimientoUsuario->get("notification",$data);
+
+        foreach ($recousers as $recouser) {
+
+          $data["idReceptor"]=$_REQUEST["parent"];
+          $data["idTipo"]=$recouser->idReconocimientoUsuario;
+          $ObjNotificacionReceptor->view($data);
+
+        }
+
+      break;
+
     }
+    if ($response=="") {$response=false; }
     echo json_encode($response);
 ?>
 

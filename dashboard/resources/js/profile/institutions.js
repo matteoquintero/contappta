@@ -7,4 +7,9 @@
 
       });
 
+      $( ".btn-clear" ).click(function() {
+        senddataajax("clear","institucion","institution="+$(this).attr("data-institution"));
+        redirectpage("instituciones");
+      });
+
     });

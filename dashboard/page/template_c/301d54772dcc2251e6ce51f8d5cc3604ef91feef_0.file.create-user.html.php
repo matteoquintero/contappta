@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-19 01:33:03
+/* Smarty version 3.1.29, created on 2016-03-19 01:28:06
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/create-user.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c662bf718226_56062180',
+  'unifunc' => 'content_56ecf1765bf900_65979970',
   'file_dependency' => 
   array (
     '301d54772dcc2251e6ce51f8d5cc3604ef91feef' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/create-user.html',
-      1 => 1455671400,
+      1 => 1458367900,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c662bf718226_56062180 ($_smarty_tpl) {
+function content_56ecf1765bf900_65979970 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -56,6 +56,34 @@ function content_56c662bf718226_56062180 ($_smarty_tpl) {
             <div class="box-body">
             <div class="row">
               <div class="col-md-6">
+                                  <div class="form-group">
+                  <label for="institute">Institución</label>
+                  <select class="form-control select2" name="institute" id="institute" data-placeholder="Seleecione la institution" style="width: 100%;">
+                    <option></option>
+                    <?php
+$_from = $_smarty_tpl->tpl_vars['institutions']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_institute_0_saved_item = isset($_smarty_tpl->tpl_vars['institute']) ? $_smarty_tpl->tpl_vars['institute'] : false;
+$_smarty_tpl->tpl_vars['institute'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['institute']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['institute']->value) {
+$_smarty_tpl->tpl_vars['institute']->_loop = true;
+$__foreach_institute_0_saved_local_item = $_smarty_tpl->tpl_vars['institute'];
+?>
+                      <option value="<?php echo $_smarty_tpl->tpl_vars['institute']->value->idInstitucion;?>
+"><?php echo $_smarty_tpl->tpl_vars['institute']->value->institucion;?>
+</option>
+                    <?php
+$_smarty_tpl->tpl_vars['institute'] = $__foreach_institute_0_saved_local_item;
+}
+if ($__foreach_institute_0_saved_item) {
+$_smarty_tpl->tpl_vars['institute'] = $__foreach_institute_0_saved_item;
+}
+?>
+                  </select>
+                  </div>
                   <div class="form-group">
                     <label for="username">Usuario</label>
                     <input type="text" class="form-control" name="username" id="username" placeholder="Digite el el usuario">
@@ -101,21 +129,21 @@ $_from = $_smarty_tpl->tpl_vars['roles']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
 }
-$__foreach_role_0_saved_item = isset($_smarty_tpl->tpl_vars['role']) ? $_smarty_tpl->tpl_vars['role'] : false;
+$__foreach_role_1_saved_item = isset($_smarty_tpl->tpl_vars['role']) ? $_smarty_tpl->tpl_vars['role'] : false;
 $_smarty_tpl->tpl_vars['role'] = new Smarty_Variable();
 $_smarty_tpl->tpl_vars['role']->_loop = false;
 foreach ($_from as $_smarty_tpl->tpl_vars['role']->value) {
 $_smarty_tpl->tpl_vars['role']->_loop = true;
-$__foreach_role_0_saved_local_item = $_smarty_tpl->tpl_vars['role'];
+$__foreach_role_1_saved_local_item = $_smarty_tpl->tpl_vars['role'];
 ?>
                       <option value="<?php echo $_smarty_tpl->tpl_vars['role']->value->idRol;?>
 "><?php echo $_smarty_tpl->tpl_vars['role']->value->rol;?>
 </option>
                     <?php
-$_smarty_tpl->tpl_vars['role'] = $__foreach_role_0_saved_local_item;
+$_smarty_tpl->tpl_vars['role'] = $__foreach_role_1_saved_local_item;
 }
-if ($__foreach_role_0_saved_item) {
-$_smarty_tpl->tpl_vars['role'] = $__foreach_role_0_saved_item;
+if ($__foreach_role_1_saved_item) {
+$_smarty_tpl->tpl_vars['role'] = $__foreach_role_1_saved_item;
 }
 ?>
                   </select>
@@ -127,12 +155,11 @@ $_smarty_tpl->tpl_vars['role'] = $__foreach_role_0_saved_item;
                       <option value="app">Administrador app</option>
                       <option value="institution">Administrador institución</option>
                       <option value="any">Ninguno</option>
+                      <option value="user">Acudientes o alumnos</option>
                     </select>
                   </div>
               </div>
             </div><!-- /.box-body -->
-            <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['userdata']->value['idInstitucion'];?>
-" name="institute">
             <div class="box-footer">
               <button type="button" class="btn btn-primary">Enviar</button>
             </div>

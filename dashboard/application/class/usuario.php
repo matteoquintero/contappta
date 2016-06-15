@@ -30,6 +30,7 @@ class Usuario extends Users
 
     $dbdata->usuario=$this->cleanuser($usuario);
 		$dbdata->correo=$correo;
+          $dbdata->fechaRegistro=date('Y-m-d H:i:s');
 		$dbdata->find();
 
 		if ($dbdata->fetch()) { $resultado[0] = false; } else {
@@ -70,6 +71,27 @@ class Usuario extends Users
 
   }
 
+  public function clear($id){
+
+    $dbdata = DB_DataObject::Factory('Usuario');
+
+    $dbdata->clear="Si";
+    $dbdata->whereAdd("id = $id");
+
+    $dbdata->find();
+
+    if ($dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY)) {
+      $resultado[0] = true;
+    } else {
+      $resultado[0] = false;
+    }
+
+    $dbdata->free();
+
+    return $resultado;
+
+  }
+
 
 	public function update($data){
 
@@ -80,6 +102,8 @@ class Usuario extends Users
     $dbdata->nombre=$data["nombre"];
     $dbdata->apellido=$data["apellido"];
     $dbdata->documento=$data["documento"];
+    $dbdata->correo=$data["correo"];
+    $dbdata->contrasena=$data["contrasena"];
     $dbdata->foto=$data["foto"];
     $dbdata->celular=$data["celular"];
     $dbdata->permiso=$data["permiso"];

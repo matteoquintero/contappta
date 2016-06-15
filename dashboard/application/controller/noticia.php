@@ -19,6 +19,12 @@
 
             switch ($accion){
 
+                case 'clear':
+                  $ObjNoticia->clear($_POST["new"]);
+                  $ObjNotificacionReceptor->viewtype($_POST["new"]);
+
+                break;
+
                 case "create":
 
                     $consecutivo=$ObjNoticia->getconsecutive();
@@ -49,7 +55,7 @@
                     $datanotification["idEmisor"]=$idUsuario;
                     $datanotification["asunto"]="Noticia nueva";
                     $datanotification["descripcion"]=$datanew["asunto"];
-                    $datanotification["enlaceApp"]="enlaceApp";
+                    $datanotification["enlaceApp"]="tab.dash";
                     $datanotification["enlaceDashboard"]="noticias";
                     $datanotification["publicadaDashboard"]="Si";
                     $datanotification["publicadaApp"]=($datanew["aprobada"]=="Si" && $datanew["publicada"]=="Si") ? "Si" : "No";
@@ -61,6 +67,8 @@
                     $new=$ObjNoticia->create($datanew);
 
                     $data["idNoticia"]=$new[1];
+                    $data["idTipo"]=$new[1];
+                    $data["tipo"]="new";
                     $data["idNotificacion"]=$notification[1];
 
                    //Receptores
@@ -128,7 +136,9 @@
 
                     if ($datanotification["publicadaApp"]=="Si") {
 
-                      $ObjPhone->sendnotifications($notification[1]);
+                      $dataphone["page"]="noticias";
+                      $dataphone["dataone"]=$new[1];
+                      $ObjPhone->sendnotifications($notification[1],$dataphone);
 
                     }
 
@@ -144,14 +154,18 @@
                     $datanew["aprobada"]=( $_POST["approved"] ) ? "Si" : "No";
                     $datanew["respuesta"]=( $_POST["answer"] ) ? "Si" : "No";
                     $datanew["publicada"]=( $_POST["publishnow"] ) ? "Si" : "No";
-                    $datanew["eliminada"]=( $_POST["deleted"] ) ? "Si" : "No";
                     $datanew["fechaPublicacion"]=$_POST["datepublication"];
 
                     if (!$ObjNotificacion->ispublicateapp($_POST["notification"])) {
 
                       if($datanew["aprobada"]=="Si" && $datanew["publicada"]=="Si"){
+
                         $ObjNotificacion->publicateapp($_POST["notification"]);
-                        $ObjPhone->sendnotifications($_POST["notification"]);
+
+                        $dataphone["page"]="noticias";
+                        $dataphone["dataone"]=$_POST["new"];
+                        $ObjPhone->sendnotifications($notification[1],$dataphone);
+
                       }
 
                     }

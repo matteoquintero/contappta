@@ -14,6 +14,7 @@ class DataObject_Reconocimiento extends DB_DataObject
     public $idInstitucion;                   // int(11)  
     public $reconocimiento;                  // string(200)  
     public $descripcion;                     // blob(65535)  blob
+    public $clear;                           // string(2)  enum
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
@@ -27,7 +28,8 @@ class DataObject_Reconocimiento extends DB_DataObject
              'idInstitucion' =>  DB_DATAOBJECT_INT,
              'reconocimiento' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'clear' =>  DB_DATAOBJECT_STR,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 
@@ -46,6 +48,7 @@ class DataObject_Reconocimiento extends DB_DataObject
          return array(
              'reconocimiento' => '',
              'descripcion' => '',
+             'clear' => 'No',
          );
     }
 

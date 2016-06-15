@@ -10,6 +10,10 @@
 
             switch ($accion){
 
+                case 'clear':
+                  $ObjReconocimiento->clear($_POST["honor"]);
+                break;
+
                 case "create":
 
                     $data["idInstitucion"]=$_POST["institute"];
@@ -18,6 +22,7 @@
                     $data["descripcion"]=$_POST["description"];
 
 										$response=$ObjReconocimiento->create($data);
+
 										echo json_encode($response);
 
                 break;

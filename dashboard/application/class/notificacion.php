@@ -18,7 +18,7 @@ class Notificacion
       $dbdata->enlaceDashboard=$data["enlaceDashboard"];
       $dbdata->publicadaDashboard=$data["publicadaDashboard"];
       $dbdata->publicadaApp=$data["publicadaApp"];
-
+      $dbdata->fechaRegistro=date('Y-m-d H:i:s');
      $create=$dbdata->insert();
 
 		if ($create) {
@@ -45,7 +45,6 @@ class Notificacion
     $dbdata->publicadaApp="Si";
     $dbdata->whereAdd("id = '$notification'");
 
-    $dbdata->find();
 
     if ($dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY)) {
 

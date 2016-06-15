@@ -41,8 +41,9 @@ class Messages
 
         $dbdata = DB_DataObject::Factory('Messages');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("idMensaje,mensaje,media,fechaRegistro");
+        $dbdata->selectAdd("idMensaje,mensaje,media,nombreEmisor,fechaRegistro");
         $dbdata->whereAdd("idConversacion='".($data["idConversacion"])."'");
+        $dbdata->orderBy("fechaRegistro desc");
 
         $dbdata->find();
         $contador=0;
@@ -54,6 +55,7 @@ class Messages
           }
           $ret[$contador]->idMensaje = $dbdata->idMensaje;
           $ret[$contador]->mensaje = $dbdata->mensaje;
+          $ret[$contador]->nombre = $dbdata->nombreEmisor;
           $ret[$contador]->fechaRegistro = $dbdata->fechaRegistro;
           $contador++;
         }

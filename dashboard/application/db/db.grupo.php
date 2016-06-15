@@ -14,6 +14,7 @@ class DataObject_Grupo extends DB_DataObject
     public $grado;                           // string(45)  
     public $identificador;                   // string(45)  
     public $descripcion;                     // string(150)  
+    public $clear;                           // string(2)  enum
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
@@ -27,7 +28,8 @@ class DataObject_Grupo extends DB_DataObject
              'grado' =>  DB_DATAOBJECT_STR,
              'identificador' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'clear' =>  DB_DATAOBJECT_STR,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 
@@ -47,6 +49,7 @@ class DataObject_Grupo extends DB_DataObject
              'grado' => '',
              'identificador' => '',
              'descripcion' => '',
+             'clear' => 'No',
          );
     }
 

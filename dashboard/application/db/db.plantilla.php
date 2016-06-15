@@ -25,7 +25,7 @@ class DataObject_Plantilla extends DB_DataObject
              'imagen' =>  DB_DATAOBJECT_STR,
              'plantilla' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 

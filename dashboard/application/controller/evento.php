@@ -18,6 +18,11 @@
 
             switch ($accion){
 
+                case 'clear':
+                  $ObjEvento->clear($_POST["event"]);
+                  $ObjNotificacionReceptor->viewtype($_POST["event"]);
+                break;
+
                 case "create":
 
                     $dataevent["idInstitucion"]=$_POST["institute"];
@@ -29,15 +34,15 @@
                     $dataevent["fechaPublicacion"]=$_POST["datepublication"];
 
                     $dateevent=explode("-",$_POST["dateevent"]);
-                    $dataevent["fechaInicio"]=trim($dateevent[0]);
-                    $dataevent["fechaFin"]=trim($dateevent[1]);
+                    $dataevent["fechaInicio"]=trim($dateevent[0]).":00";
+                    $dataevent["fechaFin"]=trim($dateevent[1]).":00";
 
                     $datanotification["idInstitucion"]=$_POST["institute"];
                     $datanotification["idEmisor"]=$idUsuario;
                     $datanotification["asunto"]="Evento nuevo";
                     $datanotification["descripcion"]=$dataevent["asunto"];
-                    $datanotification["enlaceApp"]="enlaceApp";
-                    $datanotification["enlaceDashboard"]="noticias";
+                    $datanotification["enlaceApp"]="tab.calender";
+                    $datanotification["enlaceDashboard"]="eventos";
                     $datanotification["publicadaDashboard"]="Si";
                     $datanotification["publicadaApp"]=($dataevent["aprobado"]=="Si" && $dataevent["publicado"]=="Si") ? "Si" : "No";
 
@@ -48,6 +53,8 @@
 										$event=$ObjEvento->create($dataevent);
 
                     $data["idEvento"]=$event[1];
+                    $data["idTipo"]=$event[1];
+                    $data["tipo"]="event";
                     $data["idNotificacion"]=$notification[1];
 
                    //Receptores
@@ -114,13 +121,7 @@
                         }
                     }
 
-                    if ($datanotification["publicadaApp"]=="Si") {
-
-                      $ObjPhone->sendnotifications($notification[1]);
-
-                    }
-
-                    echo json_encode($event);
+                  echo json_encode($event);
                 break;
 
                 case 'update':
@@ -136,18 +137,6 @@
                     $dateevent=explode("-",$_POST["dateevent"]);
                     $dataevent["fechaInicio"]=trim($dateevent[0]);
                     $dataevent["fechaFin"]=trim($dateevent[1]);
-
-
-                    if (!$ObjNotificacion->ispublicateapp($_POST["notification"])) {
-
-                      if($dataevent["aprobada"]=="Si" && $dataevent["publicada"]=="Si"){
-                        $ObjNotificacion->publicateapp($_POST["notification"]);
-                        $ObjPhone->sendnotifications($_POST["notification"]);
-                      }
-
-                    }
-
-
 
                     $response=$ObjEvento->update($dataevent);
                     echo json_encode($response);

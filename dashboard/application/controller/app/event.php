@@ -5,10 +5,13 @@
     require("../../requires.php");
     $Ruta="../../";
     IncluirArchivos($Ruta);
-printVar($_REQUEST);
-
-
-
+    $ObjEventoReceptor=new EventoReceptor();
+    $ObjNotificacionReceptor=new NotificacionReceptor();
+    $data["idReceptor"]=$_REQUEST["user"];
+    $data["idEvento"]=$_REQUEST["even"];
+    $data["idTipo"]=$_REQUEST["even"];
+    $ObjNotificacionReceptor->view($data);
+    $ObjEventoReceptor->view($data);
 ?>
 
 

@@ -23,7 +23,7 @@ class DataObject_Rol extends DB_DataObject
              'id' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'rol' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 

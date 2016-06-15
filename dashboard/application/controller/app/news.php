@@ -10,6 +10,7 @@
     $data["idNoticia"]=$_REQUEST["nevv"];
     $data["mode"]=$_REQUEST["mode"];
     $response=$ObjNews->get("app",$data);
+    if ($response=="") {$response[0]->data=false; }
     echo json_encode($response);
 ?>
 

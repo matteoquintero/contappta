@@ -9,4 +9,10 @@
         $("#form-sender input").val( $(this).attr("data-event") );
         $("#form-sender").submit();
       });
+
+      $( ".btn-clear" ).click(function() {
+        senddataajax("clear","evento","event="+$(this).attr("data-event"));
+        redirectpage("eventos");
+      });
+
     });

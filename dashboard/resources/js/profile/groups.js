@@ -7,4 +7,9 @@
 
       });
 
+      $( ".btn-clear" ).click(function() {
+        senddataajax("clear","grupo","group="+$(this).attr("data-group"));
+        redirectpage("grupos");
+      });
+
     });

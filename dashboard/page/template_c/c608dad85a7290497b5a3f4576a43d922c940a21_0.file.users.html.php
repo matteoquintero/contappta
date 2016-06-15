@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-27 02:45:45
+/* Smarty version 3.1.29, created on 2016-04-23 19:43:35
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/users.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56d0ffc9d8c6f1_22009766',
+  'unifunc' => 'content_571c16b7cedc44_59795492',
   'file_dependency' => 
   array (
     'c608dad85a7290497b5a3f4576a43d922c940a21' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/users.html',
-      1 => 1456531923,
+      1 => 1461458614,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56d0ffc9d8c6f1_22009766 ($_smarty_tpl) {
+function content_571c16b7cedc44_59795492 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -88,8 +88,18 @@ $__foreach_user_0_saved_local_item = $_smarty_tpl->tpl_vars['user'];
                         <td>
                           <button class="btn btn-primary btn-edit" data-user="<?php echo $_smarty_tpl->tpl_vars['user']->value->idUsuario;?>
 ">Editar</button>
+                          <?php if ($_smarty_tpl->tpl_vars['user']->value->acudientes != '') {?>
                           <button class="btn btn-primary btn-guardians" data-user="<?php echo $_smarty_tpl->tpl_vars['user']->value->idUsuario;?>
-">Ver acudientes</button>
+">Acudientes</button>
+                          <?php }?>
+
+                          <?php if ($_smarty_tpl->tpl_vars['user']->value->idRol == "5" || $_smarty_tpl->tpl_vars['user']->value->idRol == "6") {?>
+                          <button class="btn btn-primary btn-recognitions" data-user="<?php echo $_smarty_tpl->tpl_vars['user']->value->idUsuario;?>
+">Reconocimientos</button>
+                          <?php }?>
+
+                          <button class="btn btn-primary btn-clear" data-user="<?php echo $_smarty_tpl->tpl_vars['user']->value->idUsuario;?>
+">Eliminar</button>
                         </td>
                       </tr>
                       <?php
@@ -115,18 +125,21 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_0_saved_item;
             </div><!-- /.col -->
           </div><!-- /.row -->
         </section><!-- /.content -->
+
         <form action="<?php echo @constant('BASE');?>
-modificar-usuario" method="post" id="form-edit"><input type="hidden" name="idUsuario"></form>
-
-  <form action="<?php echo @constant('BASE');?>
 modificar-usuario" method="post" id="form-edit">
-      <input type="hidden" name="idUsuario">
-  </form>
-  <form action="<?php echo @constant('BASE');?>
-acudientes-usuario" method="post" id="form-guardians">
-      <input type="hidden" name="idUsuario">
-  </form>
+            <input type="hidden" name="idUsuario">
+        </form>
 
+        <form action="<?php echo @constant('BASE');?>
+acudientes-usuario" method="post" id="form-guardians">
+            <input type="hidden" name="idUsuario">
+        </form>
+
+        <form action="<?php echo @constant('BASE');?>
+reconocimientos-usuario" method="post" id="form-recognitions">
+            <input type="hidden" name="idUsuario">
+        </form>
 
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/footer.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>

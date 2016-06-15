@@ -25,7 +25,7 @@ class DataObject_MensajeXUsuario extends DB_DataObject
              'idEmisor' =>  DB_DATAOBJECT_INT,
              'idReceptor' =>  DB_DATAOBJECT_INT,
              'vista' =>  DB_DATAOBJECT_STR,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 

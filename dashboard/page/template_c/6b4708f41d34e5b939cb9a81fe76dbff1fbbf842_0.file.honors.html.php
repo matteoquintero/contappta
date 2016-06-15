@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-27 02:47:50
+/* Smarty version 3.1.29, created on 2016-04-17 13:28:41
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/honors.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56d100467e5656_49194590',
+  'unifunc' => 'content_5713d5d986d080_82045825',
   'file_dependency' => 
   array (
     '6b4708f41d34e5b939cb9a81fe76dbff1fbbf842' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/honors.html',
-      1 => 1456532469,
+      1 => 1460917717,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56d100467e5656_49194590 ($_smarty_tpl) {
+function content_5713d5d986d080_82045825 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -81,6 +81,8 @@ $__foreach_honor_0_saved_local_item = $_smarty_tpl->tpl_vars['honor'];
                   <td>
                     <button class="btn btn-primary btn-edit" data-honor="<?php echo $_smarty_tpl->tpl_vars['honor']->value->idReconocimiento;?>
 ">Editar</button>
+                    <button class="btn btn-primary btn-clear" data-honor="<?php echo $_smarty_tpl->tpl_vars['honor']->value->idReconocimiento;?>
+">Eliminar</button>
                   </td>
                 </tr>
                 <?php

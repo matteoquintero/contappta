@@ -18,6 +18,11 @@
 
             switch ($accion){
 
+                case 'clear':
+                  $ObjMensaje->clear($_POST["message"]);
+                  $ObjNotificacionReceptor->viewtype($_POST["message"]);
+                break;
+
                 case "create":
 
                     $consecutivo=$ObjMensaje->getconsecutive();
@@ -37,16 +42,15 @@
                     $datanotification["idInstitucion"]=$_POST["institute"];
                     $datanotification["idEmisor"]=$idUsuario;
                     $datanotification["asunto"]="Mensaje nuevo";
-                    $datanotification["descripcion"]=substr($data["mensaje"], 0,10);
-                    $datanotification["enlaceApp"]="enlaceApp";
-                    $datanotification["enlaceDashboard"]="noticias";
+                    $datanotification["descripcion"]=substr($data["mensaje"], 0,20);
+                    $datanotification["enlaceApp"]="tab.chats";
+                    $datanotification["enlaceDashboard"]="mensajes";
                     $datanotification["publicadaDashboard"]="Si";
                     $datanotification["publicadaApp"]="Si";
 
-                    $notification=$ObjNotificacion->create($datanotification);
                    //Receptores
 
-                    $data["idNotificacion"]=$notification[1];
+                    $data["tipo"]="message";
 
                     $sendersok=array();
                     array_push($sendersok,$idUsuario);
@@ -64,16 +68,24 @@
                           foreach ($usersinstitution as $user) {
                             if (!in_array($user->idUsuario, $sendersok)) {
 
+                              $notification=$ObjNotificacion->create($datanotification);
+                              $data["idNotificacion"]=$notification[1];
+
                               $data["idReceptor"]=$user->idUsuario;
 
                               $conversation=$ObjConversacion->create($data);
                               $data["idConversacion"]=$conversation[1];
 
-                              $ObjMensaje->create($data);
+                              $message=$ObjMensaje->create($data);
+                              $data["idTipo"]=$message[1];
                               $ObjNotificacionReceptor->create($data);
 
                               array_push($sendersok,$user->idUsuario);
                               $response[0]=true;
+
+                              $dataphone["page"]="mensajes";
+                              $dataphone["dataone"]=$conversation[1];
+                              $ObjPhone->sendnotifications($notification[1],$dataphone);
 
                             }
                           }
@@ -87,16 +99,27 @@
                           foreach ($usersgroup as $user) {
                             if (!in_array($user->idUsuario, $sendersok)) {
 
+
+                              $notification=$ObjNotificacion->create($datanotification);
+                              $data["idNotificacion"]=$notification[1];
+
                               $data["idReceptor"]=$user->idUsuario;
 
                               $conversation=$ObjConversacion->create($data);
                               $data["idConversacion"]=$conversation[1];
 
-                              $ObjMensaje->create($data);
+                              $message=$ObjMensaje->create($data);
+                              $data["idTipo"]=$message[1];
                               $ObjNotificacionReceptor->create($data);
 
                               array_push($sendersok,$user->idUsuario);
                               $response[0]=true;
+
+                              $dataphone["page"]="mensajes";
+                              $dataphone["dataone"]=$conversation[1];
+                              $ObjPhone->sendnotifications($notification[1],$dataphone);
+
+
                             }
                           }
 
@@ -105,16 +128,27 @@
 
                           if (!in_array($senders[0], $sendersok)) {
 
+
+                            $notification=$ObjNotificacion->create($datanotification);
+                            $data["idNotificacion"]=$notification[1];
+
                             $data["idReceptor"]=$senders[0];
 
                             $conversation=$ObjConversacion->create($data);
                             $data["idConversacion"]=$conversation[1];
 
-                            $ObjMensaje->create($data);
+                            $message=$ObjMensaje->create($data);
+                            $data["idTipo"]=$message[1];
                             $ObjNotificacionReceptor->create($data);
 
                             array_push($sendersok,$senders[0]);
                             $response[0]=true;
+
+                            $dataphone["page"]="mensajes";
+                            $dataphone["dataone"]=$conversation[1];
+                            $ObjPhone->sendnotifications($notification[1],$dataphone);
+
+
                           }
 
                         break;
@@ -122,7 +156,6 @@
 
                     }
 
-                    $ObjPhone->sendnotifications($notification[1]);
 
                     echo json_encode($response);
                 break;

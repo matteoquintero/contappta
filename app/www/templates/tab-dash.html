@@ -1,5 +1,5 @@
-<img id="logo-ins" src="{{institution.logo}}" alt="">
-<ion-view view-title="Inicio <small>{{institution.institucion}}</small>">
+
+<ion-view  cache-view="false" can-swipe-back="false"  view-title="Inicio <small>{{institution.institucion}}</small> <img src='{{institution.logo}}' alt=''>">
   <ion-content class="padding">
     <div class="list card" ng-repeat="notice in notices">
       <div ng-switch on="{{notice.template}}">

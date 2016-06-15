@@ -10,4 +10,9 @@
         $("#form-sender").submit();
       });
 
+      $( ".btn-clear" ).click(function() {
+        senddataajax("clear","mensaje","message="+$(this).attr("data-message"));
+        redirectpage("mensajes");
+      });
+
     });

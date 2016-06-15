@@ -5,18 +5,24 @@ class Phone{
 
 		}
 
-    private function androidnotification($datanoti){
+    private function androidnotification($notification,$dataandroid){
 
       $msg = array(
-        'message'   => $datanoti["message"],
-        'title'   => $datanoti["title"],
+        'message'   => $dataandroid["message"],
+        'title'   => $dataandroid["title"],
         'vibrate' => 1,
         'sound'   => 1,
         'largeIcon' => 'large_icon',
-        'smallIcon' => 'small_icon'
+        'smallIcon' => 'small_icon',
+        'page' => $dataandroid["page"],
+        'dataone' => $dataandroid["dataone"],
+        'datatwo' => $dataandroid["title"],
+        'datathree' => $dataandroid["message"],
+        'priority'=> 3,
+        'notId'=> $notification,
       );
       $fields = array(
-        'registration_ids'  => $datanoti["tokens"],
+        'registration_ids'  => $dataandroid["tokens"],
         'data'      => $msg
       );
 
@@ -34,21 +40,22 @@ class Phone{
       curl_setopt( $ch,CURLOPT_POSTFIELDS, json_encode( $fields ) );
       $result = curl_exec($ch );
       curl_close( $ch );
-
-
     }
 
-    public function sendnotifications($notification){
+    public function sendnotifications($notification,$datanotification){
 
         define( 'API_ACCESS_KEY', 'AIzaSyAYdSMxRmaJfz_DqMmo-Kn-9NBinriOwbA' );
 
-        $datanoti["tokens"]= array($this->tokens($notification));
-        $datanoti["title"]=$this->title($notification);
-        $datanoti["message"]=$this->message($notification);
-        $this->androidnotification($datanoti);
+        $dataandroid["tokens"]= $this->tokens($notification);
+        $dataandroid["page"]=$datanotification["page"];
+        $dataandroid["title"]=( empty($datanotification["title"]) ) ? $this->title($notification) : $datanotification["title"];
+        $dataandroid["message"]=$this->message($notification);
+        $dataandroid["dataone"]=$datanotification["dataone"];
+        $dataandroid["datatwo"]=$datanotification["datatwo"];
+
+        $this->androidnotification($notification,$dataandroid);
 
     }
-
 
     private function message($notification){
 
@@ -89,12 +96,13 @@ class Phone{
       $dbdata->find();
       $contador=0;
       while( $dbdata->fetch() ){
-        $ret[$contador] = $dbdata->deviceToken;
-        $contador++;
+        if ($dbdata->deviceToken !="") {
+          $ret[$contador] = $dbdata->deviceToken;
+          $contador++;
+        }
       }
       $dbdata->free();
-      $deviceTokens = implode (",", $ret);
-      return $deviceTokens;
+      return $ret;
 
     }
 

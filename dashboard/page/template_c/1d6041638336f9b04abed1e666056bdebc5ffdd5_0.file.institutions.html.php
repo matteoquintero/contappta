@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-19 01:17:50
+/* Smarty version 3.1.29, created on 2016-04-17 13:55:35
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/institutions.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c65f2e0d1e92_09395533',
+  'unifunc' => 'content_5713dc27936f45_58587505',
   'file_dependency' => 
   array (
     '1d6041638336f9b04abed1e666056bdebc5ffdd5' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/app/institutions.html',
-      1 => 1455671400,
+      1 => 1460919332,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c65f2e0d1e92_09395533 ($_smarty_tpl) {
+function content_5713dc27936f45_58587505 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -84,8 +84,12 @@ $__foreach_institution_0_saved_local_item = $_smarty_tpl->tpl_vars['institution'
 </td>
                         <td><?php echo $_smarty_tpl->tpl_vars['institution']->value->activo;?>
 </td>
-                        <td><button class="btn-edit btn btn-primary" data-institution="<?php echo $_smarty_tpl->tpl_vars['institution']->value->idInstitucion;?>
-">Editar</button></td>
+                        <td>
+                          <button class="btn-edit btn btn-primary" data-institution="<?php echo $_smarty_tpl->tpl_vars['institution']->value->idInstitucion;?>
+">Editar</button>
+                          <button class="btn btn-primary btn-clear" data-institution="<?php echo $_smarty_tpl->tpl_vars['institution']->value->idInstitucion;?>
+">Eliminar</button>
+                        </td>
                       </tr>
                       <?php
 $_smarty_tpl->tpl_vars['institution'] = $__foreach_institution_0_saved_local_item;
@@ -131,23 +135,16 @@ modificar-institucion" method="post" id="form-edit"><input type="hidden" name="i
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
+ src="<?php echo fileversion('resources/js/profile/institutions.js');?>
+"><?php echo '</script'; ?>
 >
-    $(function () {
-
-      $( ".btn-edit" ).click(function() {
-
-        $("#form-edit input").val( $(this).attr("data-institution") );
-        $("#form-edit").submit();
-
-      });
-
-      $("#data").DataTable();
-
-    });
-  <?php echo '</script'; ?>
+  <?php echo '<script'; ?>
+ src="<?php echo fileversion('resources/js/profile/data.js');?>
+"><?php echo '</script'; ?>
 >
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/botoom.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
+
 
 
 

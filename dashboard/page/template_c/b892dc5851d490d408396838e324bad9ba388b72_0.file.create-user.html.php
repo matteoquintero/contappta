@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-20 00:53:00
+/* Smarty version 3.1.29, created on 2016-03-20 23:54:26
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-user.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56c7aadc9cb838_42908444',
+  'unifunc' => 'content_56ef7e822db0b9_36995705',
   'file_dependency' => 
   array (
     'b892dc5851d490d408396838e324bad9ba388b72' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/create-user.html',
-      1 => 1455671400,
+      1 => 1457469412,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56c7aadc9cb838_42908444 ($_smarty_tpl) {
+function content_56ef7e822db0b9_36995705 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -211,6 +211,7 @@ $_smarty_tpl->tpl_vars['honor'] = $__foreach_honor_3_saved_item;
                       <option></option>
                       <option value="institution">Administrador</option>
                       <option value="any">Ninguno</option>
+                      <option value="user">Acudientes</option>
                     </select>
                   </div>
               </div>

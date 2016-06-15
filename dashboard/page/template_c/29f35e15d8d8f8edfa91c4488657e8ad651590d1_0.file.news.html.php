@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-27 02:46:56
+/* Smarty version 3.1.29, created on 2016-04-17 12:54:14
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/news.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56d1001081ce25_37783175',
+  'unifunc' => 'content_5713cdc648bf55_13812429',
   'file_dependency' => 
   array (
     '29f35e15d8d8f8edfa91c4488657e8ad651590d1' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/news.html',
-      1 => 1456532314,
+      1 => 1460915653,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56d1001081ce25_37783175 ($_smarty_tpl) {
+function content_5713cdc648bf55_13812429 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -85,9 +85,11 @@ $__foreach_new_0_saved_local_item = $_smarty_tpl->tpl_vars['new'];
                     <button class="btn btn-primary btn-edit" data-new="<?php echo $_smarty_tpl->tpl_vars['new']->value->idNoticia;?>
 ">Editar</button>
                     <button class="btn btn-primary btn-sender" data-new="<?php echo $_smarty_tpl->tpl_vars['new']->value->idNoticia;?>
-">Ver receptores</button>
+">Receptores</button>
                     <button class="btn btn-primary btn-answer" data-new="<?php echo $_smarty_tpl->tpl_vars['new']->value->idNoticia;?>
-">Ver respuestas</button>
+">Respuestas</button>
+                    <button class="btn btn-primary btn-clear" data-new="<?php echo $_smarty_tpl->tpl_vars['new']->value->idNoticia;?>
+">Eliminar</button>
                   </td>
                 </tr>
                 <?php

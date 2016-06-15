@@ -3,7 +3,7 @@ angular.module('starter.controllers', [])
 
 .controller('InitCtrl', function($state) {
 
-    var appdata={'controller':"http://www.contappta.com/application/controller/app/"};
+    var appdata={'controller':"http://www.contappta.com/dashboard/application/controller/app/"};
     //var appdata={'controller':"http://localhost/contappta/dashboard/application/controller/app/"};
     localStorage.setItem('app',JSON.stringify(appdata));
 
@@ -13,18 +13,25 @@ angular.module('starter.controllers', [])
 
     }else{
 
+      localStorage.removeItem("events");
+      localStorage.removeItem('user');
+      localStorage.removeItem('devicetoken');
+      localStorage.removeItem('institution');
+      localStorage.removeItem('photo');
       $state.go('login');
 
     }
 
 })
 
-.controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
+.controller('LoginCtrl', function($scope,LoginService, $ionicPopup, $state) {
 
     $scope.data = {};
     $scope.login = function() {
-        LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
-            $state.go('tab.dash');
+          LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
+
+              $state.go('tab.dash');
+
         }).error(function(data) {
             var alertPopup = $ionicPopup.alert({
                 title: 'Inicio fallido',
@@ -35,15 +42,24 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('CloseCtrl', function($state) {
+.controller('CloseCtrl', function($state,$timeout,$ionicHistory,$log,$window) {
 
+  localStorage.clear();
   localStorage.removeItem('app');
   localStorage.removeItem("events");
   localStorage.removeItem('user');
   localStorage.removeItem('devicetoken');
   localStorage.removeItem('institution');
+  localStorage.removeItem('photo');
   localStorage.clear();
-  $state.go('init');
+
+  $timeout(function () {
+      $window.localStorage.clear();
+      $ionicHistory.clearCache();
+      $ionicHistory.clearHistory();
+      $log.debug('clearing cache')
+      $state.go('init');
+  },300);
 
 })
 
@@ -52,11 +68,21 @@ angular.module('starter.controllers', [])
   $scope.fechaevento=$stateParams.dateevent;
   events.date($stateParams.dateevent).then(function(response) { $scope.events=response;});
 
+
 })
 
 .controller('EventIdDetailCtrl', function($scope, $stateParams, events) {
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
 
   events.eventId($stateParams.idEvent).then(function(response) { $scope.events=response; });
+
+  var dataevent={
+    user:user["idUsuario"],
+    even:$stateParams.idEvent,
+  };
+
+  events.view(dataevent).then();
+    $scope.doRefresh();
 
 })
 
@@ -66,18 +92,68 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('DashCtrl', function($scope, news, institutions) {
+
+.controller('DashCtrl', function($scope, news) {
 
   var user = JSON.parse(localStorage.getItem('user') || '{}');
+  var institution = JSON.parse(localStorage.getItem('institution') || '{}');
 
-  institutions.get(user["idInstitucion"]).then(function(response) {
-     $scope.institution=response;
-    localStorage.setItem("institution",JSON.stringify(response));
-  });
+  $scope.institution=institution;
 
   news.all().then(function(response) { $scope.notices=response; });
+    $scope.doRefresh();
 
-  $scope.user=user;
+})
+
+.controller('TabCtrl', function($scope, $state,$timeout,notifications) {
+
+  $scope.doRefresh = function() {
+
+    $timeout( function() {
+
+      notifications.count().then(function(response) {
+
+          $scope.data = {
+            badgeCountNew: response.news,
+            badgeCountMessage: response.messages,
+            badgeCountEvent: response.events,
+            badgeCountMagazine: response.magazines,
+            badgeCountRecognition: response.recognitions,
+            badgeCountAcount: response.acount
+          };
+
+      });
+
+    }, 2000);
+
+  };
+
+  $scope.checkTab = function(place){
+    $scope.doRefresh();
+    $state.go("tab."+place);
+  }
+
+})
+
+.controller('ProfileCtrl', function($scope, $stateParams,$state,perfil) {
+
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
+  console.log(user)
+  $scope.name = user["Nombre"] == '' ? "Nombre" : user["nombre"] ;
+  $scope.lastname = user["Apellido"] == '' ? "Apellido" : user["apellido"] ;
+  $scope.email = user["Correo"] == '' ? "Correo" : user["correo"] ;
+
+  $scope.updateProfile =  function(a){
+
+      var datanew={
+        "name":$scope.input.name,
+        "lastname":$scope.input.lastname,
+        "email":$scope.input.email,
+        "password":$scope.input.password,
+      };
+      perfil.update(datanew).then(function(response) { $state.go("tab.dash"); });
+  };
+
 
 })
 
@@ -102,12 +178,17 @@ angular.module('starter.controllers', [])
   };
 
   news.view(datanew).then();
+    $scope.doRefresh();
 
 })
 
 .controller('ChatsCtrl', function($scope, chats,$ionicPopup, $timeout,mensaje,$state) {
 
-  chats.all().then(function(response) { $scope.chats=response; });
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
+  console.log(user);
+  $scope.user=user;
+
+  chats.all().then(function(response) { console.log(response); $scope.chats=response; });
 
   $scope.remove = function(chat) {
 
@@ -131,20 +212,49 @@ angular.module('starter.controllers', [])
    });
 
   };
+
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, $state,chats, users,mensaje) {
+.controller('ChatDetailCtrl', function($scope, $stateParams, $state,chats, users,mensaje,$ionicPopup,$cordovaFileTransfer) {
 
   var user = JSON.parse(localStorage.getItem('user') || '{}');
   $scope.user=user;
+  var app = JSON.parse(localStorage.getItem('app') || '{}');
 
   chats.get($stateParams.chatId).then(function(response) { $scope.messages=response; });
-  users.get($stateParams.userId).then(function(response) { $scope.userchat=response; });
+
+   $scope.takePhoto = function() {
+
+      navigator.camera.getPicture(onSuccess, onFail,
+          {
+              sourceType : Camera.PictureSourceType.CAMERA,
+              correctOrientation: false,
+              quality: 75,
+              targetWidth: 200,
+              destinationType: Camera.DestinationType.DATA_URL,
+              encodingType: Camera.EncodingType.PNG,
+              saveToPhotoAlbum:false
+          });
+
+      function onSuccess(imageData) {
+
+            var alertPopup = $ionicPopup.alert({
+                title: 'Mensaje',
+                template: 'Foto cargada envia tu mensaje.'
+            });
+
+        localStorage.removeItem('photo');
+        localStorage.setItem('photo',imageData);
+
+      }
+
+      function onFail(message) {
+
+      }
+  };
+
 
   $scope.sendMessage =  function(sendMessageForm){
-
-      console.log($scope);
-
       var datamessage={
         message:$scope.input.message,
         transmitter:user["idUsuario"],
@@ -152,7 +262,46 @@ angular.module('starter.controllers', [])
         conversation:$stateParams.chatId,
         institution:user["idInstitucion"]
       };
-      mensaje.create(datamessage).then(function(response) { $state.go("tab.chats"); });
+
+        var photo="No";
+        if (localStorage.getItem('photo')) { photo="Si"; }
+
+        var imageData="data:image/png;base64,"+localStorage.getItem('photo');
+        localStorage.removeItem('photo');
+
+        var server =  app["controller"]+'newmessage.php';
+        var trustAllHosts = true;
+
+
+         var options = {
+          'fileKey' :'file',
+          'fileName' :'photo',
+          'mimeType' :'image/png',
+          'httpMethod' :'POST',
+          'params':{
+            'message': datamessage["message"] ,
+            'reciver': datamessage["reciver"] ,
+            'transmitter': datamessage["transmitter"] ,
+            'conversation': datamessage["conversation"] ,
+            'institution': datamessage["institution"],
+            'photo': photo
+          }
+         };
+
+        $cordovaFileTransfer.upload(encodeURI(server), imageData, options, trustAllHosts).then(function(result) {
+
+          $state.go("tab.chats");
+
+          $scope.input.message=null;
+
+          },
+          function(err) {
+          },
+          function (progress) {
+        });
+
+
+
   };
 
   var datamessage={
@@ -162,12 +311,22 @@ angular.module('starter.controllers', [])
 
   mensaje.view(datamessage).then();
 
+  $scope.doRefresh();
+
+
 })
 
 .controller('Son', function($scope, $stateParams, users, honors) {
 
   users.get($stateParams.user).then(function(response) { $scope.user=response;});
   honors.get($stateParams.user).then(function(response) { $scope.honors=response;});
+
+  var datauser={
+    son:$stateParams.user,
+  };
+  users.view(datauser).then();
+
+    $scope.doRefresh();
 
 })
 
@@ -222,9 +381,11 @@ angular.module('starter.controllers', [])
   var endDate=new Date(2024, 1, 26);
 
   var highlights=[];
-  var events=JSON.parse(localStorage.getItem('events'));
-  for (var i = 0; i < events.length; i++) {
-    highlights.push( { date: new Date( events[i].date ) } );
+  if (localStorage.getItem('events')) {
+    var events=JSON.parse(localStorage.getItem('events'));
+    for (var i = 0; i < events.length; i++) {
+      highlights.push( { date: new Date( events[i].date ) } );
+    }
   }
 
   $scope.onezoneDatepicker = {
@@ -255,72 +416,55 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('MagazineCtrl', ['$scope', '$ionicModal', '$ionicSlideBoxDelegate','magazines', function($scope, $ionicModal, $ionicSlideBoxDelegate, magazines) {
+.controller('MagazineCtrl',  function($scope, $stateParams, $ionicSlideBoxDelegate, magazines) {
 
-  magazines.all().then(function(response) { $scope.magazines=response; });
+  magazines.pages($stateParams.magazineId).then(function(response) {
+      $scope.magazines=response;
+      $ionicSlideBoxDelegate.$getByHandle('image-viewer').update();
+  });
+
+    $scope.nextMain = function() {
+      $ionicSlideBoxDelegate.$getByHandle('image-viewer').next();
+    };
+
+    $scope.previousMain = function() {
+      $ionicSlideBoxDelegate.$getByHandle('image-viewer').previous();
+    };
+
 
     $scope.data = {
       allowScroll : false
-    }
-
-    $ionicModal.fromTemplateUrl('image-modal.html', {
-      scope: $scope,
-      animation: 'slide-in-up'
-    }).then(function(modal) {
-      $scope.modal = modal;
-    });
-
-    $scope.openModal = function(id) {
-
-      magazines.pages(id).then(function(response) {
-
-        var pages=Array();
-        for (var i = 0; i < response.length; i++) {
-
-          pages.push({
-            'src' : response[i].pagina,
-          });
-        }
-
-        $scope.aImages=pages;
-
-        $ionicSlideBoxDelegate.slide(0);
-        $scope.modal.show();
-
-      });
-
     };
 
-    $scope.closeModal = function() {
-      $scope.modal.hide();
-    };
+  magazines.view($stateParams.magazineId).then();
 
-    $scope.$on('$destroy', function() {
-      $scope.modal.remove();
-    });
-    $scope.$on('modal.hide', function() {
-    });
-    $scope.$on('modal.removed', function() {
-    });
-    $scope.$on('modal.shown', function() {
-    });
 
-    $scope.next = function() {
-      $ionicSlideBoxDelegate.next();
-    };
-
-    $scope.previous = function() {
-      $ionicSlideBoxDelegate.previous();
-    };
-
-    $scope.goToSlide = function(index) {
-      $scope.modal.show();
-      $ionicSlideBoxDelegate.slide(index);
-    }
-    $scope.slideChanged = function(index) {
-      $scope.slideIndex = index;
-    };
   }
-])
+)
+
+.controller('MagazinesCtrl',  function($scope,  $ionicSlideBoxDelegate, magazines) {
+
+  magazines.all().then(function(response) {
+      $scope.magazines=response;
+      $ionicSlideBoxDelegate.$getByHandle('image-viewer').update();
+  });
+
+    $scope.nextMain = function() {
+      $ionicSlideBoxDelegate.$getByHandle('image-viewer').next();
+    };
+
+    $scope.previousMain = function() {
+      $ionicSlideBoxDelegate.$getByHandle('image-viewer').previous();
+    };
+
+
+    $scope.data = {
+      allowScroll : false
+    };
+
+  }
+)
+
+
 
 ;

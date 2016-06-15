@@ -29,6 +29,15 @@
             <div class="box-body">
             <div class="row">
               <div class="col-md-6">
+                                  <div class="form-group">
+                  <label for="institute">Institución</label>
+                  <select class="form-control select2" name="institute" id="institute" data-placeholder="Seleecione la institution" style="width: 100%;">
+                    <option></option>
+                    {#foreach from=$institutions item=institute#}
+                      <option value="{#$institute->idInstitucion#}">{#$institute->institucion#}</option>
+                    {#/foreach#}
+                  </select>
+                  </div>
                   <div class="form-group">
                     <label for="username">Usuario</label>
                     <input type="text" class="form-control" name="username" id="username" placeholder="Digite el el usuario">
@@ -81,12 +90,11 @@
                       <option value="app">Administrador app</option>
                       <option value="institution">Administrador institución</option>
                       <option value="any">Ninguno</option>
-                      <option value="user">Acudientes</option>
+                      <option value="user">Acudientes o alumnos</option>
                     </select>
                   </div>
               </div>
             </div><!-- /.box-body -->
-            <input type="hidden" value="{#$userdata.idInstitucion#}" name="institute">
             <div class="box-footer">
               <button type="button" class="btn btn-primary">Enviar</button>
             </div>

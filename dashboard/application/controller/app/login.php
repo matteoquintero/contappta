@@ -8,6 +8,7 @@
   $ObjUsers=new Users();
   $ObjSesion=new Sesion();
   $ObjCifrado=new Cifrado();
+  $ObjInstitutions=new Institutions();
   $user=strtolower($_REQUEST["user"]);
   $password=$ObjCifrado->encryptpassword($_REQUEST["password"]);
   $data["usuario"]=$user;
@@ -16,6 +17,7 @@
   $datauser["deviceToken"]=$_REQUEST["devicetoken"];
   $response=$ObjSesion->authenticationapp($user,$password,$datauser);
   $response[1]=$datauser;
+  $response[2]=$ObjInstitutions->get("app",$datauser);
   echo json_encode($response);
 ?>
 

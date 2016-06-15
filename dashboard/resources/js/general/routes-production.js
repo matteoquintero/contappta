@@ -1,8 +1,8 @@
 function getroute(){
-	return "/";
+	return "/dashboard/";
 }
 function getroutecontroller(){
-	return "/application/controller/";
+	return "/dashboard/application/controller/";
 }
 function server(){
 	return "production";

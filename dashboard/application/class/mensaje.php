@@ -18,7 +18,7 @@ class Mensaje
     $dbdata->idEmisor=$data["idEmisor"];
     $dbdata->mensaje=$data["mensaje"];
     $dbdata->media=$data["media"];
-
+      $dbdata->fechaRegistro=date('Y-m-d H:i:s');
     $create=$dbdata->insert();
 
     if ($create) {
@@ -34,6 +34,27 @@ class Mensaje
 		return $resultado;
 
 	}
+
+  public function clear($id){
+
+    $dbdata = DB_DataObject::Factory('Mensaje');
+
+    $dbdata->clear="Si";
+    $dbdata->whereAdd("id = $id");
+
+    $dbdata->find();
+
+    if ($dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY)) {
+      $resultado[0] = true;
+    } else {
+      $resultado[0] = false;
+    }
+
+    $dbdata->free();
+
+    return $resultado;
+
+  }
 
   public function getconsecutive(){
     $dbdata = DB_DataObject::Factory('Mensaje');

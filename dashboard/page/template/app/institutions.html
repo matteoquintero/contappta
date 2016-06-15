@@ -41,7 +41,10 @@
                         <td>{#$institution->correo#}</td>
                         <td>{#$institution->direccion#}</td>
                         <td>{#$institution->activo#}</td>
-                        <td><button class="btn-edit btn btn-primary" data-institution="{#$institution->idInstitucion#}">Editar</button></td>
+                        <td>
+                          <button class="btn-edit btn btn-primary" data-institution="{#$institution->idInstitucion#}">Editar</button>
+                          <button class="btn btn-primary btn-clear" data-institution="{#$institution->idInstitucion#}">Eliminar</button>
+                        </td>
                       </tr>
                       {#/foreach#}
                     </tbody>
@@ -66,21 +69,10 @@
   <script src="{#'resources/js/vendor/jquery-datatables.js'|fileversion#}"></script>
   <script src="{#'resources/js/vendor/datatables-bootstrap.js'|fileversion#}"></script>
   <script src="{#'resources/js/vendor/jquery-slimscroll.js'|fileversion#}"></script>
-  <script>
-    $(function () {
-
-      $( ".btn-edit" ).click(function() {
-
-        $("#form-edit input").val( $(this).attr("data-institution") );
-        $("#form-edit").submit();
-
-      });
-
-      $("#data").DataTable();
-
-    });
-  </script>
+  <script src="{#'resources/js/profile/institutions.js'|fileversion#}"></script>
+  <script src="{#'resources/js/profile/data.js'|fileversion#}"></script>
   {#include file="master/general/botoom.html"|filetemplate#}
+
 
 
 

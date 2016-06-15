@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-27 01:27:51
+/* Smarty version 3.1.29, created on 2016-04-17 12:55:43
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/events.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56d0ed871e7ac1_67154736',
+  'unifunc' => 'content_5713ce1fd041c9_20102517',
   'file_dependency' => 
   array (
     'bf400afddb37819fb1e5f981c65e827af158ff92' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/events.html',
-      1 => 1456532612,
+      1 => 1460915739,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56d0ed871e7ac1_67154736 ($_smarty_tpl) {
+function content_5713ce1fd041c9_20102517 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -85,7 +85,9 @@ $__foreach_event_0_saved_local_item = $_smarty_tpl->tpl_vars['event'];
                     <button class="btn btn-primary btn-edit" data-event="<?php echo $_smarty_tpl->tpl_vars['event']->value->idEvento;?>
 ">Editar</button>
                     <button class="btn btn-primary btn-sender" data-event="<?php echo $_smarty_tpl->tpl_vars['event']->value->idEvento;?>
-">Ver receptores</button>
+">Receptores</button>
+                    <button class="btn btn-primary btn-clear" data-event="<?php echo $_smarty_tpl->tpl_vars['event']->value->idEvento;?>
+">Eliminar</button>
                   </td>
                 </tr>
                 <?php

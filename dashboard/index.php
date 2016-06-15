@@ -27,6 +27,7 @@
     $ObjTipoInstitucion=new TipoInstitucion();
     $ObjRevista=new Revista();
     $ObjNotifications=new Notifications();
+    $UserRecognition=new UserRecognition();
 
     @$seccion=$_GET["seccion"];
     @$urldata=$_GET["data"];
@@ -43,7 +44,8 @@
       "crear-grupo","grupos","modificar-grupo","importar-usuarios",
       "crear-reconocimiento","reconocimientos","modificar-reconocimiento",
       "crear-revista","revistas","modificar-revista","notificaciones",
-      "perfil","modificar-contrasena","modificar-nombre-usuario","modificar-correo"
+      "perfil","modificar-contrasena","modificar-nombre-usuario","modificar-correo",
+      "reconocimientos-usuario"
       );
 
     //Variable usuario logeado
@@ -175,6 +177,9 @@
                 $roles = $ObjRol->get("all","");
                 $smarty->assign("roles",$roles);
 
+                $institutions = $ObjInstitutions->get("all","");
+                $smarty->assign("institutions",$institutions);
+
                 $smarty->display($userdata["permiso"]."/create-user".MIN."html");
 
             break;
@@ -185,8 +190,6 @@
                 $users = $ObjUsers->get("guardiansson",$data);
                 $smarty->assign("users",$users);
 
-
-
                 $smarty->display($userdata["permiso"]."/guardians-user".MIN."html");
 
             break;
@@ -194,11 +197,29 @@
             case "usuarios":
 
                 $data["idInstitucion"]=$userdata["idInstitucion"];
-
-                $users = $ObjUsers->get("institution",$data);
+                $mode=($_SESSION['usuario']["permiso"]=='app') ? "all":"institution";
+                $users = $ObjUsers->get($mode,$data);
                 $smarty->assign("users",$users);
 
                 $smarty->display($userdata["permiso"]."/users".MIN."html");
+
+            break;
+
+            case "reconocimientos-usuario":
+                $data["idInstitucion"]=$userdata["idInstitucion"];
+
+                $honors = $ObjHonors->get("institution",$data);
+                $smarty->assign("honors",$honors);
+
+                $data["idUsuario"]=$_POST["idUsuario"];
+                $user = $ObjUsers->get("one",$data);
+                $smarty->assign("user",$user);
+
+                $data["idUsuario"]=$_POST["idUsuario"];
+                $userrecognition = $UserRecognition->get("user",$data);
+                $smarty->assign("userrecognition",$userrecognition);
+
+                $smarty->display($userdata["permiso"]."/user-recognitions".MIN."html");
 
             break;
 
@@ -210,9 +231,6 @@
 
                 $groups = $ObjGrupo->get("institution",$data);
                 $smarty->assign("groups",$groups);
-
-                $honors = $ObjHonors->get("institution",$data);
-                $smarty->assign("honors",$honors);
 
                 $roles = $ObjRol->get("all","");
                 $smarty->assign("roles",$roles);
@@ -461,6 +479,7 @@
 
     }else{
     	if ($seccion=="") {
+         $smarty->display("page/authentication".MIN."html");
     	}else{
            	$smarty->display("errorpage/404".MIN."html");
     	}

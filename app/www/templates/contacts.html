@@ -1,11 +1,11 @@
-<ion-view view-title="Contactos">
+<ion-view  cache-view="false" can-swipe-back="false"  view-title="Contactos">
   <ion-content>
     <label class="item item-input">
       <i class="icon ion-search placeholder-icon"></i>
       <input type="text" placeholder="Buscar" ng-model="searchContact">
     </label>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="user in users |filter:searchContact" type="item-text-wrap" href="#/tab/chat-detail/{{user.idConversacion}}/{{user.idUsuario}}" transitiontype="slide" direction="left" go-native>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="user in users |filter:searchContact" type="item-text-wrap" ng-click="$state.go('tab.chat-detail', {chatId:user.idConversacion})" transitiontype="slide" direction="left" go-native>
         <img ng-src="{{user.foto}}">
         <h2>{{user.rol}} {{user.usuario}}</h2>
         <p>Tap para ver los mensajes</p>

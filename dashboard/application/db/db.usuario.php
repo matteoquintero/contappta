@@ -3,7 +3,7 @@
  * Table Definition for usuario
  */
 
-class DataObject_Usuario extends DB_DataObject
+class DataObject_Usuario extends DB_DataObject 
 {
     ###START_AUTOCODE
     /* the code below is auto generated do not remove the above tag */
@@ -15,14 +15,15 @@ class DataObject_Usuario extends DB_DataObject
     public $idGrupo;                         // int(11)  not_null
     public $deviceToken;                     // blob(65535)  blob
     public $usuario;                         // string(100)  not_null
-    public $nombre;                          // string(100)
-    public $apellido;                        // string(100)
-    public $documento;                       // string(150)
-    public $celular;                         // string(150)
-    public $correo;                          // string(250)
-    public $foto;                            // string(150)
-    public $contrasena;                      // string(250)
+    public $nombre;                          // string(100)  
+    public $apellido;                        // string(100)  
+    public $documento;                       // string(150)  
+    public $celular;                         // string(150)  
+    public $correo;                          // string(250)  
+    public $foto;                            // string(150)  
+    public $contrasena;                      // string(250)  
     public $permiso;                         // string(11)  enum
+    public $clear;                           // string(2)  enum
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
@@ -45,7 +46,8 @@ class DataObject_Usuario extends DB_DataObject
              'foto' =>  DB_DATAOBJECT_STR,
              'contrasena' =>  DB_DATAOBJECT_STR,
              'permiso' =>  DB_DATAOBJECT_STR,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'clear' =>  DB_DATAOBJECT_STR,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 
@@ -59,7 +61,7 @@ class DataObject_Usuario extends DB_DataObject
          return array('id', true, false);
     }
 
-    function defaults() // column default values
+    function defaults() // column default values 
     {
          return array(
              'deviceToken' => '',
@@ -69,9 +71,10 @@ class DataObject_Usuario extends DB_DataObject
              'documento' => '',
              'celular' => '',
              'correo' => '',
-             'foto' => '_data/profilepictures/profile-default.png',
+             'foto' => '',
              'contrasena' => '',
-             'permiso' => 'user',
+             'permiso' => 'any',
+             'clear' => 'No',
          );
     }
 

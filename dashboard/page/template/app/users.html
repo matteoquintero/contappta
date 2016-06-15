@@ -30,7 +30,7 @@
                         <th>Usuario</th>
                         <th>Nombre</th>
                         <th>Rol</th>
-                        <th>Celular</th>
+                        <th>Institucion</th>
                         <th>Acciones</th>
                       </tr>
                     </thead>
@@ -40,9 +40,18 @@
                         <td>{#$user->usuario#}</td>
                         <td>{#$user->nombre#} {#$user->apellido#}</td>
                         <td>{#$user->rol#}</td>
-                        <td>{#$user->celular#}</td>
+                        <td>{#$user->institucion#}</td>
                         <td>
-                          <button class="btn btn-primary btn-guardians" data-user="{#$user->idUsuario#}">Ver acudientes</button>
+                          <button class="btn btn-primary btn-edit" data-user="{#$user->idUsuario#}">Editar</button>
+                          {#if $user->acudientes!=""#}
+                          <button class="btn btn-primary btn-guardians" data-user="{#$user->idUsuario#}">Acudientes</button>
+                          {#/if#}
+
+                          {#if $user->idRol=="5" || $user->idRol=="6" #}
+                          <button class="btn btn-primary btn-recognitions" data-user="{#$user->idUsuario#}">Reconocimientos</button>
+                          {#/if#}
+
+                          <button class="btn btn-primary btn-clear" data-user="{#$user->idUsuario#}">Eliminar</button>
                         </td>
                       </tr>
                       {#/foreach#}
@@ -77,23 +86,8 @@
   <script src="{#'resources/js/vendor/jquery-datatables.js'|fileversion#}"></script>
   <script src="{#'resources/js/vendor/datatables-bootstrap.js'|fileversion#}"></script>
   <script src="{#'resources/js/vendor/jquery-slimscroll.js'|fileversion#}"></script>
-  <script>
-    $(function () {
-
-      $( ".btn-edit" ).click(function() {
-        $("#form-edit input").val( $(this).attr("data-user") );
-        $("#form-edit").submit();
-      });
-
-      $( ".btn-guardians" ).click(function() {
-        $("#form-guardians input").val( $(this).attr("data-user") );
-        $("#form-guardians").submit();
-      });
-
-      $("#data").DataTable();
-
-    });
-  </script>
+  <script src="{#'resources/js/profile/users.js'|fileversion#}"></script>
+  <script src="{#'resources/js/profile/data.js'|fileversion#}"></script>
   {#include file="master/general/botoom.html"|filetemplate#}
 
 

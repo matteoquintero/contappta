@@ -103,7 +103,7 @@ class News
 
         $dbdata = DB_DataObject::Factory('News');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("idNoticia,idNotificacion,idPlantilla,asunto,descripcion,media,aprobada,publicada,eliminada,respuesta,fechaPublicacion");
+        $dbdata->selectAdd("idNoticia,idNotificacion,idPlantilla,asunto,descripcion,media,aprobada,publicada,respuesta,fechaPublicacion");
         $dbdata->whereAdd("idNoticia='".$data['idNoticia']."'");
         $dbdata->find();
         while( $dbdata->fetch() ){
@@ -114,7 +114,6 @@ class News
           $ret['descripcion'] = $dbdata->descripcion;
           $ret['aprobada'] = $dbdata->aprobada;
           $ret['publicada'] = $dbdata->publicada;
-          $ret['eliminada'] = $dbdata->eliminada;
           $ret['respuesta'] = $dbdata->respuesta;
           $ret['media'] = $dbdata->media;
           $ret['fechaPublicacion'] = $dbdata->fechaPublicacion;

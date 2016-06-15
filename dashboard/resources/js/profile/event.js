@@ -75,8 +75,8 @@ function events(){
 
 $(document).ready(function() {
 
-  $("[data-mask]").inputmask("yyyy/mm/dd", {"placeholder": "yyyy/mm/dd"});
+  $("[data-mask]").inputmask("datetime");
   $(".select2").select2();
-  $('#dateevent').daterangepicker({ format: "YYYY/MM/DD"});
+  $('#dateevent').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'YYYY/MM/DD H:mm'});
   $( "form button" ).click(function() { events() });
 });

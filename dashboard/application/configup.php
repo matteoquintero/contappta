@@ -1,8 +1,8 @@
 <?php
-	define('BASE', '/');
+	define('BASE', '/dashboard/');
 	define('SITE', 'production');
 	define('MIN', '.');
-  define('RUTADATA', 'http://contappta.com/');
+  define('RUTADATA', 'http://contappta.com/dashboard/');
 	function format($message,$mode=""){
 
 		switch ($mode) {

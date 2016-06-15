@@ -1,0 +1,31 @@
+<ion-view  cache-view="false" can-swipe-back="false"  view-title="Modificar Perfil"  >
+
+    <ion-content class="paddingcontent has-header ionic-pseudo" scroll="false">
+
+      <div class="list acount card">
+
+      <label class="item item-input">
+        <input ng-model="$parent.$parent.input.name" name="name" id="name" type="text" placeholder="{{name}}">
+      </label>
+
+      <label class="item item-input">
+        <input ng-model="$parent.$parent.input.lastname" name="lastname" id="lastname" type="text"  placeholder="{{lastname}}">
+      </label>
+
+      <label class="item item-input">
+        <input ng-model="$parent.$parent.input.email" name="email" id="email" type="email" value="" placeholder="{{email}}">
+      </label>
+
+      <label class="item item-input">
+        <input ng-model="$parent.$parent.input.password" name="password" id="password" type="password" placeholder="Contraseña">
+      </label>
+
+  </div>
+  <div class="padding">
+<button class="button button-block" ng-click="updateProfile()">Modificar Perfil</button>
+
+
+  </div>
+
+  </ion-content>
+</ion-view>

@@ -99,7 +99,7 @@ function step2(){
 
 $(document).ready(function() {
 
-  $("[data-mask]").inputmask("yyyy/mm/dd", {"placeholder": "yyyy/mm/dd"});
+  $("[data-mask]").inputmask("datetime");
   $(".select2").select2();
   $("#btn-step-2").hide();
   $("#step-2").hide();

@@ -1,0 +1,93 @@
+  {#include file="master/general/header.html"|filetemplate#}
+    <link rel="stylesheet" href="{#'resources/css/vendor/datatables-bootstrap.css'|fileversion#}">
+  </head>
+  {#include file="master/profile/nav.html"|filetemplate#}
+
+  <section class="content-header">
+    <h1>
+      Ver reconocimientos de {#$user.nombre#}
+      <small>Listado de los reconocimientos</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li><a href="#">Usuario</a></li>
+      <li class="active">{#$user.nombre#}</li>
+    </ol>
+  </section>
+        <!-- Main content -->
+        <section class="content">
+        <div class="box box-primary">
+
+
+          <form role="form" autocomplete="off" id="form-recognition" >
+            <div class="box-body">
+
+                  <div class="form-group">
+                    <label for="honor">Reconocimiento</label>
+                    <select class="form-control select2" id="honor" name="honor"  style="width: 100%;" data-placeholder="Seleecione reconocimiento">
+                      <option></option>
+                      {#foreach from=$honors item=honor#}
+                      {#if !$honor->idReconocimiento|in_array:$user.reconocimientos#}
+                        <option value="{#$honor->idReconocimiento#}">{#$honor->reconocimiento#}</option>
+                      {#/if#}
+                      {#/foreach#}
+                    </select>
+                  </div>
+
+            </div><!-- /.box-body -->
+            <div class="box-footer">
+              <button data-user="{#$user.idUsuario#}" data-name="{#$user.nombre#}" type="button" class="btn btn-primary">Añadir</button>
+            </div>
+          </form>
+                  </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Listado de los reconocimientos del usuario {#$user.nombre#}</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table id="data" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Reconocimiento</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {#foreach from=$userrecognition item=usre#}
+                      <tr>
+                        <td>{#$usre->reconocimiento#}</td>
+                        <td>
+                          <button class="btn btn-primary btn-clear" data-usre="{#$usre->idReconocimientoUsuario#}" >Eliminar</button>
+                        </td>
+                      </tr>
+                      {#/foreach#}
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th>Reconocimiento</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </section><!-- /.content -->
+
+
+  {#include file="master/general/footer.html"|filetemplate#}
+  {#include file="master/general/scripts.html"|filetemplate#}
+  <script src="{#'resources/js/vendor/jquery-datatables.js'|fileversion#}"></script>
+  <script src="{#'resources/js/vendor/datatables-bootstrap.js'|fileversion#}"></script>
+  <script src="{#'resources/js/vendor/jquery-slimscroll.js'|fileversion#}"></script>
+  <script src="{#'resources/js/vendor/select2.js'|fileversion#}"></script>
+  <script src="{#'resources/js/profile/user-recognition.js'|fileversion#}"></script>
+  <script src="{#'resources/js/profile/data.js'|fileversion#}"></script>
+  {#include file="master/general/botoom.html"|filetemplate#}
+
+
+

@@ -1,83 +1,27 @@
-<!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
--->
-
-<ion-view view-title="{{userchat.rol}} {{userchat.nombre}}" hide-tabs>
+<ion-view  cache-view="false" can-swipe-back="false"  view-title="Historial" hide-tabs>
 
   <ion-content class="padding" id="detail-message">
     <ion-list>
 
-      <ion-item class="card chat"  type="item-text-wrap" ng-repeat="message in messages">
-        <div class="chat-media" ng-show="{{message.data}}" >
-          <img src="{{message.media}}" alt="">
+
+        <div ng-repeat="message in messages">
+          <div class="chat-media" ng-show="{{message.data}}" >
+            <img src="{{message.media}}" alt="">
+          </div>
+
+
+          <div class="card chat">
+            <div class="item item-text-wrap">
+             <strong>{{message.nombre}}</strong><br> {{message.mensaje}}
+            </div>
+            <span class="date">{{message.fechaRegistro}}</span>
+          </div>
+
         </div>
-        <p>{{message.mensaje}}</p>
-        <span class="date">{{message.fechaRegistro}}</span>
-      </ion-item>
 
     </ion-list>
   </ion-content>
-  <div ng-switch on="{{user.idRol}}">
-    <div ng-switch-when="3">
-      <form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)" novalidate  >
-          <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach>
-              <label class="item-input-wrapper">
-                  <textarea ng-model="$parent.input.message" value="" placeholder="Enviar mensaje..." required minlength="1" maxlength="1500" msd-elastic></textarea>
-              </label>
-              <div class="footer-btn-wrap">
-                <button class="button button-icon icon ion-android-send footer-btn" type="submit"
-                    ng-disabled="!input.message || input.message === ''">
-                </button>
-              </div>
-          </ion-footer-bar>
-      </form>
-    </div>
-    <div ng-switch-when="4">
-      <form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)" novalidate  >
-          <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach>
-              <label class="item-input-wrapper">
-                  <textarea ng-model="$parent.input.message" value="" placeholder="Enviar mensaje..." required minlength="1" maxlength="1500" msd-elastic></textarea>
-              </label>
-              <div class="footer-btn-wrap">
-                <button class="button button-icon icon ion-android-send footer-btn" type="submit"
-                    ng-disabled="!input.message || input.message === ''">
-                </button>
-              </div>
-          </ion-footer-bar>
-      </form>
-    </div>
-    <div ng-switch-when="7">
-      <form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)" novalidate  >
-          <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach>
-              <label class="item-input-wrapper">
-                  <textarea ng-model="$parent.input.message" value="" placeholder="Enviar mensaje..." required minlength="1" maxlength="1500" msd-elastic></textarea>
-              </label>
-              <div class="footer-btn-wrap">
-                <button class="button button-icon icon ion-android-send footer-btn" type="submit"
-                    ng-disabled="!input.message || input.message === ''">
-                </button>
-              </div>
-          </ion-footer-bar>
-      </form>
-    </div>
-    <div ng-switch-when="8">
-      <form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)" novalidate  >
-          <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach>
-              <label class="item-input-wrapper">
-                  <textarea ng-model="$parent.input.message" value="" placeholder="Enviar mensaje..." required minlength="1" maxlength="1500" msd-elastic></textarea>
-              </label>
-              <div class="footer-btn-wrap">
-                <button class="button button-icon icon ion-android-send footer-btn" type="submit"
-                    ng-disabled="!input.message || input.message === ''">
-                </button>
-              </div>
-          </ion-footer-bar>
-      </form>
-    </div>
-  </div>
 
+<div ng-show="user.insornat" ng-include="'partials/send-message.html'"> </div>
 
 </ion-view>

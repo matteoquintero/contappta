@@ -14,7 +14,7 @@ class Reconocimiento
     $dbdata->reconocimiento=$data["reconocimiento"];
     $dbdata->idTipoReconocimiento=$data["idTipoReconocimiento"];
     $dbdata->descripcion=$data["descripcion"];
-
+      $dbdata->fechaRegistro=date('Y-m-d H:i:s');
 		$dbdata->find();
 
 		if ($dbdata->fetch()) {
@@ -42,6 +42,27 @@ class Reconocimiento
     $dbdata->descripcion=$data["descripcion"];
 
     $dbdata->whereAdd("id = '".$data["idReconocimiento"]."'");
+
+    $dbdata->find();
+
+    if ($dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY)) {
+      $resultado[0] = true;
+    } else {
+      $resultado[0] = false;
+    }
+
+    $dbdata->free();
+
+    return $resultado;
+
+  }
+
+  public function clear($id){
+
+    $dbdata = DB_DataObject::Factory('Reconocimiento');
+
+    $dbdata->clear="Si";
+    $dbdata->whereAdd("id = $id");
 
     $dbdata->find();
 

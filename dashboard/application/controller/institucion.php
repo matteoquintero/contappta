@@ -11,6 +11,10 @@
 
             switch ($accion){
 
+                case 'clear':
+                  $ObjInstitucion->clear($_POST["institution"]);
+                break;
+
                 case "create":
 
 										$data["activo"]=( $_POST["active"] ) ? "Si" : "No";

@@ -40,7 +40,7 @@
                           </optgroup>
                           <optgroup label="Personas">
                            {#foreach from=$users item=user#}
-                              <option value="{#$user->idUsuario#}-user">{#$user->nombre#} ({#$user->usuario#})</option>
+                              <option value="{#$user->idUsuario#}-user">{#$user->nombre#} {#$user->apellido#} </option>
                             {#/foreach#}
                           </optgroup>
                         </select>

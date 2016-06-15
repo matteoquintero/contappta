@@ -21,8 +21,8 @@ class Noticia
     $dbdata->aprobada=$data["aprobada"];
     $dbdata->respuesta=$data["respuesta"];
     $dbdata->publicada=($data["aprobada"]=="No") ? "No" : $data["publicada"];
-    $dbdata->fechaPublicacion=( empty($data["fechaPublicacion"]) ) ? date("Y/m/d") : $data["fechaPublicacion"];
-
+    $dbdata->fechaPublicacion=( empty($data["fechaPublicacion"]) ) ? date("Y/m/d H:i:s") : $data["fechaPublicacion"];
+      $dbdata->fechaRegistro=date('Y-m-d H:i:s');
     $create=$dbdata->insert();
 
     if ($create) {
@@ -56,6 +56,46 @@ class Noticia
     return $consecutivo;
   }
 
+  public function clear($id){
+
+    $dbdata = DB_DataObject::Factory('Noticia');
+
+    $dbdata->clear="Si";
+    $dbdata->whereAdd("id = $id");
+
+    $dbdata->find();
+
+    if ($dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY)) {
+      $resultado[0] = true;
+    } else {
+      $resultado[0] = false;
+    }
+
+    $dbdata->free();
+
+    return $resultado;
+
+  }
+
+  public function publicate($id){
+
+    $dbdata = DB_DataObject::Factory('Noticia');
+
+    $dbdata->publicada="Si";
+    $dbdata->whereAdd("id = $id");
+
+    if ($dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY)) {
+      $resultado[0] = true;
+    } else {
+      $resultado[0] = false;
+    }
+
+    $dbdata->free();
+
+    return $resultado;
+
+  }
+
   public function update($data){
 
     $dbdata = DB_DataObject::Factory('Noticia');
@@ -65,9 +105,8 @@ class Noticia
     $dbdata->media=$data["media"];
     $dbdata->aprobada=$data["aprobada"];
     $dbdata->respuesta=$data["respuesta"];
-    $dbdata->eliminada=$data["eliminada"];
     $dbdata->publicada=($data["aprobada"]=="No") ? "No" : $data["publicada"];
-    $dbdata->fechaPublicacion=(empty($data["fechaPublicacion"]))? date("Y/m/d"):$data["fechaPublicacion"];
+    $dbdata->fechaPublicacion=(empty($data["fechaPublicacion"]))? date("Y/m/d H:i:s"):$data["fechaPublicacion"];
 
     $dbdata->whereAdd("id = '".$data["idNoticia"]."'");
 

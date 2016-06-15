@@ -1,17 +1,16 @@
-<ion-view view-title="Mensajes">
+<ion-view  cache-view="false" can-swipe-back="false"   view-title="Mensajes">
   <ion-content>
     <ion-list>
-
-      <ion-item class="item-avatar item-icon-right" type="item-text-wrap" href="#/tab/contacts" transitiontype="slide" direction="left" go-native>
+      <ion-item ng-show="user.insornat" class="item-avatar item-icon-right" type="item-text-wrap" href="#/tab/contacts" transitiontype="slide" direction="left" go-native>
         <img ng-src="http://www.contappta.com/_data/app/contacts.png">
         <h2>Contactos</h2>
         <p>Tap para ver los contactos</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
 
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chat-detail/{{chat.idConversacion}}/{{chat.idEmisor}}" transitiontype="slide" direction="left" go-native>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" ng-click="$state.go('tab.chat-detail', {chatId:chat.idConversacion})"transitiontype="slide" direction="left" go-native>
         <img ng-src="{{chat.fotoEmisor}}">
-        <h2>{{chat.rolEmisor}} {{chat.usuarioEmisor}}</h2>
+        <h2>{{chat.nombreEmisor}} {{chat.apellidoEmisor}} {{chat.rolEmisor}}</h2>
         <p>{{chat.mensaje}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 

@@ -28,6 +28,27 @@ class Utilidad
         $partesNombre = explode(".", $filename);
         $tamano=count($partesNombre)-1;
         $tipo=$partesNombre[$tamano];
+
+        $permit=array("xlsx","jpg",'jpeg','png','gif','xls');
+
+        if ( !in_array($tipo, $permit) ) {
+
+          switch ($_FILES["$NombreFile"]['type']) {
+
+            case 'image/jpeg':
+              $tipo="jpg";
+            break;
+            case 'image/png':
+              $tipo="png";
+            break;
+            case 'image/gif':
+              $tipo="gif";
+            break;
+
+          }
+
+        }
+
         $NombreArchivo =  $Nombre.".".$tipo;
         $Ruta = $Path . $NombreArchivo;
         if (copy($_FILES["$NombreFile"]['tmp_name'], $Ruta)) {
@@ -44,7 +65,6 @@ class Utilidad
         return $ArrayRespuesta;
 
     }
-
 
     function datasection($section) {
 
@@ -92,8 +112,8 @@ class Utilidad
     function operationdate($mode,$startdate,$enddate,$data) {
 
         $dateresult=false;
-        if ($startdate==="") { $startdate=date('Y-m-d H:i'); }
-        if ($enddate==="") { $enddate=date('Y-m-d H:i'); }
+        if ($startdate==="") { $startdate=date('Y-m-d H:i:s'); }
+        if ($enddate==="") { $enddate=date('Y-m-d H:i:s'); }
 
         switch ($mode) {
 

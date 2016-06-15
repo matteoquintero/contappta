@@ -12,7 +12,7 @@ class DataObject_Notifications extends DB_DataObject
     public $idInstitucion;                   // int(11)  
     public $idNotificacion;                  // int(11)  not_null
     public $idReceptor;                      // int(11)  not_null
-    public $vista;                           // string(2)  enum
+    public $vista;                           // string(6)  enum
     public $asunto;                          // string(100)  
     public $descripcion;                     // blob(65535)  blob
     public $enlaceApp;                       // blob(65535)  blob

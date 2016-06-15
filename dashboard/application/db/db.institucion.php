@@ -19,6 +19,7 @@ class DataObject_Institucion extends DB_DataObject
     public $telefono;                        // string(150)  
     public $celular;                         // string(200)  
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
+    public $clear;                           // string(2)  enum
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('DataObject_Institucion',$k,$v); }
@@ -35,7 +36,8 @@ class DataObject_Institucion extends DB_DataObject
              'logo' =>  DB_DATAOBJECT_STR,
              'telefono' =>  DB_DATAOBJECT_STR,
              'celular' =>  DB_DATAOBJECT_STR,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
+             'clear' =>  DB_DATAOBJECT_STR,
          );
     }
 
@@ -59,6 +61,7 @@ class DataObject_Institucion extends DB_DataObject
              'logo' => '',
              'telefono' => '',
              'celular' => '',
+             'clear' => 'No',
          );
     }
 

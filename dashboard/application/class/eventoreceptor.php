@@ -12,6 +12,7 @@ class EventoReceptor
 
 		$dbdata->idEvento=$data["idEvento"];
 		$dbdata->idReceptor=$data["idReceptor"];
+          $dbdata->fechaRegistro=date('Y-m-d H:i:s');
     $dbdata->find();
 
     if ($dbdata->fetch()) {
@@ -29,7 +30,26 @@ class EventoReceptor
 
 	}
 
+  public function view($data){
 
+    $dbdata = DB_DataObject::Factory('EventoXReceptor');
+
+    $dbdata->vista="Si";
+    $dbdata->whereAdd("idReceptor = '".$data["idReceptor"]."'");
+    $dbdata->whereAdd("idEvento = '".$data["idEvento"]."'");
+    $dbdata->find();
+
+    if ($dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY)) {
+      $resultado[0] = true;
+    } else {
+      $resultado[0] = false;
+    }
+
+    $dbdata->free();
+
+    return $resultado;
+
+  }
 }
 
 ?>

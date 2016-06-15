@@ -15,7 +15,7 @@ angular.module('starter.services', [])
                'Content-Type': ' application/json '
              },
              params: {
-              user: name,
+              'user': name,
               password: pw,
               devicetoken:localStorage.getItem('devicetoken')
               }
@@ -24,7 +24,9 @@ angular.module('starter.services', [])
             $http(req).then(function (response) {
 
               if (response.data[0]===true) {
+
                   localStorage.setItem('user',JSON.stringify(response.data[1]));
+                  localStorage.setItem('institution',JSON.stringify(response.data[2]));
 
                   deferred.resolve();
               } else { deferred.reject(); }
@@ -42,6 +44,36 @@ angular.module('starter.services', [])
             return promise;
         }
     }
+})
+
+.service('notifications', function($http,$rootScope) {
+
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
+  var app = JSON.parse(localStorage.getItem('app') || '{}');
+  var idUser=user["idUsuario"];
+  console.log(user,"noti");
+
+  var notifications = {
+    count: function() {
+
+      var req = {
+       method: 'POST',
+       url: app["controller"]+'notifications.php',
+       headers: {
+         'Content-Type': ' application/json '
+       },
+       params: {
+        'user':idUser
+        }
+      };
+      var promise = $http(req).then(function (response) {
+        $rootScope.$broadcast('noti');
+        return response.data;
+      });
+      return promise;
+    }
+  };
+  return notifications;
 })
 
 .service('news', function($http) {
@@ -64,9 +96,10 @@ angular.module('starter.services', [])
         mode:"news"
         }
       };
-
       var promise = $http(req).then(function (response) {
-        return response.data;
+          if (response.data[0].data!=false) {
+            return response.data;
+          }
       });
       return promise;
     },
@@ -85,7 +118,9 @@ angular.module('starter.services', [])
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data[0];
+          if (response.data[0].data!=false) {
+            return response.data[0];
+          }
       });
       return promise;
     },
@@ -98,15 +133,12 @@ angular.module('starter.services', [])
          'Content-Type': ' application/json '
        },
        params: {
-        user: datanew["user"] ,
+        'user': datanew["user"] ,
         nevv: datanew["nevv"]
         }
       };
 
-      var promise = $http(req).then(function (response) {
-        return response.data;
-      });
-      return promise;
+      return $http(req).then();
     }
   };
   return news;
@@ -117,6 +149,7 @@ angular.module('starter.services', [])
   var user = JSON.parse(localStorage.getItem('user') || '{}');
   var app = JSON.parse(localStorage.getItem('app') || '{}');
   var idinstitution=user["idInstitucion"];
+  var idUser=user["idUsuario"];
 
   var magazines = {
     all: function() {
@@ -134,9 +167,28 @@ angular.module('starter.services', [])
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
+          if (response.data[0].data!=false) {
+            return response.data;
+          }
       });
       return promise;
+    },
+    view: function(magazine) {
+
+      var req = {
+       method: 'POST',
+       url: app["controller"]+'magazines.php',
+       headers: {
+         'Content-Type': ' application/json '
+       },
+       params: {
+        user: idUser,
+        magazine: magazine,
+        mode:"view"
+        }
+      };
+
+       return $http(req).then();
     },
     pages: function(id) {
 
@@ -153,26 +205,9 @@ angular.module('starter.services', [])
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
-      });
-      return promise;
-    },
-    view: function(datanew) {
-
-      var req = {
-       method: 'POST',
-       url: app["controller"]+'new.php',
-       headers: {
-         'Content-Type': ' application/json '
-       },
-       params: {
-        user: datanew["user"] ,
-        nevv: datanew["nevv"]
-        }
-      };
-
-      var promise = $http(req).then(function (response) {
-        return response.data;
+          if (response.data[0].data!=false) {
+            return response.data;
+          }
       });
       return promise;
     }
@@ -203,15 +238,21 @@ angular.module('starter.services', [])
 
       var promise = $http(req).then(function (response) {
 
-          var dates=[];
 
-          for (var i = 0; i < response.data.length; i++) {
-            var fecha=response.data[i]["fechaInicio"].split("-");
-            dates.push({date: new Date(parseInt(fecha[0]), (parseInt(fecha[1])-1), parseInt(fecha[2]))});
+          if (response.data[0].data!=false) {
+
+            var dates=[];
+
+            for (var i = 0; i < response.data.length; i++) {
+              var fecha=response.data[i]["fechaInicio"].split("-");
+              dates.push({date: new Date(parseInt(fecha[0]), (parseInt(fecha[1])-1), parseInt(fecha[2]))});
+            }
+
+            localStorage.removeItem("events");
+            localStorage.setItem("events", JSON.stringify(dates) );
+
           }
 
-          localStorage.removeItem("events");
-          localStorage.setItem("events", JSON.stringify(dates) );
 
       });
     },
@@ -231,7 +272,11 @@ angular.module('starter.services', [])
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
+
+          if (response.data[0].data!=false) {
+            return response.data;
+          }
+
       });
       return promise;
     },
@@ -251,9 +296,27 @@ angular.module('starter.services', [])
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
+          if (response.data[0]!=false) {
+            return response.data;
+          }
       });
       return promise;
+    },
+    view: function(dataevent) {
+
+      var req = {
+       method: 'POST',
+       url: app["controller"]+'event.php',
+       headers: {
+         'Content-Type': ' application/json '
+       },
+       params: {
+        'user': dataevent["user"] ,
+        even: dataevent["even"]
+        }
+      };
+
+      return $http(req).then();
     }
   };
   return events;
@@ -275,12 +338,14 @@ angular.module('starter.services', [])
          'Content-Type': ' application/json '
        },
        params: {
-        user:idUser
+        'user':idUser
         }
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
+          if (response.data[0].data!=false) {
+            return response.data;
+          }
       });
       return promise;
     }
@@ -302,12 +367,14 @@ angular.module('starter.services', [])
          'Content-Type': ' application/json '
        },
        params: {
-        user: id
+        'user': id
         }
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
+          if (response.data[0].data!=false) {
+            return response.data;
+          }
       });
       return promise;
     }
@@ -333,7 +400,9 @@ angular.module('starter.services', [])
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
+          if (response.data[0].data!=false) {
+            return response.data;
+          }
       });
       return promise;
     }
@@ -359,12 +428,34 @@ angular.module('starter.services', [])
        params: {
         institution: user["idInstitucion"],
         mode: "users",
-        user: idUser
+        'user': idUser
         }
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
+           if (response.data!=false) {
+            return response.data;
+          }
+      });
+      return promise;
+    },
+    view: function(datauser) {
+
+      var req = {
+       method: 'POST',
+       url: app["controller"]+'users.php',
+       headers: {
+         'Content-Type': ' application/json '
+       },
+       params: {
+        parent: idUser,
+        son: datauser["son"],
+        mode:"view"
+        }
+      };
+
+      var promise = $http(req).then(function (response) {
+        console.log("asd");
       });
       return promise;
     },
@@ -377,13 +468,15 @@ angular.module('starter.services', [])
          'Content-Type': ' application/json '
        },
        params: {
-        user: id,
+        'user': id,
         mode: "user"
         }
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
+          if (response.data!=false) {
+            return response.data;
+          }
       });
       return promise;
     }
@@ -407,13 +500,15 @@ angular.module('starter.services', [])
          'Content-Type': ' application/json '
        },
        params: {
-        user: idUser ,
+        'user': idUser ,
         mode:"app-all"
         }
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
+          if (response.data[0].data!=false) {
+            return response.data;
+          }
       });
       return promise;
     },
@@ -432,7 +527,9 @@ angular.module('starter.services', [])
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
+          if (response.data[0].data!=false) {
+            return response.data;
+          }
       });
       return promise;
     },
@@ -445,6 +542,41 @@ angular.module('starter.services', [])
     }
   };
   return chats;
+})
+
+
+.service('perfil', function($http) {
+
+  var app = JSON.parse(localStorage.getItem('app') || '{}');
+
+  var user = JSON.parse(localStorage.getItem('user') || '{}');
+
+  var idUser=user["idUsuario"];
+
+
+  var perfil = {
+    update: function(datanew) {
+
+      var req = {
+       method: 'POST',
+       url: app["controller"]+'perfil.php',
+       headers: {
+         'Content-Type': ' application/json '
+       },
+       params: {
+        "name": datanew["name"] ,
+        "lastmane": datanew["lastname"] ,
+        "email": datanew["email"],
+        "password": datanew["password"],
+        "user": idUser,
+        }
+      };
+
+      return $http(req).then();
+    },
+
+  };
+  return perfil;
 })
 
 .service('respuesta', function($http) {
@@ -462,13 +594,15 @@ angular.module('starter.services', [])
        },
        params: {
         response: datanew["response"] ,
-        user: datanew["user"] ,
+        'user': datanew["user"] ,
         nevv: datanew["nevv"]
         }
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
+          if (response.data[0].data!=false) {
+            return response.data;
+          }
       });
       return promise;
     },
@@ -482,29 +616,6 @@ angular.module('starter.services', [])
   var app = JSON.parse(localStorage.getItem('app') || '{}');
 
   var mensaje = {
-    create: function(datamessage) {
-
-      var req = {
-       method: 'POST',
-       url: app["controller"]+'mensaje.php',
-       headers: {
-         'Content-Type': ' application/json '
-       },
-       params: {
-        message: datamessage["message"] ,
-        reciver: datamessage["reciver"] ,
-        transmitter: datamessage["transmitter"] ,
-        conversation: datamessage["conversation"] ,
-        institution: datamessage["institution"],
-        mode:"create"
-        }
-      };
-
-      var promise = $http(req).then(function (response) {
-        return response.data;
-      });
-      return promise;
-    },
     view: function(datamessage) {
 
       var req = {
@@ -520,10 +631,7 @@ angular.module('starter.services', [])
         }
       };
 
-      var promise = $http(req).then(function (response) {
-        return response.data;
-      });
-      return promise;
+       return $http(req).then();
     },
     kill: function(datamessage) {
 
@@ -540,7 +648,9 @@ angular.module('starter.services', [])
       };
 
       var promise = $http(req).then(function (response) {
-        return response.data;
+          if (response.data[0].data!=false) {
+            return response.data;
+          }
       });
       return promise;
     }

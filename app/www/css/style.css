@@ -8,7 +8,10 @@ body{
   background-image: url(../img/concrete.png);
   background-repeat: repeat;
 }
-
+#revista,#calendario,#instiuto{
+    background-image: url(../img/city.jpeg);
+    background-size: cover;
+}
 .item.tabs.tabs-secondary.tabs-icon-left {
     /* background-color: #a9ca3d; */
 }
@@ -75,7 +78,8 @@ a.item{
 
 
 .tabs .tab-item .badge.badge-assertive, .badge.badge-assertive{
-  background-color: #a9ca3d;
+  background-color: #f49915;
+  opacity: 1;
 }
 
 .card:nth-child(even){
@@ -129,24 +133,32 @@ a.item{
     margin: 0 auto;
 }
 .card-two p{
-    font-size: 19px;
-    line-height: 25px;
+    font-size: 14px;
+    line-height: 16px;
     text-align: left;
     position: relative;
     display: block;
+    padding-left: 20px;
+}
+#login #logo{position: absolute;bottom: 0;right: 20px;opacity: 0.8;z-index: -1;}
+#login{
+  background-image: url(../img/login.png);
+  /* background-size: contain; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#login h1{
+  font-family: osb;
+  text-align: center;
+  color: rgba(255, 255, 255, 0);
 }
 
-#dash-detail,#login{
+#dash-detail{
   background: #fff;
 }
 
-#login .img-bg{
-    width: 100%;
-    padding-top: 5px;
-    margin: 35px auto 20px auto;
-    display: block;
-    max-height: 300px;
-}
+
 #login button{
   margin: 0 auto;
   overflow: hidden;
@@ -156,25 +168,23 @@ a.item{
   font-size: 20px;
 }
 
-#login label{border: 0;border-bottom: 0.080em solid #11c1f3;border-radius: 0;margin-bottom: 20px;margin: 0 auto 20px auto;     overflow: hidden;     width: 90%;}
+#login label{border: 0;border-bottom: 0.080em solid #11c1f3;border-radius: 0;margin: 0px auto 20px auto;width: 90%;background: transparent;padding: 0 0 10px 0;}
 
-#login label input{font-family: osl;color: #11c1f3;font-size: 20px;padding-left: 14px;line-height: 20px;}
+#login label input{font-family: osb;color: #FFFFFF;font-size: 20px;background: transparent;padding: 0;}
 
-#login .icon{color: #11c1f3;font-size: 25px;}
-
-#dash-detail h1{
-    text-align: left;
-    color: #187095;
-    letter-spacing: 2px;
-    font-family: osl;
-    border-bottom: 2px solid #E0E0E0;
-    margin-top: 10%;
-    padding-bottom: 10px;
+#login .list-inset{
+    background: transparent;
 }
+
+#login input::-webkit-input-placeholder {
+ color:    white;
+     font-family: osl;
+}
+
+#dash-detail h1{border-bottom: 1px solid #2bbcf9;padding-bottom: 10px;margin-top: 30px;color: #2bbcf9;}
 #dash-detail h6{
     text-align: right;
     color: #CACACA;
-    letter-spacing: 2px;
 }
 #dash-detail p{
     text-align: justify;
@@ -209,12 +219,12 @@ a.item{
     opacity: 0;
 }
 .bar-stable img{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     z-index: 10;
-    top: 6px;
-    right: 10px;
+    top: 3px;
+    right: 1px;
     border-radius: 100%;
     border: 0.050em solid #BBBABA;
 }
@@ -233,44 +243,44 @@ a.item{
 
 
 .bar.bar-stable .title{
-  padding-top: 12px;
+  padding-top: 3px;
   font-family: osb;
-  letter-spacing: 4px;
-  color: rgb(204, 204, 204);
+  color: rgb(224, 224, 224);
+  margin-left: 12px;
   text-align: left;
-  margin-left: 25px;
 }
 
 .bar.bar-stable {
-  height:65px;
+  height: 50px;
   box-shadow: 0px 1px 10px 6px rgba(0, 0, 0, 0.09);
-  border-bottom: 4px solid #2bbcf9;
+  border-bottom: 2px solid #2bbcf9;
+  background-color: #fff;
 }
 
 ion-header-bar.bar-stable.bar.bar-header.disable-user-behavior {}
 
 .has-header {
-    top: 63px;
+    top: 50px;
 }
 
 
-.list .item-icon-left{height: 75px;padding-left: 91px;line-height: 45px;font-family: osl;letter-spacing: 1px;color: #737373;}
+.list .item-icon-left{height: 75px;padding-left: 91px;line-height: 45px;font-family: osl;color: #737373;}
 
 .bar .buttons span{
   display: none;
 }
 
 .bar-stable .button.button-clear{
-    color: #187095;
-    font-size: 43px;
-    min-height: 65px;
+    color: #2bbcf9;
+    font-size: 34px;
+    min-height: 50px;
     position: absolute;
     left: 0;
     overflow: hidden;
     width: 30px;
     text-align: center;
     top: 0;
-    background: rgba(204, 204, 204, 0.21);
+    background: rgba(228, 228, 228, 0.17);
 }
 
 
@@ -288,9 +298,7 @@ ion-header-bar.bar-stable.bar.bar-header.disable-user-behavior {}
             font-size: 35px;
     }
 .item .badge{
-    top: inherit;
-    right: initial;
-    margin-left: 20px;
+    top: 26px;
 }
 
 
@@ -304,14 +312,16 @@ ion-header-bar.bar-stable.bar.bar-header.disable-user-behavior {}
     display: none;
 }
 
-.slide-wrapper{
-    height: 89%;
-}
+.slide-wrapper{margin-top: 2%;}
 .slider-img{
     display: block;
     margin: 0 auto;
     cursor: -webkit-grab;
-    height: 335px;
+    border: 0.190em solid #fff;
+    border-radius: 15px;
+    max-width: 100%;
+    height: auto;
+    max-height: 380px;
 }
 
 copy{width: 100%;position: relative;display: block;overflow: hidden;padding: 2% 0;margin: 1% 0 4% 0;}
@@ -340,11 +350,9 @@ copy small{
 .item-floating-label .input-label.has-input{
     font-family: osb;
     color: #E2E2E2;
-    letter-spacing: 3px;
 }
 
 .list .item>h4{
-    letter-spacing: 1px;
     color: #BDBCBC;
     font-size: 20px;
     font-family: osl;
@@ -454,13 +462,17 @@ color: #fff;
     display: block;
 }
 .date{
-    float: right;
     position: absolute;
-    right: 10px;
-    bottom: 2px;
+    right: 14px;
+    bottom: 0;
     font-size: 11px;
     font-family: osb;
-    color: rgba(113, 113, 113, 0.43);
+    color: rgba(113, 113, 113, 0.25);
+    z-index: 2;
+    width: 100%;
+    left: 0;
+    text-align: right;
+    padding-right: 6px;
 }
 
 #son .item-thumbnail-left{
@@ -483,7 +495,7 @@ color: #fff;
     display: block;
 }
 
-#son strong{font-size: 21px;color: #ccc;font-family: osb;letter-spacing: 3px;display: block;position: absolute;width: 78%;left: 80px;top: 21px;}
+#son strong{font-size: 21px;color: #ccc;font-family: osb;display: block;position: absolute;width: 78%;left: 80px;top: 21px;}
 #son .item-thumbnail-left p{
     margin-left: 20px;
     font-family: osb;
@@ -527,7 +539,7 @@ video{
   width: 100%;
 }
 
-.bar.bar-stable .title small{color: #656565;font-size: 13px;font-family: osb;letter-spacing: 0px;}
+.bar.bar-stable .title small{color: #656565;font-size: 13px;font-family: osb;letter-spacing: 0px;float: right;padding-right: 50px;}
 
 .noti-tab{
 
@@ -548,20 +560,40 @@ video{
   left: 0 !important;
 }
 .fullscreen-image {
-  max-width: 100%;
-  max-height: 100%;
-  bottom: 0;
   left: 0;
   margin: auto;
   overflow: auto;
   position: fixed;
   right: 0;
   top: 0;
+  float: left;
+  max-width: 100%;
+  max-height: 90%;
 }
-.slider {
+
+.modal .slider {
+height: 100%;
+
+}
+
+#buttons-magazine{
   width: 100%;
-  height: 100%;
-}
+  height: 10%;
+  background: rgb(255, 255, 255);
+  padding: 5px;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  margin: 0;
+  bottom: 0;
+  padding: 0;
+  }
+
+#portada.slider {height: 100%;}
+
+
+
+
 
 p.info {
   position: absolute;
@@ -577,27 +609,28 @@ p.info {
 /* Fix modal backdrop for smaller devices */
 @media (max-width: 679px) {
   .active .modal-backdrop-bg {
-    opacity: .5;
+    opacity: 1;
   }
   .modal-backdrop-bg {
     -webkit-transition: opacity 300ms ease-in-out;
     transition: opacity 300ms ease-in-out;
-    background-color: #000;
+    background-color: #FFF;
     opacity: 0;
   }
 }
 
 .chat-media{
     width: 100%;
-    height: 150px;
-    margin: 0 0 24px 0;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    display: block;
 }
 .chat-media img{
-    height: inherit;
-    border-radius: 0%!important;
+    border-radius: 7px;
     border: 3px solid #ccc!important;
-    display: block;
-    margin: 6px 0 0 0;
+    width: 95%;
+    height: initial;
 }
 
  .embed-responsive {
@@ -639,7 +672,12 @@ p.info {
 #detail-message .card{
     border-width: 3px 0 0 0;
     margin: 10px 10px;
+    position: relative;
 }
+
+#detail-message .card .item{padding: 8px 8px 20px 8px;}
+
+
 #detail-message .item-content{padding: 2px 0 0 10px;}
 
 .list.acount.card a{
@@ -675,13 +713,6 @@ p.info {
   background-color: #187095;
 }
 
-#logo-login{
-    position: absolute;
-    width: 170px;
-    display: block;
-    left: calc(50% - 85px);
-    top: -1px;
-}
 
 .bar-footer {
   overflow: visible !important;
@@ -705,8 +736,8 @@ at the bottom as the textarea resizes */
 .footer-btn-wrap {
   position: relative;
   height: 100%;
-  width: 50px;
-  top: -1px;
+  width: 82px;
+  top: 5px;
 }
 
 .footer-btn {
@@ -722,29 +753,40 @@ at the bottom as the textarea resizes */
 .bar-footer textarea,
 .bar-footer .item-input,
 .bar-footer .item-input-wrapper {
-  background-color: #f4f4f4 !important;
+  background-color: #EFEFEF !important;
 }
 
-ion-button{
-  position: absolute;
-  color: rgba(255, 255, 255, 0.54);
+#buttons-magazine ion-button,
+#buttons-magazine a{
   font-size: 46px;
-  cursor: pointer;
+  color: #E0E0E0;
+  width: 100%;
+  display: block;
+  height: 100%;
+  text-align: center;
 }
 
-.modal .ion-chevron-right{
-    right: 5px;
-    top: calc(50% - 23px);
+
+#buttons-magazine .opc{
+  cursor: pointer;
+  width: 33.3%;
+  display: block;
+  height: 100%;
+  float: left;
+  padding-top: 5px;
 }
-.modal .ion-chevron-left{
-    left: 5px;
-    top: calc(50% - 23px);
+
+#login cite{
+    font-family: osb;
+    color: white;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px auto 30px auto;
+    position: relative;
 }
-.modal .ion-close{
-    right: 5px;
-    font-size: 30px;
-    top: 5px;
-}
+
+
 #logo-ins{
   position: absolute;
   top: 4px;
@@ -756,3 +798,14 @@ ion-button{
 #detail-message.has-header {
     bottom: 65px;
   }
+
+#detail-message ion-item p{
+    padding-right: 20%;
+}
+.message-photo{right: 9px;z-index: 9;bottom: 3px;}
+
+.onezone-content{
+    margin-top: 30px;
+}
+
+#buttons-magazine{}

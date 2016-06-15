@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-27 01:04:57
+/* Smarty version 3.1.29, created on 2016-04-22 22:32:42
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-user.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56d0e829d73260_76699376',
+  'unifunc' => 'content_571aecda93c7f6_08705899',
   'file_dependency' => 
   array (
     '0040efb0d61d0ca8e38b725d3a4d134b8e28345f' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/update-user.html',
-      1 => 1456531486,
+      1 => 1461382342,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56d0e829d73260_76699376 ($_smarty_tpl) {
+function content_571aecda93c7f6_08705899 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -190,40 +190,6 @@ $_smarty_tpl->tpl_vars['group'] = $__foreach_group_2_saved_item;
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="honor">Reconocimiento</label>
-                    <select class="form-control select2" id="honor" name="honor[]" multiple style="width: 100%;" data-placeholder="Seleecione reconocimientos">
-                      <option></option>
-                      <?php
-$_from = $_smarty_tpl->tpl_vars['honors']->value;
-if (!is_array($_from) && !is_object($_from)) {
-settype($_from, 'array');
-}
-$__foreach_honor_3_saved_item = isset($_smarty_tpl->tpl_vars['honor']) ? $_smarty_tpl->tpl_vars['honor'] : false;
-$_smarty_tpl->tpl_vars['honor'] = new Smarty_Variable();
-$_smarty_tpl->tpl_vars['honor']->_loop = false;
-foreach ($_from as $_smarty_tpl->tpl_vars['honor']->value) {
-$_smarty_tpl->tpl_vars['honor']->_loop = true;
-$__foreach_honor_3_saved_local_item = $_smarty_tpl->tpl_vars['honor'];
-?>
-                      <?php if (in_array($_smarty_tpl->tpl_vars['honor']->value->idReconocimiento,$_smarty_tpl->tpl_vars['user']->value['reconocimientos'])) {?>
-                        <option selected value="<?php echo $_smarty_tpl->tpl_vars['honor']->value->idReconocimiento;?>
-"><?php echo $_smarty_tpl->tpl_vars['honor']->value->reconocimiento;?>
-</option>
-                      <?php } else { ?>
-                        <option value="<?php echo $_smarty_tpl->tpl_vars['honor']->value->idReconocimiento;?>
-"><?php echo $_smarty_tpl->tpl_vars['honor']->value->reconocimiento;?>
-</option>
-                      <?php }?>
-                      <?php
-$_smarty_tpl->tpl_vars['honor'] = $__foreach_honor_3_saved_local_item;
-}
-if ($__foreach_honor_3_saved_item) {
-$_smarty_tpl->tpl_vars['honor'] = $__foreach_honor_3_saved_item;
-}
-?>
-                    </select>
-                  </div>
-                  <div class="form-group">
                     <label for="permission">Permisos</label>
                     <select class="form-control select2" id="permission" name="permission" style="width: 100%;" data-placeholder="Seleecione el permiso">
                       <option></option>
@@ -244,6 +210,8 @@ $_smarty_tpl->tpl_vars['honor'] = $__foreach_honor_3_saved_item;
             <input type="hidden" name="user" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['idUsuario'];?>
 ">
             <input type="hidden" name="namephoto" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['usuario'];?>
+">
+            <input type="hidden" name="institute" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['idInstitucion'];?>
 ">
             <div class="box-footer">
               <button type="button" class="btn btn-primary">Enviar</button>

@@ -1,36 +1,31 @@
-<ion-view view-title="Revista" hide-tabs>
-  <ion-content class="padding">
-  <copy>
-    <strong>Accede a la revista escolar</strong>
-    <span>e infórmate sobre los avances</span>
-    <small>de tu colegio.</small>
-  </copy>
+<ion-view  cache-view="false" can-swipe-back="false"  view-title="Revista" hide-tabs id="revista">
+  <ion-content scroll="false">
 
-     <ion-slide-box >
+     <ion-slide-box id="portada" delegate-handle="image-viewer" >
 
-        <ion-slide ng-click="openModal({{magazine.idRevista}})" ng-repeat="magazine in magazines">
+        <ion-slide  ng-repeat="magazine in magazines">
           <div class="slide-wrapper">
-            <img class="slider-img" src="{{magazine.portada}}"/>
+            <img class="slider-img" src="{{magazine.pagina}}"/>
+          </div>
+
+          <div id="buttons-magazine">
+
+            <div class="opc">
+              <ion-button class="ion-chevron-left" ng-click="previousMain()" ng-show="magazine.primero"></ion-button>
+            </div>
+
+            <div class="opc">
+              <a class="ion-close" ng-click="$state.go('tab.magazines')"></a>
+            </div>
+
+            <div class="opc">
+              <ion-button class="ion-chevron-right" ng-click="nextMain()" ng-show="magazine.ultimo"></ion-button>
+            </div>
+
           </div>
         </ion-slide>
 
       </ion-slide-box>
-
-      <script id="image-modal.html" type="text/ng-template">
-          <div class="modal image-modal transparent">
-            <ion-slide-box on-slide-changed="slideChanged(index)"
-                           show-pager="false">
-              <ion-slide ng-repeat="oImage in aImages">
-                <img ng-src="{{oImage.src}}" class="fullscreen-image" />
-                <p class="info">{{oImage.msg}}</p>
-                <ion-button class="ion-chevron-right" ng-click="next()"></ion-button>
-                <ion-button class="ion-chevron-left" ng-click="previous()"></ion-button>
-                <ion-button class="ion-close"  ng-click="closeModal()" ></ion-button>
-              </ion-slide>
-
-            </ion-slide-box>
-          </div>
-      </script>
 
   </ion-content>
 </ion-view>

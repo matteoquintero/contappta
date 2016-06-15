@@ -16,6 +16,7 @@ class DataObject_Revista extends DB_DataObject
     public $revista;                         // string(150)  
     public $descripcion;                     // blob(65535)  blob
     public $consecutivo;                     // int(11)  
+    public $clear;                           // string(2)  enum
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
@@ -31,7 +32,8 @@ class DataObject_Revista extends DB_DataObject
              'revista' =>  DB_DATAOBJECT_STR,
              'descripcion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'consecutivo' =>  DB_DATAOBJECT_INT,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'clear' =>  DB_DATAOBJECT_STR,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 
@@ -51,6 +53,7 @@ class DataObject_Revista extends DB_DataObject
              'identificador' => '',
              'revista' => '',
              'descripcion' => '',
+             'clear' => 'No',
          );
     }
 

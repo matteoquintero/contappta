@@ -5,9 +5,12 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic','starter.controllers', 'starter.services','starter.directives', 'onezone-datepicker','youtube-embed'])
+angular.module('starter', ['ionic','starter.controllers', 'starter.services','starter.directives', 'onezone-datepicker','youtube-embed','ngCordova'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$cordovaBadge,notifications,$rootScope, $state, $stateParams) {
+
+ $rootScope.$state = $state;
+  $rootScope.$stateParams = $stateParams;
 
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -53,10 +56,49 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services','st
 
     push.on('notification', function(data) {
 
+      var dataone=data.additionalData.dataone;
+      switch(data.additionalData.page){
+
+        case 'noticias':
+            $state.go("tab.dash-detail", {noticeId:dataone});
+        break;
+
+        case 'mensajes':
+            $state.go("tab.chat-detail", {chatId:dataone});
+        break;
+
+        case 'eventos':
+            $state.go("tab.event-id", {idEvent:dataone});
+        break;
+
+        case 'reconocimientos':
+            $state.go("tab.son", {user:dataone});
+        break;
+
+        case 'revistas':
+            $state.go("tab.magazine", {magazineId:dataone});
+        break;
+
+      }
+
     });
 
     push.on('error', function(e) {
     });
+
+    /*notifications.count().then(function(response) {
+        var badges=0;
+        badges=parseInt(response.news)+parseInt(response.messages)+parseInt(response.events);
+
+        $cordovaBadge.promptForPermission();
+
+        $cordovaBadge.hasPermission().then(function(result) {
+            $cordovaBadge.set(badges);
+        }, function(error) {
+            console.log(error);
+        });
+
+    });*/
 
 
   });
@@ -120,6 +162,17 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services','st
 
     // Each tab has its own nav history stack:
 
+    .state('tab.profile', {
+      url: '/profile',
+      views: {
+        'tab-account': {
+            cache: false,
+          templateUrl: 'templates/profile.html',
+          controller: 'ProfileCtrl'
+        }
+      }
+    })
+
     .state('tab.calender', {
       url: '/calender',
       views: {
@@ -132,18 +185,21 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services','st
     })
 
     .state('tab.dash-detail', {
-      url: '/dash-detail/:noticeId',
+      url: '/dash-detail',
+      params:{noticeId:null},
       views: {
         'tab-dash': {
-            cache: false,
+          cache: false,
           templateUrl: 'templates/dash-detail.html',
-          controller: 'DashDetailCtrl'
+          controller: 'DashDetailCtrl',
+
         }
-      }
+      },
     })
 
     .state('tab.event-detail', {
-      url: '/event-detail/:dateevent',
+      url: '/event-detail',
+      params:{dateevent:null},
       views: {
         'tab-account': {
           cache: false,
@@ -154,7 +210,8 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services','st
     })
 
     .state('tab.event-id', {
-      url: '/event-id/:idEvent',
+      url: '/event-id',
+      params:{idEvent:null},
       views: {
         'tab-account': {
           cache: false,
@@ -187,7 +244,8 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services','st
     })
 
     .state('tab.chat-detail', {
-      url: '/chat-detail/:chatId/:userId',
+      url: '/chat-detail',
+      params:{chatId:null},
       views: {
         'tab-chats': {
             cache: false,
@@ -209,7 +267,8 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services','st
     })
 
     .state('tab.son', {
-      url: '/son/:user',
+      url: '/son',
+      params:{user:null},
       views: {
         'tab-account': {
             cache: false,
@@ -219,8 +278,20 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services','st
       }
     })
 
+    .state('tab.magazines', {
+      url: '/magazines',
+      views: {
+        'tab-account': {
+            cache: false,
+          templateUrl: 'templates/magazines.html',
+          controller: 'MagazinesCtrl'
+        }
+      }
+    })
+
     .state('tab.magazine', {
-      url: '/magazine',
+      url: '/magazines',
+      params:{magazineId:null},
       views: {
         'tab-account': {
             cache: false,
@@ -229,6 +300,7 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services','st
         }
       }
     })
+
 
     .state('tab.account', {
       url: '/account',

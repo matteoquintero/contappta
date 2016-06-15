@@ -13,7 +13,7 @@ class Respuesta
     $dbdata->idNoticia=$data["idNoticia"];
     $dbdata->idUsuario=$data["idUsuario"];
     $dbdata->respuesta=$data["respuesta"];
-
+      $dbdata->fechaRegistro=date('Y-m-d H:i:s');
     $create=$dbdata->insert();
 
     if ($create) {

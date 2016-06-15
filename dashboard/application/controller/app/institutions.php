@@ -8,6 +8,7 @@
     $ObjInstitutions=new Institutions();
     $data["idInstitucion"]=$_REQUEST["institution"];
     $response=$ObjInstitutions->get("app",$data);
+    if ($response=="") {$response[0]->data=false; }
     echo json_encode($response);
 ?>
 

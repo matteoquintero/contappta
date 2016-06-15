@@ -12,6 +12,10 @@
 
             switch ($accion){
 
+                case 'clear':
+                  $ObjGrupo->clear($_POST["group"]);
+                break;
+
                 case "create":
 										$data["idInstitucion"]=$idInstitucion;
                     $data["grado"]=$_POST["degree"];

@@ -35,7 +35,10 @@
                       {#foreach from=$groups item=group #}
                       <tr>
                         <td>{#$group->grado#}-{#$group->identificador#}</td>
-                        <td><button class="btn-edit btn btn-primary" data-group="{#$group->idGrupo#}">Editar</button></td>
+                        <td>
+                          <button class="btn-edit btn btn-primary" data-group="{#$group->idGrupo#}">Editar</button>
+                          <button class="btn btn-primary btn-clear" data-group="{#$group->idGrupo#}">Eliminar</button>
+                        </td>
                       </tr>
                       {#/foreach#}
                     </tbody>

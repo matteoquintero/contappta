@@ -24,7 +24,7 @@ if (!defined('PATH_SEPARATOR')) {
 }
 
 $include_path = ini_get("include_path");
-@ini_set("include_path", $include_path . PATH_SEPARATOR . $_SERVER["DOCUMENT_ROOT"]."/pear");
+@ini_set("include_path", $include_path . PATH_SEPARATOR . $_SERVER["DOCUMENT_ROOT"].BASE."/pear");
 
 require_once("MDB2.php");
 require_once("DB/DataObject.php");
@@ -49,4 +49,21 @@ $optionsDataObject = array(
     'db_driver'   => 'MDB2',
     'class_prefix'     => 'DataObject_',
     'generator_no_ini' => true);
+
+
+$mdb2 =& MDB2::connect($DB_DSN);
+if (PEAR::isError($db)) {
+    die($db->getMessage());
+}
+
+$sql  = "SET SESSION time_zone = 'America/Bogota'";
+
+$affected =& $mdb2->exec($sql);
+
+if (PEAR::isError($affected)) {
+    die($affected->getMessage());
+}
+
+$mdb2->disconnect();
+
 ?>

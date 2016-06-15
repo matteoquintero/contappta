@@ -8,7 +8,6 @@
     $ObjUtilidad=new Utilidad();
     $ObjAcudiente=new Acudiente();
     $ObjUsers=new Users();
-    $ObjReconocimientoUsuario=new ReconocimientoUsuario();
     $response=false;
 	  @session_start();
     @$idUsuario=$_SESSION['usuario']["idUsuario"];
@@ -19,6 +18,10 @@
         if (isset($action)) {
 
             switch ($action){
+
+                case 'clear':
+                  $ObjUsuario->clear($_POST["user"]);
+                break;
 
                 case "create":
 
@@ -41,25 +44,17 @@
                     $foto=$ObjUtilidad->GenerarArchivo($ruta, $nombre, $nombrefile);
                     $data["foto"]=$foto[1];
 
-                    $response=$ObjUsuario->create($data);
+                    $user=$ObjUsuario->create($data);
 
-                    $data["idHijo"]= $response[1];
+                   $data["idHijo"]= $user[1];
                    if (!empty($_POST["guardian"])) {
                         foreach ($_POST["guardian"] as $key => $value) {
                           $data["idAcudiente"]=$value;
-                          $response=$ObjAcudiente->create($data);
+                          $ObjAcudiente->create($data);
                         }
                     }
 
-                    $data["idUsuario"]= $response[1];
-                   if (!empty($_POST["honor"])) {
-                        foreach ($_POST["honor"] as $key => $value) {
-                          $data["idReconocimiento"]=$value;
-                          $response=$ObjReconocimientoUsuario->create($data);
-                        }
-                    }
-
-                    echo json_encode($response);
+                   echo json_encode($user);
 
                 break;
 
@@ -82,25 +77,17 @@
                     $foto=$ObjUtilidad->GenerarArchivo($ruta, $nombre, $nombrefile);
                     $data["foto"]=$foto[1];
 
-                    $response=$ObjUsuario->update($data);
+                    $user=$ObjUsuario->update($data);
 
-                    $data["idHijo"]= $response[1];
+                    $data["idHijo"]= $user[1];
                    if (!empty($_POST["guardian"])) {
                         foreach ($_POST["guardian"] as $key => $value) {
                           $data["idAcudiente"]=$value;
-                          $response=$ObjAcudiente->create($data);
+                          $user=$ObjAcudiente->create($data);
                         }
                     }
 
-                    $data["idUsuario"]= $response[1];
-                   if (!empty($_POST["honor"])) {
-                        foreach ($_POST["honor"] as $key => $value) {
-                          $data["idReconocimiento"]=$value;
-                          $response=$ObjReconocimientoUsuario->create($data);
-                        }
-                    }
-
-                    echo json_encode($response);
+                   echo json_encode($user);
 
                 break;
 

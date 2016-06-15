@@ -59,7 +59,7 @@ class Events
         $dbdata->selectAdd("idEvento,asunto");
         $dbdata->whereAdd("aprobado='Si'");
         $dbdata->whereAdd("publicado='Si'");
-        $dbdata->whereAdd("fechaInicio ='".$data["fechaInicio"]."'");
+        $dbdata->whereAdd("fechaInicio BETWEEN '".$data["fechaInicio"]." 00:00:00' AND '".$data["fechaInicio"]." 23:59:59' ");
         $dbdata->whereAdd("idEvento IN(".$this->eventsreciver($data["idReceptor"]).")");
         $dbdata->find();
         $contador=0;
@@ -126,7 +126,7 @@ class Events
 
         $dbdata = DB_DataObject::Factory('Events');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("idEvento,idNotificacion,aprobado,publicado,eliminado,asunto,descripcion,fechaInicio,fechaFin,fechaPublicacion");
+        $dbdata->selectAdd("idEvento,idNotificacion,aprobado,publicado,asunto,descripcion,fechaInicio,fechaFin,fechaPublicacion");
         $dbdata->whereAdd("idEvento='".$data['idEvento']."'");
         $dbdata->find();
         while( $dbdata->fetch() ){
@@ -134,7 +134,6 @@ class Events
           $ret["idNotificacion"] = $dbdata->idNotificacion;
           $ret['aprobado'] = $dbdata->aprobado;
           $ret['publicado'] = $dbdata->publicado;
-          $ret['eliminado'] = $dbdata->eliminado;
           $ret['asunto'] = $dbdata->asunto;
           $ret['descripcion'] = $dbdata->descripcion;
           $ret['fechaInicio'] = $dbdata->fechaInicio;

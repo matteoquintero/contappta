@@ -19,10 +19,10 @@ class DataObject_Noticia extends DB_DataObject
     public $media;                           // string(250)  
     public $publicada;                       // string(2)  enum
     public $aprobada;                        // string(2)  enum
-    public $eliminada;                       // string(2)  enum
     public $respuesta;                       // string(2)  enum
     public $consecutivo;                     // int(11)  
-    public $fechaPublicacion;                // date(10)  binary
+    public $fechaPublicacion;                // datetime(19)  binary
+    public $clear;                           // string(2)  enum
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
 
     /* Static get */
@@ -41,11 +41,11 @@ class DataObject_Noticia extends DB_DataObject
              'media' =>  DB_DATAOBJECT_STR,
              'publicada' =>  DB_DATAOBJECT_STR,
              'aprobada' =>  DB_DATAOBJECT_STR,
-             'eliminada' =>  DB_DATAOBJECT_STR,
              'respuesta' =>  DB_DATAOBJECT_STR,
              'consecutivo' =>  DB_DATAOBJECT_INT,
-             'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'fechaPublicacion' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
+             'clear' =>  DB_DATAOBJECT_STR,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 
@@ -67,8 +67,8 @@ class DataObject_Noticia extends DB_DataObject
              'media' => '',
              'publicada' => 'No',
              'aprobada' => 'No',
-             'eliminada' => 'No',
              'respuesta' => 'No',
+             'clear' => 'No',
          );
     }
 

@@ -12,6 +12,7 @@ class NoticiaReceptor
 
 		$dbdata->idNoticia=$data["idNoticia"];
 		$dbdata->idReceptor=$data["idReceptor"];
+          $dbdata->fechaRegistro=date('Y-m-d H:i:s');
     $dbdata->find();
 
     if ($dbdata->fetch()) {

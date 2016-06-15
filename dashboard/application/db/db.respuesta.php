@@ -25,7 +25,7 @@ class DataObject_Respuesta extends DB_DataObject
              'idNoticia' =>  DB_DATAOBJECT_INT,
              'idUsuario' =>  DB_DATAOBJECT_INT,
              'respuesta' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
-             'fechaRegistro' =>  DB_DATAOBJECT_MYSQLTIMESTAMP,
+             'fechaRegistro' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
          );
     }
 

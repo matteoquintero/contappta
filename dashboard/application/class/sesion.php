@@ -37,6 +37,7 @@ class Sesion{
         if ( strtolower($usuario) == $data['usuario'] && $contrasena == $data['contrasena'] ) {
             $_SESSION['usuario'] = array(
               'idUsuario' => $data['idUsuario'],
+              'idRol' => $data['idRol'],
               'idInstitucion' => $data['idInstitucion'],
               'usuario' => $data['usuario'],
               'permiso' => $data['permiso']

@@ -9,6 +9,7 @@
     $data["idConversacion"]=$_REQUEST["conversation"];
     $mode=$_REQUEST["mode"];
     $response=$ObjMessages->get($mode,$data);
+    if ($response=="") {$response[0]->data=false; }
     echo json_encode($response);
 ?>
 

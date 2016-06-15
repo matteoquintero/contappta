@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-03-08 21:33:43
+/* Smarty version 3.1.29, created on 2016-04-17 13:29:43
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/groups.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56df3727577f80_81065904',
+  'unifunc' => 'content_5713d6172f4217_02063069',
   'file_dependency' => 
   array (
     'eafa6c4750997f35bb4e5332841e7fc835ab92b6' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/groups.html',
-      1 => 1456532558,
+      1 => 1460917780,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56df3727577f80_81065904 ($_smarty_tpl) {
+function content_5713d6172f4217_02063069 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -76,8 +76,12 @@ $__foreach_group_0_saved_local_item = $_smarty_tpl->tpl_vars['group'];
                         <td><?php echo $_smarty_tpl->tpl_vars['group']->value->grado;?>
 -<?php echo $_smarty_tpl->tpl_vars['group']->value->identificador;?>
 </td>
-                        <td><button class="btn-edit btn btn-primary" data-group="<?php echo $_smarty_tpl->tpl_vars['group']->value->idGrupo;?>
-">Editar</button></td>
+                        <td>
+                          <button class="btn-edit btn btn-primary" data-group="<?php echo $_smarty_tpl->tpl_vars['group']->value->idGrupo;?>
+">Editar</button>
+                          <button class="btn btn-primary btn-clear" data-group="<?php echo $_smarty_tpl->tpl_vars['group']->value->idGrupo;?>
+">Eliminar</button>
+                        </td>
                       </tr>
                       <?php
 $_smarty_tpl->tpl_vars['group'] = $__foreach_group_0_saved_local_item;

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-27 02:47:54
+/* Smarty version 3.1.29, created on 2016-04-17 13:19:24
   from "/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/messages.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56d1004a112b39_24976659',
+  'unifunc' => 'content_5713d3ac8cf603_27725802',
   'file_dependency' => 
   array (
     'f9dbbafd7ddbb039c683f6e97b7d21d06ce73acd' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/contappta/dashboard/page/template/institution/messages.html',
-      1 => 1456532356,
+      1 => 1460917163,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56d1004a112b39_24976659 ($_smarty_tpl) {
+function content_5713d3ac8cf603_27725802 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -90,6 +90,8 @@ $__foreach_message_0_saved_local_item = $_smarty_tpl->tpl_vars['message'];
                   <td>
                     <button class="btn btn-primary btn-edit" data-message="<?php echo $_smarty_tpl->tpl_vars['message']->value->idMensaje;?>
 ">Editar</button>
+                    <button class="btn btn-primary btn-clear" data-message="<?php echo $_smarty_tpl->tpl_vars['message']->value->idMensaje;?>
+">Eliminar</button>
                   </td>
                 </tr>
                 <?php
