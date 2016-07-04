@@ -251,22 +251,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "www/js/services.js",
-			"settings":
-			{
-				"buffer_size": 15030,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/js/controllers.js",
-			"settings":
-			{
-				"buffer_size": 12030,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -304,23 +288,24 @@
 	},
 	"file_history":
 	[
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/css/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/chat-detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/services.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/controllers.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-chats.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/config.xml",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/profile.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/css/style.css",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/platforms/android/AndroidManifest.xml",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/platforms/android/CordovaLib/build/intermediates/bundles/release/AndroidManifest.xml",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/gulpfile.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/info.txt",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/send-message.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/profile.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/services.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/controllers.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/directives.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-student.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-parent.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/account-institute.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/js/app.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/event-detail.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-chats.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/magazine.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/magazines.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/card-two.html",
@@ -329,7 +314,6 @@
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/partials/card-one.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/contacts.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-dash.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/chat-detail.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tab-account.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/login.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/contappta/app/www/templates/tabs.html",
@@ -608,71 +592,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/js/services.js",
-					"settings":
-					{
-						"buffer_size": 15030,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "www/js/controllers.js",
-					"settings":
-					{
-						"buffer_size": 12030,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4095,
-								4095
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1616.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
