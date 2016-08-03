@@ -36,7 +36,30 @@ class Messages
 
       break;
 
+      case 'transmitter':
 
+        $dbdata = DB_DataObject::Factory('Messages');
+        $dbdata->selectAdd();
+        $dbdata->selectAdd("idMensaje,mensaje,nombreEmisor,nombreReceptor,media,fechaRegistro,visto");
+        $dbdata->whereAdd("idEmisor = '".$data["idEmisor"]."'");
+
+        $dbdata->find();
+        $contador=0;
+        while( $dbdata->fetch() ){
+          $ret[$contador]->idMensaje = $dbdata->idMensaje;
+          $ret[$contador]->mensaje = $dbdata->mensaje;
+          $ret[$contador]->nombreEmisor = $dbdata->nombreEmisor;
+          $ret[$contador]->nombreReceptor = $dbdata->nombreReceptor;
+          $ret[$contador]->media = $dbdata->media;
+          $ret[$contador]->visto = $dbdata->visto;
+          $ret[$contador]->fechaRegistro = $dbdata->fechaRegistro;
+          $contador++;
+        }
+
+        $dbdata->free();
+        return $ret;
+
+      break;
       case 'conversation':
 
         $dbdata = DB_DataObject::Factory('Messages');

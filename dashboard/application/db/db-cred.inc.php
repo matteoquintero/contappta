@@ -17,10 +17,10 @@ $C['DB_USER'] = 'root';
 /*
 * The database password
 */
-$C['DB_PASS'] = '';
+$C['DB_PASS'] = 'root';
 /*
 * The name of the database to work with
 */
-$C['DB_NAME'] = 'contaapta';
+$C['DB_NAME'] = 'contappta';
 
 ?>

@@ -6,7 +6,7 @@
   <section class="content-header">
     <h1>
       Ver mensajes
-      <small>Listado de las mensajes</small>
+      <small>Listado de las mensajes que usted envio</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
@@ -21,13 +21,12 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Listado de las mensajes</h3>
+            <h3 class="box-title">Listado de las mensajes que usted envio</h3>
           </div><!-- /.box-header -->
           <div class="box-body">
             <table id="data" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>Emisor</th>
                   <th>Mensaje</th>
                   <th>Receptor</th>
                   <th>Fecha registro</th>
@@ -38,7 +37,6 @@
               <tbody>
                 {#foreach from=$messages item=message#}
                 <tr>
-                  <td>{#$message->nombreEmisor#}</td>
                   <td>{#$message->mensaje#}</td>
                   <td>{#$message->nombreReceptor#}</td>
                   <td>{#$message->fechaRegistro#}</td>
@@ -52,7 +50,6 @@
               </tbody>
               <tfoot>
                 <tr>
-                  <th>Emisor</th>
                   <th>Mensaje</th>
                   <th>Receptor</th>
                   <th>Fecha registro</th>

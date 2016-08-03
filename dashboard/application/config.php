@@ -2,7 +2,7 @@
 
 @session_start();
 //Smarty
-require($_SERVER["DOCUMENT_ROOT"].BASE."/smarty/libs/Smarty.class.php");
+require($_SERVER["DOCUMENT_ROOT"]."/smarty/libs/Smarty.class.php");
 $smarty = new Smarty();
 $smarty->compile_check = true;
 $smarty->left_delimiter = '{#';
@@ -12,7 +12,6 @@ $smarty->compile_dir  = $_SERVER["DOCUMENT_ROOT"].BASE."page/template_c/";
 $smarty->loadPlugin('smarty_compiler_switch');
 
 date_default_timezone_set('America/Bogota');
-
 function IncluirArchivos($Ruta){
 	define('PREFIJO_GENERAL', $Ruta);
 	require("db/DBO.php");

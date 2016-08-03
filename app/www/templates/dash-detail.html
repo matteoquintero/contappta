@@ -1,0 +1,33 @@
+<ion-view  cache-view="false" can-swipe-back="false"  view-title="Detalle noticia" >
+  <ion-content class="padding" id="dash-detail" >
+
+        <h1>{{notice.title}}</h1>
+        <h6>{{notice.date}}</h6>
+        <p> {{notice.description}}</p>
+
+
+<div ng-if="notice.download">
+  <button class="button icon ion-code-download" type="button">
+    Descargar archivo noticia {{downloadProgress}} % {{hasil}}
+  </button>
+</div>
+
+  </ion-content>
+
+  <div ng-if="notice.answer">
+    <form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)" novalidate >
+        <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach>
+            <label class="item-input-wrapper">
+                <textarea ng-model="$parent.input.message" value="" placeholder="Enviar mensaje..." required minlength="1" maxlength="1500" msd-elastic></textarea>
+            </label>
+            <div class="footer-btn-wrap">
+              <button class="button button-icon icon ion-android-send footer-btn" type="submit"
+                  ng-disabled="!input.message || input.message === ''">
+              </button>
+
+            </div>
+        </ion-footer-bar>
+    </form>
+  </div>
+</ion-view>
+

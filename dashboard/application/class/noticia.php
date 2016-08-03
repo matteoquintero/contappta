@@ -18,6 +18,7 @@ class Noticia
     $dbdata->asunto=$data["asunto"];
     $dbdata->descripcion=$data["descripcion"];
     $dbdata->media=$data["media"];
+    $dbdata->mediaDescarga=$data["mediaDescarga"];
     $dbdata->aprobada=$data["aprobada"];
     $dbdata->respuesta=$data["respuesta"];
     $dbdata->publicada=($data["aprobada"]=="No") ? "No" : $data["publicada"];

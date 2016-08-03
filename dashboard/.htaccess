@@ -2,11 +2,14 @@ ErrorDocument 404 /page/template/errorpage/404.html
 Options +FollowSymLinks
 
 RewriteEngine On
-RewriteBase /dashboard/
+RewriteBase /contappta/dashboard/
 
 RewriteCond %{REQUEST_FILENAME} -d [OR]
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -l
 RewriteRule ^ - [L]
-Rewriterule ^([^/]+)/([^/]+)/?$  /dashboard/?&seccion=$1&data=$2  [QSA,L]
-Rewriterule ^([^/]+)/?$          /dashboard/?&seccion=$1          [QSA,L]
+Rewriterule ^([^/]+)/([^/]+)/?$  /contappta/dashboard/?&seccion=$1&data=$2  [QSA,L]
+Rewriterule ^([^/]+)/?$          /contappta/dashboard/?&seccion=$1          [QSA,L]
+
+php_value date.timezone "America/Bogota"
+SetEnv TZ America/Bogota

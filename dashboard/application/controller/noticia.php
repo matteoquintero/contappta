@@ -26,7 +26,6 @@
                 break;
 
                 case "create":
-
                     $consecutivo=$ObjNoticia->getconsecutive();
                     $identificador=chr(rand(ord("A"), ord("Z"))).rand(0,9).chr(rand(ord("A"), ord("Z"))).$consecutivo;
 
@@ -44,12 +43,19 @@
                     if (empty($_POST["videoid"])) {
                       $ruta="../../_data/news/";
                       $nombre=$identificador;
-                      $nombrefile="file-0";
+                      $nombrefile="fileone-0";
                       $foto=$ObjUtilidad->GenerarArchivo($ruta, $nombre, $nombrefile);
                       $datanew["media"]=$foto[1];
                     }else{
                       $datanew["media"]=$_POST["videoid"];
                     }
+
+
+                    $ruta="../../_data/news/downloads/";
+                    $nombre=$identificador;
+                    $nombrefile="filetwo-0";
+                    $mediaDescarga=$ObjUtilidad->GenerarArchivo($ruta, $nombre, $nombrefile);
+                    $datanew["mediaDescarga"]=$mediaDescarga[1];
 
                     $datanotification["idInstitucion"]=$_POST["institute"];
                     $datanotification["idEmisor"]=$idUsuario;

@@ -1,0 +1,31 @@
+<ion-view  cache-view="false" can-swipe-back="false"  view-title="Revista"  id="revista">
+  <ion-content scroll="false">
+
+     <ion-slide-box id="portada" delegate-handle="image-viewer" >
+
+        <ion-slide  ng-repeat="magazine in magazines">
+          <div class="slide-wrapper">
+            <img class="slider-img" src="{{magazine.portada}}" ng-click="$state.go('tab.magazine', {magazineId:magazine.idRevista})"/>
+          </div>
+
+          <div id="buttons-magazine">
+
+            <div class="opc">
+              <ion-button class="ion-chevron-left" ng-click="previousMain()" ng-show="magazine.primero"></ion-button>
+            </div>
+
+            <div class="opc">
+              <a class="ion-arrow-resize" ng-click="$state.go('tab.magazine', {magazineId:magazine.idRevista})" ></a>
+            </div>
+
+            <div class="opc">
+              <ion-button class="ion-chevron-right" ng-click="nextMain()" ng-show="magazine.ultimo"></ion-button>
+            </div>
+
+          </div>
+        </ion-slide>
+
+      </ion-slide-box>
+
+  </ion-content>
+</ion-view>

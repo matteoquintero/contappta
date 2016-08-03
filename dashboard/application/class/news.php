@@ -59,7 +59,7 @@ class News
 
         $dbdata = DB_DataObject::Factory('News');
         $dbdata->selectAdd();
-        $dbdata->selectAdd("idNoticia,asunto,aprobada,fechaPublicacion,respuesta,descripcion,foto,idPlantilla,media");
+        $dbdata->selectAdd("idNoticia,asunto,aprobada,fechaPublicacion,respuesta,descripcion,foto,idPlantilla,media,mediaDescarga");
         $dbdata->whereAdd("aprobada='Si'");
         $dbdata->whereAdd("publicada='Si'");
         if($data["mode"]=="news"){
@@ -73,7 +73,9 @@ class News
           $ret[$contador]->id = $dbdata->idNoticia;
           $ret[$contador]->title = $dbdata->asunto;
           $ret[$contador]->date = $dbdata->fechaPublicacion;
-          $ret[$contador]->descriptionshort = substr($dbdata->descripcion."...", 0,50);
+          $ret[$contador]->download = ( $dbdata->mediaDescarga != "" ) ? true : false;
+          $ret[$contador]->mediaDescarga = $dbdata->mediaDescarga;
+          $ret[$contador]->descriptionshort = substr($dbdata->descripcion."...", 0,250);
           $ret[$contador]->description = $dbdata->descripcion;
           $ret[$contador]->avatar = RUTADATA.$dbdata->foto;
 

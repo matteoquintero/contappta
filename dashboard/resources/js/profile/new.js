@@ -27,7 +27,8 @@ function step1 () {
 
 function step2(){
 	var form = $('#form-news');
-  var inputfile = $('#image');
+  var fileone = $('#image');
+  var filetwo = $('#download');
 	showerrors(form);
 	form.validate({
 					rules: {
@@ -37,6 +38,7 @@ function step2(){
 							},
 						 subject:{
 						 			required:true,
+                  maxlength:70
 							},
               description:{
                   required:true,
@@ -58,6 +60,7 @@ function step2(){
 							},
               subject:{
                   required:"Por favor, escriba el asunto.",
+                  maxlength:"Maximo 70 caracteres",
               },
               description:{
                   required:"Por favor, escriba la descripción.",
@@ -77,7 +80,7 @@ function step2(){
       $("#videoid").val(videoid[1]);
     }
 
-    var finale=sendformfileajax(action,"noticia",form,inputfile);
+    var finale=sendformfileajax(action,"noticia",form,fileone,filetwo);
 		switch (finale[0]){
 				case true: redirectpage("noticias"); break;
 				case false:

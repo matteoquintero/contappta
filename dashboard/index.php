@@ -338,8 +338,8 @@
 
             case "mensajes":
 
-                $data["idInstitucion"]=$userdata["idInstitucion"];
-                $messages = $ObjMessages->get("institution",$data);
+                $data["idEmisor"]=$userdata["idUsuario"];
+                $messages = $ObjMessages->get("transmitter",$data);
                 $smarty->assign("messages",$messages);
 
                 $smarty->display($userdata["permiso"]."/messages".MIN."html");
