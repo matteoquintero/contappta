@@ -9,7 +9,6 @@ class Usuario extends Users
 
 	public function create($data){
 		$dbdata = DB_DataObject::Factory('Usuario');
-
     $dbdata->idInstitucion=$data["idInstitucion"];
     $dbdata->idGrupo=$data["idGrupo"];
     $dbdata->idRol=$data["idRol"];
@@ -107,6 +106,8 @@ class Usuario extends Users
     $dbdata->foto=$data["foto"];
     $dbdata->celular=$data["celular"];
     $dbdata->permiso=$data["permiso"];
+    $dbdata->deviceToken=$data["deviceToken"];
+    $dbdata->idOneSignal=$data["idOneSignal"];
 
 		$dbdata->whereAdd("id = '".$data["idUsuario"]."'");
 

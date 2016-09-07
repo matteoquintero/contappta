@@ -113,25 +113,28 @@ function randomint(min, max) {
 
 function defaultclick () { return false; }
 
-function sendformfileajax(accion,controller,form,fileone,filetwo){
+function sendformfileajax(accion,controller,form,fileone="",filetwo=""){
     form.fadeOut();
     form.find(':input:disabled').removeAttr('disabled');
 
     var dataform = new FormData();
 
-    var file_dataone = fileone[0].files;
-    for(var i = 0;i<file_dataone.length;i++){
-        dataform.append("fileone-"+i, file_dataone[i]);
+    if (fileone!="") {
+      var file_dataone = fileone[0].files;
+      for(var i = 0;i<file_dataone.length;i++){
+          dataform.append("fileone-"+i, file_dataone[i]);
+      }
+      dataform.append("filesone",file_dataone.length);
     }
 
-    dataform.append("filesone",file_dataone.length);
 
-    var file_datatwo = filetwo[0].files;
-    for(var i = 0;i<file_datatwo.length;i++){
-        dataform.append("filetwo-"+i, file_datatwo[i]);
+    if (filetwo!="") {
+      var file_datatwo = filetwo[0].files;
+      for(var i = 0;i<file_datatwo.length;i++){
+          dataform.append("filetwo-"+i, file_datatwo[i]);
+      }
+      dataform.append("filestwo",file_datatwo.length);
     }
-
-    dataform.append("filestwo",file_datatwo.length);
 
     var other_data = form.serializeArray();
     $.each(other_data,function(key,input){

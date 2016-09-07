@@ -5,7 +5,7 @@ class Phone{
 
 		}
 
-    private function androidnotification($notification,$dataandroid){
+    private function androidnotificationcgm($notification,$dataandroid){
 
       $msg = array(
         'message'   => $dataandroid["message"],
@@ -18,7 +18,7 @@ class Phone{
         'dataone' => $dataandroid["dataone"],
         'datatwo' => $dataandroid["title"],
         'datathree' => $dataandroid["message"],
-        'priority'=> 3,
+        'priority'=> 10,
         'notId'=> $notification,
       );
       $fields = array(
@@ -42,18 +42,61 @@ class Phone{
       curl_close( $ch );
     }
 
+    private function androidnotificationonesignal($notification,$dataandroid){
+
+    $content = array(
+      "es" => $dataandroid["message"],
+      "en" => $dataandroid["message"]
+      );
+    $headings = array(
+      "es" => $dataandroid["title"],
+      "en" => $dataandroid["title"]
+      );
+
+    $fields = array(
+      'app_id' => "a8fae91b-a8f3-44c6-8eb2-2a733773a823",
+      'include_player_ids' => $dataandroid["idsonesignal"],
+      'data' => array(
+        'page' => $dataandroid["page"],
+        'dataone' => $dataandroid["dataone"],
+        'datatwo' => $dataandroid["title"],
+        'datathree' => $dataandroid["message"],
+        ),
+      'contents' => $content,
+      'headings' => $headings,
+      'priority'=>10
+    );
+
+    $fields = json_encode($fields);
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json',
+                           'Authorization: Basic ZjM1MzhlMzYtZjU2MC00ZTQyLTg0MWYtMzdiNjk3YTI5YmFj'));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($ch, CURLOPT_HEADER, FALSE);
+    curl_setopt($ch, CURLOPT_POST, TRUE);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+  }
+
+
+
     public function sendnotifications($notification,$datanotification){
 
-        define( 'API_ACCESS_KEY', 'AIzaSyAYdSMxRmaJfz_DqMmo-Kn-9NBinriOwbA' );
-
         $dataandroid["tokens"]= $this->tokens($notification);
+        $dataandroid["idsonesignal"]= $this->idsonesignal($notification);
         $dataandroid["page"]=$datanotification["page"];
         $dataandroid["title"]=( empty($datanotification["title"]) ) ? $this->title($notification) : $datanotification["title"];
         $dataandroid["message"]=$this->message($notification);
         $dataandroid["dataone"]=$datanotification["dataone"];
         $dataandroid["datatwo"]=$datanotification["datatwo"];
 
-        $this->androidnotification($notification,$dataandroid);
+        $this->androidnotificationonesignal($notification,$dataandroid);
 
     }
 
@@ -106,6 +149,24 @@ class Phone{
 
     }
 
+    private function idsonesignal($notification){
+
+      $dbdata = DB_DataObject::Factory('Reciversnotifications');
+      $dbdata->selectAdd();
+      $dbdata->selectAdd("idOneSignal");
+      $dbdata->whereAdd("idNotificacion='$notification'");
+      $dbdata->find();
+      $contador=0;
+      while( $dbdata->fetch() ){
+        if ($dbdata->idOneSignal !="") {
+          $ret[$contador] = $dbdata->idOneSignal;
+          $contador++;
+        }
+      }
+      $dbdata->free();
+      return $ret;
+
+    }
 }
 
 ?>

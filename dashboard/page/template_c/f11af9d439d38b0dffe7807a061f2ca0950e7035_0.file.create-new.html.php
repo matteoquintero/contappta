@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-08-01 23:16:42
+/* Smarty version 3.1.29, created on 2016-08-28 01:12:46
   from "/Applications/MAMP/htdocs/contappta/dashboard/page/template/institution/create-new.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57a01eaa1878c3_75710677',
+  'unifunc' => 'content_57c280de9930d3_19638943',
   'file_dependency' => 
   array (
     'f11af9d439d38b0dffe7807a061f2ca0950e7035' => 
     array (
       0 => '/Applications/MAMP/htdocs/contappta/dashboard/page/template/institution/create-new.html',
-      1 => 1470111398,
+      1 => 1472364765,
       2 => 'file',
     ),
   ),
@@ -19,14 +19,23 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57a01eaa1878c3_75710677 ($_smarty_tpl) {
+function content_57c280de9930d3_19638943 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
 
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo fileversion('resources/css/vendor/notebook.css');?>
+">
+
   </head>
-  <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/profile/nav.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+    <div id="editor-content">
+      <h1>Selecciona el texto que deseas editar</h1>
+      <i>X</i>
+        <div id="editor"></div>
+    </div>  <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/profile/nav.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
+
 
   <section class="content-header">
     <h1>
@@ -41,6 +50,7 @@ function content_57a01eaa1878c3_75710677 ($_smarty_tpl) {
   </section>
   <!-- Main content -->
   <section class="content">
+
     <div class="row">
       <!-- left column -->
       <div class="col-md-12">
@@ -219,6 +229,7 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_2_saved_item;
             <div class="box-footer">
               <button type="button" class="btn btn-primary" id="btn-step-1">Siguiente</button>
               <button type="button" class="btn btn-primary" id="btn-step-2">Enviar</button>
+              <button type="button" class="btn btn-primary" id="btn-html">Editar description</button>
             </div>
           </form>
         </div><!-- /.box -->
@@ -232,23 +243,27 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_2_saved_item;
 ?>
 
   <?php echo '<script'; ?>
- src="<?php echo fileversion('resources/js/vendor/jquery-inputmask.js');?>
+ type="text/javascript" src="<?php echo fileversion('resources/js/vendor/jquery-inputmask.js');?>
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
- src="<?php echo fileversion('resources/js/vendor/jquery-inputmask-date-extensions.js');?>
+ type="text/javascript" src="<?php echo fileversion('resources/js/vendor/jquery-inputmask-date-extensions.js');?>
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
- src="<?php echo fileversion('resources/js/vendor/jquery-inputmask-extensions.js');?>
+ type="text/javascript" src="<?php echo fileversion('resources/js/vendor/jquery-inputmask-extensions.js');?>
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
- src="<?php echo fileversion('resources/js/vendor/select2.js');?>
+ type="text/javascript" src="<?php echo fileversion('resources/js/vendor/select2.js');?>
 "><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
- src="<?php echo fileversion('resources/js/profile/new.js');?>
+ type="text/javascript" src="<?php echo fileversion('resources/js/vendor/notebook.js');?>
+"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo fileversion('resources/js/profile/new.js');?>
 "><?php echo '</script'; ?>
 >
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/botoom.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);

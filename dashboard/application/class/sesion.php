@@ -12,6 +12,7 @@ class Sesion{
 
             $dbdata = DB_DataObject::Factory('Usuario');
             $dbdata->deviceToken=$data["deviceToken"];
+            $dbdata->idOneSignal=$data["idOneSignal"];
             $dbdata->whereAdd("id = '".$data["idUsuario"]."'");
             $dbdata->update(DB_DATAOBJECT_WHEREADD_ONLY);
             $dbdata->free();

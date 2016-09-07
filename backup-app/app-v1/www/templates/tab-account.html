@@ -1,0 +1,12 @@
+<ion-view  cache-view="false" can-swipe-back="false"  view-title="Cuenta">
+  <ion-content class="content has-header ionic-pseudo">
+    <div class="list acount">
+      <div ng-switch="user.menu">
+       <div ng-switch-when="student"><div ng-include="'partials/account-student.html'"></div></div>
+       <div ng-switch-when="institute"><div ng-include="'partials/account-institute.html'"></div></div>
+       <div ng-switch-when="parent"><div ng-include="'partials/account-parent.html'"></div></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+

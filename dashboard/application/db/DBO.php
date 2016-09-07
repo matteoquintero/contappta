@@ -10,7 +10,6 @@ foreach ( $C as $name => $val )
 {
     define($name, $val);
 }
-
 /*
 * Create a Database object
 */
@@ -23,7 +22,7 @@ if (!defined('PATH_SEPARATOR')) {
 }
 
 $include_path = ini_get("include_path");
-@ini_set("include_path", $include_path . PATH_SEPARATOR . $_SERVER["DOCUMENT_ROOT"]."/PEAR");
+@ini_set("include_path", $include_path . PATH_SEPARATOR . $_SERVER["DOCUMENT_ROOT"].ROUTELIBS."pear");
 //echo $include_path;
 
 require_once("DB.php");

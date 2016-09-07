@@ -1,5 +1,6 @@
 <?php
-	define('BASE', '/contappta/dashboard/');
+  define('BASE', '/contappta/dashboard/');
+	define('ROUTELIBS', '/libs/');
 	define('SITE', 'local');
 	define('MIN', '.');
   define('RUTADATA', 'http://localhost/contappta/dashboard/');

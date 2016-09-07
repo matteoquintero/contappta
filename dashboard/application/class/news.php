@@ -108,12 +108,12 @@ class News
         $dbdata->selectAdd("idNoticia,idNotificacion,idPlantilla,asunto,descripcion,media,aprobada,publicada,respuesta,fechaPublicacion");
         $dbdata->whereAdd("idNoticia='".$data['idNoticia']."'");
         $dbdata->find();
-        while( $dbdata->fetch() ){
+        if( $dbdata->fetch() ){
           $ret["idNoticia"] = $dbdata->idNoticia;
           $ret["idNotificacion"] = $dbdata->idNotificacion;
           $ret["idPlantilla"] = $dbdata->idPlantilla;
-          $ret['asunto'] = $dbdata->asunto;
-          $ret['descripcion'] = $dbdata->descripcion;
+          $ret['asunto'] = format($dbdata->asunto,"encode");
+          $ret['descripcion'] = format($dbdata->descripcion,"encode");
           $ret['aprobada'] = $dbdata->aprobada;
           $ret['publicada'] = $dbdata->publicada;
           $ret['respuesta'] = $dbdata->respuesta;

@@ -309,6 +309,7 @@
                 $data["idNoticia"]=$_POST["idNoticia"];
                 $sendersnews = $ObjSendersNews->get("new",$data);
                 $smarty->assign("sendersnews",$sendersnews);
+                $smarty->assign("new",$_POST["idNoticia"]);
 
                 $smarty->display($userdata["permiso"]."/senders-news".MIN."html");
 
@@ -392,6 +393,7 @@
                 $data["idEvento"]=$_POST["idEvento"];
                 $sendersevents = $ObjSendersEvents->get("event",$data);
                 $smarty->assign("sendersevents",$sendersevents);
+                $smarty->assign("event",$_POST["idEvento"]);
 
                 $smarty->display($userdata["permiso"]."/senders-events".MIN."html");
 

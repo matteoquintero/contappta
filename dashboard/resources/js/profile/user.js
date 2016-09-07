@@ -14,15 +14,7 @@ function user(){
               lastname:{
                   required:true,
               },
-              email:{
-                  required:true,
-                  email:true,
-                  uniqueemail:true
-              },
              password:{
-                  required:true,
-              },
-              smartphone:{
                   required:true,
               },
              institution:{
@@ -48,15 +40,8 @@ function user(){
               lastname:{
                   required:"Por favor, escriba el apellido.",
               },
-              email:{
-                  required:"Por favor, escriba el correo.",
-                  email:"Correo electronico incorrecto.",
-              },
               password:{
                   required:"Por favor, escriba la contraseña.",
-              },
-              smartphone:{
-                  required:"Por favor, escriba el celular.",
               },
               institution:{
                   required:"Por favor, seleccione la institución.",

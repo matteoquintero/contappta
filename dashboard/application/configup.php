@@ -1,5 +1,6 @@
 <?php
 	define('BASE', '/dashboard/');
+  define('ROUTELIBS', '/dashboard/');
 	define('SITE', 'production');
 	define('MIN', '.');
   define('RUTADATA', 'http://contappta.com/dashboard/');

@@ -39,10 +39,10 @@
                     $ruta="../../_data/magazines/".$identificador."/";
 
 
-                    for ($i=0; $i <  intval( $_POST["files"] ) ; $i++) {
+                    for ($i=0; $i <  intval( $_POST["filesone"] ) ; $i++) {
 
                       $nombre=$i;
-                      $nombrefile="file-".$i;
+                      $nombrefile="fileone-".$i;
 
                       $pagina=$ObjUtilidad->GenerarArchivo($ruta, $nombre, $nombrefile);
 

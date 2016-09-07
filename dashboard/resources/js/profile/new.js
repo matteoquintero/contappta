@@ -20,6 +20,7 @@ function step1 () {
     }
     $("#btn-step-2").show();
     $("#step-2").show();
+    $("#btn-html").show();
 
   }else{return false;}
   return false;
@@ -99,13 +100,45 @@ function step2(){
 	return false;
 }
 
-
 $(document).ready(function() {
+  $( "#btn-html" ).click(function() {
+
+    $("#editor").html($("#description").val());
+
+    $( "#editor-content" ).animate({
+      opacity: 1,
+      top: 0,
+      height: "100%"
+    }, 2000, function() {
+
+    });
+
+  });
+
+  $( "#editor-content i" ).click(function() {
+
+    $("#description").val($("#editor").html());
+
+    $( "#editor-content" ).animate({
+      opacity: 0,
+      top: "-100%",
+      height: 0
+    }, 2000, function() {
+
+    });
+
+  });
+
+  $('#editor').notebook({
+    autoFocus: true,
+    placeholder: 'Type something awesome...'
+  });
 
   $("[data-mask]").inputmask("datetime");
   $(".select2").select2();
   $("#btn-step-2").hide();
   $("#step-2").hide();
+  $("#btn-html").hide();
   $( "#btn-step-1" ).click(function() { step1() });
   $( "#btn-step-2" ).click(function() { step2() });
   $( "#btn-update" ).click(function() { step2() });

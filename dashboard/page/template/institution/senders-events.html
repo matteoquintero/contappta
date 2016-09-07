@@ -22,6 +22,11 @@
         <div class="box">
           <div class="box-header">
             <h3 class="box-title">Listado de los receptores</h3>
+            <form id="report-form" action="application/controller/report.php" class="hidden hide" method="post">
+              <input type="hidden" name="idEvennto" value="{#$event#}">
+              <input type="hidden" name="accion" value="senders-events">
+            </form>
+            <button type="button" class="btn btn-primary" id="report-button">Reporte</button>
           </div><!-- /.box-header -->
           <div class="box-body">
             <table id="data" class="table table-bordered table-striped">
@@ -61,6 +66,7 @@
   <script src="{#'resources/js/vendor/datatables-bootstrap.js'|fileversion#}"></script>
   <script src="{#'resources/js/vendor/jquery-slimscroll.js'|fileversion#}"></script>
   <script src="{#'resources/js/profile/data.js'|fileversion#}"></script>
+  <script src="{#'resources/js/profile/report.js'|fileversion#}"></script>
   {#include file="master/general/botoom.html"|filetemplate#}
 
 

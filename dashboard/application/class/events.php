@@ -129,7 +129,7 @@ class Events
         $dbdata->selectAdd("idEvento,idNotificacion,aprobado,publicado,asunto,descripcion,fechaInicio,fechaFin,fechaPublicacion");
         $dbdata->whereAdd("idEvento='".$data['idEvento']."'");
         $dbdata->find();
-        while( $dbdata->fetch() ){
+        if( $dbdata->fetch() ){
           $ret["idEvento"] = $dbdata->idEvento;
           $ret["idNotificacion"] = $dbdata->idNotificacion;
           $ret['aprobado'] = $dbdata->aprobado;

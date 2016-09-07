@@ -8,7 +8,9 @@ class Rol
   public function get(){
 
     $dbdata = DB_DataObject::Factory('Rol');
+    $dbdata->selectAdd();
     $dbdata->selectAdd("id,rol");
+    $dbdata->whereAdd("id NOT LIKE '17'");
     $dbdata->find();
     $contador=0;
     while( $dbdata->fetch() ){

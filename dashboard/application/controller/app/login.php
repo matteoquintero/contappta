@@ -15,6 +15,7 @@
   $mode="app-sesion";
   $datauser=$ObjUsers->get($mode,$data);
   $datauser["deviceToken"]=$_REQUEST["devicetoken"];
+  $datauser["idOneSignal"]=$_REQUEST["idonesignal"];
   $response=$ObjSesion->authenticationapp($user,$password,$datauser);
   $response[1]=$datauser;
   $response[2]=$ObjInstitutions->get("app",$datauser);

@@ -1,8 +1,7 @@
 <?php
-
 @session_start();
 //Smarty
-require($_SERVER["DOCUMENT_ROOT"]."/smarty/libs/Smarty.class.php");
+require($_SERVER["DOCUMENT_ROOT"].ROUTELIBS."smarty/libs/Smarty.class.php");
 $smarty = new Smarty();
 $smarty->compile_check = true;
 $smarty->left_delimiter = '{#';
@@ -11,7 +10,10 @@ $smarty->template_dir = $_SERVER["DOCUMENT_ROOT"].BASE."page/template/";
 $smarty->compile_dir  = $_SERVER["DOCUMENT_ROOT"].BASE."page/template_c/";
 $smarty->loadPlugin('smarty_compiler_switch');
 
+define( 'API_ACCESS_KEY', 'AIzaSyAYdSMxRmaJfz_DqMmo-Kn-9NBinriOwbA' );
+
 date_default_timezone_set('America/Bogota');
+
 function IncluirArchivos($Ruta){
 	define('PREFIJO_GENERAL', $Ruta);
 	require("db/DBO.php");
@@ -59,6 +61,7 @@ function IncluirArchivos($Ruta){
   require(PREFIJO_GENERAL."class/eventsremindersday.php");
   require(PREFIJO_GENERAL."class/eventsremindersminute.php");
   require(PREFIJO_GENERAL."class/userrecognition.php");
+  require(PREFIJO_GENERAL."class/excel.php");
 }
 function printVar( $variable, $title = "" ){ $var = print_r( $variable, true ); echo "<pre style='background-color:#000000; color:#00FF00; border: dashed thin #FFFFFF;position:relative;width: 100%;z-index: 9999;'><strong>[$title]</strong> $var</pre>"; }
 function replace_unicode_escape_sequence($match) { return mb_convert_encoding(pack('H*', $match[1]), 'UTF-8', 'UCS-2BE'); }

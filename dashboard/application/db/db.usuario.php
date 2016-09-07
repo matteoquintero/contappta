@@ -3,7 +3,7 @@
  * Table Definition for usuario
  */
 
-class DataObject_Usuario extends DB_DataObject 
+class DataObject_Usuario extends DB_DataObject
 {
     ###START_AUTOCODE
     /* the code below is auto generated do not remove the above tag */
@@ -13,15 +13,16 @@ class DataObject_Usuario extends DB_DataObject
     public $idRol;                           // int(11)  not_null
     public $idInstitucion;                   // int(11)  not_null
     public $idGrupo;                         // int(11)  not_null
+    public $idOneSignal;                     // blob(65535)  blob
     public $deviceToken;                     // blob(65535)  blob
     public $usuario;                         // string(100)  not_null
-    public $nombre;                          // string(100)  
-    public $apellido;                        // string(100)  
-    public $documento;                       // string(150)  
-    public $celular;                         // string(150)  
-    public $correo;                          // string(250)  
-    public $foto;                            // string(150)  
-    public $contrasena;                      // string(250)  
+    public $nombre;                          // string(100)
+    public $apellido;                        // string(100)
+    public $documento;                       // string(150)
+    public $celular;                         // string(150)
+    public $correo;                          // string(250)
+    public $foto;                            // string(150)
+    public $contrasena;                      // string(250)
     public $permiso;                         // string(11)  enum
     public $clear;                           // string(2)  enum
     public $fechaRegistro;                   // timestamp(19)  unsigned binary timestamp
@@ -36,6 +37,7 @@ class DataObject_Usuario extends DB_DataObject
              'idRol' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idInstitucion' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
              'idGrupo' =>  DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+             'idOneSignal' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'deviceToken' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_BLOB,
              'usuario' =>  DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,
              'nombre' =>  DB_DATAOBJECT_STR,
@@ -61,9 +63,10 @@ class DataObject_Usuario extends DB_DataObject
          return array('id', true, false);
     }
 
-    function defaults() // column default values 
+    function defaults() // column default values
     {
          return array(
+             'idOneSignal' => '',
              'deviceToken' => '',
              'usuario' => '',
              'nombre' => '',

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-30 19:10:31
+/* Smarty version 3.1.29, created on 2016-08-27 18:21:38
   from "/Applications/MAMP/htdocs/contappta/dashboard/page/template/institution/senders-news.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_579d41f7225ae7_59763628',
+  'unifunc' => 'content_57c2208210c066_34082352',
   'file_dependency' => 
   array (
     'b6467145ffd99b662dccf80937872bf0a98829dd' => 
     array (
       0 => '/Applications/MAMP/htdocs/contappta/dashboard/page/template/institution/senders-news.html',
-      1 => 1456531954,
+      1 => 1472340093,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_579d41f7225ae7_59763628 ($_smarty_tpl) {
+function content_57c2208210c066_34082352 ($_smarty_tpl) {
 ?>
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/header.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -50,7 +50,13 @@ function content_579d41f7225ae7_59763628 ($_smarty_tpl) {
         <div class="box">
           <div class="box-header">
             <h3 class="box-title">Listado de los receptores</h3>
-          </div><!-- /.box-header -->
+            <form id="report-form" action="application/controller/report.php" class="hidden hide" method="post">
+              <input type="hidden" name="idNoticia" value="<?php echo $_smarty_tpl->tpl_vars['new']->value;?>
+">
+              <input type="hidden" name="accion" value="senders-news">
+            </form>
+            <button type="button" class="btn btn-primary" id="report-button">Reporte</button>
+                      </div><!-- }/.box-header -->
           <div class="box-body">
             <table id="data" class="table table-bordered table-striped">
               <thead>
@@ -123,6 +129,10 @@ $_smarty_tpl->tpl_vars['sendernew'] = $__foreach_sendernew_0_saved_item;
 >
   <?php echo '<script'; ?>
  src="<?php echo fileversion('resources/js/profile/data.js');?>
+"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="<?php echo fileversion('resources/js/profile/report.js');?>
 "><?php echo '</script'; ?>
 >
   <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, filetemplate("master/general/botoom.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);

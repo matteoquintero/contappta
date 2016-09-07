@@ -133,28 +133,28 @@ function showerrors(form){
     jQuery.validator.setDefaults({
         showErrors: function(map, list) {
             jQuery.each(list, function(index, error) {
-                if(index==0 && error.element.type!="password"){
+                if(index==0 ){
                     error.element.focus();
                 }
             });
             var focussed = document.activeElement;
-            if (focussed && jQuery(focussed).is("input, textarea, select")) {
+            if (focussed && jQuery(focussed).is("input, textarea, select, password")) {
                 mensaje.html('');
             }
             contenedor.hide();
-            if (focussed && jQuery(focussed).is("input, textarea, select")) {
+            if (focussed && jQuery(focussed).is("input, textarea, select, password")) {
                 this.currentElements.removeAttr("title").removeClass("error");
             }else{
                 jQuery(focussed).removeClass("error");
             }
             $.each(list, function(index, error) {
-                if (focussed && jQuery(focussed).is("input, textarea, select")) {
+                if (focussed && jQuery(focussed).is("input, textarea, select, password")) {
                     jQuery(error.element).attr("title", error.message).addClass("error");
                 }else{
                     jQuery(error.element).addClass("error");
                 }
             });
-            if (focussed && jQuery(focussed).is("input, textarea, select")) {
+            if (focussed && jQuery(focussed).is("input, textarea, select, password")) {
                 if(jQuery(focussed).hasClass('error')){
                         contenedor.show();
                 }

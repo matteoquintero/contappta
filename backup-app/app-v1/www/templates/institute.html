@@ -1,0 +1,31 @@
+<ion-view  cache-view="false" can-swipe-back="false"  view-title="{{institution.tipoInstitucion}}"   id="instiuto">
+
+    <ion-content class="paddingcontent has-header ionic-pseudo" scroll="false">
+
+      <div class="list acount card">
+
+    <div class="item item-icon-left">
+      <i class="icon ion-ios-lightbulb-outline"></i>
+        {{institution.institucion}}
+    </div>
+
+    <div class="item item-icon-left">
+      <i class="icon ion-ios-location-outline"></i>
+        {{institution.direccion}}
+    </div>
+
+
+      <a class="item item-icon-left" href="tel:+{{institution.celular}}">
+        <i class="icon ion-android-phone-portrait"></i>
+        {{institution.celular}}
+      </a>
+
+    <a class="item item-icon-left" href="mailto:{{institution.correo}}">
+      <i class="icon ion-ios-email-outline"></i>
+      {{institution.correo}}
+    </a>
+
+  </div>
+
+  </ion-content>
+</ion-view>
